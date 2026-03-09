@@ -7,7 +7,7 @@
 <title>学習塾あっと地球っ子！北加瀬教室 | 考える楽しさを伝える学習塾</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <style>
@@ -27,9 +27,9 @@
   --text-sub:#5A5A5A;
   --text-note:#9C9B99;
   --border:#E5E4E1;
-  --font-display:'Shippori Mincho', serif;
-  --font-body:'Zen Kaku Gothic New', sans-serif;
-  --font-accent:'Cormorant Garamond', serif;
+  --font-display:'BIZ UDPGothic', sans-serif;
+  --font-body:'Noto Sans JP', sans-serif;
+  --font-accent:'Playfair Display', serif;
   --max-w:1100px;
   --transition:.4s cubic-bezier(.22,1,.36,1);
   --radius:20px;
@@ -201,26 +201,24 @@ header nav a.nav-active::after{width:70%}
 .reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
 .reveal-el.visible{opacity:1;transform:translateY(0)}
 
-/* ===== FEATURES (Animated cards) ===== */
+/* ===== FEATURES (Zigzag layout) ===== */
 .features{background:var(--white);padding:120px 0;position:relative}
 .features::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
 .features-header{margin-bottom:72px}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.feature-card{background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border-radius:var(--radius);padding:36px 28px;border:1px solid rgba(0,0,0,.05);transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden;cursor:default}
-.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
-.feature-card::after{content:'';position:absolute;inset:0;border-radius:var(--radius);border:1.5px solid transparent;transition:border-color .4s;pointer-events:none}
-.feature-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-md),var(--shadow-glow)}
-.feature-card:hover::before{transform:scaleX(1)}
-.feature-card:hover::after{border-color:var(--primary-20)}
-.feature-card-shine{position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);transform:translateX(-100%);pointer-events:none}
-.feature-card:hover .feature-card-shine{transform:translateX(100%);transition:transform .7s ease}
-.feature-icon-wrap{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,var(--primary-10),var(--primary-5));display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:all .5s cubic-bezier(.22,1,.36,1)}
-.feature-card:hover .feature-icon-wrap{background:linear-gradient(135deg,var(--primary),var(--primary-light));transform:scale(1.1) rotate(-5deg);box-shadow:0 6px 20px #EA580C30}
-.feature-icon{width:24px;height:24px;color:var(--primary);transition:color .3s}
-.feature-card:hover .feature-icon{color:#fff}
+.features-grid{display:flex;flex-direction:column;gap:80px}
+.feature-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-row-reverse{direction:rtl}
+.feature-row-reverse>*{direction:ltr}
+.feature-visual{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px;background:linear-gradient(135deg,var(--primary-5),var(--primary-10));border-radius:var(--radius);position:relative;aspect-ratio:4/3;will-change:clip-path,transform}
+.feature-icon-wrap-lg{width:80px;height:80px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px #EA580C30;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-icon-wrap-lg{transform:scale(1.1) rotate(-5deg)}
+.feature-icon{width:36px;height:36px;color:#fff}
+.feature-num-lg{font-family:var(--font-accent);font-size:5rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;position:absolute;bottom:16px;right:24px;opacity:.4}
 .feature-num{font-family:var(--font-accent);font-size:.85rem;font-weight:400;font-style:italic;letter-spacing:.1em;color:var(--primary-light);margin-bottom:12px;opacity:.5}
-.feature-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.5}
-.feature-desc{font-size:.88rem;color:var(--text-sub);line-height:1.9}
+.feature-title{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.5}
+.feature-desc{font-size:.92rem;color:var(--text-sub);line-height:2}
+.feature-line{width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;margin-top:24px;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-line{width:120px}
 
 /* ===== PHOTO GRID ===== */
 .photo-grid{background:var(--bg-warm);padding:80px 0;position:relative;overflow:hidden}
@@ -369,7 +367,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .hero-photo-wrap{order:-1}
   .hero-photo{aspect-ratio:16/9}
   .hero{padding:72px 0 88px;min-height:auto}
-  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:16/9;padding:32px}
   .photo-grid-inner{grid-template-columns:1fr}
   .access-inner{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr}
@@ -381,7 +380,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 @media(max-width:640px){
   header nav,.nav-cta-btn{display:none}
   .hamburger{display:flex}
-  .features-grid{grid-template-columns:1fr}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:16/9;padding:32px}
   .hero-stats{gap:20px}
   .hero h1{font-size:clamp(1.7rem,7vw,2.4rem)}
   .photo-frame{aspect-ratio:4/3}
@@ -483,32 +483,47 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <p class="section-desc reveal-el">深く考える事を嫌う子供達に考える楽しさを伝え、達成した時の喜びを経験させます。</p>
   </div>
   <div class="features-grid">
-    <div class="feature-card reveal-el" data-delay="0.0">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+    <div class="feature-row">
+      <div class="feature-visual">
+        <div class="feature-icon-wrap-lg">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        </div>
+        <div class="feature-num-lg">01</div>
       </div>
-      <div class="feature-num">01</div>
-      <h3 class="feature-title">考える楽しさを伝える指導</h3>
-      <p class="feature-desc">深く考える事を嫌う子供達に、考える楽しさを伝えます。「勉強は最高の遊びだよ」を合言葉に、学ぶことの面白さを体感できる授業を行います。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-text">
+        <div class="feature-num">01</div>
+        <h3 class="feature-title">考える楽しさを伝える指導</h3>
+        <p class="feature-desc">深く考える事を嫌う子供達に、考える楽しさを伝えます。「勉強は最高の遊びだよ」を合言葉に、学ぶことの面白さを体感できる授業を行います。</p>
+        <div class="feature-line"></div>
+      </div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.1">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+    <div class="feature-row feature-row-reverse">
+      <div class="feature-visual">
+        <div class="feature-icon-wrap-lg">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="feature-num-lg">02</div>
       </div>
-      <div class="feature-num">02</div>
-      <h3 class="feature-title">達成の喜びを経験させる</h3>
-      <p class="feature-desc">問題を解けた時、理解できた時の達成感を大切にしています。小さな成功体験を積み重ねることで、自ら学ぶ力を育てます。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-text">
+        <div class="feature-num">02</div>
+        <h3 class="feature-title">達成の喜びを経験させる</h3>
+        <p class="feature-desc">問題を解けた時、理解できた時の達成感を大切にしています。小さな成功体験を積み重ねることで、自ら学ぶ力を育てます。</p>
+        <div class="feature-line"></div>
+      </div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.2">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <div class="feature-row">
+      <div class="feature-visual">
+        <div class="feature-icon-wrap-lg">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="feature-num-lg">03</div>
       </div>
-      <div class="feature-num">03</div>
-      <h3 class="feature-title">全4回の無料体験</h3>
-      <p class="feature-desc">入塾前に全4回の無料体験を実施しています。お子様に合った学習環境かどうか、じっくりお試しいただけます。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-text">
+        <div class="feature-num">03</div>
+        <h3 class="feature-title">全4回の無料体験</h3>
+        <p class="feature-desc">入塾前に全4回の無料体験を実施しています。お子様に合った学習環境かどうか、じっくりお試しいただけます。</p>
+        <div class="feature-line"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -1026,16 +1041,26 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
     // === Scroll-triggered animations ===
 
-    // Feature cards batch stagger
-    ScrollTrigger.batch('.feature-card',{
-      onEnter:function(batch){
-        gsap.fromTo(batch,
-          {opacity:0,y:50,scale:.95},
-          {opacity:1,y:0,scale:1,stagger:.1,duration:.8,ease:'power3.out'}
+    // Feature rows: zigzag clip-path slide-in (like detail blocks)
+    document.querySelectorAll('.feature-row, .feature-row-reverse').forEach(function(row){
+      var isReverse=row.classList.contains('feature-row-reverse');
+      var visual=row.querySelector('.feature-visual');
+      var text=row.querySelector('.feature-text');
+      // Visual: clip-path wipe from the side + scale + slight rotation
+      var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+      if(visual){
+        gsap.fromTo(visual,
+          {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+          {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
         );
-      },
-      start:'top 88%',
-      once:true
+      }
+      // Text: slide in from opposite side
+      if(text){
+        gsap.fromTo(text,
+          {opacity:0,x:isReverse?-60:60,y:15},
+          {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+        );
+      }
     });
 
     // Detail blocks: dramatic clip-path reveal + slide + scale (zigzag)
