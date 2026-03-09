@@ -1210,18 +1210,27 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
     // === Scroll-triggered animations ===
 
-    // Feature rows: zigzag clip-path slide-in (like detail blocks)
+    // Feature rows: photo → clip-path slide-in, icon → simple fade+slide
     document.querySelectorAll('.feature-row, .feature-row-reverse').forEach(function(row){
       var isReverse=row.classList.contains('feature-row-reverse');
       var visual=row.querySelector('.feature-visual');
       var text=row.querySelector('.feature-text');
-      // Visual: clip-path wipe from the side + scale + slight rotation
-      var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+      var isPhoto=visual&&visual.classList.contains('feature-visual-photo');
       if(visual){
-        gsap.fromTo(visual,
-          {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
-          {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
-        );
+        if(isPhoto){
+          // Photo: dramatic clip-path wipe from side
+          var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+          gsap.fromTo(visual,
+            {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+            {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }else{
+          // Icon: gentle fade + slide from side
+          gsap.fromTo(visual,
+            {opacity:0,x:isReverse?-40:40,scale:.95},
+            {opacity:1,x:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }
       }
       // Text: slide in from opposite side
       if(text){
