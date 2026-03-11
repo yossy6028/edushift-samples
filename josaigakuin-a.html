@@ -4,7 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="埼玉県坂戸市元町の個別指導塾「城埼学院」。講師1名に対し生徒2名までの個別指導で、定期テスト・北辰テスト・入試対策に対応。月5,500円〜、講師歴20年以上のベテラン指導。無料体験授業受付中。">
+<meta property="og:title" content="城埼学院｜坂戸市元町の個別指導塾 定期テストに強い地元密着塾">
+<meta property="og:description" content="埼玉県坂戸市元町の個別指導塾「城埼学院」。講師1名に対し生徒2名までの個別指導で、定期テスト・北辰テスト・入試対策に対応。月5,500円〜、講師歴20年以上のベテラン指導。無料体験授業受付中。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://josaigakuin.crayonsite.net">
 <title>城埼学院｜坂戸市元町の個別指導塾 定期テストに強い地元密着塾</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"城埼学院","description":"埼玉県坂戸市元町の個別指導塾「城埼学院」。講師1名に対し生徒2名までの個別指導で、定期テスト・北辰テスト・入試対策に対応。月5,500円〜、講師歴20年以上のベテラン指導。無料体験授業受付中。","url":"https://josaigakuin.crayonsite.net"}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -201,26 +208,34 @@ header nav a.nav-active::after{width:70%}
 .reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
 .reveal-el.visible{opacity:1;transform:translateY(0)}
 
-/* ===== FEATURES (Animated cards) ===== */
+/* ===== FEATURES (Zigzag layout) ===== */
 .features{background:var(--white);padding:120px 0;position:relative}
 .features::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
 .features-header{margin-bottom:72px}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.feature-card{background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border-radius:var(--radius);padding:36px 28px;border:1px solid rgba(0,0,0,.05);transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden;cursor:default}
-.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
-.feature-card::after{content:'';position:absolute;inset:0;border-radius:var(--radius);border:1.5px solid transparent;transition:border-color .4s;pointer-events:none}
-.feature-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-md),var(--shadow-glow)}
-.feature-card:hover::before{transform:scaleX(1)}
-.feature-card:hover::after{border-color:var(--primary-20)}
-.feature-card-shine{position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);transform:translateX(-100%);pointer-events:none}
-.feature-card:hover .feature-card-shine{transform:translateX(100%);transition:transform .7s ease}
-.feature-icon-wrap{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,var(--primary-10),var(--primary-5));display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:all .5s cubic-bezier(.22,1,.36,1)}
-.feature-card:hover .feature-icon-wrap{background:linear-gradient(135deg,var(--primary),var(--primary-light));transform:scale(1.1) rotate(-5deg);box-shadow:0 6px 20px #1B3A5C30}
-.feature-icon{width:24px;height:24px;color:var(--primary);transition:color .3s}
-.feature-card:hover .feature-icon{color:#fff}
+.features-grid{display:grid;grid-template-columns:1fr;gap:80px}
+.features-grid:has(.feature-card):not(:has(.feature-row)){grid-template-columns:repeat(2,1fr);gap:32px}
+@supports not (selector(:has(*))){.features-grid{display:flex;flex-direction:column;gap:80px}}
+/* Photo zigzag rows */
+.feature-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-row-reverse{direction:rtl}
+.feature-row-reverse>*{direction:ltr}
+.feature-visual{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;will-change:clip-path,transform}
+.feature-visual-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-visual-photo img{transform:scale(1.05)}
+.feature-num-lg{font-family:var(--font-accent);font-size:5rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);text-shadow:0 2px 12px rgba(0,0,0,.3);line-height:1;position:absolute;bottom:16px;right:24px;z-index:2}
+/* Card layout (no-photo fallback) */
+.feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;position:relative;transition:transform .3s,box-shadow .3s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.feature-card-num{font-family:var(--font-accent);font-size:3.5rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;margin-bottom:16px}
+.feature-card-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feature-card-icon svg{width:24px;height:24px;color:#fff}
+/* Shared feature text */
 .feature-num{font-family:var(--font-accent);font-size:.85rem;font-weight:400;font-style:italic;letter-spacing:.1em;color:var(--primary-light);margin-bottom:12px;opacity:.5}
-.feature-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.5}
-.feature-desc{font-size:.88rem;color:var(--text-sub);line-height:1.9}
+.feature-title{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.5}
+.feature-desc{font-size:.92rem;color:var(--text-sub);line-height:2}
+.feature-line{width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;margin-top:24px;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-line{width:120px}
+.feature-card:hover .feature-line{width:120px}
 
 /* ===== PHOTO GRID ===== */
 .photo-grid{background:var(--bg-warm);padding:80px 0;position:relative;overflow:hidden}
@@ -228,7 +243,7 @@ header nav a.nav-active::after{width:70%}
 .photo-grid::before{top:0;background:linear-gradient(180deg,var(--white),transparent)}
 .photo-grid::after{bottom:0;background:linear-gradient(0deg,var(--white),transparent)}
 .photo-grid-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.photo-frame{aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow-md);transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.photo-frame{aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow-md);transition:transform .6s cubic-bezier(.22,1,.36,1);will-change:clip-path,transform}
 .photo-frame:hover{transform:scale(1.02)}
 
 /* ===== DETAIL BLOCKS (Premium Zigzag) ===== */
@@ -237,7 +252,7 @@ header nav a.nav-active::after{width:70%}
 .detail-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .detail-block-reverse{direction:rtl}
 .detail-block-reverse>*{direction:ltr}
-.detail-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;position:relative;transition:transform .6s}
+.detail-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;position:relative;transition:transform .6s;will-change:clip-path,transform}
 .detail-block:hover .detail-img{transform:scale(1.02)}
 .detail-img .img-container{height:100%}
 .detail-img-frame{position:absolute;inset:-8px;border:2px solid var(--primary-20);border-radius:calc(var(--radius) + 8px);pointer-events:none;transition:all .6s}
@@ -258,7 +273,8 @@ header nav a.nav-active::after{width:70%}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .marquee-track:hover{animation-play-state:paused}
 .result-badge{background:var(--white);border:1px solid var(--border);border-radius:100px;padding:10px 24px;font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--navy);box-shadow:var(--shadow-sm);transition:all var(--transition);cursor:default;flex-shrink:0}
-.result-badge:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-3px) scale(1.05);box-shadow:0 6px 20px #1B3A5C30}
+.result-badge:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-6px) scale(1.12);box-shadow:0 10px 30px #1B3A5C40;z-index:2}
+.result-badge{transition:all .4s cubic-bezier(.34,1.56,.64,1)}
 .result-header{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-color:transparent;font-weight:800}
 
 /* ===== COURSES (Tab switcher) ===== */
@@ -296,7 +312,7 @@ header nav a.nav-active::after{width:70%}
 .faq-item.open .faq-q-toggle{transform:rotate(45deg);background:var(--primary);color:#fff}
 .faq-toggle-v{transition:opacity .3s}
 .faq-item.open .faq-toggle-v{opacity:0}
-.faq-a-wrap{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,1,.36,1)}
+.faq-a-wrap{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.34,1.56,.64,1)}
 .faq-a{font-size:.9rem;color:var(--text-sub);line-height:2;padding:0 24px 22px 72px;display:flex;gap:12px;align-items:flex-start}
 .faq-a-icon{flex-shrink:0;width:34px;height:34px;border-radius:10px;background:var(--bg-warm);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:var(--primary);font-family:var(--font-accent)}
 
@@ -368,7 +384,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .hero-photo-wrap{order:-1}
   .hero-photo{aspect-ratio:16/9}
   .hero{padding:72px 0 88px;min-height:auto}
-  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:16/9;padding:32px}
   .photo-grid-inner{grid-template-columns:1fr}
   .access-inner{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr}
@@ -380,7 +397,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 @media(max-width:640px){
   header nav,.nav-cta-btn{display:none}
   .hamburger{display:flex}
-  .features-grid{grid-template-columns:1fr}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:16/9;padding:32px}
   .hero-stats{gap:20px}
   .hero h1{font-size:clamp(1.7rem,7vw,2.4rem)}
   .photo-frame{aspect-ratio:4/3}
@@ -394,6 +412,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .features,.details,.results,.courses,.faq-section,.access{padding:80px 0}
   .cta{padding:80px 0}
 }
+
+/* ===== ENHANCED ANIMATIONS ===== */
+/* 2. Photo parallax container */
+.photo-frame .img-container img{will-change:transform}
+
 </style>
 </head>
 <body>
@@ -462,6 +485,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div class="img-overlay">画像はご希望に合わせて変更可能です</div>
 </div>
       <div class="hero-photo-shine"></div>
+      <div class="hero-photo-badge hero-photo-badge-1">&#10003; 講師歴</div>
+      <div class="hero-photo-badge hero-photo-badge-2">&#9733; 講師1:生徒2 個別指導 · 無料体験授業受付中</div>
     </div>
   </div>
 </div>
@@ -475,77 +500,77 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <p class="section-desc reveal-el">城埼学院が選ばれる理由をご紹介します。</p>
   </div>
   <div class="features-grid">
-    <div class="feature-card reveal-el" data-delay="0.0">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">01</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
       </div>
-      <div class="feature-num">01</div>
       <h3 class="feature-title">各学校に合わせた定期テスト対策</h3>
       <p class="feature-desc">定期テスト期間中は、基本的にテスト範囲表に沿って授業を進めます。学校のワークやプリント、ノートなどの提出物のサポートはもちろん、各学校の過去問も活用し、内申点アップを目指します。テストの点数や順位が上がることで、「次はもっと上を目指したい」という意欲にもつながります。生徒自身のやる気を引き出すことを大切に指導しています。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.1">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">02</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
       </div>
-      <div class="feature-num">02</div>
       <h3 class="feature-title">合格率の高い英検・漢検・数検対策</h3>
       <p class="feature-desc">英検対策では、リスニングから二次試験（面接）までしっかりサポートします。近年は、英検2級の取得により大学受験で英語が免除されたり、入試で加点される学校も増えているため、準2級・2級を目指す生徒が増えています。また、合格実績も高く、中学3年生で準1級に合格した実績があります。数検対策も行っており、中学3年生で2級に合格した実績があります。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.2">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">03</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       </div>
-      <div class="feature-num">03</div>
       <h3 class="feature-title">受講していない教科へのフォローアップ</h3>
       <p class="feature-desc">英語の授業では理科・社会の対策も行い、数学の授業では国語の対策も取り入れています。毎回少しずつ確認しながら積み重ねて学習することで、理科・社会・国語の定着を図ります。要点を分かりやすく説明したうえで、自習時間に問題を繰り返し解くことで、着実な成績アップにつなげます。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.30000000000000004">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">04</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
       </div>
-      <div class="feature-num">04</div>
       <h3 class="feature-title">自主勉強法指導で家庭学習の定着</h3>
       <p class="feature-desc">家でなかなか勉強できない生徒には、授業とは別に自習時間を予定に組み入れて来てもらっています。自習時間には、勉強の進め方や取り組み方も一緒に確認しながら指導し、家庭学習の習慣づけをサポートします。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.4">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">05</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       </div>
-      <div class="feature-num">05</div>
       <h3 class="feature-title">過去問を分析した北辰テスト・入試対策</h3>
       <p class="feature-desc">北辰テスト・入試に向けて過去問を分析し、傾向に沿った対策を実施。基礎力をつけたい生徒には分からなくなったところまで戻り丁寧に復習、応用力を伸ばしたい生徒には入試を見据えた内容で幅広く対応できる力を養います。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.5">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">06</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
       </div>
-      <div class="feature-num">06</div>
       <h3 class="feature-title">学年関係なくつまずいたところから</h3>
       <p class="feature-desc">一人ひとりの弱点に合わせてカリキュラムを作成します。クラス授業のように全員が同じ内容を学ぶのではなく、つまずきの原因となった前学年・前学期に遡る「戻り学習」を積極的に行っています。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.6000000000000001">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">07</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
       </div>
-      <div class="feature-num">07</div>
       <h3 class="feature-title">好きな時間に自習席が使えます</h3>
       <p class="feature-desc">自習席は無料で自由に利用できます。当塾の卒業生も利用可能です。分からないところがあれば空き時間に説明し、自習用プリントもご用意しています。勉強だけでなく、進路相談や悩みなどを気軽に話しに来る生徒もおり、安心して通える雰囲気の塾です。自習席の空き状況はInstagram、Xにて毎日公開中です。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
-    <div class="feature-card reveal-el" data-delay="0.7000000000000001">
-      <div class="feature-icon-wrap">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">08</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
       </div>
-      <div class="feature-num">08</div>
       <h3 class="feature-title">分からないところはすぐに聞いてその日に解決！</h3>
       <p class="feature-desc">講師1名に対して生徒2名までの個別指導です。講師が常に近くにいるため、分からないことはすぐに質問できます。毎回「今日はこれができるようになった」と実感できる、メリハリのある授業を心がけています。</p>
-      <div class="feature-card-shine"></div>
+      <div class="feature-line"></div>
     </div>
   </div>
 </div>
@@ -751,18 +776,21 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="section-label-accent">VOICE</div>
     <h2 class="section-title">卒業生の声</h2>
   </div>
-  <div class="features-grid" style="margin-top:24px">
-    <div class="feature-card fade-up" style="position:relative;padding-top:32px">
+  <div class="features-grid" style="margin-top:24px;grid-template-columns:repeat(2,1fr)">
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
       <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">1</div>
       <p class="feature-desc" style="font-style:italic;line-height:1.9">わかりやすく丁寧に教えてくださいました。卒業してからも気軽に入れるようなアットホームな雰囲気の塾です！</p>
+      
     </div>
-    <div class="feature-card fade-up" style="position:relative;padding-top:32px">
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
       <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">2</div>
       <p class="feature-desc" style="font-style:italic;line-height:1.9">嫌いだった数学が楽しくなりました！先生のおかげで高校でも理系で頑張っています。</p>
+      
     </div>
-    <div class="feature-card fade-up" style="position:relative;padding-top:32px">
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
       <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">3</div>
       <p class="feature-desc" style="font-style:italic;line-height:1.9">勉強以外にも相談でき、何と言っても話しやすい先生たちばかりで全くストレスなく勉強できました。</p>
+      
     </div>
   </div>
 </div>
@@ -773,12 +801,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <div class="container">
   <div class="section-header-center">
     <div class="section-label-accent">RESULTS</div>
-    <h2 class="section-title">合格実績</h2>
-    <p class="section-desc-center">確かな指導力が、生徒の可能性を広げます。</p>
-  </div>
-  <div class="results-marquee">
-    <div class="marquee-track marquee-track-1"><span class="result-badge">title</span><span class="result-badge">title</span></div>
-    <div class="marquee-track marquee-track-2"><span class="result-badge">desc</span><span class="result-badge">items</span><span class="result-badge">desc</span><span class="result-badge">items</span></div>
+    <h2 class="section-title">合格実績・検定実績</h2>
+    <p class="section-desc-center">城埼学院から多くの生徒が志望校へ合格しています。</p>
   </div>
 </div>
 </section>
@@ -1118,30 +1142,49 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 </div>
 </section>
 
-<section style="padding:48px 0">
+
+
+<section style="padding:48px 0" id="improvement">
 <div class="container">
-  <div class="section-label" style="font-family:var(--font-accent);font-size:clamp(.8rem,1.5vw,1rem);font-weight:400;font-style:italic;letter-spacing:.15em;color:var(--primary);margin-bottom:12px">IMPROVEMENT</div>
-  <h2 class="section-title">改善ポイント（ご提案）</h2>
+  <div class="section-header-center">
+    <div class="section-label-accent">IMPROVEMENT</div>
+    <h2 class="section-title">改善ポイント（ご提案）</h2>
+    <p class="section-desc-center">元サイトを分析し、特にインパクトの大きい改善点を3つご提案します。</p>
+  </div>
   <div class="features-grid" style="margin-top:24px">
     <div class="feature-card fade-up">
       <div class="feature-num">Point 1</div>
-      <h3 class="feature-title">トップ画面の第一印象</h3>
-      <p class="feature-desc">保護者がサイトを開いた瞬間に「この塾なら安心」と感じていただけるよう、教室の雰囲気が伝わるビジュアルとキャッチコピーを大きく配置。講師歴20年以上の実績・定期テストに強い指導力など、貴塾の強みをファーストビューで一目で伝えます。</p>
+      <h3 class="feature-title">教室の雰囲気が伝わるファーストビュー</h3>
+      <p class="feature-desc">元サイト（Crayon）はテキスト中心のレイアウトで、トップページにヒーロー画像がなく、講師歴20年以上・1:2個別指導という強みがスクロールしないと見えない構成でした。</p>
+      <div style="display:flex;align-items:center;gap:8px;margin:12px 0 8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span style="font-family:var(--font-display);font-size:.85rem;font-weight:700;color:var(--primary)">このサンプルでの改善</span>
+      </div>
+      <p class="feature-desc" style="color:var(--primary);font-weight:500">フルスクリーンのヒーロー画像に「分かるまでじっくり、伸びるまでとことん」のキャッチコピーを重ね、講師歴20年・月5,500円〜の強みを統計バッジで一目で訴求しています。</p>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-num">Point 2</div>
-      <h3 class="feature-title">「もっと知りたい」を引き出す構成</h3>
-      <p class="feature-desc">スクロールするごとに「選ばれる理由」「コース・料金」「合格実績」「FAQ」と段階的に情報を開示。保護者の関心を途切れさせず、自然と体験申込まで導く設計にしています。川越高校合格・英検準1級(中3)などの実績が信頼感を後押しします。</p>
+      <h3 class="feature-title">スマートフォンでの閲覧体験</h3>
+      <p class="feature-desc">Crayonサイトのレスポンシブ対応が限定的で、スマホ閲覧時にテキストが小さく表示され、電話番号もプレーンテキストのためタップで発信できない状態でした。</p>
+      <div style="display:flex;align-items:center;gap:8px;margin:12px 0 8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span style="font-family:var(--font-display);font-size:.85rem;font-weight:700;color:var(--primary)">このサンプルでの改善</span>
+      </div>
+      <p class="feature-desc" style="color:var(--primary);font-weight:500">モバイルファーストの設計で全セクションを最適化。電話番号（049-214-2394）はタップで即発信可能にし、CTAボタンもスマホで押しやすいサイズに拡大しています。</p>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-num">Point 3</div>
-      <h3 class="feature-title">問い合わせへの最短導線</h3>
-      <p class="feature-desc">「無料体験に申し込む」ボタンを画面上部と下部の2箇所に常時表示。「気になった瞬間」を逃さず、ワンタップで行動に移せます。電話番号もタップで即発信、24時間対応のフォームで深夜でも問い合わせ可能です。</p>
+      <h3 class="feature-title">合格実績・信頼性の訴求力</h3>
+      <p class="feature-desc">川越高校合格や英検準1級（中3）などの実績情報が、サブページに分散しており、初訪問の保護者が最も知りたい成果が目立たない位置にありました。</p>
+      <div style="display:flex;align-items:center;gap:8px;margin:12px 0 8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span style="font-family:var(--font-display);font-size:.85rem;font-weight:700;color:var(--primary)">このサンプルでの改善</span>
+      </div>
+      <p class="feature-desc" style="color:var(--primary);font-weight:500">合格実績をスクロールマーキーと詳細リストの2段構成で配置。川越高校・川越南高校・松山高校などの実績が視覚的に映え、指導力の証明として機能する設計にしています。</p>
     </div>
   </div>
 </div>
 </section>
-
 
 <section class="cta" id="contact">
 <div class="cta-float-1"></div>
@@ -1510,30 +1553,69 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
     // === Scroll-triggered animations ===
 
-    // Feature cards batch stagger
-    ScrollTrigger.batch('.feature-card',{
-      onEnter:function(batch){
-        gsap.fromTo(batch,
-          {opacity:0,y:50,scale:.95},
-          {opacity:1,y:0,scale:1,stagger:.1,duration:.8,ease:'power3.out'}
+    // Feature rows: photo → clip-path slide-in, icon → simple fade+slide
+    document.querySelectorAll('.feature-row, .feature-row-reverse').forEach(function(row){
+      var isReverse=row.classList.contains('feature-row-reverse');
+      var visual=row.querySelector('.feature-visual');
+      var text=row.querySelector('.feature-text');
+      var isPhoto=visual&&visual.classList.contains('feature-visual-photo');
+      if(visual){
+        if(isPhoto){
+          // Photo: dramatic clip-path wipe from side
+          var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+          gsap.fromTo(visual,
+            {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+            {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }else{
+          // Icon: gentle fade + slide from side
+          gsap.fromTo(visual,
+            {opacity:0,x:isReverse?-40:40,scale:.95},
+            {opacity:1,x:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }
+      }
+      // Text: slide in from opposite side
+      if(text){
+        gsap.fromTo(text,
+          {opacity:0,x:isReverse?-60:60,y:15},
+          {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
         );
-      },
-      start:'top 88%',
-      once:true
+      }
     });
 
-    // Detail blocks slide in from alternating sides
+    // Detail blocks: dramatic clip-path reveal + slide + scale (zigzag)
     document.querySelectorAll('.detail-block').forEach(function(block){
       var isReverse=block.classList.contains('detail-block-reverse');
       var img=block.querySelector('.detail-img');
       var text=block.querySelector('.detail-text');
+      var num=block.querySelector('.detail-number');
+      // Image: clip-path wipe from the side + scale + slight rotation
+      var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
       gsap.fromTo(img,
-        {opacity:0,x:isReverse?60:-60},
-        {opacity:1,x:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:block,start:'top 80%',once:true}}
+        {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+        {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
       );
+      // Text: slide in from opposite side with stagger feel
       gsap.fromTo(text,
-        {opacity:0,x:isReverse?-60:60},
-        {opacity:1,x:0,duration:1,delay:.15,ease:'power3.out',scrollTrigger:{trigger:block,start:'top 80%',once:true}}
+        {opacity:0,x:isReverse?-80:80,y:20},
+        {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+      );
+      // Number: scale pop
+      if(num){
+        gsap.fromTo(num,
+          {opacity:0,scale:0.5},
+          {opacity:1,scale:1,duration:.6,delay:.5,ease:'back.out(2)',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+        );
+      }
+    });
+
+    // Photo grid frames: staggered clip-path reveal
+    document.querySelectorAll('.photo-frame').forEach(function(frame,i){
+      var clipFrom=i%2===0?'inset(0 0 100% 0)':'inset(100% 0 0 0)';
+      gsap.fromTo(frame,
+        {clipPath:clipFrom,scale:1.05},
+        {clipPath:'inset(0 0 0% 0)',scale:1,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:frame,start:'top 82%',once:true}}
       );
     });
 
@@ -1568,6 +1650,17 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       {opacity:0,scale:.92},
       {opacity:1,scale:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.cta',start:'top 80%',once:true}}
     );
+
+    // === ENHANCED: 2. Photo frame parallax ===
+    document.querySelectorAll('.photo-frame').forEach(function(frame){
+      var img=frame.querySelector('img,.img-container');
+      if(img){
+        gsap.fromTo(img,
+          {yPercent:-8},
+          {yPercent:8,ease:'none',scrollTrigger:{trigger:frame,start:'top bottom',end:'bottom top',scrub:1.5}}
+        );
+      }
+    });
 
     // Access items slide in from left
     ScrollTrigger.batch('.access-item',{
