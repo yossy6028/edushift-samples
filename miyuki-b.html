@@ -20,7 +20,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden}
 
 /* ===== NAVIGATION ===== */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(44,24,16,0.97);backdrop-filter:blur(8px);padding:0 24px}
@@ -232,6 +232,10 @@ footer{background:var(--primary-dark);padding:56px 24px 36px}
   .features-grid{grid-template-columns:1fr}
   .hero-stats{gap:24px}
   .cert-badges{flex-direction:column}
+}
+@media(max-width:480px){
+  .floating-line a{padding:12px 18px;font-size:.82rem}
+  .hero-cta{padding:14px 28px;font-size:.92rem;width:100%;text-align:center;display:block}
 }
 </style>
 </head>
