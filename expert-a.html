@@ -262,6 +262,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .btn-primary{padding:13px 20px;font-size:.88rem}
   .floating-line{bottom:12px;right:12px;padding:11px 16px;font-size:.82rem}
 }
+@media(max-width:390px){
+  .hero-actions{flex-direction:column}
+  .btn-primary,.btn-secondary{max-width:100%;width:100%;justify-content:center}
+  .btn-cta{max-width:100%;width:100%;justify-content:center}
+}
 
 /* ===== EDUSHIFT PROPOSAL ===== */
 .edushift-proposal{padding:72px 0;background:linear-gradient(135deg,#f0f4ff 0%,#fff8f0 100%);border-top:3px solid var(--primary)}
@@ -763,7 +768,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </div>
       </div>
       <div class="reveal-el">
-        <iframe src="https://maps.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E5%B3%B626-48&output=embed" width="100%" height="340" style="border:0;border-radius:var(--radius);box-shadow:var(--shadow-md)" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://maps.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E5%B3%B626-48&output=embed" width="100%" height="340" style="border:0;border-radius:var(--radius);box-shadow:var(--shadow-md);max-width:100%;display:block" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -874,6 +879,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   });
 
   setTimeout(function(){
+    var fl=document.getElementById('floating-line');
+    if(fl)fl.classList.add('show');
     document.querySelectorAll('.reveal-el:not(.visible)').forEach(function(el){el.classList.add('visible')});
   },4500);
 })();

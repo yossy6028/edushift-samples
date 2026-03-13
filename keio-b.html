@@ -712,8 +712,11 @@ ul,ol{list-style:none}
   .guarantee-strip{flex-direction:column;align-items:center}
 }
 @media(max-width:480px){
-  .btn-primary{padding:14px 24px;font-size:.88rem}
-  .btn-secondary{padding:12px 20px;font-size:.85rem}
+  .btn-primary{padding:14px 24px;font-size:.88rem;max-width:100%}
+  .btn-secondary{padding:12px 20px;font-size:.85rem;max-width:100%}
+}
+@media(max-width:390px){
+  .btn-primary,.btn-secondary,.btn-outline-white{width:100%;justify-content:center;max-width:100%}
 }
 </style>
 </head>
@@ -1750,6 +1753,9 @@ setTimeout(function() {
   }
   // Also reveal any hidden delayed elements
   document.querySelectorAll('.delayed-reveal').forEach(function(el) {
+    el.classList.add('visible');
+  });
+  document.querySelectorAll('.fade-in:not(.visible),.fade-in-left:not(.visible),.fade-in-right:not(.visible),.fade-in-up:not(.visible)').forEach(function(el) {
     el.classList.add('visible');
   });
 }, 4500);

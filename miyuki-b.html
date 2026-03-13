@@ -197,7 +197,7 @@ section{padding:96px 24px}
 .cta-band{background:var(--primary);padding:80px 24px;text-align:center}
 .cta-band h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:var(--white);margin-bottom:12px}
 .cta-band p{font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:36px}
-.cta-band a{display:inline-block;background:var(--accent);color:var(--primary-dark);padding:16px 52px;font-size:1.05rem;font-weight:700;text-decoration:none;letter-spacing:.06em;transition:transform .2s,box-shadow .2s}
+.cta-band a{display:inline-block;background:var(--accent);color:var(--primary-dark);padding:16px 40px;font-size:1.05rem;font-weight:700;text-decoration:none;letter-spacing:.06em;max-width:100%;transition:transform .2s,box-shadow .2s}
 .cta-band a:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,164,90,0.4)}
 
 /* ===== FOOTER ===== */
@@ -236,6 +236,11 @@ footer{background:var(--primary-dark);padding:56px 24px 36px}
 @media(max-width:480px){
   .floating-line a{padding:12px 18px;font-size:.82rem}
   .hero-cta{padding:14px 28px;font-size:.92rem;width:100%;text-align:center;display:block}
+}
+@media(max-width:390px){
+  .hero-cta{padding:14px 16px;font-size:.9rem;width:100%;display:block;text-align:center;box-sizing:border-box}
+  .cta-band a{width:100%;display:block;padding:14px 16px;box-sizing:border-box}
+  .course-cta{padding:12px 8px}
 }
 </style>
 </head>
@@ -720,9 +725,10 @@ mobileMenu.querySelectorAll('a').forEach(function(a) {
   });
 });
 
-// Floating line (setTimeout 4500ms)
+// Floating line + animation fallback (setTimeout 4500ms)
 setTimeout(function() {
   document.getElementById('floatingLine').classList.add('visible');
+  document.querySelectorAll('.feature-card:not(.visible),.timeline-item:not(.visible),.bar-item:not(.visible),.testimonial-card:not(.visible),.course-card:not(.visible),.roadmap-step:not(.visible)').forEach(function(el){el.classList.add('visible');});
 }, 4500);
 
 // IntersectionObserver for animations

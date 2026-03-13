@@ -145,7 +145,7 @@ section{padding:88px 24px}
 /* ===== INFO ===== */
 #info{background:var(--white)}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.info-table{width:100%;border-collapse:collapse}
+.info-table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}
 .info-table th,.info-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--light-gray);font-size:.9rem}
 .info-table th{color:var(--primary);font-weight:700;width:36%;background:var(--light-gray)}
 .info-table td{color:var(--gray)}
@@ -203,7 +203,8 @@ footer{background:var(--primary-dark);color:rgba(255,255,255,0.7);padding:48px 2
   .roadmap{grid-template-columns:1fr}
   .hero-stats{flex-direction:column;gap:12px}
   .floating-line a{padding:12px 20px;font-size:.82rem}
-  .cta-btn{padding:14px 32px;font-size:.95rem}
+  .cta-btn{padding:14px 32px;font-size:.95rem;max-width:100%;width:100%;text-align:center;box-sizing:border-box}
+  .hero-cta{display:block;max-width:100%;width:100%;text-align:center;box-sizing:border-box}
 }
 </style>
 </head>
@@ -588,7 +589,7 @@ document.querySelectorAll('.fade-in, .timeline-item, .roadmap-step, .course-card
   observer.observe(el);
 });
 
-// Floating CTA (setTimeout 4500ms)
+// Floating CTA + animation fallback (setTimeout 4500ms)
 setTimeout(() => {
   const fl = document.getElementById('floatingLine');
   fl.style.display = 'block';
@@ -598,6 +599,7 @@ setTimeout(() => {
       fl.classList.add('animate');
     });
   });
+  document.querySelectorAll('.fade-in:not(.visible),.timeline-item:not(.visible),.roadmap-step:not(.visible),.course-card:not(.visible)').forEach(el => el.classList.add('visible'));
 }, 4500);
 </script>
 

@@ -294,7 +294,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
 /* ===== MOBILE ===== */
 @media(max-width:900px){
-  header nav,. nav-cta{display:none}
+  header nav,.nav-cta{display:none}
   .hamburger{display:flex}
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-right{order:-1;min-height:56vw}
@@ -575,7 +575,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <h2 class="section-title">授業スケジュール</h2>
     <p class="section-desc-center">月・水・金の週3日制。4つの時間帯からご都合に合わせて選べます。月単位で時間帯を固定してご利用ください。</p>
   </div>
-  <div class="reveal-el" style="max-width:720px;margin:0 auto">
+  <div class="reveal-el" style="max-width:720px;margin:0 auto;overflow-x:auto">
     <table class="schedule-table">
       <thead>
         <tr>
@@ -1105,6 +1105,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       el.style.transform='none';el.style.opacity='1';
     });
     document.querySelectorAll('.reveal-el:not(.visible)').forEach(function(el){el.classList.add('visible');});
+    document.querySelectorAll('.fade-in,.slide-in,.reveal').forEach(function(el){
+      el.classList.add('visible','active');
+      el.style.opacity='1';
+      el.style.transform='none';
+    });
+    document.querySelectorAll('.fade-up:not(.visible)').forEach(function(el){el.classList.add('visible');});
+    document.querySelectorAll('.detail-img,.detail-text').forEach(function(el){if(getComputedStyle(el).opacity==='0'){el.style.opacity='1';el.style.transform='none';el.style.clipPath='none';}});
     var h1=document.querySelector('.hero h1');if(h1)h1.classList.add('revealed');
   },4500);
 

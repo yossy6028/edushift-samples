@@ -306,7 +306,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.8);padding:56px 0 32px}
   .fixed-cta__btn{flex:1;justify-content:center}
 }
 @media(max-width:480px){
-  .btn-primary{padding:13px 20px;font-size:.88rem}
+  .btn-primary{padding:13px 20px;font-size:.88rem;max-width:100%}
+  .btn-accent{max-width:100%}
+}
+@media(max-width:390px){
+  .btn-primary,.btn-accent,.btn-outline{width:100%;justify-content:center;max-width:100%}
 }
 </style>
 </head>
@@ -886,9 +890,10 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// Fixed CTA (setTimeout 4500ms)
+// Fixed CTA + animation fallback (setTimeout 4500ms)
 setTimeout(() => {
   document.getElementById('fixedCta').style.display = 'block';
+  document.querySelectorAll('.reveal:not(.visible),.reveal-left:not(.visible),.reveal-right:not(.visible)').forEach(el => el.classList.add('visible'));
 }, 4500);
 </script>
 

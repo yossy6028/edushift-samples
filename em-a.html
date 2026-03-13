@@ -1028,9 +1028,10 @@
     });
   });
 
-  // Floating line - setTimeout 4500ms
+  // Floating line + animation fallback - setTimeout 4500ms
   setTimeout(function() {
     document.getElementById('floatingLine').classList.add('visible');
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el){el.classList.add('visible');});
   }, 4500);
 
   // IntersectionObserver for fade-in

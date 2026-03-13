@@ -1102,6 +1102,10 @@ body {
   .fixed-cta{gap:12px;padding:10px 16px}
   .fixed-cta__text{font-size:.82rem}
   .fixed-cta a{padding:8px 20px;font-size:.82rem}
+  .btn-primary,.btn-outline{max-width:100%;width:100%;justify-content:center;display:flex;align-items:center}
+}
+@media(max-width:390px){
+  .btn-primary,.btn-outline{max-width:100%;width:100%;justify-content:center;display:flex;align-items:center}
 }
 </style>
 </head>
@@ -1624,10 +1628,16 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
   observer.observe(el);
 });
 
-// Fixed CTA
+// Fixed CTA + animation fallback
 setTimeout(() => {
   const fixedCta = document.getElementById('fixed-cta');
   if (fixedCta) fixedCta.classList.add('show');
+  document.querySelectorAll('.reveal:not(.visible),.reveal-left:not(.visible),.reveal-right:not(.visible)').forEach(el => el.classList.add('visible'));
+  document.querySelectorAll('.fade-in,.slide-in').forEach(function(el){
+    el.classList.add('visible','active');
+    el.style.opacity='1';
+    el.style.transform='none';
+  });
 }, 4500);
 
 const ctaClose = document.getElementById('cta-close');

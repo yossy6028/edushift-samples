@@ -71,11 +71,11 @@ img{max-width:100%;height:auto;display:block}
 .section-desc-center{font-size:.95rem;color:var(--text-sub);max-width:600px;line-height:1.9;margin:0 auto}
 
 /* ===== BUTTONS ===== */
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:1rem;padding:18px 36px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 20px rgba(6,199,85,.3);border:none;cursor:pointer}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:1rem;padding:18px 36px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 20px rgba(6,199,85,.3);border:none;cursor:pointer;max-width:100%}
 .btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 32px rgba(6,199,85,.45)}
-.btn-accent{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.95rem;padding:16px 32px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 16px rgba(232,168,56,.35);border:none;cursor:pointer}
+.btn-accent{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.95rem;padding:16px 32px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 16px rgba(232,168,56,.35);border:none;cursor:pointer;max-width:100%}
 .btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,168,56,.5);background:var(--accent-light)}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--primary);font-family:var(--font-body);font-weight:700;font-size:.9rem;padding:14px 28px;border-radius:100px;border:2px solid var(--primary);transition:all var(--transition)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--primary);font-family:var(--font-body);font-weight:700;font-size:.9rem;padding:14px 28px;border-radius:100px;border:2px solid var(--primary);transition:all var(--transition);max-width:100%}
 .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
 
 /* ===== SCROLL ANIMATIONS ===== */
@@ -281,6 +281,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:48px 0 24px}
 @media(max-width:480px){
   .fixed-cta__text{display:none}
   .btn-primary{padding:14px 20px;font-size:.88rem}
+}
+@media(max-width:390px){
+  .btn-primary,.btn-accent,.btn-outline{width:100%;justify-content:center;box-sizing:border-box}
+  .hero__btns{flex-direction:column;align-items:stretch;gap:10px}
 }
 </style>
 </head>
@@ -830,10 +834,11 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// Fixed CTA (setTimeout 4500ms)
+// Fixed CTA + animation fallback (setTimeout 4500ms)
 setTimeout(() => {
   const fixedCta = document.getElementById('fixedCta');
   if (fixedCta) fixedCta.classList.add('visible');
+  document.querySelectorAll('.reveal:not(.visible),.reveal-left:not(.visible),.reveal-right:not(.visible)').forEach(el => el.classList.add('visible'));
 }, 4500);
 </script>
 

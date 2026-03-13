@@ -302,9 +302,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.8);padding:56px 0 32px}
   .courses-tabs{gap:6px}
   .tab-btn{padding:10px 18px;font-size:.82rem}
 }
+@media(max-width:390px){
+  .btn-primary,.btn-accent,.btn-outline{max-width:100%;width:100%;justify-content:center}
+  .hero__actions{flex-direction:column}
+}
 @media(max-width:480px){
   .fixed-cta__btn{font-size:.8rem;padding:10px 16px}
-  .btn-primary{padding:14px 20px;font-size:.88rem}
+  .btn-primary{padding:14px 20px;font-size:.88rem;max-width:100%;width:100%;justify-content:center}
+  .btn-accent,.btn-outline{max-width:100%;width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -809,9 +814,15 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// Fixed CTA (setTimeout 4500ms)
+// Fixed CTA + animation fallback (setTimeout 4500ms)
 setTimeout(() => {
   document.getElementById('fixedCta').style.display = 'block';
+  document.querySelectorAll('.reveal:not(.visible),.reveal-left:not(.visible),.reveal-right:not(.visible)').forEach(el => el.classList.add('visible'));
+  document.querySelectorAll('.fade-in,.slide-in').forEach(function(el){
+    el.classList.add('visible','active');
+    el.style.opacity='1';
+    el.style.transform='none';
+  });
 }, 4500);
 </script>
 

@@ -27,6 +27,7 @@
     --shadow-lg: 0 8px 40px rgba(27,67,50,0.15);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { max-width: 100%; height: auto; display: block; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
@@ -195,7 +196,10 @@
   @media (max-width: 600px) {
     .hero-content { padding: 0 24px; padding-top: 66px; }
     .hero-btns { flex-direction: column; }
-    .btn-primary, .btn-outline { text-align: center; padding: 14px 24px; }
+    .btn-primary, .btn-outline { text-align: center; padding: 14px 24px; width: 100%; max-width: 100%; }
+  }
+  @media (max-width: 390px) {
+    .btn-primary, .btn-outline { width: 100%; max-width: 100%; justify-content: center; }
   }
 
   /* ===== TRIAL BAND ===== */
@@ -921,10 +925,16 @@
   }, {threshold: 0.12});
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 
-  // Fixed CTA
+  // Fixed CTA + animation fallback
   setTimeout(() => {
     const cta = document.getElementById('fixed-cta');
-    cta.classList.add('visible');
+    if (cta) cta.classList.add('visible');
+    // Fallback: force-reveal any elements still hidden after 4.5s
+    document.querySelectorAll('.fade-in,.slide-in,.reveal,.reveal-left,.reveal-right').forEach(function(el) {
+      el.classList.add('visible', 'active');
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
   }, 4500);
 </script>
 
