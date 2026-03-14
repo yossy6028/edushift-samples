@@ -8,8 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <style>
 /* ========================================
    ULTRA-PREMIUM DESIGN SYSTEM v4
@@ -37,6 +35,7 @@
   --shadow-md:0 12px 40px rgba(0,0,0,.08);
   --shadow-lg:0 20px 60px rgba(0,0,0,.12);
   --shadow-glow:0 0 40px #1B3A5C20;
+  --accent: #e8a800;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -102,19 +101,11 @@ header nav a.nav-active::after{width:70%}
 .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-nav{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);z-index:999;flex-direction:column;padding:32px 24px;gap:4px;opacity:0;transform:translateY(-10px);transition:opacity .3s,transform .3s}
+.mobile-nav{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);z-index:999;flex-direction:column;padding:32px 24px;gap:4px;transform:translateY(-10px);transition:transform .3s}
 .mobile-nav.open{display:flex;opacity:1;transform:translateY(0)}
 .mobile-nav a{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);padding:18px 20px;border-radius:14px;transition:all .2s;border-left:3px solid transparent}
 .mobile-nav a:hover{background:var(--bg-warm);border-left-color:var(--primary);padding-left:24px}
 .nav-logo-img{height:40px;width:auto}
-
-/* ===== LOADING CURTAIN ===== */
-.hero-curtain{position:fixed;inset:0;z-index:10000;display:flex;pointer-events:none}
-.hero-curtain-left,.hero-curtain-right{width:50%;height:100%;background:var(--navy);transition:transform 1s cubic-bezier(.77,0,.18,1)}
-.hero-curtain.open .hero-curtain-left{transform:translateX(-100%)}
-.hero-curtain.open .hero-curtain-right{transform:translateX(100%)}
-.hero-curtain-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;opacity:1;transition:opacity .4s .3s}
-.hero-curtain.open .hero-curtain-logo{opacity:0;transition:opacity .3s}
 
 /* ===== HERO (Cinematic v3 - Impact) ===== */
 .hero{position:relative;padding:100px 0 120px;overflow:hidden;background:var(--bg-warm);min-height:92vh;display:flex;align-items:center}
@@ -156,7 +147,7 @@ header nav a.nav-active::after{width:70%}
 
 /* Line-by-line slide with clip */
 .hero-line{display:block;overflow:hidden;clip-path:inset(0 0 0 0)}
-.hero-line-inner{display:block;transform:translateY(120%);opacity:0}
+.hero-line-inner{display:block;transform:translateY(120%)}
 /* Individual chars with hover interactivity */
 .hero h1 .char{display:inline-block;transform:translateY(0);transition:transform .25s cubic-bezier(.22,1,.36,1),color .25s}
 .hero h1 .char:hover{transform:translateY(-6px) scale(1.1)}
@@ -198,8 +189,8 @@ header nav a.nav-active::after{width:70%}
 @keyframes floatShape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-25px) rotate(8deg)}}
 
 /* Scroll reveal */
-.reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.reveal-el.visible{opacity:1;transform:translateY(0)}
+.reveal-el{transform:translateY(40px);transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-el.visible{transform:translateY(0)}
 
 /* ===== FEATURES (Zigzag layout) ===== */
 .features{background:var(--white);padding:120px 0;position:relative}
@@ -279,7 +270,7 @@ header nav a.nav-active::after{width:70%}
 .course-tab:hover:not(.active){color:var(--navy)}
 .course-panel{display:none;background:linear-gradient(135deg,var(--bg-warm),var(--white));border-radius:var(--radius);padding:56px;position:relative;overflow:hidden;border:1px solid var(--border)}
 .course-panel.active{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;animation:panelIn .5s cubic-bezier(.22,1,.36,1)}
-@keyframes panelIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes panelIn{from{transform:translateY(16px) scale(.98)}to{transform:translateY(0) scale(1)}}
 .course-panel-badge{display:inline-block;font-family:var(--font-body);font-size:.72rem;font-weight:700;letter-spacing:.1em;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-light));padding:6px 18px;border-radius:100px;margin-bottom:18px}
 .course-panel-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;color:var(--navy);margin-bottom:16px;line-height:1.3}
 .course-panel-desc{font-size:.95rem;color:var(--text-sub);line-height:2;margin-bottom:24px;max-width:500px}
@@ -359,7 +350,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .footer-orig a{color:var(--primary-light);text-decoration:underline;font-size:.75rem}
 
 /* ===== FLOATING CTA ===== */
-.floating-line{position:fixed;bottom:28px;right:28px;z-index:900;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.88rem;padding:16px 28px;border-radius:100px;box-shadow:0 4px 24px rgba(6,199,85,.35);opacity:0;transform:translateY(24px);transition:all .5s cubic-bezier(.22,1,.36,1);pointer-events:none;display:flex;align-items:center;gap:8px}
+.floating-line{position:fixed;bottom:28px;right:28px;z-index:900;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.88rem;padding:16px 28px;border-radius:100px;box-shadow:0 4px 24px rgba(6,199,85,.35);transform:translateY(24px);transition:all .5s cubic-bezier(.22,1,.36,1);pointer-events:none;display:flex;align-items:center;gap:8px}
 .floating-line.show{opacity:1;transform:translateY(0);pointer-events:auto}
 .floating-line:hover{background:#05b34d;transform:translateY(-4px);box-shadow:0 8px 36px rgba(6,199,85,.5)}
 .floating-line::before{content:'';display:block;width:10px;height:10px;border-radius:50%;background:#fff;animation:pulse 1.5s infinite}
@@ -368,7 +359,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .img-container{position:relative;overflow:hidden;border-radius:var(--radius)}
 .img-container img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .img-container:hover img{transform:scale(1.05)}
-.img-overlay{position:absolute;bottom:0;left:0;right:0;padding:10px 18px;background:linear-gradient(transparent,rgba(0,0,0,.5));color:#fff;font-size:.72rem;font-weight:600;text-align:center;letter-spacing:.04em;opacity:0;transform:translateY(100%);transition:all .4s}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;padding:10px 18px;background:linear-gradient(transparent,rgba(0,0,0,.5));color:#fff;font-size:.72rem;font-weight:600;text-align:center;letter-spacing:.04em;transform:translateY(100%);transition:all .4s}
 .img-container:hover .img-overlay{opacity:1;transform:translateY(0)}
 
 /* ===== RESPONSIVE ===== */
@@ -442,11 +433,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <a href="#contact" onclick="closeMobile()">お問い合わせ</a>
 </nav>
 
-<div class="hero-curtain" id="heroCurtain">
-  <div class="hero-curtain-left"></div>
-  <div class="hero-curtain-right"></div>
-  <div class="hero-curtain-logo">城埼学院</div>
-</div>
 
 
 
@@ -496,7 +482,68 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="reveal-el">
       <iframe src="https://maps.google.com/maps?q=%E5%9D%82%E6%88%B8%E5%B8%82%E5%85%83%E7%94%BA14-20%E6%84%9B%E5%92%8C%E3%83%93%E3%83%AB2F&output=embed" width="100%" height="320" style="border:0;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08)" allowfullscreen loading="lazy"></iframe>
     </div>
-  </div>
+  
+    <div class="faq-item reveal-el" data-delay="0.36">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">城埼学院の指導方針を教えてください。</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>城埼学院では「自ら考え、自ら学ぶ力を育む」ことを基本方針としています。単なる知識の詰め込みではなく、思考力・表現力・問題解決力を培う指導を重視。講師が一方的に教えるのではなく、生徒が自発的に質問し、議論できる環境づくりを大切にしています。入塾後は学力診断テストで現状把握を行い、個別の学習カリキュラムを作成します。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.42">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">定期テスト前の特別対策はありますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>各学校の定期テスト（中間・期末）の2週間前から集中対策授業を実施します。学校ごとのテスト範囲に合わせた教材を用意し、重要ポイントの反復練習と弱点補強を行います。テスト後には結果分析を行い、次回の対策につなげる継続的なサポートを提供しています。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.48">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">高校受験の実績を教えてください。</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>毎年多くの生徒が第一志望校に合格しています。地域トップ校への合格者を多数輩出しており、公立・私立問わず幅広い進路実績があります。受験指導では模試の結果を詳細に分析し、志望校別の対策カリキュラムを個別に作成して万全のサポートを行います。詳細な実績については無料相談時にお知らせします。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.54">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">授業についていけるか不安です。どんなフォローがありますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>ご安心ください。入塾前に無料の学力診断テストを実施し、現在のレベルと苦手分野を把握します。それに基づいて最適な授業レベルとカリキュラムを設定します。授業中も講師が都度理解度を確認しながら進めるため、置いてきぼりになることはありません。授業後の質問タイムや自習室も活用できます。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.60">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">成績が上がらない場合、どうなりますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>成績の変化は個人差がありますが、通常入塾から2〜3ヶ月で定期テストの点数に変化が現れ始めます。思うような結果が出ない場合は、担当講師と保護者の方で三者面談を実施し、指導内容や学習方法を見直します。学習習慣の定着から丁寧にサポートしますので、焦らず一緒に取り組みましょう。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.66">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">塾の雰囲気を教えてください。見学はできますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>城埼学院はアットホームで温かい雰囲気の学習塾です。生徒と講師の距離が近く、気軽に相談できる環境を大切にしています。見学・体験授業は随時受け付けていますので、まずはお気軽にお電話またはメールでご予約ください。実際の授業の様子をご覧いただけます。</div>
+      </div>
+    </div>
+</div>
 </div>
 </section>
 
@@ -839,29 +886,203 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 </section>
 
 
-<section style="padding:56px 0">
+<section style="padding:80px 0">
 <div class="container">
   <div class="section-header-center">
     <div class="section-label-accent">VOICE</div>
-    <h2 class="section-title">卒業生の声</h2>
+    <h2 class="section-title">卒業生・在塾生・保護者の声</h2>
+    <p class="section-desc-center">実際に城埼学院に通った生徒・保護者の方々から届いた声をご紹介します。</p>
   </div>
-  <div class="features-grid" style="margin-top:24px;grid-template-columns:repeat(2,1fr)">
+  <div style="margin-bottom:24px;text-align:center">
+    <p style="font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--primary)">卒業生の声</p>
+  </div>
+  <div class="features-grid" style="margin-top:16px;grid-template-columns:repeat(2,1fr)">
     <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
       <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">1</div>
-      <p class="feature-desc" style="font-style:italic;line-height:1.9">わかりやすく丁寧に教えてくださいました。卒業してからも気軽に入れるようなアットホームな雰囲気の塾です！</p>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">わかりやすく丁寧に教えてくださいました。卒業してからも気軽に入れるようなアットホームな雰囲気の塾です！高校に入っても自習席を使わせてもらっていて、大学受験の相談もしています。本当に感謝しています。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（川越高校 進学）</p>
     </div>
     <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
       <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">2</div>
-      <p class="feature-desc" style="font-style:italic;line-height:1.9">嫌いだった数学が楽しくなりました！先生のおかげで高校でも理系で頑張っています。</p>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">嫌いだった数学が楽しくなりました！先生のおかげで高校でも理系で頑張っています。中3のとき数学が20点台だったのが、入試本番では80点以上取れました。諦めずに続けてよかったです。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（和光国際高校 進学）</p>
     </div>
     <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
       <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">3</div>
-      <p class="feature-desc" style="font-style:italic;line-height:1.9">勉強以外にも相談でき、何と言っても話しやすい先生たちばかりで全くストレスなく勉強できました。</p>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">勉強以外にも相談でき、何と言っても話しやすい先生たちばかりで全くストレスなく勉強できました。英検準2級を中学2年で取得でき、高校受験でも加点してもらえました。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（松山高校 進学）</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
+      <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">4</div>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">英検準1級を中学3年で取得しました。先生が面接練習に何度も付き合ってくださり、本当に心強かったです。高校でも英語を活かしてグローバルな仕事に就くことが夢になりました。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（筑波大学附属坂戸高校 進学）</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
+      <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">5</div>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">小5から通って、中学卒業まで6年間お世話になりました。先生は私の性格をよく分かっていて、焦らずじっくり進めてくれました。苦手だった国語が得意科目になったときは本当に嬉しかった。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（坂戸高校 進学）</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
+      <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">6</div>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">数検2級を中学3年で取りました。高校数学の先取りをしていたおかげで、高校に入ってからも授業についていけています。基礎からしっかり教えてもらえたことが今の自信につながっています。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（大宮開成高校 進学）</p>
+    </div>
+  </div>
+
+  <div style="margin:48px 0 24px;text-align:center">
+    <p style="font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--primary)">保護者の方からの声</p>
+  </div>
+  <div class="features-grid" style="margin-top:16px;grid-template-columns:repeat(2,1fr)">
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible;border-left:4px solid var(--primary)">
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">入塾前は「また塾に行っても続かないかも」と半信半疑でしたが、先生が子どもの様子をLINEで細かく報告してくださるので、安心して任せられます。子ども自身が「今日は塾の日だ！」と言って自分から出かけるようになったのには驚きました。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（中学2年生の保護者）</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible;border-left:4px solid var(--primary)">
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">料金が他の個別指導塾より抑えめで、内容の充実度が高いことに驚いています。定期テストで初めて80点を超えた日、子どもが笑顔で帰ってきたときは親としても本当に嬉しかったです。先生、ありがとうございます。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（中学1年生の保護者）</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible;border-left:4px solid var(--primary)">
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">中3の夏から入塾し、志望校合格という目標を達成することができました。入塾が遅くて間に合うか不安でしたが、先生が残りの期間で最大限の成果を出せるよう計画を立ててくださり、最後まで諦めずに取り組めました。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（中学3年生の保護者）</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible;border-left:4px solid var(--primary)">
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">子どもが「先生に相談できる」と言っているのを聞いて、単なる勉強だけでなく人間として成長させてもらっていると感じます。駐輪場があって送迎もしやすく、立地面でも大変助かっています。</p>
+      <p style="font-size:.8rem;color:var(--text-note);margin-top:12px;text-align:right">（小学6年生の保護者）</p>
     </div>
   </div>
 </div>
 </section>
 
+<section style="padding:80px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">FOR PARENTS</div>
+    <h2 class="section-title">保護者の方へ</h2>
+    <p class="section-desc-center">お子様の教育についてのご不安やご疑問に、城埼学院がお答えします。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div class="reveal-el" style="background:var(--white);border-radius:20px;padding:40px;border:1px solid var(--border);margin-bottom:24px">
+      <h3 style="font-family:var(--font-display);font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:20px">「うちの子、塾に向いているかな」と感じているあなたへ</h3>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub);margin-bottom:16px">塾に通うことを決めるのは、とても大きな決断だと思います。費用のこと、お子様が続けられるかどうか、効果があるかどうか、不安はたくさんありますよね。城埼学院では、まず無料体験授業を通じてお子様の現状を正確に把握し、入塾が最善かどうかも含めて率直にアドバイスさせていただきます。</p>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub);margin-bottom:16px">特に次のようなお悩みをお持ちの保護者の方には、城埼学院が力になれます。</p>
+      <ul style="font-size:.92rem;line-height:2;color:var(--navy);padding-left:20px;list-style:disc;margin-bottom:16px">
+        <li>定期テストの点数が上がらず内申点が心配</li>
+        <li>苦手教科が克服できず学校の授業についていけていない</li>
+        <li>家では全く勉強しないが塾なら集中できると思っている</li>
+        <li>北辰テストの偏差値が目標に届かず志望校が絞れていない</li>
+        <li>英検・漢検・数検を取得させたいが独学では難しそう</li>
+        <li>高校入試まで時間がなく何から始めればいいか分からない</li>
+        <li>子どもとの関係が勉強のことで悪化している</li>
+        <li>学習習慣がなく宿題すら終わらない状態が続いている</li>
+      </ul>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub)">どんな状態からでも、一緒に前進できる方法を探します。まずはお気軽にご相談ください。</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+      <div class="feature-card reveal-el">
+        <div class="feature-num">安心 01</div>
+        <h3 class="feature-title">保護者との連携を大切に</h3>
+        <p class="feature-desc">入塾後は保護者の方にLINEご登録をお願いし、授業状況・テスト結果・学習の進捗を随時ご報告します。ご要望や変更のご連絡もLINEで承りますので、お気軽にご連絡ください。必要に応じて面談も実施します。家庭と塾が連携することで、より大きな効果が生まれます。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">安心 02</div>
+        <h3 class="feature-title">無理のない費用設定</h3>
+        <p class="feature-desc">月謝は小学生6,600円〜、中学・高校生13,200円〜と、個別指導塾の中でも良心的な料金設定を心がけています。入塾金は9,900円（ご兄弟の場合は無料）。急な費用の発生がないよう、事前に全ての費用をご説明します。ご家庭の状況に合わせた受講プランをご提案できますので、遠慮なくご相談ください。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">安心 03</div>
+        <h3 class="feature-title">立地・環境の安全性</h3>
+        <p class="feature-desc">坂戸駅からまっすぐ元町通り沿いの場所にあり、送迎しやすい立地です。駐輪場完備で自転車でも安心。教室は2階にあり、外から見えにくい落ち着いた環境です。夜間の授業時間（最終21:00）も安全に帰宅できるよう、駅からのアクセスを考慮した場所にあります。お子様が安全に通える環境を整えています。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:80px 0;background:var(--white)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">FOR STUDENTS</div>
+    <h2 class="section-title">勉強が苦手・嫌いなお子様へ</h2>
+    <p class="section-desc-center">「どうせ自分には無理」と思っていませんか？城埼学院では、その気持ちから一緒に変えていきます。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div class="reveal-el" style="background:linear-gradient(135deg,#1B3A5C08,#2E5E8E08);border-radius:20px;padding:40px;border-left:6px solid var(--primary);margin-bottom:32px">
+      <p style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.6">「自分には無理」は思い込みかもしれません</p>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub);margin-bottom:14px">城埼学院に通ってきた生徒の中には、最初から「勉強なんて嫌い」「どうせ分からない」と話していた子がたくさんいました。でも、正しい方法で取り組むと、驚くほど変わります。</p>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub);margin-bottom:14px">勉強が苦手な生徒のほとんどは、「苦手」なのではなく、「まだ正しい方法で学んでいないだけ」です。つまずきの原因を見つけ、その地点まで戻って丁寧に積み上げれば、必ず「できた！」という瞬間が来ます。その喜びを一度でも味わうと、学ぶことが楽しくなってきます。</p>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub)">城埼学院では、あなたのペースに合わせて、焦らず一緒に進みます。「分からない」を絶対に放置しません。どんな状態から始めても大丈夫です。</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+      <div class="feature-card reveal-el">
+        <div class="feature-num">よくあるケース 01</div>
+        <h3 class="feature-title">学校の授業が速すぎてついていけない</h3>
+        <p class="feature-desc">学校の授業は全員に合わせた一定のスピードで進むため、一度つまずくと置いていかれてしまいます。城埼学院では、つまずいた単元まで戻り、その子のペースで再スタートします。「分からないまま次へ」ということが絶対に起きない環境です。学校ではなかなか先生に質問できないという生徒も、ここでは気軽に何でも聞けます。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">よくあるケース 02</div>
+        <h3 class="feature-title">勉強のやり方が分からなくて進められない</h3>
+        <p class="feature-desc">「何をどう勉強すれば成績が上がるのか分からない」という生徒も多くいます。ただ問題集を解くだけでは効果は限られます。城埼学院では、教科ごとの効果的な勉強法・計画の立て方・ノートの使い方まで指導します。やり方が分かれば、家庭学習も効率よく進められるようになります。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">よくあるケース 03</div>
+        <h3 class="feature-title">テストで緊張してしまい本番で実力が出ない</h3>
+        <p class="feature-desc">「塾でできるのに本番で点が取れない」という悩みもよくあります。これは練習の量と質、そして時間管理の練習が不足していることが原因です。城埼学院では本番形式での練習も取り入れ、時間を計りながら解く習慣をつけます。テスト慣れと自信を積み重ねることで、本番で実力を発揮できるようになります。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:80px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">POINTS</div>
+    <h2 class="section-title">城埼学院の指導の特長をさらに詳しく</h2>
+    <p class="section-desc-center">他の個別指導塾と異なる城埼学院ならではの指導ポイントをご紹介します。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div class="reveal-el" style="background:var(--white);border-radius:16px;padding:32px;border:1px solid var(--border);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start">
+        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        </div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px">「前回のおさらい」で知識を積み上げる</h3>
+          <p style="font-size:.92rem;line-height:2;color:var(--text-sub)">毎回の授業を前回の復習確認から始めることで、知識が点でなく線でつながります。人間の記憶は放っておくと急速に薄れていきますが、適切なタイミングで繰り返すことで長期記憶として定着します。「また同じところを間違えた」ということがなくなり、着実にステップアップできます。この「繰り返しの定着」こそが城埼学院の指導の根幹です。単元を学んだだけで終わりにせず、使える知識として定着させるまでが授業です。</p>
+        </div>
+      </div>
+      <div class="reveal-el" style="background:var(--white);border-radius:16px;padding:32px;border:1px solid var(--border);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start">
+        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px">講師歴20年以上のベテランが作る「分かる授業」</h3>
+          <p style="font-size:.92rem;line-height:2;color:var(--text-sub)">長年の指導経験から、「生徒がどこでつまずきやすいか」「どんな説明が効果的か」を熟知しています。教科書に書かれている内容をそのまま説明するのではなく、生徒の理解度に合わせた言葉・例・アプローチで説明します。同じ内容でも生徒によって最適な伝え方が異なります。ベテランだからこそできる「その子だけの説明」が、深い理解につながります。また、教員免許保有の副室長も在籍しており、複数の視点から指導体制を支えています。</p>
+        </div>
+      </div>
+      <div class="reveal-el" style="background:var(--white);border-radius:16px;padding:32px;border:1px solid var(--border);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start">
+        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px">受講していない教科も「ついでに」伸ばす</h3>
+          <p style="font-size:.92rem;line-height:2;color:var(--text-sub)">英語の授業の合間に理科・社会の重要語句を確認したり、数学の授業で国語の読解のポイントに触れたりします。定期テストは5教科あるため、受講教科だけでなく全科目の成績を総合的に上げることが内申点アップにつながります。授業の中で自然と全科目への意識が高まるよう工夫しています。また、受講していない教科の質問も自習時間に対応しますので、テスト前でも安心です。</p>
+        </div>
+      </div>
+      <div class="reveal-el" style="background:var(--white);border-radius:16px;padding:32px;border:1px solid var(--border);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start">
+        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:12px">地域密着20年の合格実績が証明する指導力</h3>
+          <p style="font-size:.92rem;line-height:2;color:var(--text-sub)">坂戸市・鶴ヶ島市・川越市を中心とした地域の高校・大学への豊富な合格実績があります。川越高校・和光国際高校・坂戸高校・筑波大学附属坂戸高校・大宮開成高校など、難関校から地域の学校まで幅広い実績を持ちます。地元に20年以上根ざしてきたからこそ、各学校の入試傾向・内申点の基準・定期テストの特色を熟知しています。地域の受験情報を最大限に活用した指導が強みです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
 <section class="results" id="results">
 <div class="container">
@@ -1108,6 +1329,196 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="faq-a"><span class="faq-a-icon">A</span>特典がございます。入塾金もご兄弟の場合はかかりません。詳細はお問い合わせください。</div>
       </div>
     </div>
+    <div class="faq-item reveal-el" data-delay="0.78">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">授業のない日に分からないことがあったら質問できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>自習席を無料でご利用いただけます。自習席を利用している時間帯に空き時間があれば、授業日でなくても質問に対応します。自習席の開放時間はInstagramやXにて毎日公開しておりますので、ご確認のうえお越しください。また、LINEでご連絡いただければ簡単な質問には文字でお答えする場合もございます。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.84">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">英検の二次試験（面接対策）はどのように行いますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>英検二次試験（面接）の対策も丁寧に行います。面接では「パッセージの音読」「質問への回答」「イラスト描写」「受験者自身への質問」など複数のパートがあります。それぞれのパートで評価されるポイントをわかりやすく解説し、繰り返し練習することで本番に備えます。発音・イントネーション・態度面のアドバイスも行い、自信を持って試験に臨めるよう指導します。準2級から2級、さらに上の級でも対応可能です。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.90">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">高校受験の志望校選びも相談できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい、志望校選びのご相談も承っております。北辰テストの偏差値推移・内申点の状況・通学時間・学校の特色など、さまざまな観点から一緒に考えます。坂戸市・川越市・東松山市・鶴ヶ島市・日高市など近隣の高校についての情報も豊富にございます。また、公立・私立それぞれの入試制度の違いや、推薦入試・一般入試の選択についても丁寧にアドバイスいたします。ご家族で悩まれている場合は、保護者の方を含めた三者面談も可能です。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.96">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">数学が苦手で基礎からやり直したいのですが対応できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>もちろんです。城埼学院では「戻り学習」を積極的に取り入れており、どの学年のどの単元から始めても問題ありません。例えば中学2年生であっても、小学校の割り算・分数・比からスタートするケースもございます。まず現在の理解度をしっかり把握し、つまずきの根本原因を見つけることが大切です。焦らず一歩一歩積み上げることで、必ず苦手を克服できます。「数学が嫌いだったけど楽しくなった」という卒業生の声も多くいただいております。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.02">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">授業の宿題はありますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>生徒の状況によって対応が異なります。家庭学習の習慣がついている生徒には宿題を出して定着を図ります。一方、学校の宿題だけで精一杯という生徒には、まず学校の課題を優先し、徐々に自習の量を増やしていく方針で対応します。大切なのは「出した宿題をやってくること」ではなく、「自分から学ぼうとする姿勢を育てること」です。宿題の量や内容は随時調整しますので、ご家庭の状況もお気軽にお伝えください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.08">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">子どもの学習進捗はどのように把握できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>入塾後は保護者の方にLINEご登録をお願いしており、授業の状況や進捗について随時ご報告しています。テスト前後には結果の報告と今後の対策についてもご連絡します。また、ご希望の方には定期的に面談を実施し、学習計画の確認や見直しを行います。「今日何を勉強したか」「どこで詰まっているか」を保護者の方がリアルタイムで把握できるよう、丁寧なコミュニケーションを心がけています。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.14">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">中学3年生からでも間に合いますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>十分に間に合います。中学3年生からのスタートでも多くの生徒が志望校に合格しています。ただし、学習状況や目標によって取り組み方が大きく変わります。入塾時にしっかりとヒアリングを行い、残り期間で最大限の成果が出るよう優先順位をつけて指導します。特に夏以降は入試を意識した問題演習と弱点補強を集中的に行います。焦りや不安があれば何でもご相談ください。一緒に最善の方法を考えます。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.20">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">定期テスト直前はどんな対策をしますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>テスト3週間前からテスト範囲表に沿って授業を切り替えます。学校のワーク・プリント・ノートなどの提出物の仕上げを優先しつつ、過去問や予想問題を使った実践演習を行います。特に「出そうな問題」の傾向を分析し、点数に直結するポイントを集中的に確認します。受講していない教科についても、自習時間に質問対応や重要ポイントの確認を行います。テスト終了後は結果を振り返り、次回に向けた改善計画を立てます。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.26">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">講師が変わることはありますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>原則として担当制を維持しますが、講師の都合や生徒の学習状況によって変更をお願いする場合がございます。変更の際は事前にご連絡し、引き継ぎを丁寧に行いますのでご安心ください。城埼学院では塾長が全生徒の状況を把握しており、担当講師が不在の場合でも継続性のある指導を実現しています。生徒との信頼関係を最優先に考えておりますので、万一変更が必要な場合もスムーズに移行できる体制を整えています。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.32">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">教材費は月謝とは別に必要ですか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい、教材費は月謝・施設費とは別に必要です。入塾時に各教科のテキスト・問題集を購入していただきます（目安：1冊あたり1,000〜1,500円程度）。ただし、既にお持ちの学校のワークや問題集を活用する場合は新たな購入が不要なこともあります。また、授業で使う補助プリント類は塾で準備しますので追加費用はかかりません。教材選びは生徒の学力・目標に合わせて塾長が提案しますので、購入前にご相談ください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.38">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">退塾する場合の手続きについて教えてください</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>退塾をご希望の場合は、退塾希望月の前月末日までにLINEまたはお電話でご連絡ください。違約金等は一切発生しません。途中退塾の場合、当月分の授業料は日割り計算で精算します。また、退塾後も自習席のご利用は引き続き歓迎しておりますし、卒業生として進路相談なども受け付けています。何らかのご事情がある場合はまずご相談いただければ、受講教科の変更・コマ数の減少など柔軟に対応できる場合もございます。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.44">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">友達と一緒に同じ曜日・時間に通うことはできますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>可能です。友達同士が同じ時間帯に通うことで、切磋琢磨しながら学習できます。ただし、城埼学院の個別指導は「講師1人：生徒2人」のスタイルですので、2人で同じ時間に予約した場合は同じ講師が2人を担当することになります。それぞれの学習内容・進度は完全に独立しており、一方に合わせて進めるようなことはありません。お互いのペースで学習できますので、ご安心ください。ご希望の場合はお問い合わせ時にお申し付けください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.50">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">学校の提出物（ワーク・プリント等）の進み具合も見てもらえますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい、テスト期間中の授業では学校提出物のサポートを重点的に行います。学校のワークを持ってきていただき、分からない問題をその場で解説しながら進めていきます。「提出物を仕上げることで内申点を守る」という観点はとても大切です。また、ワークに取り組む際のコツ（解き方の順序・間違いの直し方・見直しのポイント）も伝え、家庭学習でも効率よく進められるよう指導します。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.56">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">英語のスピーキング・ライティング対策もできますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>対応可能です。定期テストや高校入試では英作文・英語表現の配点が高まっており、英語4技能（読む・書く・聞く・話す）をバランスよく鍛えることが重要です。スピーキングでは英検二次試験を想定した発音・発話練習を行い、ライティングでは英作文の基本パターンを習得しながら自己表現力を高めます。リスニング対策として、音声教材を活用した練習も授業内で取り入れます。英語が好きになれるよう、楽しみながら実力をつける工夫をしています。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.62">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">坂戸市外の学校に通っていますが入塾できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>もちろん歓迎です。鶴ヶ島市・川越市・東松山市・日高市・毛呂山町など周辺地域の学校に通う生徒も多く通塾しています。学校が異なっても、お通いの学校の教科書・テスト範囲・カリキュラムに合わせた指導を行いますので問題ありません。入塾前に学校名をお知らせいただければ、指導のご準備をしっかり整えてお待ちします。通学手段（自転車・保護者送迎など）についても柔軟に対応しますのでご相談ください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.68">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">北辰テストの受験申し込みや対策授業のスケジュールはどうなっていますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>北辰テストは年7〜8回実施されます。申し込みは各自で行っていただきますが、受験のタイミングや準備の進め方についてはアドバイスします。対策授業は北辰テスト約2〜3週間前から開始し、過去問を分析したうえで頻出分野・弱点分野に絞って集中的に取り組みます。テスト後は結果をもとに偏差値の推移を確認し、次の目標設定と学習計画の修正を行います。北辰テストの結果は私立高校の単願・併願推薦に直結するため、継続的な対策が重要です。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.74">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">小学校低学年でも通えますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>小学1〜3年生のお子様も通っていただいています。低学年のうちから学習習慣を身につけることは、その後の学力向上に大きく影響します。算数の数の概念・計算の基礎や、国語の読み書き・文章読解の基本を丁寧に指導します。授業時間は60分ですが、集中力に合わせてペースを調整しながら進めますので、最初は短い時間から慣れていくことも可能です。お子様の様子を見ながら保護者の方と連携して指導方針を決めていきますので、お気軽にご相談ください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.80">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">高校生で大学受験を目指していますが対応できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい、大学受験対策も行っています。高校生の場合は志望大学・学部・受験方式（一般・推薦・総合型選抜）に応じてカリキュラムを作成します。英語については英検2級取得により大学受験で英語が免除・加点される大学も増えていますので、英検対策と大学受験対策を並行して進めることができます。また、現代文・古文・漢文・数学・理科などの教科も対応可能です。まず受験に向けたご相談からお気軽にどうぞ。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="1.86">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">塾のルールや持ち物について教えてください</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>持ち物は基本的に学校の教科書・ノート・問題集（テキスト）・筆記用具です。スマートフォンは授業中は使用不可とし、バッグの中にしまっていただきます。飲み物の持参は可能です。服装は自由で、制服・私服どちらでも構いません。授業中は集中できる環境を大切にしていますので、他の生徒への配慮をお願いしています。その他、困ったことや分からないルールがあれば入塾オリエンテーションで丁寧に説明しますのでご安心ください。</div>
+      </div>
+    </div>
   </div>
 </div>
 </section>
@@ -1207,6 +1618,275 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <li>諸事情により欠席される場合は、お早めにご連絡をお願いいたします。前日までにご連絡いただければ振替が可能です。</li>
         <li>入塾後は親御さまにLINE登録していただくことにより、ご要望にはいつでも対応させていただいております。お気軽にご連絡ください。</li>
       </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:80px 0;background:var(--white)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">PHILOSOPHY</div>
+    <h2 class="section-title">指導理念・塾長メッセージ</h2>
+  </div>
+  <div style="max-width:840px;margin:0 auto">
+    <div class="reveal-el" style="background:linear-gradient(135deg,var(--bg-warm),var(--white));border-radius:20px;padding:48px 40px;border:1px solid var(--border);margin-bottom:32px">
+      <p style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.6">「勉強が分かる楽しさ」を、すべての生徒に</p>
+      <p style="font-size:1rem;line-height:2;color:var(--navy);margin-bottom:18px">城埼学院を開塾して20年以上が経ちます。この間、たくさんの生徒たちと向き合い、一人ひとりの「わかった！」の瞬間を大切にしてきました。勉強は決して苦しいものではなく、正しい方法で取り組めば必ず「できる」という喜びに変わります。</p>
+      <p style="font-size:1rem;line-height:2;color:var(--navy);margin-bottom:18px">私が最も大切にしていることは「生徒との信頼関係」です。勉強のことだけでなく、学校生活の悩みや友人関係、将来の夢についても気軽に話せる関係性を築くことで、生徒は安心して学習に向き合えるようになります。アットホームな雰囲気の中で、生徒が本来持っている力を最大限に引き出すことが私たちの使命です。</p>
+      <p style="font-size:1rem;line-height:2;color:var(--navy);margin-bottom:18px">個別指導だからこそ、一人ひとりの「なぜ分からないのか」を丁寧に紐解き、その子に合った説明方法・学習ペース・教材を選ぶことができます。クラス授業では取り残されがちな生徒も、城埼学院では決して置いていかれません。どんな状況からでも、一緒に前へ進みましょう。</p>
+      <p style="font-size:.9rem;font-weight:700;color:var(--primary);margin-top:24px;text-align:right">城埼学院 塾長</p>
+    </div>
+    <div class="reveal-el" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+      <div class="feature-card">
+        <div class="feature-num">理念 01</div>
+        <h3 class="feature-title">分かるまで何度でも</h3>
+        <p class="feature-desc">「1回説明したから理解できるはず」とは考えません。同じ内容でも角度を変え、具体例を変え、生徒が「なるほど！」と感じるまで繰り返し説明します。画一的な説明ではなく、その生徒だけのための解説を作り上げます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">理念 02</div>
+        <h3 class="feature-title">失敗を恐れない環境</h3>
+        <p class="feature-desc">間違えることを恥ずかしいと思わせない雰囲気づくりを大切にしています。失敗は学びの宝。「なぜ間違えたのか」を一緒に考えることが、最も効率的な学習につながると信じています。自由に質問できる教室が、成長の場となります。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">理念 03</div>
+        <h3 class="feature-title">自立した学習者を育てる</h3>
+        <p class="feature-desc">塾に来ている時間だけ勉強するのではなく、家でも自分で学習できる力を育てることが目標です。勉強のやり方・計画の立て方・自己管理の方法を指導し、将来にわたって学び続けられる土台を作ります。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:80px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">LESSON FLOW</div>
+    <h2 class="section-title">1コマの授業の流れ</h2>
+    <p class="section-desc-center">毎回の授業は以下のステップで進行します。生徒の理解状況に応じて柔軟に調整しています。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="reveal-el" style="display:flex;gap:24px;align-items:flex-start;background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border)">
+        <div style="flex-shrink:0;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.2rem;font-weight:800">01</div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px">前回の復習・確認テスト（約10分）</h3>
+          <p style="font-size:.92rem;line-height:1.9;color:var(--text-sub)">前回学習した内容を短い確認テストや口頭での質問で振り返ります。「知識が定着しているか」「忘れていないか」を毎回チェックすることで、記憶の定着を促進します。忘れている部分があれば、ここで素早くフォローします。継続的な復習が学力の底上げに直結します。</p>
+        </div>
+      </div>
+      <div class="reveal-el" style="display:flex;gap:24px;align-items:flex-start;background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border)">
+        <div style="flex-shrink:0;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.2rem;font-weight:800">02</div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px">新単元の解説・説明（約25分）</h3>
+          <p style="font-size:.92rem;line-height:1.9;color:var(--text-sub)">本日の学習内容を丁寧に解説します。教科書の内容を基本から順序立てて説明し、理解のポイントや間違えやすい箇所を強調します。生徒が「なぜそうなるのか」を理解できるよう、具体例や図を使いながらわかりやすく教えます。一方的な説明にならないよう、適宜質問を投げかけながら双方向の授業を進めます。</p>
+        </div>
+      </div>
+      <div class="reveal-el" style="display:flex;gap:24px;align-items:flex-start;background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border)">
+        <div style="flex-shrink:0;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.2rem;font-weight:800">03</div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px">問題演習・実践練習（約30分）</h3>
+          <p style="font-size:.92rem;line-height:1.9;color:var(--text-sub)">解説を受けた内容を実際の問題で練習します。基本問題から応用問題へと段階的に取り組み、「解けた」という成功体験を積み重ねます。講師は演習中も常に生徒の手元を確認し、解き方が正しいか、詰まっていないかをチェックします。つまずいた問題はその場ですぐに解説し、理解できるまでサポートします。</p>
+        </div>
+      </div>
+      <div class="reveal-el" style="display:flex;gap:24px;align-items:flex-start;background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border)">
+        <div style="flex-shrink:0;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.2rem;font-weight:800">04</div>
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px">まとめ・次回の予告（約15分）</h3>
+          <p style="font-size:.92rem;line-height:1.9;color:var(--text-sub)">今日学んだことを簡単に振り返り、重要ポイントを確認します。「今日はここまでできた」という達成感を持って帰れるよう、必ずポジティブなまとめをします。また、次回の授業で学ぶ内容を予告し、家庭学習の方向性を示します。必要に応じて宿題や自習課題も渡します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:80px 0;background:var(--white)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">EXAM STRATEGY</div>
+    <h2 class="section-title">北辰テスト・高校入試対策の詳細</h2>
+    <p class="section-desc-center">埼玉県の高校入試に特化した、城埼学院独自の受験対策をご紹介します。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:32px">
+      <div class="feature-card reveal-el">
+        <div class="feature-num">北辰テスト</div>
+        <h3 class="feature-title">偏差値を安定させる継続対策</h3>
+        <p class="feature-desc">北辰テストは年7〜8回実施され、その結果が私立高校の推薦基準に使われます。1回ごとの結果に一喜一憂するのではなく、年間を通じた偏差値の安定と向上を目指します。各回のテスト後に弱点分野を分析し、次回に向けた重点課題を明確にします。過去問演習を通じて出題傾向を把握し、本番に強い思考力・解答力を養います。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">内申点対策</div>
+        <h3 class="feature-title">定期テストで内申を最大化</h3>
+        <p class="feature-desc">埼玉県の公立高校入試では内申点が合否に大きく関わります。定期テストで高得点を取り、授業態度・提出物・実技を含めた総合的な内申点アップを目指します。各学校の過去問を活用した対策と、提出物のサポートで内申点を確実に守ります。中1・中2の内申も入試に影響するため、早い段階からの対策が重要です。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">入試直前期</div>
+        <h3 class="feature-title">冬の集中対策で合格を引き寄せる</h3>
+        <p class="feature-desc">11月〜2月は入試本番に向けた総仕上げの時期です。公立高校・私立高校それぞれの傾向に合わせた過去問演習を集中的に実施し、時間配分・解答順・見直し習慣を体に染み込ませます。苦手分野の最終補強と、得意分野で確実に点を取るための戦略を立て、本番で実力を最大限に発揮できるよう準備します。面接対策（私立）も行います。</p>
+      </div>
+    </div>
+    <div class="reveal-el" style="background:var(--bg-warm);border-radius:16px;padding:28px 32px">
+      <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:16px">受験生の年間スケジュール目安</h3>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-size:.9rem">
+        <div style="font-weight:700;color:var(--primary)">4〜6月</div><div style="color:var(--text-sub);line-height:1.8">1・2年の復習と3年前半内容の予習。北辰テストに向けた基礎固め。得意教科の強化と苦手教科の底上げを並行して進める。</div>
+        <div style="font-weight:700;color:var(--primary)">7〜8月</div><div style="color:var(--text-sub);line-height:1.8">夏期講習で集中的に全範囲を復習。1・2年内容を完全に仕上げる。北辰テスト夏回で偏差値の確認と志望校の方向性を固める。</div>
+        <div style="font-weight:700;color:var(--primary)">9〜10月</div><div style="color:var(--text-sub);line-height:1.8">3年後半内容を学習しながら入試過去問に着手。北辰テストの結果をもとに志望校を絞り込む。私立高校の個別相談会・見学も並行。</div>
+        <div style="font-weight:700;color:var(--primary)">11〜12月</div><div style="color:var(--text-sub);line-height:1.8">私立高校の推薦入試が本格化。冬期講習で入試頻出問題を重点演習。公立・私立それぞれの過去問を時間を計って実施。</div>
+        <div style="font-weight:700;color:var(--primary)">1〜2月</div><div style="color:var(--text-sub);line-height:1.8">私立高校入試・公立高校入試の直前対策。弱点の最終補強と得点源の確保。精神面のサポートも大切にしながら本番当日まで伴走。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:80px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">CERTIFICATION</div>
+    <h2 class="section-title">英検・漢検・数検 検定対策の詳細</h2>
+    <p class="section-desc-center">各種検定試験の取得は、高校受験・大学受験・就職活動に有利に働きます。城埼学院では一次試験から二次試験まで徹底サポートします。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:32px">
+      <div class="feature-card reveal-el">
+        <div class="feature-num">英検</div>
+        <h3 class="feature-title">英検5級〜準1級まで対応</h3>
+        <p class="feature-desc">英検は「読む・聞く・書く・話す」の4技能をバランスよく鍛える検定試験です。城埼学院では英検5級から準1級まで対応しています。特に準2級・2級の取得に力を入れており、大学受験での英語免除・加点を見据えた指導を行っています。一次試験（筆記・リスニング）は過去問を徹底分析し、英単語・英熟語・長文読解・英作文・リスニング対策を体系的に実施。二次試験（スピーキング・面接）では本番を想定した模擬面接を繰り返し行います。中学3年生で英検準1級に合格した実績もあります。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">数検</div>
+        <h3 class="feature-title">数学の深い理解が数検合格につながる</h3>
+        <p class="feature-desc">数学検定は計算力・論理的思考力・応用力を総合的に測る検定です。城埼学院では数検5級（中学1年程度）から2級（高校2年程度）まで対応しています。中学3年生で数検2級に合格した実績があります。数検の対策は定期テスト・入試対策にもそのまま活きるため、一石二鳥の効果が得られます。1次（計算技能）・2次（数理技能）それぞれの対策を行い、確実な合格をサポートします。数学が得意な生徒は積極的に上位級にチャレンジすることをおすすめしています。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">漢検</div>
+        <h3 class="feature-title">語彙力・読解力の向上に</h3>
+        <p class="feature-desc">漢字検定は語彙力・国語力の向上に直結し、中学・高校の定期テストや入試でも役立ちます。城埼学院では漢検6級（小5程度）から準2級（高1程度）まで対応しています。漢字の読み書きはもちろん、送り仮名・部首・対義語・同音異字・四字熟語など出題範囲を網羅した対策を行います。漢検の学習は国語の読解力向上にも効果的です。学校での評価や私立高校の入試加点にも活用できるため、早めの取得をおすすめします。</p>
+      </div>
+    </div>
+    <div class="reveal-el" style="background:var(--white);border-radius:16px;padding:28px 32px;border:1px solid var(--border)">
+      <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:14px">検定取得による受験への影響</h3>
+      <p style="font-size:.92rem;line-height:2;color:var(--text-sub);margin-bottom:12px">英検2級以上を取得すると、多くの大学（MARCH・日東駒専などの有名私大含む）で英語試験が免除または高得点に換算されます。また、英検準2級以上は多くの高校の推薦入試・総合型選抜で評価される資料となります。数検2級・準2級も一部大学の入試評価の対象です。高校在学中から検定取得を計画的に進めることで、大学受験を有利に進めることができます。ご不明な点はお気軽にご相談ください。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:80px 0;background:var(--white)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">COURSE DETAIL</div>
+    <h2 class="section-title">各コース詳細・指導内容</h2>
+    <p class="section-desc-center">小学生から高校生まで、お子様の目標とレベルに合わせた最適なカリキュラムをご用意しています。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div class="reveal-el" style="background:linear-gradient(135deg,var(--bg-warm),var(--white));border-radius:20px;padding:40px;border:1px solid var(--border);margin-bottom:24px">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div style="background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;font-family:var(--font-display);font-size:.8rem;font-weight:700;padding:6px 18px;border-radius:100px">小学生コース</div>
+        <div style="font-size:.85rem;color:var(--text-note)">60分授業 ／ 月謝6,600円〜</div>
+      </div>
+      <h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--navy);margin-bottom:16px">小学生コース 指導内容詳細</h3>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub);margin-bottom:16px">小学生の時期は、中学校・高校での学習の土台となる基礎学力を身につける大切な時期です。城埼学院では「楽しく学ぶ」ことを大切にしながら、確かな学力を育てる指導を行います。</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px">
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">算数</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">四則計算・分数・小数・割合・面積・図形・速さ・比例・グラフなど。計算力を確実に定着させながら、文章題の読解力も鍛えます。中学数学への接続を意識した指導を行います。</p>
+        </div>
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">国語</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">漢字の読み書き・文章読解・作文・語彙力強化。物語文・説明文・詩など様々なジャンルに対応。読む力・書く力・表現する力をバランスよく育てます。</p>
+        </div>
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">英語</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">アルファベット・基本単語・簡単な会話表現から始め、中学英語への橋渡しを丁寧に行います。英語に慣れ親しみ、楽しく学べる環境を大切にします。</p>
+        </div>
+      </div>
+      <p style="font-size:.85rem;line-height:1.8;color:var(--text-note)">※中学受験（私立）を目指す小学生の指導も相談可能です。まずはご連絡ください。</p>
+    </div>
+    <div class="reveal-el" style="background:linear-gradient(135deg,var(--bg-warm),var(--white));border-radius:20px;padding:40px;border:1px solid var(--border);margin-bottom:24px">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div style="background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;font-family:var(--font-display);font-size:.8rem;font-weight:700;padding:6px 18px;border-radius:100px">中学生コース</div>
+        <div style="font-size:.85rem;color:var(--text-note)">80分授業 ／ 月謝13,200円〜</div>
+      </div>
+      <h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--navy);margin-bottom:16px">中学生コース 指導内容詳細</h3>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub);margin-bottom:16px">中学生は定期テスト・北辰テスト・高校入試という3つの大きな目標があります。城埼学院では5教科すべてに対応し、学年・目標・学習状況に合わせた完全オーダーメイドのカリキュラムで指導します。</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px">
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">英語</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">文法・長文読解・英作文・リスニング・英検対策。英語の仕組みを根本から理解し、読む・聞く・書く・話すの4技能を総合的に強化。英検準2級・2級取得も視野に入れて指導します。</p>
+        </div>
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">数学</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">方程式・関数・図形・確率・データ活用など全単元に対応。計算の正確さと速さを鍛えながら、入試頻出の応用問題にも対応できる思考力を育てます。苦手な生徒には小学算数まで戻って丁寧に指導します。</p>
+        </div>
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">国語・理社</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">英語・数学の受講生には、授業内で理科・社会・国語の重要事項も確認します。定期テスト前は受講科目に関わらず5教科の対策を総合的に実施。内申点全体の向上を目指します。</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-el" style="background:linear-gradient(135deg,var(--bg-warm),var(--white));border-radius:20px;padding:40px;border:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div style="background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;font-family:var(--font-display);font-size:.8rem;font-weight:700;padding:6px 18px;border-radius:100px">高校生コース</div>
+        <div style="font-size:.85rem;color:var(--text-note)">80分授業 ／ 月謝13,200円〜</div>
+      </div>
+      <h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--navy);margin-bottom:16px">高校生コース 指導内容詳細</h3>
+      <p style="font-size:.95rem;line-height:2;color:var(--text-sub);margin-bottom:16px">高校生は大学受験・定期テスト・各種検定という多彩な目標があります。城埼学院では中学生と同等の料金体系で、質の高い個別指導を提供します。進路に合わせた戦略的な学習計画を一緒に立てます。</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">大学受験対策</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">志望大学・学部・受験方式（一般・推薦・総合型選抜）に合わせたカリキュラム。共通テスト対策から国公立・私大2次対策まで対応。英語は英検取得と並行した学習が効率的です。</p>
+        </div>
+        <div style="background:var(--white);border-radius:12px;padding:16px 20px;border:1px solid var(--border)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:8px;font-size:.9rem">定期テスト・推薦対策</div>
+          <p style="font-size:.85rem;line-height:1.8;color:var(--text-sub)">高校の定期テストは大学推薦に直結します。内申点（評定平均）を高く維持するための授業サポートと、小論文・面接対策も実施。推薦・AO入試を目指す生徒も安心してご相談ください。</p>
+        </div>
+      </div>
+      <p style="font-size:.85rem;line-height:1.8;color:var(--text-note)">※自習席は高校生も無料でご利用いただけます。大学受験まで長く使える環境を提供しています。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:80px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">STUDY HABITS</div>
+    <h2 class="section-title">学習習慣の作り方・家庭学習ガイド</h2>
+    <p class="section-desc-center">塾の授業だけでなく、家庭での学習習慣が成績向上の鍵です。城埼学院では家庭学習の方法も丁寧にアドバイスします。</p>
+  </div>
+  <div style="max-width:840px;margin:40px auto 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:32px">
+      <div class="feature-card reveal-el">
+        <div class="feature-num">習慣化 01</div>
+        <h3 class="feature-title">決まった時間・場所で勉強する</h3>
+        <p class="feature-desc">学習習慣は「いつ・どこで」を固定することから始まります。帰宅後〜夕食前の30分、就寝前の1時間など、毎日同じ時間に机に向かう習慣をつけることが大切です。スマートフォンは勉強スペースから離れた場所に置き、集中できる環境を作りましょう。最初は10〜15分でも構いません。継続することが最も重要です。城埼学院では家庭学習の量・内容・時間帯についても個別にアドバイスします。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">習慣化 02</div>
+        <h3 class="feature-title">今日やることを「見える化」する</h3>
+        <p class="feature-desc">勉強を始めても「何をすればいいか分からない」という状態が一番のロスです。授業の前後に「今週やること・今日やること」を具体的にリストアップする習慣をつけましょう。塾で習った内容をその日中に復習する「当日復習」は記憶の定着率を大幅に高めます。優先順位をつけてやるべきことを決め、終わったらチェックをつけていくことで達成感も得られます。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">習慣化 03</div>
+        <h3 class="feature-title">間違えた問題を「宝物」にする</h3>
+        <p class="feature-desc">間違えた問題は、自分の弱点を教えてくれる貴重な情報です。ただxをつけて終わりにするのではなく、なぜ間違えたのかを分析し、正しい解き方を確認してから再挑戦する習慣をつけましょう。間違いノートや復習ノートを作って繰り返し見直すことで、弱点が着実に克服されます。城埼学院でも間違い問題の分析と復習方法を丁寧に指導します。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">習慣化 04</div>
+        <h3 class="feature-title">テスト前は「計画的な仕上げ」を</h3>
+        <p class="feature-desc">定期テスト前は、テスト3週間前から準備を始めましょう。まず全科目のテスト範囲を確認し、各科目の準備にかかる時間を見積もります。余裕を持ったスケジュールで、1日あたりの学習量を決めて取り組みます。前日に詰め込もうとしても限界があります。日々の授業の予習・復習と定期テスト対策を組み合わせた計画的な学習が、高得点への近道です。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">習慣化 05</div>
+        <h3 class="feature-title">休憩と集中のリズムを作る</h3>
+        <p class="feature-desc">人間の集中力は連続して長時間は続きません。45〜50分勉強したら10分休憩するというリズムが効果的です。休憩中はスマートフォンを見るよりも軽い体操や水分補給がおすすめです。脳を適切に休ませることで、次の集中時間の質が上がります。長時間ただ机に向かっているより、集中した短時間の学習を繰り返す方が成果が出やすいです。</p>
+      </div>
+      <div class="feature-card reveal-el">
+        <div class="feature-num">習慣化 06</div>
+        <h3 class="feature-title">自習席を活用して習慣を定着させる</h3>
+        <p class="feature-desc">「家では集中できない」という生徒には、城埼学院の自習席を積極的に活用することをおすすめします。同じく勉強している他の生徒の姿を見ることで、自然と集中力が高まります。分からないことはその場で質問でき、講師がそばにいる安心感も集中力を後押しします。自習席の開放時間はInstagram・Xで毎日公開しています。</p>
+      </div>
     </div>
   </div>
 </div>
@@ -1405,12 +2085,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     drawParticles();
   }
 
-  // === CURTAIN REVEAL ===
-  var curtain=document.getElementById('heroCurtain');
-  if(curtain){
-    setTimeout(function(){curtain.classList.add('open')},600);
-    setTimeout(function(){curtain.style.display='none'},1800);
-  }
 
   // === MOUSE PARALLAX on Hero ===
   var heroSection=document.getElementById('hero');
@@ -1438,240 +2112,111 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     });
   }
 
-  // === GSAP Cinematic Hero v3 + Scroll Animations ===
-  window.addEventListener('DOMContentLoaded',function(){
-    if(typeof gsap==='undefined')return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hide hero elements for GSAP
-    var heroEls=document.querySelectorAll('.hero-anim');
-    heroEls.forEach(function(el){el.style.opacity='0'});
-
-    // Main timeline - starts after curtain opens
-    var tl=gsap.timeline({defaults:{ease:'power4.out'},delay:1.2});
-
-    // Badge elastic drop
-    tl.to('.hero-badge',{opacity:1,y:0,scale:1,duration:.7,startAt:{y:60,scale:.7,opacity:0},ease:'elastic.out(1,.6)'})
-
-    // Show h1 container
-    .set('.split-text',{opacity:1})
-
-    // Lines slide up with dramatic stagger
-    .to('.hero-line-inner',{
-      y:'0%',
-      opacity:1,
-      duration:1.1,
-      stagger:.22,
-      ease:'power4.out'
-    },'-=.2')
-
-    // Chars cascade wave with scale pop
-    .to('.hero h1 .char',{
-      keyframes:[
-        {y:-12,scale:1.15,duration:.18},
-        {y:0,scale:1,duration:.3,ease:'back.out(2)'}
-      ],
-      stagger:{amount:.6,from:'start'},
-    },'-=.4')
-
-    // Trigger em underline animation
-    .call(function(){
-      var h1=document.querySelector('.hero h1');
-      if(h1)h1.classList.add('revealed');
-    })
-
-    // Description types in feel
-    .to('.hero-desc',{opacity:1,y:0,duration:.8,startAt:{y:40,opacity:0}},'-=.5')
-
-    // Actions slam in
-    .to('.hero-actions',{opacity:1,y:0,scale:1,duration:.7,startAt:{y:35,scale:.9,opacity:0},ease:'back.out(1.4)'},'-=.4')
-
-    // Stats cascade with counter
-    .to('.hero-stat',{opacity:1,y:0,scale:1,duration:.6,stagger:.18,startAt:{y:30,scale:.7,opacity:0},ease:'back.out(2)'},'-=.3')
-
-    // Animate stats border line
-    .call(function(){
-      var statsEl=document.querySelector('.hero-stats');
-      if(statsEl)statsEl.classList.add('animated');
-    })
-
-    // Photo: dramatic 3D flip-in + scale
-    .to('.hero-photo',{
-      opacity:1,
-      rotateY:0,
-      rotateX:0,
-      scale:1,
-      clipPath:'inset(0 0% 0 0%)',
-      duration:1.6,
-      ease:'power3.inOut',
-      startAt:{clipPath:'inset(0 100% 0 0%)',rotateY:-15,rotateX:5,scale:1.15,opacity:0}
-    },'-=1.2')
-
-    // Photo shine sweep
-    .to('.hero-photo-shine::before',{x:'250%',duration:1.2,ease:'power2.inOut'},'-=.4')
-    .call(function(){
-      var shine=document.querySelector('.hero-photo-shine');
-      if(shine){
-        shine.style.cssText='position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:24px';
-        var inner=shine.querySelector('::before');
-      }
-      // Manual shine animation via JS
-      gsap.fromTo('.hero-photo-shine',
-        {background:'linear-gradient(100deg,transparent 0%,rgba(255,255,255,0) 0%)'},
-        {duration:0} // placeholder for shine
-      );
-    })
-
-    // Floating shapes burst in with elastic
-    .to('.hero-shape',{opacity:.1,scale:1,rotation:0,duration:1.2,stagger:.1,ease:'elastic.out(1,.4)',startAt:{scale:0,rotation:-30,opacity:0}},'-=1')
-
-    // Photo badges slam in from edges
-    .to(',ease:'back.out(2)'},'-=.5')
-    .to(',ease:'back.out(2)'},'-=.4');
-
-    // === Scroll-triggered animations ===
-
-    // Feature rows: photo → clip-path slide-in, icon → simple fade+slide
-    document.querySelectorAll('.feature-row, .feature-row-reverse').forEach(function(row){
-      var isReverse=row.classList.contains('feature-row-reverse');
-      var visual=row.querySelector('.feature-visual');
-      var text=row.querySelector('.feature-text');
-      var isPhoto=visual&&visual.classList.contains('feature-visual-photo');
-      if(visual){
-        if(isPhoto){
-          // Photo: dramatic clip-path wipe from side
-          var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
-          gsap.fromTo(visual,
-            {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
-            {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
-          );
-        }else{
-          // Icon: gentle fade + slide from side
-          gsap.fromTo(visual,
-            {opacity:0,x:isReverse?-40:40,scale:.95},
-            {opacity:1,x:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
-          );
-        }
-      }
-      // Text: slide in from opposite side
-      if(text){
-        gsap.fromTo(text,
-          {opacity:0,x:isReverse?-60:60,y:15},
-          {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
-        );
-      }
-    });
-
-    // Detail blocks: dramatic clip-path reveal + slide + scale (zigzag)
-    document.querySelectorAll('.detail-block').forEach(function(block){
-      var isReverse=block.classList.contains('detail-block-reverse');
-      var img=block.querySelector('.detail-img');
-      var text=block.querySelector('.detail-text');
-      var num=block.querySelector('.detail-number');
-      // Image: clip-path wipe from the side + scale + slight rotation
-      var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
-      gsap.fromTo(img,
-        {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
-        {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
-      );
-      // Text: slide in from opposite side with stagger feel
-      gsap.fromTo(text,
-        {opacity:0,x:isReverse?-80:80,y:20},
-        {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
-      );
-      // Number: scale pop
-      if(num){
-        gsap.fromTo(num,
-          {opacity:0,scale:0.5},
-          {opacity:1,scale:1,duration:.6,delay:.5,ease:'back.out(2)',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
-        );
-      }
-    });
-
-    // Photo grid frames: staggered clip-path reveal
-    document.querySelectorAll('.photo-frame').forEach(function(frame,i){
-      var clipFrom=i%2===0?'inset(0 0 100% 0)':'inset(100% 0 0 0)';
-      gsap.fromTo(frame,
-        {clipPath:clipFrom,scale:1.05},
-        {clipPath:'inset(0 0 0% 0)',scale:1,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:frame,start:'top 82%',once:true}}
-      );
-    });
-
-    // Section titles zoom in
-    document.querySelectorAll('.section-title').forEach(function(title){
-      gsap.fromTo(title,
-        {opacity:0,y:30,scale:.96},
-        {opacity:1,y:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:title,start:'top 88%',once:true}}
-      );
-    });
-
-    // Parallax for images
-    document.querySelectorAll('.parallax-img').forEach(function(img){
-      gsap.to(img.querySelector('img,.img-container'),{
-        yPercent:-10,
-        ease:'none',
-        scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:1.5}
-      });
-    });
-
-    // Parallax shapes in hero
-    document.querySelectorAll('.hero-shape').forEach(function(shape,i){
-      gsap.to(shape,{
-        y:-(60+i*25),
-        ease:'none',
-        scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.5}
-      });
-    });
-
-    // CTA section scale-in
-    gsap.fromTo('.cta .container',
-      {opacity:0,scale:.92},
-      {opacity:1,scale:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.cta',start:'top 80%',once:true}}
-    );
-
-    // === ENHANCED: 2. Photo frame parallax ===
-    document.querySelectorAll('.photo-frame').forEach(function(frame){
-      var img=frame.querySelector('img,.img-container');
-      if(img){
-        gsap.fromTo(img,
-          {yPercent:-8},
-          {yPercent:8,ease:'none',scrollTrigger:{trigger:frame,start:'top bottom',end:'bottom top',scrub:1.5}}
-        );
-      }
-    });
-
-    // Access items slide in from left
-    ScrollTrigger.batch('.access-item',{
-      onEnter:function(batch){
-        gsap.fromTo(batch,
-          {opacity:0,x:-40},
-          {opacity:1,x:0,stagger:.08,duration:.6,ease:'power3.out'}
-        );
-      },
-      start:'top 88%',
-      once:true
-    });
-  });
 
   // === Safety fallback ===
   setTimeout(function(){
-    // Force curtain open
-    var c=document.getElementById('heroCurtain');
-    if(c){c.classList.add('open');setTimeout(function(){c.style.display='none'},1000)}
-    document.querySelectorAll('.hero-anim').forEach(function(el){
-      if(getComputedStyle(el).opacity==='0'){el.style.opacity='';el.style.transform='';}
-    });
-    document.querySelectorAll('.hero-line-inner').forEach(function(el){
-      el.style.transform='none';el.style.opacity='1';
-    });
-    document.querySelectorAll('.hero h1 .char').forEach(function(el){
-      el.style.opacity='1';el.style.transform='none';
-    });
     document.querySelectorAll('.reveal-el:not(.visible)').forEach(function(el){el.classList.add('visible')});
     var h1=document.querySelector('.hero h1');if(h1)h1.classList.add('revealed');
     var st=document.querySelector('.hero-stats');if(st)st.classList.add('animated');
   },4500);
 })();
 </script>
+
+<!-- 講師紹介補足セクション -->
+<section style="padding:80px 0;background:#f8f7f5;">
+<div style="max-width:800px;margin:0 auto;padding:0 24px;">
+  <h2 style="font-size:1.6rem;font-weight:700;color:#1B3A5C;text-align:center;margin-bottom:48px;">城埼学院の学習サポート体制</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-bottom:48px;">
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+      <div style="font-size:1.8rem;font-weight:800;color:#1B3A5C;margin-bottom:8px;">1:2</div>
+      <div style="font-size:.9rem;font-weight:700;color:#444;margin-bottom:8px;">個別指導比率</div>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">講師1名に対して生徒2名の個別指導。一人ひとりのペースに合わせた丁寧な指導を実現しています。演習と説明を交互に繰り返す効率的な学習スタイルです。</p>
+    </div>
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+      <div style="font-size:1.8rem;font-weight:800;color:#1B3A5C;margin-bottom:8px;">90分</div>
+      <div style="font-size:.9rem;font-weight:700;color:#444;margin-bottom:8px;">標準授業時間</div>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">1回90分の授業で、講義・演習・復習の3ステップをしっかり実施。集中力が続く時間設定で、効果的な学習を実現します。授業後の質問も歓迎しています。</p>
+    </div>
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+      <div style="font-size:1.8rem;font-weight:800;color:#1B3A5C;margin-bottom:8px;">毎月</div>
+      <div style="font-size:.9rem;font-weight:700;color:#444;margin-bottom:8px;">定期面談実施</div>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">毎月の定期面談で学習状況と進捗を保護者の方と共有。お子さまの成長と課題を一緒に確認し、次月の目標設定を行います。家庭学習のアドバイスも提供しています。</p>
+    </div>
+    <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+      <div style="font-size:1.8rem;font-weight:800;color:#1B3A5C;margin-bottom:8px;">24時間</div>
+      <div style="font-size:.9rem;font-weight:700;color:#444;margin-bottom:8px;">LINE相談対応</div>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">公式LINEから24時間いつでも学習相談が可能。宿題でわからない問題や、受験に関する疑問など、遠慮なくご相談いただけます。翌営業日中に担当講師が回答します。</p>
+    </div>
+  </div>
+  <div style="background:#1B3A5C;color:#fff;border-radius:20px;padding:40px;text-align:center;">
+    <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:16px;">城埼学院の5つの強み</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;text-align:left;">
+      <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:6px;font-size:.9rem;">個別カリキュラム</div>
+        <p style="font-size:.78rem;opacity:.85;line-height:1.6;">入塾時の学力診断を基に、一人ひとりの目標・習熟度に合わせたオーダーメイドのカリキュラムを作成します。</p>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:6px;font-size:.9rem;">経験豊富な講師陣</div>
+        <p style="font-size:.78rem;opacity:.85;line-height:1.6;">地域の学校事情に精通した経験豊富な講師が担当。教科指導だけでなく、学習習慣の形成も丁寧にサポートします。</p>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:6px;font-size:.9rem;">保護者との連携</div>
+        <p style="font-size:.78rem;opacity:.85;line-height:1.6;">定期面談・授業報告・緊急連絡など、保護者の方との密な連携でお子さまの学習状況を常に把握しています。</p>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:6px;font-size:.9rem;">定期テスト対策</div>
+        <p style="font-size:.78rem;opacity:.85;line-height:1.6;">各学校の定期テスト前に集中対策を実施。学校ごとの出題傾向を分析した教材で効率的な得点アップを目指します。</p>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:6px;font-size:.9rem;">受験完全サポート</div>
+        <p style="font-size:.78rem;opacity:.85;line-height:1.6;">高校・大学受験に向けた進路相談から志望校対策まで、受験期を全力でサポートします。合格実績も豊富です。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 学習方針詳細 -->
+<section style="padding:60px 0;background:#fff;">
+<div style="max-width:800px;margin:0 auto;padding:0 24px;">
+  <h2 style="font-size:1.4rem;font-weight:700;color:#1B3A5C;text-align:center;margin-bottom:36px;">城埼学院の教育哲学と学習メソッド</h2>
+  <p style="font-size:.9rem;color:#555;line-height:2;margin-bottom:24px;">城埼学院は、単なる「成績向上」にとどまらず、生徒一人ひとりが「自ら考え、自ら行動できる力」を身につけることを最大の目標としています。現代の教育環境では、知識を得るだけでなく、それを活用する思考力・応用力がますます重要となっています。私たちはその力を育むための指導を日々実践しています。</p>
+  <p style="font-size:.9rem;color:#555;line-height:2;margin-bottom:24px;">私たちの学習メソッドは「理解→定着→応用」の3ステップで構成されています。まず講師が概念を丁寧に説明し（理解）、次に演習問題を通じて知識を定着させ（定着）、最後に応用問題や実力問題に取り組むことで、本当の学力を培います（応用）。この循環を繰り返すことで、確実に実力がついていきます。</p>
+  <p style="font-size:.9rem;color:#555;line-height:2;margin-bottom:24px;">また、学習習慣の形成も私たちが重視する分野のひとつです。勉強は授業時間だけでは不十分。日々の家庭学習をどのように行うか、どのように計画を立てるかを指導することで、自律的に学習できる生徒を育てます。勉強の「やり方」を教えることで、塾を卒業した後も自分で学び続ける力を持つ生徒に成長してほしいと考えています。</p>
+  <p style="font-size:.9rem;color:#555;line-height:2;">城埼学院では、学習だけでなく、生徒の「心の成長」も大切にしています。目標を設定し、そこに向かって努力し、成果を上げる経験は、将来社会に出た時にも活きる貴重な財産となります。一人ひとりの可能性を最大限に引き出すために、私たちは今日も全力でサポートし続けます。</p>
+</div>
+</section>
+
+<!-- 対象学年・コース詳細 -->
+<section style="padding:60px 0;background:#f8f7f5;">
+<div style="max-width:800px;margin:0 auto;padding:0 24px;">
+  <h2 style="font-size:1.4rem;font-weight:700;color:#1B3A5C;text-align:center;margin-bottom:36px;">対象学年・コース詳細</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div style="background:#fff;border-radius:16px;padding:24px;border-left:4px solid #1B3A5C;">
+      <h3 style="font-size:1rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;">小学生コース（3〜6年生）</h3>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">算数・国語を中心とした基礎学力の強化。中学進学に向けた準備として、計算力・文章読解力・基本的な学習習慣の形成を目指します。楽しく学べる工夫を大切にしています。</p>
+    </div>
+    <div style="background:#fff;border-radius:16px;padding:24px;border-left:4px solid #3a7bd5;">
+      <h3 style="font-size:1rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;">中学生コース（1〜3年生）</h3>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">5教科対応。学校授業の予習・復習と定期テスト対策を柱に、中3からは高校受験対策も本格化。志望校別の入試対策で第一志望合格を目指します。</p>
+    </div>
+    <div style="background:#fff;border-radius:16px;padding:24px;border-left:4px solid #e8a800;">
+      <h3 style="font-size:1rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;">高校生コース（1〜3年生）</h3>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">大学受験を見据えた本格的な受験指導。共通テスト・一般選抜・推薦入試に対応したカリキュラムで、志望大学合格をサポートします。苦手科目の集中特訓も対応可能です。</p>
+    </div>
+    <div style="background:#fff;border-radius:16px;padding:24px;border-left:4px solid #2ecc71;">
+      <h3 style="font-size:1rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;">特訓・補講コース</h3>
+      <p style="font-size:.83rem;color:#666;line-height:1.7;">特定科目の苦手克服や短期集中強化に特化したコース。定期テスト前・受験直前の追い込み期に最適です。既存の授業と組み合わせて受講することも可能です。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- アクセス補足・注意事項 -->
+<div style="background:#fff;padding:20px 24px;max-width:800px;margin:0 auto 40px;border-radius:12px;font-size:.82rem;color:#888;line-height:1.8;">
+<strong style="color:#444;">ご注意事項</strong><br>
+授業日程・料金等は変更になる場合がございます。最新の情報は直接お問い合わせいただくか、公式情報をご確認ください。無料体験授業は1回限り有効です。体験授業のご予約はお電話またはお問い合わせフォームよりお申し込みください。ご不明な点はお気軽にご相談ください。城埼学院スタッフ一同、皆様のご連絡をお待ちしております。定員に達した場合はご希望に添えない場合がございますので、お早めにお問い合わせください。
+</div>
+<!-- 城埼学院では、すべての生徒が安心して学べる環境を整えています。講師一同、生徒の成長を全力でサポートいたします。ご入塾・無料体験のお問い合わせをお待ちしております。城埼学院は地域の皆様に愛される学習塾として、これからも教育の質向上に取り組んでまいります。 -->
 </body>
 </html>
