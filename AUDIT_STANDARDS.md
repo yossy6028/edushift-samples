@@ -1,0 +1,58 @@
+# AUDIT_STANDARDS.md - 監査基準
+
+本ドキュメントは `edushift-samples` における塾HP品質監査の基準・ルールを定義します。
+
+---
+
+## 監査基準 更新履歴
+
+### v2.1 (2026-03-14) SVGプレースホルダー検出基準追加
+
+#### 新規チェック項目: R-SVG-PH (SVGプレースホルダー禁止)
+
+**違反条件:**
+- `src="data:image/svg+xml;base64,..."` 形式の img タグが存在する
+- デコード後のSVGが `<rect` + `<text` を含む（= 色付き背景に文字を重ねたプレースホルダー図）
+
+**OK条件（誤検知除外）:**
+- inline SVG (`<svg>...</svg>`) がアイコン用途 (viewBox="0 0 24 24") → OK
+- background CSS の SVG ノイズフィルター → OK
+- img-overlay の装飾用 SVG → OK
+
+**修正方針:**
+- 対象SVGを同バッチ他塾のbase64 JPEG写真で置換する
+- 重複画像使用禁止 (R24)
+
+#### 更新された検出スクリプト例
+
+```python
+import re, base64
+
+def check_svg_placeholder(html_content):
+    issues = []
+    svg_srcs = re.findall(r'src="(data:image/svg\+xml;base64,[^"]+)"', html_content)
+    for s in svg_srcs:
+        b64 = s.split(',',1)[1]
+        dec = base64.b64decode(b64).decode('utf-8','replace')
+        if '<rect' in dec and ('<text' in dec or 'fill=' in dec):
+            texts = re.findall(r'<text[^>]*>([^<]+)', dec)
+            issues.append(f"SVG_PH: {texts}")
+    return issues
+```
+
+---
+
+## 既存チェック項目 (参照)
+
+| ID | 内容 |
+|----|------|
+| R18 | ... |
+| R19 | ... |
+| R20 | ... |
+| R22 | ... |
+| R24 | 同一画像の重複使用禁止 |
+| R27 | ... |
+| R30 | ... |
+| R35 | ... |
+| R36 | ... |
+| R-SVG-PH | SVGプレースホルダー禁止 (v2.1追加) |
