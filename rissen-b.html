@@ -34,6 +34,10 @@ section { padding: 64px 0; }
 /* FADE-UP: transform only, NO opacity:0 */
 .fade-up { transform: translateY(32px); transition: transform 0.6s ease; }
 .fade-up.visible { transform: translateY(0); }
+.fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-left.visible { opacity: 1; transform: translateX(0); }
+.fade-right.visible { opacity: 1; transform: translateX(0); }
 
 /* HEADER */
 header {
@@ -396,21 +400,21 @@ body { padding-bottom: 70px; }
     <h2 class="section-title">りっせんが選ばれる理由</h2>
     <p class="section-sub">一人ひとりに寄り添う、3つのこだわり</p>
     <div class="features-grid">
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-left">
         <div class="icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
         </div>
         <h3>講師1対1〜3名の個別指導</h3>
         <p>大人数の集団授業ではなく、少人数だからこそできる丁寧な指導。生徒一人ひとりの理解度・進度に合わせてカリキュラムを組み立てます。</p>
       </div>
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-right">
         <div class="icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/></svg>
         </div>
         <h3>オンライン指導にも対応</h3>
         <p>通塾が難しい場合もご安心ください。オンラインでの指導にも対応しており、お子さまの状況に合わせて柔軟に対応します。</p>
       </div>
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-left">
         <div class="icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
         </div>
@@ -595,11 +599,11 @@ body { padding-bottom: 70px; }
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(function(el) {
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(function(el) {
     observer.observe(el);
   });
   setTimeout(function() {
-    document.querySelectorAll('.fade-up').forEach(function(el) {
+    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(function(el) {
       el.classList.add('visible');
     });
   }, 2000);

@@ -173,6 +173,10 @@ footer p { font-size: 0.85rem; }
 /* FADE-UP */
 .fade-up { transform: translateY(32px); transition: transform 0.7s ease; }
 .fade-up.visible { transform: translateY(0); }
+.fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-left.visible { opacity: 1; transform: translateX(0); }
+.fade-right.visible { opacity: 1; transform: translateX(0); }
 
 .img-note { font-size: 0.7rem; color: #888; margin-top: 4px; }
 </style>
@@ -227,17 +231,17 @@ footer p { font-size: 0.85rem; }
     <h2 class="section-title fade-up">Wing個別学院が<br>選ばれる3つの理由</h2>
     <p class="section-lead fade-up">ただ「教える」だけでなく、お子さまが自分で考え解ける力を育てます。</p>
     <div class="cards">
-      <div class="card fade-up">
+      <div class="card fade-left">
         <div class="card-num">01</div>
         <h3>授業＋演習で完全定着</h3>
         <p>授業で内容を理解したら、その場で演習問題に取り組みます。「わかった」で終わらせず、「解ける」まで徹底的にサポートします。</p>
       </div>
-      <div class="card fade-up">
+      <div class="card fade-right">
         <div class="card-num">02</div>
         <h3>家庭事情に合わせた目標設定</h3>
         <p>部活・習い事・家庭の都合など、それぞれの状況をヒアリングし、無理なく続けられる目標と学習ペースを一緒に考えます。</p>
       </div>
-      <div class="card fade-up">
+      <div class="card fade-left">
         <div class="card-num">03</div>
         <h3>80分の充実した無料体験</h3>
         <p>体験授業は80分間じっくり実施。実際の授業の流れや講師との相性を確認してから入会をご検討いただけます。</p>
@@ -407,8 +411,8 @@ mobileMenu.querySelectorAll('a').forEach(a => {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-setTimeout(() => { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible')); }, 2000);
+document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
+setTimeout(() => { document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => el.classList.add('visible')); }, 2000);
 </script>
 </body>
 </html>
