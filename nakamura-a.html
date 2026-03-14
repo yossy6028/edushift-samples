@@ -109,7 +109,8 @@ header nav a.nav-active::after{width:70%}
 .nav-logo-img{height:40px;width:auto}
 
 /* ===== LOADING CURTAIN ===== */
-.hero-curtain{position:fixed;inset:0;z-index:10000;display:flex;pointer-events:none}
+.hero-curtain{position:fixed;inset:0;z-index:10000;display:flex;pointer-events:none;animation:curtainFade 1s 2s both}
+@keyframes curtainFade{to{opacity:0;visibility:hidden}}
 .hero-curtain-left,.hero-curtain-right{width:50%;height:100%;background:var(--navy);transition:transform 1s cubic-bezier(.77,0,.18,1)}
 .hero-curtain.open .hero-curtain-left{transform:translateX(-100%)}
 .hero-curtain.open .hero-curtain-right{transform:translateX(100%)}
@@ -156,7 +157,8 @@ header nav a.nav-active::after{width:70%}
 
 /* Line-by-line slide with clip */
 .hero-line{display:block;overflow:hidden;clip-path:inset(0 0 0 0)}
-.hero-line-inner{display:block;transform:translateY(120%);opacity:0}
+.hero-line-inner{display:block;transform:translateY(120%);opacity:0;animation:heroLineShow .8s 1.5s both}
+@keyframes heroLineShow{to{transform:translateY(0);opacity:1}}
 /* Individual chars with hover interactivity */
 .hero h1 .char{display:inline-block;transform:translateY(0);transition:transform .25s cubic-bezier(.22,1,.36,1),color .25s}
 .hero h1 .char:hover{transform:translateY(-6px) scale(1.1)}
@@ -1267,7 +1269,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     document.querySelectorAll('.reveal-el:not(.visible)').forEach(function(el){el.classList.add('visible')});
     var h1=document.querySelector('.hero h1');if(h1)h1.classList.add('revealed');
     var st=document.querySelector('.hero-stats');if(st)st.classList.add('animated');
-  },4500);
+  },2000);
 })();
 </script>
 </body>
