@@ -109,13 +109,11 @@ header nav a.nav-active::after{width:70%}
 .nav-logo-img{height:40px;width:auto}
 
 /* ===== LOADING CURTAIN ===== */
-.hero-curtain{position:fixed;inset:0;z-index:10000;display:flex;pointer-events:none;animation:curtainFade 1s 2s both}
-@keyframes curtainFade{to{opacity:0;visibility:hidden}}
-.hero-curtain-left,.hero-curtain-right{width:50%;height:100%;background:var(--navy);transition:transform 1s cubic-bezier(.77,0,.18,1)}
-.hero-curtain.open .hero-curtain-left{transform:translateX(-100%)}
-.hero-curtain.open .hero-curtain-right{transform:translateX(100%)}
-.hero-curtain-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;opacity:1;transition:opacity .4s .3s}
-.hero-curtain.open .hero-curtain-logo{opacity:0;transition:opacity .3s}
+}
+
+
+
+
 
 /* ===== HERO (Cinematic v3 - Impact) ===== */
 .hero{position:relative;padding:100px 0 120px;overflow:hidden;background:var(--bg-warm);min-height:92vh;display:flex;align-items:center}
@@ -157,8 +155,7 @@ header nav a.nav-active::after{width:70%}
 
 /* Line-by-line slide with clip */
 .hero-line{display:block;overflow:hidden;clip-path:inset(0 0 0 0)}
-.hero-line-inner{display:block;transform:translateY(120%);opacity:0;animation:heroLineShow .8s 1.5s both}
-@keyframes heroLineShow{to{transform:translateY(0);opacity:1}}
+.hero-line-inner{display:block}
 /* Individual chars with hover interactivity */
 .hero h1 .char{display:inline-block;transform:translateY(0);transition:transform .25s cubic-bezier(.22,1,.36,1),color .25s}
 .hero h1 .char:hover{transform:translateY(-6px) scale(1.1)}
@@ -200,7 +197,8 @@ header nav a.nav-active::after{width:70%}
 @keyframes floatShape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-25px) rotate(8deg)}}
 
 /* Scroll reveal */
-.reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);animation:revealFallback .6s 2.5s both}
+@keyframes revealFallback{to{opacity:1;transform:translateY(0)}}
 .reveal-el.visible{opacity:1;transform:translateY(0)}
 
 /* ===== FEATURES (Zigzag layout) ===== */
@@ -444,82 +442,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <a href="#contact" onclick="closeMobile()">お問い合わせ</a>
 </nav>
 
-<div class="hero-curtain" id="heroCurtain">
-  <div class="hero-curtain-left"></div>
-  <div class="hero-curtain-right"></div>
-  <div class="hero-curtain-logo">中村学習塾</div>
-</div>
 
-<section class="hero" id="hero">
-<canvas id="particles"></canvas>
-<div class="hero-light-sweep"></div>
-<div class="hero-shape hero-shape-1"></div>
-<div class="hero-shape hero-shape-2"></div>
-<div class="hero-shape hero-shape-3"></div>
-<div class="hero-shape hero-shape-4"></div>
-<div class="container hero-inner">
-  <div class="hero-text hero-parallax-layer" data-depth="0.02">
-    <div class="hero-badge hero-anim">
-      <span class="hero-badge-dot"></span>
-      少人数制 · 1週間無料体験あり
-    </div>
-    <h1 class="hero-anim split-text"><em>考える力</em>が身につく<br>稚内の少人数制学習塾</h1>
-    
-</section>
-
-<footer>
-<div class="container">
-  <div class="footer-brand">
-    <div class="footer-brand-icon">中</div><div class="footer-brand-name">中村学習塾</div>
-  </div>
-  <p class="footer-desc">北海道稚内市の少人数制学習塾。大手塾講師経験を活かした個別指導。小学5・6年生・中学生対象。理系強化・国語力・テスト対策。1週間無料体験実施中。</p>
-  <div class="footer-sns">
-    <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-    <a href="#" aria-label="LINE"><svg viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
-  </div>
-  <p class="footer-sns-note">※ご希望に応じてSNSをお選びいただけます</p>
-  <div class="footer-legal">
-    <a href="#">プライバシーポリシー</a>
-    <a href="#">特定商取引法に基づく表記</a>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">&copy; 2025 中村学習塾 All Rights Reserved.</span>
-    <span class="footer-orig">元サイト: <a href="https://nakamurazyuku.crayonsite.net" target="_blank" rel="noopener">nakamurazyuku.crayonsite.net</a></span>
-  </div>
-</div>
-</footer>
-<!-- ===== EduShiftご提案（本体とは独立） ===== -->
-<section style="padding:60px 0;background:#f9fafb">
-<div class="container">
-  <div class="section-label" style="font-family:var(--font-accent);font-size:.9rem;font-style:italic;letter-spacing:.15em;color:var(--primary);margin-bottom:12px">IMPROVEMENT</div>
-  <h2 class="section-title" style="margin-bottom:32px">EduShift からのご提案</h2>
-  <div class="features-grid">
-    <div class="feature-card fade-up">
-      <div class="feature-num">Point 1</div>
-      <h3 class="feature-title">スマホからの問い合わせ強化</h3>
-      <p class="feature-desc">現在のサイトはスマートフォンで見づらい部分があります。保護者の多くがスマホで情報収集するため、レスポンシブデザインで快適に閲覧できるLP化で問い合わせ率が上がります。</p>
-    </div>
-    <div class="feature-card fade-up">
-      <div class="feature-num">Point 2</div>
-      <h3 class="feature-title">体験申込の導線整備</h3>
-      <p class="feature-desc">「1週間無料体験」はとても魅力的なオファーです。この強みをファーストビューに大きく表示し、ワンタップで申し込めるCTAボタンを設置することで、体験申込数の増加が期待できます。</p>
-    </div>
-    <div class="feature-card fade-up">
-      <div class="feature-num">Point 3</div>
-      <h3 class="feature-title">プライバシーポリシー・特商法表記の整備</h3>
-      <p class="feature-desc">保護者の信頼を得るために、個人情報の取り扱いに関するプライバシーポリシーと特定商取引法に基づく表記を追加することをご提案します。</p>
-    </div>
-  </div>
-  <p class="hero-desc hero-anim">北海道稚内市に2021年5月に開塾した中村学習塾です。大手学習塾で講師をしていた経験を活かして、少人数ならではの個人に合わせた細かい指導を行います。なぜそうなるかという疑問を丁寧に解決し、考える力を育てます。</p>
-    <div class="hero-actions hero-anim">
-      <a href="#contact" class="btn-primary">1週間無料体験に申し込む<span style="font-size:1.2em">&#8594;</span></a>
-      <a href="#features" class="btn-secondary">塾の特長を見る</a>
-    </div>
-    <div class="hero-stats hero-anim">
-      <div class="hero-stat" data-delay="0.0"><div class="hero-stat-num" data-val="2021">2021</div><div class="hero-stat-label">開塾</div></div><div class="hero-stat" data-delay="0.15"><div class="hero-stat-num" data-val="少人数">少人数</div><div class="hero-stat-label">個別対応</div></div><div class="hero-stat" data-delay="0.3"><div class="hero-stat-num" data-val="体験1週間">体験1週間</div><div class="hero-stat-label">無料体験</div></div>
-    </div>
   </div>
   <div class="hero-photo-wrap hero-parallax-layer" data-depth="0.04">
     <div class="hero-photo hero-anim" id="heroPhoto">
@@ -1005,9 +928,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   }
 
   // === CURTAIN REVEAL ===
-  var curtain=document.getElementById('heroCurtain');
-  if(curtain){
-    setTimeout(function(){curtain.classList.add('open')},600);
+  ,600);
     setTimeout(function(){curtain.style.display='none'},1800);
   }
 
@@ -1254,9 +1175,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
   // === Safety fallback ===
   setTimeout(function(){
-    // Force curtain open
-    var c=document.getElementById('heroCurtain');
-    if(c){c.classList.add('open');setTimeout(function(){c.style.display='none'},1000)}
+    ,1000)}
     document.querySelectorAll('.hero-anim').forEach(function(el){
       if(getComputedStyle(el).opacity==='0'){el.style.opacity='';el.style.transform='';}
     });
