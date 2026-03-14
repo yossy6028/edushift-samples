@@ -683,6 +683,24 @@ footer p { font-size: 0.85rem; line-height: 1.8; }
   transform: translateY(0);
 }
 
+/* ===== FADE-LEFT / FADE-RIGHT ANIMATION ===== */
+.fade-left,
+.fade-right {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-left {
+  transform: translateX(-40px);
+}
+.fade-right {
+  transform: translateX(40px);
+}
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* ===== EDUSHIFT SECTION ===== */
 .edushift-proposal {
   background: linear-gradient(135deg, #1a2a3a 0%, #2d4a62 100%);
@@ -767,7 +785,7 @@ footer p { font-size: 0.85rem; line-height: 1.8; }
 </section>
 
 <!-- FEATURES -->
-<section class="section" id="features">
+<section class="section fade-left" id="features">
   <div class="container">
     <span class="section-label fade-up">Features</span>
     <h2 class="section-title fade-up">ふるた教室の3つの特徴</h2>
@@ -799,7 +817,7 @@ footer p { font-size: 0.85rem; line-height: 1.8; }
 </section>
 
 <!-- ABOUT (desk image) -->
-<section class="section section-alt" id="about">
+<section class="section section-alt fade-right" id="about">
   <div class="container">
     <div class="about-wrap">
       <div class="about-img-wrap fade-up">
@@ -824,7 +842,7 @@ footer p { font-size: 0.85rem; line-height: 1.8; }
 </section>
 
 <!-- SUBJECTS -->
-<section class="section section-alt2" id="subjects">
+<section class="section section-alt2 fade-left" id="subjects">
   <div class="container">
     <span class="section-label fade-up">Subjects</span>
     <h2 class="section-title fade-up">対応科目</h2>
@@ -856,7 +874,7 @@ footer p { font-size: 0.85rem; line-height: 1.8; }
 </section>
 
 <!-- SCHEDULE -->
-<section class="section" id="schedule">
+<section class="section fade-right" id="schedule">
   <div class="container">
     <div class="classroom-wrap">
       <div class="fade-up">
@@ -903,7 +921,7 @@ footer p { font-size: 0.85rem; line-height: 1.8; }
 </section>
 
 <!-- ACCESS -->
-<section class="section section-alt" id="access">
+<section class="section section-alt fade-left" id="access">
   <div class="container">
     <span class="section-label fade-up">Access</span>
     <h2 class="section-title fade-up">アクセス</h2>
@@ -935,7 +953,7 @@ footer p { font-size: 0.85rem; line-height: 1.8; }
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+<section class="section fade-right" id="contact">
   <div class="container">
     <span class="section-label fade-up">Contact</span>
     <h2 class="section-title fade-up">お問い合わせ・無料体験申込</h2>
@@ -1005,9 +1023,9 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => { observer.observe(el); });
+document.querySelectorAll('.fade-left, .fade-right, .fade-up').forEach(el => { observer.observe(el); });
 setTimeout(() => {
-  document.querySelectorAll('.fade-up').forEach(el => { el.classList.add('visible'); });
+  document.querySelectorAll('.fade-left, .fade-right, .fade-up').forEach(el => { el.classList.add('visible'); });
 }, 2000);
 
 // Hamburger
