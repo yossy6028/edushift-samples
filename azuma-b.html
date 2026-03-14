@@ -895,6 +895,33 @@ img { max-width: 100%; display: block; }
     .hamburger { display: flex !important; }
   }
 
+
+  /* ===== MOBILE TABLE FIX ===== */
+  @media (max-width: 640px) {
+    .fee-table-wrap, .hours-table-wrap { overflow-x: visible; }
+    .fee-table, .hours-table { min-width: unset !important; width: 100%; }
+    .fee-table thead, .hours-table thead { display: none; }
+    .fee-table tbody tr, .hours-table tbody tr {
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px 14px;
+      background: var(--white);
+    }
+    .fee-table td, .hours-table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border: none;
+      font-size: 0.88rem;
+    }
+    .fee-table td::before { content: attr(data-label); font-weight: 600; color: var(--text-light); min-width: 72px; }
+    .hours-table td::before { content: attr(data-label); font-weight: 600; color: var(--text-light); min-width: 48px; }
+    .fee-table tr:nth-child(even) td, .hours-table tr:nth-child(even) td { background: transparent; }
+  }
+
 </style>
 </head>
 <body>
@@ -1073,34 +1100,34 @@ img { max-width: 100%; display: block; }
         </thead>
         <tbody>
           <tr>
-            <td>入塾金（全コース共通）</td>
-            <td>初回のみ</td>
-            <td class="fee-price">10,000円</td>
+            <td data-label="コース名">入塾金（全コース共通）</td>
+            <td data-label="授業形式">初回のみ</td>
+            <td data-label="月謝" class="fee-price">10,000円</td>
           </tr>
           <tr>
-            <td>小学生全学年 基礎コース</td>
-            <td>1回2時間 月4回</td>
-            <td class="fee-price">10,000円</td>
+            <td data-label="コース名">小学生全学年 基礎コース</td>
+            <td data-label="授業形式">1回2時間 月4回</td>
+            <td data-label="月謝" class="fee-price">10,000円</td>
           </tr>
           <tr>
-            <td>小学生全学年 標準コース</td>
-            <td>1回2時間 月8回</td>
-            <td class="fee-price">15,000円</td>
+            <td data-label="コース名">小学生全学年 標準コース</td>
+            <td data-label="授業形式">1回2時間 月8回</td>
+            <td data-label="月謝" class="fee-price">15,000円</td>
           </tr>
           <tr>
-            <td>小学5・6年 発展コース</td>
-            <td>1回2時間 月10回</td>
-            <td class="fee-price">20,000円〜<br><small>（自習ブース使用時間無制限・受験生別枠特化メニュー）</small></td>
+            <td data-label="コース名">小学5・6年 発展コース</td>
+            <td data-label="授業形式">1回2時間 月10回</td>
+            <td data-label="月謝" class="fee-price">20,000円〜<br><small>（自習ブース使用時間無制限・受験生別枠特化メニュー）</small></td>
           </tr>
           <tr>
-            <td>中学生全学年 標準コース</td>
-            <td>1回2時間 月8回</td>
-            <td class="fee-price">17,000円〜</td>
+            <td data-label="コース名">中学生全学年 標準コース</td>
+            <td data-label="授業形式">1回2時間 月8回</td>
+            <td data-label="月謝" class="fee-price">17,000円〜</td>
           </tr>
           <tr>
-            <td>中3受験生コース</td>
-            <td>1回2時間 月10回</td>
-            <td class="fee-price">30,000円〜<br><small>（自習ブース使用時間無制限・受験生別枠特化メニュー）</small></td>
+            <td data-label="コース名">中3受験生コース</td>
+            <td data-label="授業形式">1回2時間 月10回</td>
+            <td data-label="月謝" class="fee-price">30,000円〜<br><small>（自習ブース使用時間無制限・受験生別枠特化メニュー）</small></td>
           </tr>
         </tbody>
       </table>
