@@ -3,128 +3,1272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>中村学習塾 ｜ 北海道稚内市の個別指導塾</title>
+<meta name="description" content="北海道稚内市萩見の中村学習塾。2021年5月開塾。大手塾講師経験を活かした少人数個別指導。小学5・6年生・中学生対象。理系強化・国語力・テスト対策。1週間無料体験あり。">
+<title>中村学習塾｜北海道稚内市の個別指導 理系・国語に強い少人数制塾</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN',sans-serif;color:#333;line-height:1.7}
-.notice-banner{background:#e8f5e9;border-left:4px solid #2e7d32;padding:12px 20px;font-size:13px;color:#1b5e20;text-align:center}
-header{background:linear-gradient(135deg,#1b5e20 0%,#2e7d32 100%);color:#fff;padding:60px 20px;text-align:center}
-header h1{font-size:2.2em;margin-bottom:10px;letter-spacing:2px}
-header p{font-size:1.1em;opacity:.9;margin-bottom:24px}
-.hero-cta{display:inline-block;background:#a5d6a7;color:#1b5e20;padding:14px 36px;border-radius:30px;font-weight:700;font-size:1.1em;text-decoration:none;transition:.2s}
-.hero-cta:hover{background:#81c784;transform:translateY(-2px)}
-section{padding:60px 20px;max-width:900px;margin:0 auto}
-h2{font-size:1.6em;color:#2e7d32;border-bottom:3px solid #2e7d32;padding-bottom:10px;margin-bottom:30px}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:20px}
-.feature-card{background:#f1f8e9;border-radius:12px;padding:28px;border-top:4px solid #2e7d32}
-.feature-card h3{color:#2e7d32;margin-bottom:12px;font-size:1.1em}
-.badge{background:#2e7d32;color:#fff;display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8em;margin-bottom:8px}
-.trial-box{background:#f1f8e9;border:2px solid #2e7d32;border-radius:12px;padding:32px;text-align:center;margin-top:20px}
-.trial-box h3{color:#2e7d32;font-size:1.3em;margin-bottom:12px}
-.trial-badge{background:#2e7d32;color:#fff;padding:6px 20px;border-radius:20px;display:inline-block;margin-bottom:16px;font-size:.9em}
-.course-table{width:100%;border-collapse:collapse;margin-top:20px}
-.course-table th{background:#2e7d32;color:#fff;padding:12px 16px;text-align:left}
-.course-table td{padding:12px 16px;border-bottom:1px solid #c8e6c9}
-.course-table tr:nth-child(even) td{background:#f1f8e9}
-.cta-section{background:#2e7d32;color:#fff;padding:60px 20px;text-align:center}
-.cta-section h2{color:#a5d6a7;border-color:#a5d6a7}
-form{max-width:600px;margin:30px auto 0;text-align:left}
-label{display:block;margin-bottom:6px;font-size:.95em}
-input,textarea{width:100%;padding:12px;border:1px solid rgba(255,255,255,.3);border-radius:8px;background:rgba(255,255,255,.1);color:#fff;font-size:1em;margin-bottom:20px}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,.6)}
-textarea{height:140px;resize:vertical}
-.submit-btn{display:block;width:100%;background:#a5d6a7;color:#1b5e20;border:none;padding:16px;border-radius:30px;font-size:1.1em;font-weight:700;cursor:pointer;transition:.2s}
-.submit-btn:hover{background:#81c784;transform:translateY(-2px)}
-.access-box{background:#f1f8e9;border-radius:12px;padding:28px;margin-top:20px}
-footer{background:#1b5e20;color:rgba(255,255,255,.7);text-align:center;padding:24px;font-size:.9em}
-@media(max-width:600px){header h1{font-size:1.5em}.features{grid-template-columns:1fr}}
+/* ========================================
+   ULTRA-PREMIUM DESIGN SYSTEM v4
+   ======================================== */
+:root{
+  --primary:#1a6b4a;
+  --primary-light:#2a9b6a;
+  --primary-5:#1a6b4a0D;
+  --primary-10:#1a6b4a1A;
+  --primary-20:#1a6b4a33;
+  --navy:#0d2b1e;
+  --bg-warm:#f0faf4;
+  --line-green:#06C755;
+  --white:#FFFFFF;
+  --text-sub:#5A5A5A;
+  --text-note:#9C9B99;
+  --border:#E5E4E1;
+  --font-display:'Zen Kaku Gothic New', sans-serif;
+  --font-body:'Zen Kaku Gothic New', sans-serif;
+  --font-accent:'Playfair Display', serif;
+  --max-w:1100px;
+  --transition:.4s cubic-bezier(.22,1,.36,1);
+  --radius:20px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.04);
+  --shadow-md:0 12px 40px rgba(0,0,0,.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.12);
+  --shadow-glow:0 0 40px #1a6b4a20;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--navy);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* Custom scrollbar */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg-warm)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:4px}
+
+/* Scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));z-index:9999;transform-origin:left;transform:scaleX(0);transition:none}
+
+/* ===== SECTION HEADERS ===== */
+.section-label-accent{font-family:var(--font-accent);font-size:clamp(.8rem,1.5vw,1rem);font-weight:400;font-style:italic;letter-spacing:.15em;color:var(--primary);margin-bottom:12px;position:relative;display:inline-block}
+.section-label-accent::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:1px;background:linear-gradient(90deg,var(--primary),transparent)}
+.section-header-center{text-align:center;margin-bottom:64px}
+.section-header-center .section-title{margin-top:8px}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;line-height:1.25;color:var(--navy);margin-bottom:18px;letter-spacing:-.02em}
+.section-desc{font-size:.95rem;color:var(--text-sub);max-width:600px;line-height:1.9}
+.section-desc-center{font-size:.95rem;color:var(--text-sub);max-width:600px;line-height:1.9;margin:0 auto}
+
+/* Wave dividers between sections */
+.wave-divider{position:relative;height:80px;overflow:hidden}
+.wave-divider svg{position:absolute;bottom:0;width:100%;height:80px}
+.wave-divider-flip svg{position:absolute;top:0;transform:rotate(180deg)}
+
+/* ===== BUTTONS ===== */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:1rem;padding:18px 36px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 20px rgba(6,199,85,.3);position:relative;overflow:hidden;z-index:1}
+.btn-primary::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.15);transition:all .6s;transform:translate(-50%,-50%);z-index:-1}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 32px rgba(6,199,85,.45)}
+.btn-primary:hover::before{width:300px;height:300px}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.6);backdrop-filter:blur(8px);color:var(--navy);font-family:var(--font-body);font-weight:700;font-size:.95rem;padding:16px 30px;border-radius:100px;border:1.5px solid var(--border);transition:all var(--transition)}
+.btn-secondary:hover{background:var(--white);border-color:var(--primary);color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+
+/* ===== HEADER (Glass) ===== */
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.72);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(0,0,0,.04);transition:all .4s}
+header.scrolled{background:rgba(255,255,255,.95);box-shadow:0 1px 30px rgba(0,0,0,.06)}
+.nav-inner{display:flex;align-items:center;height:76px;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;font-weight:800;box-shadow:0 4px 16px #1a6b4a30;transition:transform .3s}
+.nav-logo-icon:hover{transform:rotate(-5deg) scale(1.05)}
+.nav-logo-text{font-family:var(--font-display);font-size:1.05rem;font-weight:800;line-height:1.2}
+.nav-logo-sub{font-size:.65rem;color:var(--text-note);font-weight:500;display:block;letter-spacing:.03em}
+header nav{margin-left:auto}
+header nav ul{display:flex;list-style:none;gap:2px}
+header nav a{font-size:.84rem;font-weight:600;color:var(--text-sub);padding:8px 16px;border-radius:10px;transition:all var(--transition);letter-spacing:.02em;position:relative}
+header nav a::after{content:'';position:absolute;bottom:2px;left:50%;width:0;height:2.5px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;transition:all .3s cubic-bezier(.22,1,.36,1);transform:translateX(-50%)}
+header nav a:hover{color:var(--primary)}
+header nav a:hover::after{width:70%}
+/* Active nav highlight */
+header nav a.nav-active{color:var(--primary)}
+header nav a.nav-active::after{width:70%}
+.nav-cta-btn{background:var(--line-green);color:#fff;font-weight:700;font-size:.82rem;padding:10px 22px;border-radius:100px;transition:all var(--transition);white-space:nowrap;margin-left:12px;box-shadow:0 2px 12px rgba(6,199,85,.25);position:relative;overflow:hidden;animation:ctaPulse 3s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{box-shadow:0 2px 12px rgba(6,199,85,.25)}50%{box-shadow:0 4px 24px rgba(6,199,85,.5)}}
+.nav-cta-btn:hover{background:#05b34d;transform:translateY(-2px)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);z-index:999;flex-direction:column;padding:32px 24px;gap:4px;opacity:0;transform:translateY(-10px);transition:opacity .3s,transform .3s}
+.mobile-nav.open{display:flex;opacity:1;transform:translateY(0)}
+.mobile-nav a{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);padding:18px 20px;border-radius:14px;transition:all .2s;border-left:3px solid transparent}
+.mobile-nav a:hover{background:var(--bg-warm);border-left-color:var(--primary);padding-left:24px}
+.nav-logo-img{height:40px;width:auto}
+
+/* ===== LOADING CURTAIN ===== */
+.hero-curtain{position:fixed;inset:0;z-index:10000;display:flex;pointer-events:none}
+.hero-curtain-left,.hero-curtain-right{width:50%;height:100%;background:var(--navy);transition:transform 1s cubic-bezier(.77,0,.18,1)}
+.hero-curtain.open .hero-curtain-left{transform:translateX(-100%)}
+.hero-curtain.open .hero-curtain-right{transform:translateX(100%)}
+.hero-curtain-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;opacity:1;transition:opacity .4s .3s}
+.hero-curtain.open .hero-curtain-logo{opacity:0;transition:opacity .3s}
+
+/* ===== HERO (Cinematic v3 - Impact) ===== */
+.hero{position:relative;padding:100px 0 120px;overflow:hidden;background:var(--bg-warm);min-height:92vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 15% 85%,#1a6b4a18,transparent),
+  radial-gradient(ellipse 60% 50% at 85% 15%,#2a9b6a15,transparent),
+  radial-gradient(ellipse 50% 40% at 50% 50%,#1a6b4a0A,transparent);
+  animation:meshShift 15s ease-in-out infinite alternate;z-index:0}
+@keyframes meshShift{
+  0%{transform:scale(1) translate(0,0)}
+  25%{transform:scale(1.08) translate(-2%,2%)}
+  50%{transform:scale(.96) translate(2%,-1%)}
+  75%{transform:scale(1.04) translate(-1%,3%)}
+  100%{transform:scale(1.02) translate(1%,-1%)}
+}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:.4;z-index:0;pointer-events:none}
+#particles{position:absolute;inset:0;z-index:0;pointer-events:none}
+
+/* Light sweep effect */
+.hero-light-sweep{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.hero-light-sweep::before{content:'';position:absolute;top:-50%;left:-50%;width:40%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);transform:rotate(25deg) translateX(-200%);animation:lightSweep 6s ease-in-out 2s infinite}
+@keyframes lightSweep{0%,100%{transform:rotate(25deg) translateX(-200%)}50%{transform:rotate(25deg) translateX(500%)}}
+
+.hero .container{position:relative;z-index:2}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+
+/* 3D tilt wrapper for mouse parallax */
+.hero-parallax-layer{transition:transform .15s ease-out;will-change:transform}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:var(--primary);background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.6);padding:10px 20px;border-radius:100px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,.04),inset 0 1px 0 rgba(255,255,255,.8)}
+.hero-badge-dot{width:8px;height:8px;background:var(--primary);border-radius:50%;animation:pulse 2s infinite;box-shadow:0 0 8px #1a6b4a60}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+
+/* Hero H1 - Cinematic reveal */
+.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,6.5vw,3.8rem);font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:28px;letter-spacing:-.03em;overflow:hidden}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--primary),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;display:inline-block}
+.hero h1 em::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:14px;background:linear-gradient(90deg,#1a6b4a25,#2a9b6a35);border-radius:6px;z-index:-1;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.hero h1.revealed em::after{transform:scaleX(1)}
+
+/* Line-by-line slide with clip */
+.hero-line{display:block;overflow:hidden;clip-path:inset(0 0 0 0)}
+.hero-line-inner{display:block;transform:translateY(120%);opacity:0}
+/* Individual chars with hover interactivity */
+.hero h1 .char{display:inline-block;transform:translateY(0);transition:transform .25s cubic-bezier(.22,1,.36,1),color .25s}
+.hero h1 .char:hover{transform:translateY(-6px) scale(1.1)}
+
+.hero-desc{font-size:1.05rem;color:var(--text-sub);line-height:2;margin-bottom:36px;max-width:480px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+
+/* Stats with counter animation */
+.hero-stats{display:flex;gap:36px;padding-top:32px;border-top:1.5px solid rgba(0,0,0,.06);position:relative}
+.hero-stats::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--primary-light));transition:width 1.2s cubic-bezier(.22,1,.36,1) 1.5s}
+.hero-stats.animated::before{width:100%}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hero-stat-label{font-size:.7rem;color:var(--text-note);margin-top:8px;font-weight:600;letter-spacing:.06em}
+
+/* Photo with dramatic 3D reveal */
+.hero-photo-wrap{perspective:1200px;width:100%}
+.hero-photo{width:100%;aspect-ratio:4/3;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg),0 0 80px #1a6b4a15;position:relative;transform-style:preserve-3d;transition:transform .3s ease-out,box-shadow .3s}
+.hero-photo:hover{box-shadow:var(--shadow-lg),0 0 120px #1a6b4a25}
+.hero-photo::before{content:'';position:absolute;inset:0;border-radius:24px;border:1px solid rgba(255,255,255,.3);z-index:2;pointer-events:none}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,#1a6b4a18);z-index:1;pointer-events:none;border-radius:24px}
+.hero-photo img,.hero-photo .img-container img{animation:kenburns 20s ease-in-out infinite alternate}
+@keyframes kenburns{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.1) translate(-1.5%,1%)}100%{transform:scale(1.06) translate(1%,-0.5%)}}
+
+/* Shine sweep on photo */
+.hero-photo-shine{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:24px}
+.hero-photo-shine::before{content:'';position:absolute;top:0;left:-80%;width:60%;height:100%;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.25) 50%,transparent 80%);transform:skewX(-15deg)}
+
+
+
+
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.hero-shape{position:absolute;z-index:0;opacity:.08;pointer-events:none}
+.hero-shape-1{width:200px;height:200px;border:2px solid var(--primary);border-radius:50%;top:8%;right:12%;animation:floatShape 10s ease-in-out infinite}
+.hero-shape-2{width:100px;height:100px;background:var(--primary-light);border-radius:50%;bottom:12%;left:3%;filter:blur(40px);animation:floatShape 8s ease-in-out infinite reverse}
+.hero-shape-3{width:60px;height:60px;border:2px solid var(--primary-light);top:55%;right:3%;transform:rotate(45deg);animation:floatShape 12s ease-in-out infinite}
+.hero-shape-4{width:150px;height:150px;background:var(--primary);border-radius:50%;top:60%;left:45%;filter:blur(60px);animation:floatShape 14s ease-in-out infinite reverse}
+@keyframes floatShape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-25px) rotate(8deg)}}
+
+/* Scroll reveal */
+.reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-el.visible{opacity:1;transform:translateY(0)}
+
+/* ===== FEATURES (Zigzag layout) ===== */
+.features{background:var(--white);padding:120px 0;position:relative}
+.features::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.features-header{margin-bottom:72px}
+.features-grid{display:grid;grid-template-columns:1fr;gap:80px}
+.features-grid:has(.feature-card):not(:has(.feature-row)){grid-template-columns:repeat(2,1fr);gap:32px}
+@supports not (selector(:has(*))){.features-grid{display:flex;flex-direction:column;gap:80px}}
+/* Photo zigzag rows */
+.feature-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-row-reverse{direction:rtl}
+.feature-row-reverse>*{direction:ltr}
+.feature-visual{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;will-change:clip-path,transform}
+.feature-visual-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-visual-photo img{transform:scale(1.05)}
+.feature-num-lg{font-family:var(--font-accent);font-size:5rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);text-shadow:0 2px 12px rgba(0,0,0,.3);line-height:1;position:absolute;bottom:16px;right:24px;z-index:2}
+/* Card layout (no-photo fallback) */
+.feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;position:relative;transition:transform .3s,box-shadow .3s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.feature-card-num{font-family:var(--font-accent);font-size:3.5rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;margin-bottom:16px}
+.feature-card-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feature-card-icon svg{width:24px;height:24px;color:#fff}
+/* Shared feature text */
+.feature-num{font-family:var(--font-accent);font-size:.85rem;font-weight:400;font-style:italic;letter-spacing:.1em;color:var(--primary-light);margin-bottom:12px;opacity:.5}
+.feature-title{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.5}
+.feature-desc{font-size:.92rem;color:var(--text-sub);line-height:2}
+.feature-line{width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;margin-top:24px;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-line{width:120px}
+.feature-card:hover .feature-line{width:120px}
+
+/* ===== PHOTO GRID ===== */
+.photo-grid{background:var(--bg-warm);padding:80px 0;position:relative;overflow:hidden}
+.photo-grid::before,.photo-grid::after{content:'';position:absolute;left:0;right:0;height:80px;z-index:1}
+.photo-grid::before{top:0;background:linear-gradient(180deg,var(--white),transparent)}
+.photo-grid::after{bottom:0;background:linear-gradient(0deg,var(--white),transparent)}
+.photo-grid-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.photo-frame{aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow-md);transition:transform .6s cubic-bezier(.22,1,.36,1);will-change:clip-path,transform}
+.photo-frame:hover{transform:scale(1.02)}
+
+/* ===== DETAIL BLOCKS (Premium Zigzag) ===== */
+.details{padding:120px 0;background:var(--white);position:relative}
+.detail-blocks{display:flex;flex-direction:column;gap:100px;margin-top:64px}
+.detail-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.detail-block-reverse{direction:rtl}
+.detail-block-reverse>*{direction:ltr}
+.detail-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;position:relative;transition:transform .6s;will-change:clip-path,transform}
+.detail-block:hover .detail-img{transform:scale(1.02)}
+.detail-img .img-container{height:100%}
+.detail-img-frame{position:absolute;inset:-8px;border:2px solid var(--primary-20);border-radius:calc(var(--radius) + 8px);pointer-events:none;transition:all .6s}
+.detail-block:hover .detail-img-frame{inset:-4px;border-color:var(--primary)}
+.detail-number{font-family:var(--font-accent);font-size:4rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;margin-bottom:8px;letter-spacing:-.02em;transition:color .4s}
+.detail-block:hover .detail-number{color:var(--primary-20)}
+.detail-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.4}
+.detail-desc{font-size:.92rem;color:var(--text-sub);line-height:2}
+.detail-line{width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;margin-top:24px;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.detail-block:hover .detail-line{width:120px}
+
+/* ===== RESULTS (Marquee) ===== */
+.results{background:var(--bg-warm);padding:120px 0;overflow:hidden}
+.results-marquee{margin-top:48px;display:flex;flex-direction:column;gap:16px;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
+.marquee-track{display:flex;gap:12px;width:max-content;white-space:nowrap}
+.marquee-track-1{animation:marquee 40s linear infinite}
+.marquee-track-2{animation:marquee 45s linear infinite reverse}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-track:hover{animation-play-state:paused}
+.result-badge{background:var(--white);border:1px solid var(--border);border-radius:100px;padding:10px 24px;font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--navy);box-shadow:var(--shadow-sm);transition:all var(--transition);cursor:default;flex-shrink:0}
+.result-badge:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-6px) scale(1.12);box-shadow:0 10px 30px #1a6b4a40;z-index:2}
+.result-badge{transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.result-header{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-color:transparent;font-weight:800}
+
+/* ===== COURSES (Tab switcher) ===== */
+.courses{padding:120px 0;background:var(--white);position:relative}
+.courses::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.course-tabs{display:flex;gap:8px;margin-bottom:40px;padding:6px;background:var(--bg-warm);border-radius:100px;width:fit-content;margin-left:auto;margin-right:auto;box-shadow:inset 0 1px 3px rgba(0,0,0,.04)}
+.course-tab{font-family:var(--font-body);font-size:.88rem;font-weight:700;color:var(--text-sub);padding:12px 28px;border-radius:100px;border:none;background:transparent;cursor:pointer;transition:all var(--transition);position:relative}
+.course-tab.active{background:var(--white);color:var(--primary);box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.course-tab:hover:not(.active){color:var(--navy)}
+.course-panel{display:none;background:linear-gradient(135deg,var(--bg-warm),var(--white));border-radius:var(--radius);padding:56px;position:relative;overflow:hidden;border:1px solid var(--border)}
+.course-panel.active{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;animation:panelIn .5s cubic-bezier(.22,1,.36,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.course-panel-badge{display:inline-block;font-family:var(--font-body);font-size:.72rem;font-weight:700;letter-spacing:.1em;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-light));padding:6px 18px;border-radius:100px;margin-bottom:18px}
+.course-panel-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;color:var(--navy);margin-bottom:16px;line-height:1.3}
+.course-panel-desc{font-size:.95rem;color:var(--text-sub);line-height:2;margin-bottom:24px;max-width:500px}
+.course-panel-cta{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--primary);font-size:.9rem;transition:all var(--transition);padding:10px 0;border-bottom:2px solid transparent}
+.course-panel-cta:hover{gap:14px;border-bottom-color:var(--primary)}
+.course-panel-cta .arrow-right{transition:transform .3s}
+.course-panel-cta:hover .arrow-right{transform:translateX(6px)}
+.course-panel-deco{position:relative;width:180px;height:180px;flex-shrink:0}
+.course-deco-circle{width:180px;height:180px;border-radius:50%;border:2px dashed var(--primary-20);position:absolute;animation:decoSpin 25s linear infinite}
+.course-deco-dots{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--primary-10),transparent);position:absolute;top:30px;left:30px}
+@keyframes decoSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+/* ===== FAQ ===== */
+.faq-section{padding:120px 0;background:var(--bg-warm)}
+.faq-list{max-width:740px;margin:48px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all var(--transition)}
+.faq-item.open{box-shadow:var(--shadow-md);border-color:var(--primary)}
+.faq-q{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--navy);padding:22px 24px;cursor:pointer;display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:none;border:none;transition:all var(--transition)}
+.faq-q:hover{color:var(--primary)}
+.faq-q-icon{flex-shrink:0;width:34px;height:34px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;font-family:var(--font-accent);box-shadow:0 2px 8px #1a6b4a25}
+.faq-q-text{flex:1}
+.faq-q-toggle{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--bg-warm);display:flex;align-items:center;justify-content:center;color:var(--text-note);transition:all .4s cubic-bezier(.22,1,.36,1)}
+.faq-item.open .faq-q-toggle{transform:rotate(45deg);background:var(--primary);color:#fff}
+.faq-toggle-v{transition:opacity .3s}
+.faq-item.open .faq-toggle-v{opacity:0}
+.faq-a-wrap{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.34,1.56,.64,1)}
+.faq-a{font-size:.9rem;color:var(--text-sub);line-height:2;padding:0 24px 22px 72px;display:flex;gap:12px;align-items:flex-start}
+.faq-a-icon{flex-shrink:0;width:34px;height:34px;border-radius:10px;background:var(--bg-warm);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:var(--primary);font-family:var(--font-accent)}
+
+/* ===== CTA ===== */
+.cta{background:linear-gradient(135deg,#1a6b4a 0%,var(--primary) 40%,var(--primary-light) 100%);padding:120px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");pointer-events:none}
+.cta-float-1,.cta-float-2,.cta-float-3{position:absolute;border-radius:50%;background:rgba(255,255,255,.06);pointer-events:none}
+.cta-float-1{width:300px;height:300px;top:-100px;left:-50px;animation:floatShape 10s ease-in-out infinite}
+.cta-float-2{width:200px;height:200px;bottom:-80px;right:-40px;animation:floatShape 8s ease-in-out infinite reverse}
+.cta-float-3{width:150px;height:150px;top:50%;left:60%;animation:floatShape 12s ease-in-out infinite}
+.cta-label{font-family:var(--font-accent);font-size:1rem;font-style:italic;color:rgba(255,255,255,.6);letter-spacing:.2em;margin-bottom:16px;position:relative}
+.cta-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;color:#fff;margin-bottom:20px;position:relative}
+.cta-desc{font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:44px;position:relative}
+.btn-cta{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--primary);font-family:var(--font-body);font-weight:800;font-size:1.1rem;padding:20px 44px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 30px rgba(0,0,0,.2);position:relative;overflow:hidden;z-index:1}
+.btn-cta::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:var(--bg-warm);transition:all .6s;transform:translate(-50%,-50%);z-index:-1}
+.btn-cta:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.btn-cta:hover::before{width:300px;height:300px}
+
+/* ===== ACCESS (SVG icons) ===== */
+.access{background:var(--bg-warm);padding:120px 0}
+.access-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+.access-info{display:flex;flex-direction:column;gap:12px}
+.access-item{display:flex;gap:18px;align-items:center;padding:20px 24px;background:var(--white);border-radius:16px;border:1px solid var(--border);transition:all .4s cubic-bezier(.22,1,.36,1)}
+.access-item:hover{box-shadow:var(--shadow-md);transform:translateX(8px);border-color:var(--primary)}
+.access-icon{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px #1a6b4a25;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.access-icon svg{width:22px;height:22px;stroke:#fff;fill:none}
+.access-item:hover .access-icon{transform:scale(1.1) rotate(-5deg);box-shadow:0 6px 20px #1a6b4a35}
+.access-label{font-size:.7rem;font-weight:700;color:var(--primary);letter-spacing:.12em;margin-bottom:4px;text-transform:uppercase}
+.access-value{font-size:.92rem;color:var(--navy);font-weight:600;line-height:1.65}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy);color:rgba(255,255,255,.88);padding:64px 0 40px;position:relative}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-light),var(--primary))}
+.footer-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.footer-brand-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;font-weight:800;box-shadow:0 4px 16px #1a6b4a30}
+.footer-brand-name{font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:#fff}
+.footer-logo-img{height:48px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+.footer-desc{font-size:.82rem;line-height:1.9;color:rgba(255,255,255,.45);margin-bottom:28px;max-width:480px}
+.footer-sns{display:flex;gap:12px;margin-bottom:8px}
+.footer-sns a{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);transition:all var(--transition)}
+.footer-sns a:hover{background:var(--primary);transform:translateY(-3px) scale(1.05);box-shadow:0 4px 16px #1a6b4a40}
+.footer-sns svg{width:18px;height:18px;fill:rgba(255,255,255,.6);transition:fill .3s}
+.footer-sns a:hover svg{fill:#fff}
+.footer-sns-note{font-size:.68rem;color:rgba(255,255,255,.3);margin-bottom:20px}
+.footer-legal{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.footer-legal a{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:underline;transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.7)}
+.footer-bottom{padding-top:28px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.3)}
+.footer-orig a{color:var(--primary-light);text-decoration:underline;font-size:.75rem}
+
+/* ===== FLOATING CTA ===== */
+.floating-line{position:fixed;bottom:28px;right:28px;z-index:900;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.88rem;padding:16px 28px;border-radius:100px;box-shadow:0 4px 24px rgba(6,199,85,.35);opacity:0;transform:translateY(24px);transition:all .5s cubic-bezier(.22,1,.36,1);pointer-events:none;display:flex;align-items:center;gap:8px}
+.floating-line.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.floating-line:hover{background:#05b34d;transform:translateY(-4px);box-shadow:0 8px 36px rgba(6,199,85,.5)}
+.floating-line::before{content:'';display:block;width:10px;height:10px;border-radius:50%;background:#fff;animation:pulse 1.5s infinite}
+
+/* Image overlay */
+.img-container{position:relative;overflow:hidden;border-radius:var(--radius)}
+.img-container img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.img-container:hover img{transform:scale(1.05)}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;padding:10px 18px;background:linear-gradient(transparent,rgba(0,0,0,.5));color:#fff;font-size:.72rem;font-weight:600;text-align:center;letter-spacing:.04em;opacity:0;transform:translateY(100%);transition:all .4s}
+.img-container:hover .img-overlay{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-photo-wrap{order:-1}
+  .hero-photo{aspect-ratio:4/3}
+  .hero{padding:72px 0 88px;min-height:auto}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:4/3;padding:32px}
+  .photo-grid-inner{grid-template-columns:1fr}
+  .access-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .detail-block,.detail-block-reverse{grid-template-columns:1fr;direction:ltr}
+  .course-panel.active{grid-template-columns:1fr}
+  .course-panel-deco{display:none}
+  
+}
+@media(max-width:640px){
+  header nav,.nav-cta-btn{display:none}
+  .hamburger{display:flex}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:4/3;padding:32px}
+  .hero-stats{gap:20px}
+  .hero h1{font-size:clamp(1.7rem,7vw,2.4rem)}
+  .photo-frame{aspect-ratio:4/3}
+  .hero{padding:56px 0 72px}
+  .course-panel{padding:36px 24px}
+  .course-tabs{flex-wrap:wrap;border-radius:16px}
+  .course-tab{padding:10px 20px;font-size:.82rem}
+  section{scroll-margin-top:76px}
+  .section-title{font-size:clamp(1.5rem,6vw,2rem)}
+  .detail-blocks{gap:64px}
+  .features,.details,.results,.courses,.faq-section,.access{padding:80px 0}
+  .cta{padding:80px 0}
+}
+
+/* ===== ENHANCED ANIMATIONS ===== */
+/* 2. Photo parallax container */
+.photo-frame .img-container img{will-change:transform}
+
 </style>
 </head>
 <body>
-<div class="notice-banner">
-  ※このページは <strong>中村学習塾</strong> へのHP改善提案サンプルです。現HPへの追加提案：プライバシーポリシー・特定商取引法の追記、料金表の明記、スマートフォン最適化
-</div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <header>
-  <h1>中村学習塾</h1>
-  <p>北海道稚内市萩見3丁目 ／ 小学5・6年生〜中学生 ／ 少人数個別指導</p>
-  <a href="#contact" class="hero-cta">🌿 1週間 無料体験を申し込む</a>
+<div class="container nav-inner">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">中</div><div><div class="nav-logo-text">中村学習塾</div><span class="nav-logo-sub">稚内市の少人数制学習塾</span></div>
+  </div>
+  <nav><ul>
+    <li><a href="#features">特長</a></li>
+    <li><a href="#courses">コース</a></li>
+    
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#access">アクセス</a></li>
+  </ul></nav>
+  <a href="#contact" class="nav-cta-btn">無料体験に申し込む</a>
+  <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+</div>
 </header>
 
-<section>
-  <h2>中村学習塾の3つの特色</h2>
-  <div class="features">
-    <div class="feature-card">
-      <span class="badge">理系に強い</span>
-      <h3>数学・理科の苦手を克服</h3>
-      <p>「なぜそうなるか」を丁寧に解説。大手学習塾での指導経験を活かし、理系科目の本質的な理解をサポートします。</p>
-    </div>
-    <div class="feature-card">
-      <span class="badge">全教科の基礎</span>
-      <h3>国語力で全教科を底上げ</h3>
-      <p>全ての教科につながる文章の読み解き方を指導。読解力が上がると、理科・社会の記述問題にも自信がつきます。</p>
-    </div>
-    <div class="feature-card">
-      <span class="badge">テスト対策</span>
-      <h3>学校のテストに合わせた指導</h3>
-      <p>稚内市内の学校に対応した細かなテスト対策を実践。定期テストの点数アップを目標に、ひとりひとりをサポートします。</p>
-    </div>
-  </div>
-</section>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#features" onclick="closeMobile()">特長</a>
+  <a href="#courses" onclick="closeMobile()">コース</a>
+  
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#access" onclick="closeMobile()">アクセス</a>
+  <a href="#contact" onclick="closeMobile()">お問い合わせ</a>
+</nav>
 
-<section style="background:#f1f8e9;max-width:100%;padding:60px 20px">
-  <div style="max-width:900px;margin:0 auto">
-    <h2>お試し期間あり</h2>
-    <div class="trial-box">
-      <span class="trial-badge">初回特典</span>
-      <h3>授業1週間分が完全無料！</h3>
-      <p>入塾前に実際の授業を体験できます。「合うかどうか不安」という方も、まずは気軽にお試しください。費用は一切かかりません。</p>
+<div class="hero-curtain" id="heroCurtain">
+  <div class="hero-curtain-left"></div>
+  <div class="hero-curtain-right"></div>
+  <div class="hero-curtain-logo">中村学習塾</div>
+</div>
+
+<section class="hero" id="hero">
+<canvas id="particles"></canvas>
+<div class="hero-light-sweep"></div>
+<div class="hero-shape hero-shape-1"></div>
+<div class="hero-shape hero-shape-2"></div>
+<div class="hero-shape hero-shape-3"></div>
+<div class="hero-shape hero-shape-4"></div>
+<div class="container hero-inner">
+  <div class="hero-text hero-parallax-layer" data-depth="0.02">
+    <div class="hero-badge hero-anim">
+      <span class="hero-badge-dot"></span>
+      少人数制 · 1週間無料体験あり
     </div>
-  </div>
-</section>
-
-<section>
-  <h2>対応学年・コース</h2>
-  <table class="course-table">
-    <tr><th>対象</th><th>内容</th><th>受付時間</th></tr>
-    <tr><td>小学5・6年生</td><td>中学準備・基礎学力強化・算数・国語</td><td>13:00〜22:00</td></tr>
-    <tr><td>中学生</td><td>定期テスト対策・理系強化・全5科目対応</td><td>13:00〜22:00</td></tr>
-  </table>
-  <p style="font-size:.85em;color:#666;margin-top:12px">※授業料の詳細はお問い合わせください。</p>
-</section>
-
-<section>
-  <h2>アクセス</h2>
-  <div class="access-box">
-    <p><strong>中村学習塾</strong></p>
-    <p>📍 北海道稚内市萩見3丁目9-23</p>
-    <p>🕐 受付時間：13:00〜22:00</p>
-    <p>📞 お電話に出られない場合はメールでのお問い合わせが確実です</p>
-    <p>✉️ メールは24時間受付（返信は数日かかる場合があります）</p>
-  </div>
-</section>
-
-<section class="cta-section" id="contact" style="max-width:100%">
-  <div style="max-width:900px;margin:0 auto">
-    <h2>見学・無料体験のお申し込み</h2>
-    <p>いつでも見学可能です。気軽にメールまたはフォームよりご連絡ください。</p>
-    <form>
-      <label>お名前</label>
-      <input type="text" placeholder="山田 花子">
-      <label>メールアドレス</label>
-      <input type="email" placeholder="example@email.com">
-      <label>お子さまの学年</label>
-      <input type="text" placeholder="例：中学1年生">
-      <label>ご相談内容</label>
-      <textarea placeholder="体験授業の希望、苦手な教科、見学希望日など、お気軽にどうぞ"></textarea>
-      <button type="submit" class="submit-btn">✉️ 送信する（24時間受付）</button>
-    </form>
-  </div>
+    <h1 class="hero-anim split-text"><em>考える力</em>が身につく<br>稚内の少人数制学習塾</h1>
+    
 </section>
 
 <footer>
-  <p>© 2026 中村学習塾 ／ 北海道稚内市萩見3丁目9-23</p>
-  <p style="margin-top:8px;font-size:.85em">【改善提案】プライバシーポリシーページ・特定商取引法に基づく表記・料金表の明記を推奨します</p>
+<div class="container">
+  <div class="footer-brand">
+    <div class="footer-brand-icon">中</div><div class="footer-brand-name">中村学習塾</div>
+  </div>
+  <p class="footer-desc">北海道稚内市の少人数制学習塾。大手塾講師経験を活かした個別指導。小学5・6年生・中学生対象。理系強化・国語力・テスト対策。1週間無料体験実施中。</p>
+  <div class="footer-sns">
+    <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="#" aria-label="LINE"><svg viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+  </div>
+  <p class="footer-sns-note">※ご希望に応じてSNSをお選びいただけます</p>
+  <div class="footer-legal">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法に基づく表記</a>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2025 中村学習塾 All Rights Reserved.</span>
+    <span class="footer-orig">元サイト: <a href="https://nakamurazyuku.crayonsite.net" target="_blank" rel="noopener">nakamurazyuku.crayonsite.net</a></span>
+  </div>
+</div>
 </footer>
+<!-- ===== EduShiftご提案（本体とは独立） ===== -->
+<section style="padding:60px 0;background:#f9fafb">
+<div class="container">
+  <div class="section-label" style="font-family:var(--font-accent);font-size:.9rem;font-style:italic;letter-spacing:.15em;color:var(--primary);margin-bottom:12px">IMPROVEMENT</div>
+  <h2 class="section-title" style="margin-bottom:32px">EduShift からのご提案</h2>
+  <div class="features-grid">
+    <div class="feature-card fade-up">
+      <div class="feature-num">Point 1</div>
+      <h3 class="feature-title">スマホからの問い合わせ強化</h3>
+      <p class="feature-desc">現在のサイトはスマートフォンで見づらい部分があります。保護者の多くがスマホで情報収集するため、レスポンシブデザインで快適に閲覧できるLP化で問い合わせ率が上がります。</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-num">Point 2</div>
+      <h3 class="feature-title">体験申込の導線整備</h3>
+      <p class="feature-desc">「1週間無料体験」はとても魅力的なオファーです。この強みをファーストビューに大きく表示し、ワンタップで申し込めるCTAボタンを設置することで、体験申込数の増加が期待できます。</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-num">Point 3</div>
+      <h3 class="feature-title">プライバシーポリシー・特商法表記の整備</h3>
+      <p class="feature-desc">保護者の信頼を得るために、個人情報の取り扱いに関するプライバシーポリシーと特定商取引法に基づく表記を追加することをご提案します。</p>
+    </div>
+  </div>
+  <p class="hero-desc hero-anim">北海道稚内市に2021年5月に開塾した中村学習塾です。大手学習塾で講師をしていた経験を活かして、少人数ならではの個人に合わせた細かい指導を行います。なぜそうなるかという疑問を丁寧に解決し、考える力を育てます。</p>
+    <div class="hero-actions hero-anim">
+      <a href="#contact" class="btn-primary">1週間無料体験に申し込む<span style="font-size:1.2em">&#8594;</span></a>
+      <a href="#features" class="btn-secondary">塾の特長を見る</a>
+    </div>
+    <div class="hero-stats hero-anim">
+      <div class="hero-stat" data-delay="0.0"><div class="hero-stat-num" data-val="2021">2021</div><div class="hero-stat-label">開塾</div></div><div class="hero-stat" data-delay="0.15"><div class="hero-stat-num" data-val="少人数">少人数</div><div class="hero-stat-label">個別対応</div></div><div class="hero-stat" data-delay="0.3"><div class="hero-stat-num" data-val="体験1週間">体験1週間</div><div class="hero-stat-label">無料体験</div></div>
+    </div>
+  </div>
+  <div class="hero-photo-wrap hero-parallax-layer" data-depth="0.04">
+    <div class="hero-photo hero-anim" id="heroPhoto">
+      <div class="img-container" style="width:100%;height:100%">
+  <img src="data:image/jpeg;base64," alt="中村学習塾 教室" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  <div class="img-overlay">画像はご希望に合わせて変更可能です</div>
+</div>
+      <div class="hero-photo-shine"></div>
+      
+      
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="features" id="features">
+<div class="container">
+  <div class="features-header">
+    <div class="section-label-accent">FEATURES</div>
+    <h2 class="section-title reveal-el">中村学習塾が選ばれる理由</h2>
+    <p class="section-desc reveal-el">中村学習塾が選ばれる3つの理由です。</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">01</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+      </div>
+      <h3 class="feature-title">理系に強くなる</h3>
+      <p class="feature-desc">数学・理科の指導には自信あり。なぜそうなるかという疑問を丁寧に指導。公式を暗記するだけでなく、原理から理解することで応用力が身につきます。大手塾講師経験を活かした本質的な指導で、理系科目への苦手意識を解消します。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">02</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      </div>
+      <h3 class="feature-title">国語の強化</h3>
+      <p class="feature-desc">全ての教科につながる文章の読み解き方の指導。語彙力をつけることを目標に、意味や使い方、似た言葉を学習することで全ての基礎になります。国語力は算数・理科・社会の文章題を解く力にも直結します。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">03</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3 class="feature-title">テスト対策の強化</h3>
+      <p class="feature-desc">学校のテストに応じた細かな学習を実践。稚内市内の学校の出題傾向を踏まえ、定期テストで点数を取るための実践的な対策を行います。少人数だからこそ、一人ひとりの弱点を把握した細かい指導が可能です。</p>
+      <div class="feature-line"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="photo-grid">
+<div class="container photo-grid-inner">
+  <div class="photo-frame reveal-el">
+    <div class="img-container" style="width:100%;height:100%">
+  <img src="data:image/jpeg;base64," alt="学習風景" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  <div class="img-overlay">画像はご希望に合わせて変更可能です</div>
+</div>
+  </div>
+  <div class="photo-frame reveal-el" data-delay="0.15">
+    <div class="img-container" style="width:100%;height:100%">
+  <img src="data:image/jpeg;base64," alt="教室風景" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  <div class="img-overlay">画像はご希望に合わせて変更可能です</div>
+</div>
+  </div>
+</div>
+</section>
+
+
+
+
+<section style="padding:56px 0;" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">ABOUT</div>
+    <h2 class="section-title">中村学習塾について</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">北海道稚内市に2021年5月に新しく開塾しました「中村学習塾」です。一軒家を借りての小規模な学習塾ですが、大手学習塾で講師をしていた経験を生かして成績アップの手助けになればと思います。いつでも見学可能ですので、メールや電話でご連絡下さい。</p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy)">なぜそうなるかという疑問を丁寧に指導。少人数ならではの個人に合わせた細かい指導を心がけます。</p>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="courses" id="courses">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">COURSES</div>
+    <h2 class="section-title">コースのご案内</h2>
+    <p class="section-desc-center">小学生・中学生を対象にしたコースをご用意しています。1教科から受講可能です。</p>
+  </div>
+  <div class="course-tabs reveal-el">
+    <button class="course-tab" data-tab="tab-0">小学生</button>
+<button class="course-tab active" data-tab="tab-1">中学生</button>
+
+  </div>
+  <div class="course-panels">
+    <div class="course-panel" id="tab-0">
+      <div class="course-panel-inner">
+        <div class="course-panel-badge">小学生</div>
+        <h3 class="course-panel-title">小学生クラス（50分×週3回）</h3>
+        <p class="course-panel-desc">対象：小学5・6年生。月額10,000円（税込）・入会金10,000円（税込）。テキスト代は別途（年間7,000円前後）。国語・算数・英語の3教科。週50分×3回を基本。理科・社会は希望があれば相談対応。時間帯：平日 15:00〜18:50（50分授業）。</p>
+        <a href="#contact" class="course-panel-cta">詳しく見る <span class="arrow-right">&#8594;</span></a>
+      </div>
+      <div class="course-panel-deco">
+        <div class="course-deco-circle"></div>
+        <div class="course-deco-dots"></div>
+      </div>
+    </div>
+<div class="course-panel active" id="tab-1">
+      <div class="course-panel-inner">
+        <div class="course-panel-badge">中学生</div>
+        <h3 class="course-panel-title">中学生クラス（60分・5教科対応）</h3>
+        <p class="course-panel-desc">対象：中学生全学年。月額18,000円（税込）・入会金10,000円（税込）。テキスト代別途（年間13,000円前後）。国語・数学・英語・理科・社会の5教科対応。1教科から受講可能。平日18:30〜20:30、土日13:00〜20:30（時間調整可）。1ヶ月に1回程度、国語の時間をつくり物語文や論説文の解き方を指導。冬季（11〜3月）は暖房費3,000円/月。</p>
+        <a href="#contact" class="course-panel-cta">詳しく見る <span class="arrow-right">&#8594;</span></a>
+      </div>
+      <div class="course-panel-deco">
+        <div class="course-deco-circle"></div>
+        <div class="course-deco-dots"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<section class="faq-section" id="faq">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">FAQ</div>
+    <h2 class="section-title">よくある質問</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal-el" data-delay="0.0">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">体験授業はありますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい。初回お試しとして授業1週間分を無料で体験できます。お気軽にご連絡ください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.06">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">見学はできますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい、いつでも見学可能です。事前にメールや電話でご連絡ください。受付時間は13:00〜22:00です。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.12">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">何年生から通えますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>小学生クラスは小学5・6年生が対象です。中学生クラスは中学生全学年が対象です。1教科から受講可能ですので、苦手教科だけやってみたいという方もお気軽にご相談ください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.18">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">欠席した場合はどうなりますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>諸事情により欠席される場合はお早めにご連絡ください。スケジュールの状況により振替が可能です。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.24">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">理科・社会も教えてもらえますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>中学生クラスでは5教科（国語・数学・英語・理科・社会）の指導が可能です。小学生クラスは理科・社会は希望があれば相談いたします。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:56px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">TUITION</div>
+    <h2 class="section-title">授業料・費用（税込）</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto">
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">入会金</h3>
+      <p style="font-size:1.05rem;color:var(--navy)">10,000円（税込）</p>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">小学生クラス</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:1rem">
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--text-sub)">月額</td><td style="padding:10px 0;text-align:right;font-weight:700;color:var(--navy)">10,000円</td></tr>
+<tr><td style="padding:10px 0;color:var(--text-sub)">テキスト代（年間目安）</td><td style="padding:10px 0;text-align:right;color:var(--text-sub)">7,000円前後</td></tr>
+</table>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">中学生クラス</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:1rem">
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--text-sub)">月額</td><td style="padding:10px 0;text-align:right;font-weight:700;color:var(--navy)">18,000円</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--text-sub)">テキスト代（年間目安）</td><td style="padding:10px 0;text-align:right;color:var(--text-sub)">13,000円前後</td></tr>
+<tr><td style="padding:10px 0;color:var(--text-sub)">冬季暖房費（11〜3月）</td><td style="padding:10px 0;text-align:right;color:var(--text-sub)">3,000円/月</td></tr>
+</table>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:56px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">SCHEDULE</div>
+    <h2 class="section-title">授業時間</h2>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+  <div>
+    <h4 style="font-family:var(--font-display);font-size:.95rem;color:var(--primary);margin-bottom:10px">小学生クラス</h4>
+    <p style="font-size:.9rem;line-height:1.8;color:var(--text-sub)">平日（月〜金）<br>15:00〜15:50<br>16:00〜16:50<br>17:00〜17:50<br>18:00〜18:50<br>週50分×3回来塾</p>
+  </div>
+  <div>
+    <h4 style="font-family:var(--font-display);font-size:.95rem;color:var(--primary);margin-bottom:10px">中学生クラス</h4>
+    <p style="font-size:.9rem;line-height:1.8;color:var(--text-sub)">平日（月〜金）<br>18:30〜19:30<br>19:30〜20:30<br><br>土日<br>13:00〜20:30（時間調整可）</p>
+  </div>
+</div>
+<p style="font-size:.85rem;color:var(--text-note);margin-top:16px">※学年や人数によっては曜日や時間の変更等がありますが、指導時間に変更はありません。</p>
+</div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:40px 0">
+<div class="container">
+  <div style="max-width:800px;margin:0 auto">
+    <div class="fade-up" style="background:var(--primary-5);border-radius:12px;padding:24px 28px">
+      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">ご確認事項</h3>
+      <ul style="font-size:.95rem;line-height:1.9;color:var(--navy);list-style:disc;padding-left:20px">
+        <li>諸事情により欠席される場合は、お早めにご連絡をお願いいたします。</li>
+        <li>スケジュールの状況により、振替が可能です。</li>
+        <li>自宅用テキストもご希望でしたら別途ご相談いたします。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="cta" id="contact">
+<div class="cta-float-1"></div>
+<div class="cta-float-2"></div>
+<div class="cta-float-3"></div>
+<div class="container">
+  <div class="cta-label reveal-el">CONTACT</div>
+  <h2 class="cta-title reveal-el">まずは1週間の無料体験から</h2>
+  <p class="cta-desc reveal-el">初回お試しとして授業1週間分を無料で体験できます。気軽にご連絡ください。メールや電話でのお問い合わせを受け付けています。24時間受付中（お返事には数日かかることがございます）。受付時間：13:00〜22:00。</p>
+  <a href="https://nakamurazyuku.crayonsite.net" target="_blank" rel="noopener" class="btn-cta reveal-el">1週間無料体験に申し込む<span style="font-size:1.2em">&#8594;</span></a>
+</div>
+</section>
+
+<section class="access" id="access">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">ACCESS</div>
+    <h2 class="section-title">アクセス・教室情報</h2>
+  </div>
+  <div class="access-inner">
+    <div class="access-info">
+      <div class="access-item reveal-el" data-delay="0.0">
+        <div class="access-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="access-content">
+          <div class="access-label">所在地</div>
+          <div class="access-value">北海道稚内市萩見3丁目9-23</div>
+        </div>
+      </div>
+      <div class="access-item reveal-el" data-delay="0.08">
+        <div class="access-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="access-content">
+          <div class="access-label">受付時間</div>
+          <div class="access-value">13:00〜22:00（お返事には数日かかることがございます）</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-el">
+      <iframe src="https://maps.google.com/maps?q=%E7%A8%9A%E5%86%85%E5%B8%82%E8%90%A9%E8%A6%8B3%E4%B8%81%E7%9B%AE9-23&output=embed" width="100%" height="320" style="border:0;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08)" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="https://www.edu-shift.com/service/hp-production" style="color:#1a6b4a;font-weight:700;text-decoration:underline" target="_blank">▶ EduShift HP制作サービスの詳細はこちら</a></p>
+</div>
+</section>
+
+<a href="#contact" class="floating-line" id="floating-line">無料体験に申し込む</a>
+
+<script>
+(function(){
+  'use strict';
+
+  // === Hamburger (animated X) ===
+  var hamburger=document.getElementById('hamburger');
+  hamburger.addEventListener('click',function(){
+    this.classList.toggle('active');
+    document.getElementById('mobile-nav').classList.toggle('open');
+  });
+  window.closeMobile=function(){
+    hamburger.classList.remove('active');
+    document.getElementById('mobile-nav').classList.remove('open');
+  };
+
+  // === Header scroll + floating CTA + progress bar + active nav ===
+  var header=document.querySelector('header');
+  var fl=document.getElementById('floating-line');
+  var prog=document.getElementById('scrollProgress');
+  var sections=document.querySelectorAll('section[id]');
+  var navLinks=document.querySelectorAll('header nav a');
+
+  window.addEventListener('scroll',function(){
+    var sy=window.scrollY;
+    header.classList.toggle('scrolled',sy>10);
+    if(sy>400)fl.classList.add('show');else fl.classList.remove('show');
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    if(max>0)prog.style.transform='scaleX('+(sy/max)+')';
+
+    // Active nav section highlight
+    var current='';
+    sections.forEach(function(sec){
+      var top=sec.offsetTop-120;
+      if(sy>=top)current=sec.getAttribute('id');
+    });
+    navLinks.forEach(function(a){
+      a.classList.remove('nav-active');
+      if(a.getAttribute('href')==='#'+current)a.classList.add('nav-active');
+    });
+  },{passive:true});
+
+  // === Split text: Line-by-line slide-up + char animation ===
+  document.querySelectorAll('.split-text').forEach(function(el){
+    var html=el.innerHTML;
+    // Split by <br> into lines
+    var lines=html.split(/<br\s*\/?>/gi);
+    var newHTML='';
+    lines.forEach(function(line){
+      // Wrap each visible char (preserve tags)
+      var processed='';
+      var inTag=false;
+      for(var i=0;i<line.length;i++){
+        if(line[i]==='<'){inTag=true;processed+=line[i];continue;}
+        if(line[i]==='>'){inTag=false;processed+=line[i];continue;}
+        if(inTag){processed+=line[i];continue;}
+        if(line[i]===' '){processed+=' ';}
+        else{processed+='<span class="char">'+line[i]+'</span>';}
+      }
+      newHTML+='<span class="hero-line"><span class="hero-line-inner">'+processed+'</span></span>';
+    });
+    el.innerHTML=newHTML;
+  });
+
+  // === Scroll reveal ===
+  var revealObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var delay=e.target.getAttribute('data-delay')||0;
+        e.target.style.transitionDelay=delay+'s';
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.08,rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal-el').forEach(function(el){revealObs.observe(el)});
+
+  // === FAQ accordion ===
+  window.toggleFaq=function(btn){
+    var item=btn.closest('.faq-item');
+    var wrap=item.querySelector('.faq-a-wrap');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(other){
+      if(other!==item){
+        other.classList.remove('open');
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-a-wrap').style.maxHeight='0';
+      }
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      wrap.style.maxHeight=wrap.scrollHeight+'px';
+    }else{
+      item.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      wrap.style.maxHeight='0';
+    }
+  };
+
+  // === Course tabs ===
+  document.querySelectorAll('.course-tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('.course-tab').forEach(function(t){t.classList.remove('active')});
+      document.querySelectorAll('.course-panel').forEach(function(p){p.classList.remove('active')});
+      tab.classList.add('active');
+      var panel=document.getElementById(tab.getAttribute('data-tab'));
+      if(panel)panel.classList.add('active');
+    });
+  });
+
+  // === Particles canvas ===
+  var canvas=document.getElementById('particles');
+  if(canvas){
+    var ctx=canvas.getContext('2d');
+    var particles=[];
+    var primaryColor=getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+    function resizeCanvas(){
+      var hero=canvas.parentElement;
+      canvas.width=hero.offsetWidth;
+      canvas.height=hero.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize',resizeCanvas);
+    for(var i=0;i<45;i++){
+      particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2.5+0.5,
+        dx:(Math.random()-0.5)*0.5,
+        dy:(Math.random()-0.5)*0.5,
+        o:Math.random()*0.18+0.03
+      });
+    }
+    function drawParticles(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(function(p){
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=primaryColor;
+        ctx.globalAlpha=p.o;
+        ctx.fill();
+        p.x+=p.dx;p.y+=p.dy;
+        if(p.x<0||p.x>canvas.width)p.dx*=-1;
+        if(p.y<0||p.y>canvas.height)p.dy*=-1;
+      });
+      ctx.globalAlpha=0.04;
+      ctx.strokeStyle=primaryColor;
+      ctx.lineWidth=0.5;
+      for(var a=0;a<particles.length;a++){
+        for(var b=a+1;b<particles.length;b++){
+          var dx=particles[a].x-particles[b].x;
+          var dy=particles[a].y-particles[b].y;
+          if(dx*dx+dy*dy<18000){
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x,particles[a].y);
+            ctx.lineTo(particles[b].x,particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.globalAlpha=1;
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+  }
+
+  // === CURTAIN REVEAL ===
+  var curtain=document.getElementById('heroCurtain');
+  if(curtain){
+    setTimeout(function(){curtain.classList.add('open')},600);
+    setTimeout(function(){curtain.style.display='none'},1800);
+  }
+
+  // === MOUSE PARALLAX on Hero ===
+  var heroSection=document.getElementById('hero');
+  if(heroSection){
+    heroSection.addEventListener('mousemove',function(e){
+      var rect=heroSection.getBoundingClientRect();
+      var cx=(e.clientX-rect.left)/rect.width-0.5;
+      var cy=(e.clientY-rect.top)/rect.height-0.5;
+      document.querySelectorAll('.hero-parallax-layer').forEach(function(layer){
+        var d=parseFloat(layer.dataset.depth)||0.02;
+        layer.style.transform='translate('+(-cx*d*100)+'px,'+(-cy*d*100)+'px)';
+      });
+      // 3D tilt on photo
+      var photo=document.getElementById('heroPhoto');
+      if(photo){
+        photo.style.transform='rotateY('+(cx*8)+'deg) rotateX('+(-cy*6)+'deg)';
+      }
+    });
+    heroSection.addEventListener('mouseleave',function(){
+      document.querySelectorAll('.hero-parallax-layer').forEach(function(layer){
+        layer.style.transform='translate(0,0)';
+      });
+      var photo=document.getElementById('heroPhoto');
+      if(photo)photo.style.transform='rotateY(0) rotateX(0)';
+    });
+  }
+
+  // === GSAP Cinematic Hero v3 + Scroll Animations ===
+  window.addEventListener('DOMContentLoaded',function(){
+    if(typeof gsap==='undefined')return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hide hero elements for GSAP
+    var heroEls=document.querySelectorAll('.hero-anim');
+    heroEls.forEach(function(el){el.style.opacity='0'});
+
+    // Main timeline - starts after curtain opens
+    var tl=gsap.timeline({defaults:{ease:'power4.out'},delay:1.2});
+
+    // Badge elastic drop
+    tl.to('.hero-badge',{opacity:1,y:0,scale:1,duration:.7,startAt:{y:60,scale:.7,opacity:0},ease:'elastic.out(1,.6)'})
+
+    // Show h1 container
+    .set('.split-text',{opacity:1})
+
+    // Lines slide up with dramatic stagger
+    .to('.hero-line-inner',{
+      y:'0%',
+      opacity:1,
+      duration:1.1,
+      stagger:.22,
+      ease:'power4.out'
+    },'-=.2')
+
+    // Chars cascade wave with scale pop
+    .to('.hero h1 .char',{
+      keyframes:[
+        {y:-12,scale:1.15,duration:.18},
+        {y:0,scale:1,duration:.3,ease:'back.out(2)'}
+      ],
+      stagger:{amount:.6,from:'start'},
+    },'-=.4')
+
+    // Trigger em underline animation
+    .call(function(){
+      var h1=document.querySelector('.hero h1');
+      if(h1)h1.classList.add('revealed');
+    })
+
+    // Description types in feel
+    .to('.hero-desc',{opacity:1,y:0,duration:.8,startAt:{y:40,opacity:0}},'-=.5')
+
+    // Actions slam in
+    .to('.hero-actions',{opacity:1,y:0,scale:1,duration:.7,startAt:{y:35,scale:.9,opacity:0},ease:'back.out(1.4)'},'-=.4')
+
+    // Stats cascade with counter
+    .to('.hero-stat',{opacity:1,y:0,scale:1,duration:.6,stagger:.18,startAt:{y:30,scale:.7,opacity:0},ease:'back.out(2)'},'-=.3')
+
+    // Animate stats border line
+    .call(function(){
+      var statsEl=document.querySelector('.hero-stats');
+      if(statsEl)statsEl.classList.add('animated');
+    })
+
+    // Photo: dramatic 3D flip-in + scale
+    .to('.hero-photo',{
+      opacity:1,
+      rotateY:0,
+      rotateX:0,
+      scale:1,
+      clipPath:'inset(0 0% 0 0%)',
+      duration:1.6,
+      ease:'power3.inOut',
+      startAt:{clipPath:'inset(0 100% 0 0%)',rotateY:-15,rotateX:5,scale:1.15,opacity:0}
+    },'-=1.2')
+
+    // Photo shine sweep
+    .to('.hero-photo-shine::before',{x:'250%',duration:1.2,ease:'power2.inOut'},'-=.4')
+    .call(function(){
+      var shine=document.querySelector('.hero-photo-shine');
+      if(shine){
+        shine.style.cssText='position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:24px';
+        var inner=shine.querySelector('::before');
+      }
+      // Manual shine animation via JS
+      gsap.fromTo('.hero-photo-shine',
+        {background:'linear-gradient(100deg,transparent 0%,rgba(255,255,255,0) 0%)'},
+        {duration:0} // placeholder for shine
+      );
+    })
+
+    // Floating shapes burst in with elastic
+    .to('.hero-shape',{opacity:.1,scale:1,rotation:0,duration:1.2,stagger:.1,ease:'elastic.out(1,.4)',startAt:{scale:0,rotation:-30,opacity:0}},'-=1')
+
+    // Photo badges slam in from edges
+    .to(',ease:'back.out(2)'},'-=.5')
+    .to(',ease:'back.out(2)'},'-=.4');
+
+    // === Scroll-triggered animations ===
+
+    // Feature rows: photo → clip-path slide-in, icon → simple fade+slide
+    document.querySelectorAll('.feature-row, .feature-row-reverse').forEach(function(row){
+      var isReverse=row.classList.contains('feature-row-reverse');
+      var visual=row.querySelector('.feature-visual');
+      var text=row.querySelector('.feature-text');
+      var isPhoto=visual&&visual.classList.contains('feature-visual-photo');
+      if(visual){
+        if(isPhoto){
+          // Photo: dramatic clip-path wipe from side
+          var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+          gsap.fromTo(visual,
+            {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+            {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }else{
+          // Icon: gentle fade + slide from side
+          gsap.fromTo(visual,
+            {opacity:0,x:isReverse?-40:40,scale:.95},
+            {opacity:1,x:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }
+      }
+      // Text: slide in from opposite side
+      if(text){
+        gsap.fromTo(text,
+          {opacity:0,x:isReverse?-60:60,y:15},
+          {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+        );
+      }
+    });
+
+    // Detail blocks: dramatic clip-path reveal + slide + scale (zigzag)
+    document.querySelectorAll('.detail-block').forEach(function(block){
+      var isReverse=block.classList.contains('detail-block-reverse');
+      var img=block.querySelector('.detail-img');
+      var text=block.querySelector('.detail-text');
+      var num=block.querySelector('.detail-number');
+      // Image: clip-path wipe from the side + scale + slight rotation
+      var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+      gsap.fromTo(img,
+        {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+        {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+      );
+      // Text: slide in from opposite side with stagger feel
+      gsap.fromTo(text,
+        {opacity:0,x:isReverse?-80:80,y:20},
+        {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+      );
+      // Number: scale pop
+      if(num){
+        gsap.fromTo(num,
+          {opacity:0,scale:0.5},
+          {opacity:1,scale:1,duration:.6,delay:.5,ease:'back.out(2)',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+        );
+      }
+    });
+
+    // Photo grid frames: staggered clip-path reveal
+    document.querySelectorAll('.photo-frame').forEach(function(frame,i){
+      var clipFrom=i%2===0?'inset(0 0 100% 0)':'inset(100% 0 0 0)';
+      gsap.fromTo(frame,
+        {clipPath:clipFrom,scale:1.05},
+        {clipPath:'inset(0 0 0% 0)',scale:1,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:frame,start:'top 82%',once:true}}
+      );
+    });
+
+    // Section titles zoom in
+    document.querySelectorAll('.section-title').forEach(function(title){
+      gsap.fromTo(title,
+        {opacity:0,y:30,scale:.96},
+        {opacity:1,y:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:title,start:'top 88%',once:true}}
+      );
+    });
+
+    // Parallax for images
+    document.querySelectorAll('.parallax-img').forEach(function(img){
+      gsap.to(img.querySelector('img,.img-container'),{
+        yPercent:-10,
+        ease:'none',
+        scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:1.5}
+      });
+    });
+
+    // Parallax shapes in hero
+    document.querySelectorAll('.hero-shape').forEach(function(shape,i){
+      gsap.to(shape,{
+        y:-(60+i*25),
+        ease:'none',
+        scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.5}
+      });
+    });
+
+    // CTA section scale-in
+    gsap.fromTo('.cta .container',
+      {opacity:0,scale:.92},
+      {opacity:1,scale:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.cta',start:'top 80%',once:true}}
+    );
+
+    // === ENHANCED: 2. Photo frame parallax ===
+    document.querySelectorAll('.photo-frame').forEach(function(frame){
+      var img=frame.querySelector('img,.img-container');
+      if(img){
+        gsap.fromTo(img,
+          {yPercent:-8},
+          {yPercent:8,ease:'none',scrollTrigger:{trigger:frame,start:'top bottom',end:'bottom top',scrub:1.5}}
+        );
+      }
+    });
+
+    // Access items slide in from left
+    ScrollTrigger.batch('.access-item',{
+      onEnter:function(batch){
+        gsap.fromTo(batch,
+          {opacity:0,x:-40},
+          {opacity:1,x:0,stagger:.08,duration:.6,ease:'power3.out'}
+        );
+      },
+      start:'top 88%',
+      once:true
+    });
+  });
+
+  // === Safety fallback ===
+  setTimeout(function(){
+    // Force curtain open
+    var c=document.getElementById('heroCurtain');
+    if(c){c.classList.add('open');setTimeout(function(){c.style.display='none'},1000)}
+    document.querySelectorAll('.hero-anim').forEach(function(el){
+      if(getComputedStyle(el).opacity==='0'){el.style.opacity='';el.style.transform='';}
+    });
+    document.querySelectorAll('.hero-line-inner').forEach(function(el){
+      el.style.transform='none';el.style.opacity='1';
+    });
+    document.querySelectorAll('.hero h1 .char').forEach(function(el){
+      el.style.opacity='1';el.style.transform='none';
+    });
+    document.querySelectorAll('.reveal-el:not(.visible)').forEach(function(el){el.classList.add('visible')});
+    var h1=document.querySelector('.hero h1');if(h1)h1.classList.add('revealed');
+    var st=document.querySelector('.hero-stats');if(st)st.classList.add('animated');
+  },4500);
+})();
+</script>
 </body>
 </html>

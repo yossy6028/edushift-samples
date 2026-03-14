@@ -3,117 +3,1675 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>坂戸市 個別指導塾 城埼学院</title>
+<meta name="description" content="埼玉県坂戸市元町の個別指導塾「城埼学院」。講師1名に対し生徒2名までの個別指導で、定期テスト・北辰テスト・入試対策に対応。月5,500円〜、講師歴20年以上のベテラン指導。無料体験授業受付中。">
+<title>城埼学院｜坂戸市元町の個別指導塾 定期テストに強い地元密着塾</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN',sans-serif;color:#333;line-height:1.7}
-.notice-banner{background:#fff3cd;border-left:4px solid #ffc107;padding:12px 20px;font-size:13px;color:#856404;text-align:center}
-header{background:linear-gradient(135deg,#1a237e 0%,#283593 100%);color:#fff;padding:60px 20px;text-align:center}
-header h1{font-size:2.2em;margin-bottom:10px;letter-spacing:2px}
-header p{font-size:1.1em;opacity:.9;margin-bottom:24px}
-.hero-cta{display:inline-block;background:#fdd835;color:#1a237e;padding:14px 36px;border-radius:30px;font-weight:700;font-size:1.1em;text-decoration:none;transition:.2s}
-.hero-cta:hover{background:#f9a825;transform:translateY(-2px)}
-section{padding:60px 20px;max-width:900px;margin:0 auto}
-h2{font-size:1.6em;color:#1a237e;border-bottom:3px solid #1a237e;padding-bottom:10px;margin-bottom:30px}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:20px}
-.feature-card{background:#f5f7ff;border-radius:12px;padding:28px;border-top:4px solid #1a237e}
-.feature-card h3{color:#1a237e;margin-bottom:12px;font-size:1.1em}
-.badge{background:#1a237e;color:#fff;display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8em;margin-bottom:8px}
-.course-table{width:100%;border-collapse:collapse;margin-top:20px}
-.course-table th{background:#1a237e;color:#fff;padding:12px 16px;text-align:left}
-.course-table td{padding:12px 16px;border-bottom:1px solid #e0e0e0}
-.course-table tr:nth-child(even) td{background:#f5f7ff}
-.price-note{font-size:.85em;color:#666;margin-top:12px}
-.cta-section{background:#1a237e;color:#fff;padding:60px 20px;text-align:center}
-.cta-section h2{color:#fdd835;border-color:#fdd835}
-form{max-width:600px;margin:30px auto 0;text-align:left}
-label{display:block;margin-bottom:6px;font-size:.95em}
-input,textarea{width:100%;padding:12px;border:1px solid rgba(255,255,255,.3);border-radius:8px;background:rgba(255,255,255,.1);color:#fff;font-size:1em;margin-bottom:20px}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,.6)}
-textarea{height:140px;resize:vertical}
-.submit-btn{display:block;width:100%;background:#fdd835;color:#1a237e;border:none;padding:16px;border-radius:30px;font-size:1.1em;font-weight:700;cursor:pointer;transition:.2s}
-.submit-btn:hover{background:#f9a825;transform:translateY(-2px)}
-.access-box{background:#f5f7ff;border-radius:12px;padding:28px;margin-top:20px}
-footer{background:#0d1547;color:rgba(255,255,255,.7);text-align:center;padding:24px;font-size:.9em}
-@media(max-width:600px){header h1{font-size:1.5em}.features{grid-template-columns:1fr}}
+/* ========================================
+   ULTRA-PREMIUM DESIGN SYSTEM v4
+   ======================================== */
+:root{
+  --primary:#1B3A5C;
+  --primary-light:#2E5E8E;
+  --primary-5:#1B3A5C0D;
+  --primary-10:#1B3A5C1A;
+  --primary-20:#1B3A5C33;
+  --navy:#0F1C2E;
+  --bg-warm:#F0F4F8;
+  --line-green:#06C755;
+  --white:#FFFFFF;
+  --text-sub:#5A5A5A;
+  --text-note:#9C9B99;
+  --border:#E5E4E1;
+  --font-display:'Shippori Mincho', serif;
+  --font-body:'Zen Kaku Gothic New', sans-serif;
+  --font-accent:'Cormorant Garamond', serif;
+  --max-w:1100px;
+  --transition:.4s cubic-bezier(.22,1,.36,1);
+  --radius:20px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.04);
+  --shadow-md:0 12px 40px rgba(0,0,0,.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.12);
+  --shadow-glow:0 0 40px #1B3A5C20;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--navy);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* Custom scrollbar */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg-warm)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:4px}
+
+/* Scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));z-index:9999;transform-origin:left;transform:scaleX(0);transition:none}
+
+/* ===== SECTION HEADERS ===== */
+.section-label-accent{font-family:var(--font-accent);font-size:clamp(.8rem,1.5vw,1rem);font-weight:400;font-style:italic;letter-spacing:.15em;color:var(--primary);margin-bottom:12px;position:relative;display:inline-block}
+.section-label-accent::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:1px;background:linear-gradient(90deg,var(--primary),transparent)}
+.section-header-center{text-align:center;margin-bottom:64px}
+.section-header-center .section-title{margin-top:8px}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;line-height:1.25;color:var(--navy);margin-bottom:18px;letter-spacing:-.02em}
+.section-desc{font-size:.95rem;color:var(--text-sub);max-width:600px;line-height:1.9}
+.section-desc-center{font-size:.95rem;color:var(--text-sub);max-width:600px;line-height:1.9;margin:0 auto}
+
+/* Wave dividers between sections */
+.wave-divider{position:relative;height:80px;overflow:hidden}
+.wave-divider svg{position:absolute;bottom:0;width:100%;height:80px}
+.wave-divider-flip svg{position:absolute;top:0;transform:rotate(180deg)}
+
+/* ===== BUTTONS ===== */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:1rem;padding:18px 36px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 20px rgba(6,199,85,.3);position:relative;overflow:hidden;z-index:1}
+.btn-primary::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.15);transition:all .6s;transform:translate(-50%,-50%);z-index:-1}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 32px rgba(6,199,85,.45)}
+.btn-primary:hover::before{width:300px;height:300px}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.6);backdrop-filter:blur(8px);color:var(--navy);font-family:var(--font-body);font-weight:700;font-size:.95rem;padding:16px 30px;border-radius:100px;border:1.5px solid var(--border);transition:all var(--transition)}
+.btn-secondary:hover{background:var(--white);border-color:var(--primary);color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+
+/* ===== HEADER (Glass) ===== */
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.72);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(0,0,0,.04);transition:all .4s}
+header.scrolled{background:rgba(255,255,255,.95);box-shadow:0 1px 30px rgba(0,0,0,.06)}
+.nav-inner{display:flex;align-items:center;height:76px;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;font-weight:800;box-shadow:0 4px 16px #1B3A5C30;transition:transform .3s}
+.nav-logo-icon:hover{transform:rotate(-5deg) scale(1.05)}
+.nav-logo-text{font-family:var(--font-display);font-size:1.05rem;font-weight:800;line-height:1.2}
+.nav-logo-sub{font-size:.65rem;color:var(--text-note);font-weight:500;display:block;letter-spacing:.03em}
+header nav{margin-left:auto}
+header nav ul{display:flex;list-style:none;gap:2px}
+header nav a{font-size:.84rem;font-weight:600;color:var(--text-sub);padding:8px 16px;border-radius:10px;transition:all var(--transition);letter-spacing:.02em;position:relative}
+header nav a::after{content:'';position:absolute;bottom:2px;left:50%;width:0;height:2.5px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;transition:all .3s cubic-bezier(.22,1,.36,1);transform:translateX(-50%)}
+header nav a:hover{color:var(--primary)}
+header nav a:hover::after{width:70%}
+/* Active nav highlight */
+header nav a.nav-active{color:var(--primary)}
+header nav a.nav-active::after{width:70%}
+.nav-cta-btn{background:var(--line-green);color:#fff;font-weight:700;font-size:.82rem;padding:10px 22px;border-radius:100px;transition:all var(--transition);white-space:nowrap;margin-left:12px;box-shadow:0 2px 12px rgba(6,199,85,.25);position:relative;overflow:hidden;animation:ctaPulse 3s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{box-shadow:0 2px 12px rgba(6,199,85,.25)}50%{box-shadow:0 4px 24px rgba(6,199,85,.5)}}
+.nav-cta-btn:hover{background:#05b34d;transform:translateY(-2px)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);z-index:999;flex-direction:column;padding:32px 24px;gap:4px;opacity:0;transform:translateY(-10px);transition:opacity .3s,transform .3s}
+.mobile-nav.open{display:flex;opacity:1;transform:translateY(0)}
+.mobile-nav a{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);padding:18px 20px;border-radius:14px;transition:all .2s;border-left:3px solid transparent}
+.mobile-nav a:hover{background:var(--bg-warm);border-left-color:var(--primary);padding-left:24px}
+.nav-logo-img{height:40px;width:auto}
+
+/* ===== LOADING CURTAIN ===== */
+.hero-curtain{position:fixed;inset:0;z-index:10000;display:flex;pointer-events:none}
+.hero-curtain-left,.hero-curtain-right{width:50%;height:100%;background:var(--navy);transition:transform 1s cubic-bezier(.77,0,.18,1)}
+.hero-curtain.open .hero-curtain-left{transform:translateX(-100%)}
+.hero-curtain.open .hero-curtain-right{transform:translateX(100%)}
+.hero-curtain-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;opacity:1;transition:opacity .4s .3s}
+.hero-curtain.open .hero-curtain-logo{opacity:0;transition:opacity .3s}
+
+/* ===== HERO (Cinematic v3 - Impact) ===== */
+.hero{position:relative;padding:100px 0 120px;overflow:hidden;background:var(--bg-warm);min-height:92vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 15% 85%,#1B3A5C18,transparent),
+  radial-gradient(ellipse 60% 50% at 85% 15%,#2E5E8E15,transparent),
+  radial-gradient(ellipse 50% 40% at 50% 50%,#1B3A5C0A,transparent);
+  animation:meshShift 15s ease-in-out infinite alternate;z-index:0}
+@keyframes meshShift{
+  0%{transform:scale(1) translate(0,0)}
+  25%{transform:scale(1.08) translate(-2%,2%)}
+  50%{transform:scale(.96) translate(2%,-1%)}
+  75%{transform:scale(1.04) translate(-1%,3%)}
+  100%{transform:scale(1.02) translate(1%,-1%)}
+}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:.4;z-index:0;pointer-events:none}
+#particles{position:absolute;inset:0;z-index:0;pointer-events:none}
+
+/* Light sweep effect */
+.hero-light-sweep{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.hero-light-sweep::before{content:'';position:absolute;top:-50%;left:-50%;width:40%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);transform:rotate(25deg) translateX(-200%);animation:lightSweep 6s ease-in-out 2s infinite}
+@keyframes lightSweep{0%,100%{transform:rotate(25deg) translateX(-200%)}50%{transform:rotate(25deg) translateX(500%)}}
+
+.hero .container{position:relative;z-index:2}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+
+/* 3D tilt wrapper for mouse parallax */
+.hero-parallax-layer{transition:transform .15s ease-out;will-change:transform}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:var(--primary);background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.6);padding:10px 20px;border-radius:100px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,.04),inset 0 1px 0 rgba(255,255,255,.8)}
+.hero-badge-dot{width:8px;height:8px;background:var(--primary);border-radius:50%;animation:pulse 2s infinite;box-shadow:0 0 8px #1B3A5C60}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+
+/* Hero H1 - Cinematic reveal */
+.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,6.5vw,3.8rem);font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:28px;letter-spacing:-.03em;overflow:hidden}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--primary),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;display:inline-block}
+.hero h1 em::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:14px;background:linear-gradient(90deg,#1B3A5C25,#2E5E8E35);border-radius:6px;z-index:-1;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.hero h1.revealed em::after{transform:scaleX(1)}
+
+/* Line-by-line slide with clip */
+.hero-line{display:block;overflow:hidden;clip-path:inset(0 0 0 0)}
+.hero-line-inner{display:block;transform:translateY(120%);opacity:0}
+/* Individual chars with hover interactivity */
+.hero h1 .char{display:inline-block;transform:translateY(0);transition:transform .25s cubic-bezier(.22,1,.36,1),color .25s}
+.hero h1 .char:hover{transform:translateY(-6px) scale(1.1)}
+
+.hero-desc{font-size:1.05rem;color:var(--text-sub);line-height:2;margin-bottom:36px;max-width:480px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+
+/* Stats with counter animation */
+.hero-stats{display:flex;gap:36px;padding-top:32px;border-top:1.5px solid rgba(0,0,0,.06);position:relative}
+.hero-stats::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--primary-light));transition:width 1.2s cubic-bezier(.22,1,.36,1) 1.5s}
+.hero-stats.animated::before{width:100%}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hero-stat-label{font-size:.7rem;color:var(--text-note);margin-top:8px;font-weight:600;letter-spacing:.06em}
+
+/* Photo with dramatic 3D reveal */
+.hero-photo-wrap{perspective:1200px;width:100%}
+.hero-photo{width:100%;aspect-ratio:4/3;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg),0 0 80px #1B3A5C15;position:relative;transform-style:preserve-3d;transition:transform .3s ease-out,box-shadow .3s}
+.hero-photo:hover{box-shadow:var(--shadow-lg),0 0 120px #1B3A5C25}
+.hero-photo::before{content:'';position:absolute;inset:0;border-radius:24px;border:1px solid rgba(255,255,255,.3);z-index:2;pointer-events:none}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,#1B3A5C18);z-index:1;pointer-events:none;border-radius:24px}
+.hero-photo img,.hero-photo .img-container img{animation:kenburns 20s ease-in-out infinite alternate}
+@keyframes kenburns{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.1) translate(-1.5%,1%)}100%{transform:scale(1.06) translate(1%,-0.5%)}}
+
+/* Shine sweep on photo */
+.hero-photo-shine{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:24px}
+.hero-photo-shine::before{content:'';position:absolute;top:0;left:-80%;width:60%;height:100%;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.25) 50%,transparent 80%);transform:skewX(-15deg)}
+
+
+
+
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.hero-shape{position:absolute;z-index:0;opacity:.08;pointer-events:none}
+.hero-shape-1{width:200px;height:200px;border:2px solid var(--primary);border-radius:50%;top:8%;right:12%;animation:floatShape 10s ease-in-out infinite}
+.hero-shape-2{width:100px;height:100px;background:var(--primary-light);border-radius:50%;bottom:12%;left:3%;filter:blur(40px);animation:floatShape 8s ease-in-out infinite reverse}
+.hero-shape-3{width:60px;height:60px;border:2px solid var(--primary-light);top:55%;right:3%;transform:rotate(45deg);animation:floatShape 12s ease-in-out infinite}
+.hero-shape-4{width:150px;height:150px;background:var(--primary);border-radius:50%;top:60%;left:45%;filter:blur(60px);animation:floatShape 14s ease-in-out infinite reverse}
+@keyframes floatShape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-25px) rotate(8deg)}}
+
+/* Scroll reveal */
+.reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-el.visible{opacity:1;transform:translateY(0)}
+
+/* ===== FEATURES (Zigzag layout) ===== */
+.features{background:var(--white);padding:120px 0;position:relative}
+.features::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.features-header{margin-bottom:72px}
+.features-grid{display:grid;grid-template-columns:1fr;gap:80px}
+.features-grid:has(.feature-card):not(:has(.feature-row)){grid-template-columns:repeat(2,1fr);gap:32px}
+@supports not (selector(:has(*))){.features-grid{display:flex;flex-direction:column;gap:80px}}
+/* Photo zigzag rows */
+.feature-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-row-reverse{direction:rtl}
+.feature-row-reverse>*{direction:ltr}
+.feature-visual{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;will-change:clip-path,transform}
+.feature-visual-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-visual-photo img{transform:scale(1.05)}
+.feature-num-lg{font-family:var(--font-accent);font-size:5rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);text-shadow:0 2px 12px rgba(0,0,0,.3);line-height:1;position:absolute;bottom:16px;right:24px;z-index:2}
+/* Card layout (no-photo fallback) */
+.feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;position:relative;transition:transform .3s,box-shadow .3s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.feature-card-num{font-family:var(--font-accent);font-size:3.5rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;margin-bottom:16px}
+.feature-card-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feature-card-icon svg{width:24px;height:24px;color:#fff}
+/* Shared feature text */
+.feature-num{font-family:var(--font-accent);font-size:.85rem;font-weight:400;font-style:italic;letter-spacing:.1em;color:var(--primary-light);margin-bottom:12px;opacity:.5}
+.feature-title{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.5}
+.feature-desc{font-size:.92rem;color:var(--text-sub);line-height:2}
+.feature-line{width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;margin-top:24px;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.feature-row:hover .feature-line{width:120px}
+.feature-card:hover .feature-line{width:120px}
+
+/* ===== PHOTO GRID ===== */
+.photo-grid{background:var(--bg-warm);padding:80px 0;position:relative;overflow:hidden}
+.photo-grid::before,.photo-grid::after{content:'';position:absolute;left:0;right:0;height:80px;z-index:1}
+.photo-grid::before{top:0;background:linear-gradient(180deg,var(--white),transparent)}
+.photo-grid::after{bottom:0;background:linear-gradient(0deg,var(--white),transparent)}
+.photo-grid-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.photo-frame{aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow-md);transition:transform .6s cubic-bezier(.22,1,.36,1);will-change:clip-path,transform}
+.photo-frame:hover{transform:scale(1.02)}
+
+/* ===== DETAIL BLOCKS (Premium Zigzag) ===== */
+.details{padding:120px 0;background:var(--white);position:relative}
+.detail-blocks{display:flex;flex-direction:column;gap:100px;margin-top:64px}
+.detail-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.detail-block-reverse{direction:rtl}
+.detail-block-reverse>*{direction:ltr}
+.detail-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;position:relative;transition:transform .6s;will-change:clip-path,transform}
+.detail-block:hover .detail-img{transform:scale(1.02)}
+.detail-img .img-container{height:100%}
+.detail-img-frame{position:absolute;inset:-8px;border:2px solid var(--primary-20);border-radius:calc(var(--radius) + 8px);pointer-events:none;transition:all .6s}
+.detail-block:hover .detail-img-frame{inset:-4px;border-color:var(--primary)}
+.detail-number{font-family:var(--font-accent);font-size:4rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;margin-bottom:8px;letter-spacing:-.02em;transition:color .4s}
+.detail-block:hover .detail-number{color:var(--primary-20)}
+.detail-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.4}
+.detail-desc{font-size:.92rem;color:var(--text-sub);line-height:2}
+.detail-line{width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;margin-top:24px;transition:width .6s cubic-bezier(.22,1,.36,1)}
+.detail-block:hover .detail-line{width:120px}
+
+/* ===== RESULTS (Marquee) ===== */
+.results{background:var(--bg-warm);padding:120px 0;overflow:hidden}
+.results-marquee{margin-top:48px;display:flex;flex-direction:column;gap:16px;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
+.marquee-track{display:flex;gap:12px;width:max-content;white-space:nowrap}
+.marquee-track-1{animation:marquee 40s linear infinite}
+.marquee-track-2{animation:marquee 45s linear infinite reverse}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-track:hover{animation-play-state:paused}
+.result-badge{background:var(--white);border:1px solid var(--border);border-radius:100px;padding:10px 24px;font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--navy);box-shadow:var(--shadow-sm);transition:all var(--transition);cursor:default;flex-shrink:0}
+.result-badge:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-6px) scale(1.12);box-shadow:0 10px 30px #1B3A5C40;z-index:2}
+.result-badge{transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.result-header{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-color:transparent;font-weight:800}
+
+/* ===== COURSES (Tab switcher) ===== */
+.courses{padding:120px 0;background:var(--white);position:relative}
+.courses::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.course-tabs{display:flex;gap:8px;margin-bottom:40px;padding:6px;background:var(--bg-warm);border-radius:100px;width:fit-content;margin-left:auto;margin-right:auto;box-shadow:inset 0 1px 3px rgba(0,0,0,.04)}
+.course-tab{font-family:var(--font-body);font-size:.88rem;font-weight:700;color:var(--text-sub);padding:12px 28px;border-radius:100px;border:none;background:transparent;cursor:pointer;transition:all var(--transition);position:relative}
+.course-tab.active{background:var(--white);color:var(--primary);box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.course-tab:hover:not(.active){color:var(--navy)}
+.course-panel{display:none;background:linear-gradient(135deg,var(--bg-warm),var(--white));border-radius:var(--radius);padding:56px;position:relative;overflow:hidden;border:1px solid var(--border)}
+.course-panel.active{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;animation:panelIn .5s cubic-bezier(.22,1,.36,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.course-panel-badge{display:inline-block;font-family:var(--font-body);font-size:.72rem;font-weight:700;letter-spacing:.1em;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-light));padding:6px 18px;border-radius:100px;margin-bottom:18px}
+.course-panel-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;color:var(--navy);margin-bottom:16px;line-height:1.3}
+.course-panel-desc{font-size:.95rem;color:var(--text-sub);line-height:2;margin-bottom:24px;max-width:500px}
+.course-panel-cta{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--primary);font-size:.9rem;transition:all var(--transition);padding:10px 0;border-bottom:2px solid transparent}
+.course-panel-cta:hover{gap:14px;border-bottom-color:var(--primary)}
+.course-panel-cta .arrow-right{transition:transform .3s}
+.course-panel-cta:hover .arrow-right{transform:translateX(6px)}
+.course-panel-deco{position:relative;width:180px;height:180px;flex-shrink:0}
+.course-deco-circle{width:180px;height:180px;border-radius:50%;border:2px dashed var(--primary-20);position:absolute;animation:decoSpin 25s linear infinite}
+.course-deco-dots{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--primary-10),transparent);position:absolute;top:30px;left:30px}
+@keyframes decoSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+/* ===== FAQ ===== */
+.faq-section{padding:120px 0;background:var(--bg-warm)}
+.faq-list{max-width:740px;margin:48px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all var(--transition)}
+.faq-item.open{box-shadow:var(--shadow-md);border-color:var(--primary)}
+.faq-q{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--navy);padding:22px 24px;cursor:pointer;display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:none;border:none;transition:all var(--transition)}
+.faq-q:hover{color:var(--primary)}
+.faq-q-icon{flex-shrink:0;width:34px;height:34px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;font-family:var(--font-accent);box-shadow:0 2px 8px #1B3A5C25}
+.faq-q-text{flex:1}
+.faq-q-toggle{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--bg-warm);display:flex;align-items:center;justify-content:center;color:var(--text-note);transition:all .4s cubic-bezier(.22,1,.36,1)}
+.faq-item.open .faq-q-toggle{transform:rotate(45deg);background:var(--primary);color:#fff}
+.faq-toggle-v{transition:opacity .3s}
+.faq-item.open .faq-toggle-v{opacity:0}
+.faq-a-wrap{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.34,1.56,.64,1)}
+.faq-a{font-size:.9rem;color:var(--text-sub);line-height:2;padding:0 24px 22px 72px;display:flex;gap:12px;align-items:flex-start}
+.faq-a-icon{flex-shrink:0;width:34px;height:34px;border-radius:10px;background:var(--bg-warm);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:var(--primary);font-family:var(--font-accent)}
+
+/* ===== CTA ===== */
+.cta{background:linear-gradient(135deg,#1B3A5C 0%,var(--primary) 40%,var(--primary-light) 100%);padding:120px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");pointer-events:none}
+.cta-float-1,.cta-float-2,.cta-float-3{position:absolute;border-radius:50%;background:rgba(255,255,255,.06);pointer-events:none}
+.cta-float-1{width:300px;height:300px;top:-100px;left:-50px;animation:floatShape 10s ease-in-out infinite}
+.cta-float-2{width:200px;height:200px;bottom:-80px;right:-40px;animation:floatShape 8s ease-in-out infinite reverse}
+.cta-float-3{width:150px;height:150px;top:50%;left:60%;animation:floatShape 12s ease-in-out infinite}
+.cta-label{font-family:var(--font-accent);font-size:1rem;font-style:italic;color:rgba(255,255,255,.6);letter-spacing:.2em;margin-bottom:16px;position:relative}
+.cta-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;color:#fff;margin-bottom:20px;position:relative}
+.cta-desc{font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:44px;position:relative}
+.btn-cta{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--primary);font-family:var(--font-body);font-weight:800;font-size:1.1rem;padding:20px 44px;border-radius:100px;transition:all var(--transition);box-shadow:0 4px 30px rgba(0,0,0,.2);position:relative;overflow:hidden;z-index:1}
+.btn-cta::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:var(--bg-warm);transition:all .6s;transform:translate(-50%,-50%);z-index:-1}
+.btn-cta:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.btn-cta:hover::before{width:300px;height:300px}
+
+/* ===== ACCESS (SVG icons) ===== */
+.access{background:var(--bg-warm);padding:120px 0}
+.access-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
+.access-info{display:flex;flex-direction:column;gap:12px}
+.access-item{display:flex;gap:18px;align-items:center;padding:20px 24px;background:var(--white);border-radius:16px;border:1px solid var(--border);transition:all .4s cubic-bezier(.22,1,.36,1)}
+.access-item:hover{box-shadow:var(--shadow-md);transform:translateX(8px);border-color:var(--primary)}
+.access-icon{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px #1B3A5C25;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.access-icon svg{width:22px;height:22px;stroke:#fff;fill:none}
+.access-item:hover .access-icon{transform:scale(1.1) rotate(-5deg);box-shadow:0 6px 20px #1B3A5C35}
+.access-label{font-size:.7rem;font-weight:700;color:var(--primary);letter-spacing:.12em;margin-bottom:4px;text-transform:uppercase}
+.access-value{font-size:.92rem;color:var(--navy);font-weight:600;line-height:1.65}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy);color:rgba(255,255,255,.88);padding:64px 0 40px;position:relative}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-light),var(--primary))}
+.footer-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.footer-brand-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;font-weight:800;box-shadow:0 4px 16px #1B3A5C30}
+.footer-brand-name{font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:#fff}
+.footer-logo-img{height:48px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+.footer-desc{font-size:.82rem;line-height:1.9;color:rgba(255,255,255,.45);margin-bottom:28px;max-width:480px}
+.footer-sns{display:flex;gap:12px;margin-bottom:8px}
+.footer-sns a{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);transition:all var(--transition)}
+.footer-sns a:hover{background:var(--primary);transform:translateY(-3px) scale(1.05);box-shadow:0 4px 16px #1B3A5C40}
+.footer-sns svg{width:18px;height:18px;fill:rgba(255,255,255,.6);transition:fill .3s}
+.footer-sns a:hover svg{fill:#fff}
+.footer-sns-note{font-size:.68rem;color:rgba(255,255,255,.3);margin-bottom:20px}
+.footer-legal{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.footer-legal a{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:underline;transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.7)}
+.footer-bottom{padding-top:28px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.3)}
+.footer-orig a{color:var(--primary-light);text-decoration:underline;font-size:.75rem}
+
+/* ===== FLOATING CTA ===== */
+.floating-line{position:fixed;bottom:28px;right:28px;z-index:900;background:var(--line-green);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.88rem;padding:16px 28px;border-radius:100px;box-shadow:0 4px 24px rgba(6,199,85,.35);opacity:0;transform:translateY(24px);transition:all .5s cubic-bezier(.22,1,.36,1);pointer-events:none;display:flex;align-items:center;gap:8px}
+.floating-line.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.floating-line:hover{background:#05b34d;transform:translateY(-4px);box-shadow:0 8px 36px rgba(6,199,85,.5)}
+.floating-line::before{content:'';display:block;width:10px;height:10px;border-radius:50%;background:#fff;animation:pulse 1.5s infinite}
+
+/* Image overlay */
+.img-container{position:relative;overflow:hidden;border-radius:var(--radius)}
+.img-container img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.img-container:hover img{transform:scale(1.05)}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;padding:10px 18px;background:linear-gradient(transparent,rgba(0,0,0,.5));color:#fff;font-size:.72rem;font-weight:600;text-align:center;letter-spacing:.04em;opacity:0;transform:translateY(100%);transition:all .4s}
+.img-container:hover .img-overlay{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-photo-wrap{order:-1}
+  .hero-photo{aspect-ratio:4/3}
+  .hero{padding:72px 0 88px;min-height:auto}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:4/3;padding:32px}
+  .photo-grid-inner{grid-template-columns:1fr}
+  .access-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .detail-block,.detail-block-reverse{grid-template-columns:1fr;direction:ltr}
+  .course-panel.active{grid-template-columns:1fr}
+  .course-panel-deco{display:none}
+  
+}
+@media(max-width:640px){
+  header nav,.nav-cta-btn{display:none}
+  .hamburger{display:flex}
+  .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
+  .feature-visual{aspect-ratio:4/3;padding:32px}
+  .hero-stats{gap:20px}
+  .hero h1{font-size:clamp(1.7rem,7vw,2.4rem)}
+  .photo-frame{aspect-ratio:4/3}
+  .hero{padding:56px 0 72px}
+  .course-panel{padding:36px 24px}
+  .course-tabs{flex-wrap:wrap;border-radius:16px}
+  .course-tab{padding:10px 20px;font-size:.82rem}
+  section{scroll-margin-top:76px}
+  .section-title{font-size:clamp(1.5rem,6vw,2rem)}
+  .detail-blocks{gap:64px}
+  .features,.details,.results,.courses,.faq-section,.access{padding:80px 0}
+  .cta{padding:80px 0}
+}
+
+/* ===== ENHANCED ANIMATIONS ===== */
+/* 2. Photo parallax container */
+.photo-frame .img-container img{will-change:transform}
+
 </style>
 </head>
 <body>
-<div class="notice-banner">
-  ※このページは <strong>城埼学院</strong> へのHP改善提案サンプルです。現HPへの追加提案：プライバシーポリシー・特定商取引法の追記、スマートフォン最適化、お問い合わせCTA強化
-</div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <header>
-  <h1>城埼学院</h1>
-  <p>坂戸市元町 ／ 小学生〜高校生対応 ／ 1:2の丁寧な個別指導</p>
-  <a href="#contact" class="hero-cta">📚 無料体験授業を申し込む</a>
+<div class="container nav-inner">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">城</div><div><div class="nav-logo-text">城埼学院</div><span class="nav-logo-sub">坂戸市元町の個別指導塾</span></div>
+  </div>
+  <nav><ul>
+    <li><a href="#features">特長</a></li>
+    <li><a href="#courses">コース</a></li>
+    <li><a href='#results'>実績</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#access">アクセス</a></li>
+  </ul></nav>
+  <a href="#contact" class="nav-cta-btn">無料体験に申し込む</a>
+  <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+</div>
 </header>
 
-<section>
-  <h2>城埼学院の3つの強み</h2>
-  <div class="features">
-    <div class="feature-card">
-      <span class="badge">1:2指導</span>
-      <h3>最適な緊張感と集中力</h3>
-      <p>1:1は緊張しすぎ、1:3以上は演習不足。城埼学院は1:2に徹底し、程よい集中感と質問しやすい環境を両立しています。</p>
-    </div>
-    <div class="feature-card">
-      <span class="badge">柔軟な時間割</span>
-      <h3>文武両立を全力サポート</h3>
-      <p>曜日・時間帯を自由に選択可能。部活やクラブチームに入っている生徒さんも安心。欠席時は前日連絡で振替対応します。</p>
-    </div>
-    <div class="feature-card">
-      <span class="badge">週1回から</span>
-      <h3>小さく始めて着実に伸ばす</h3>
-      <p>週1回・1教科からスタートOK。入試対策、授業サポート、資格試験まで、目的に合わせて柔軟に対応します。</p>
-    </div>
-  </div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#features" onclick="closeMobile()">特長</a>
+  <a href="#courses" onclick="closeMobile()">コース</a>
+  <a href='#results' onclick='closeMobile()'>実績</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#access" onclick="closeMobile()">アクセス</a>
+  <a href="#contact" onclick="closeMobile()">お問い合わせ</a>
+</nav>
+
+<div class="hero-curtain" id="heroCurtain">
+  <div class="hero-curtain-left"></div>
+  <div class="hero-curtain-right"></div>
+  <div class="hero-curtain-logo">城埼学院</div>
+</div>
+
+
+
+
+<section class="cta" id="contact">
+<div class="cta-float-1"></div>
+<div class="cta-float-2"></div>
+<div class="cta-float-3"></div>
+<div class="container">
+  <div class="cta-label reveal-el">CONTACT</div>
+  <h2 class="cta-title reveal-el">まずは無料体験授業へ</h2>
+  <p class="cta-desc reveal-el">小学生は英語・算数・国語の各1コマ（60分）、中学生は英語・数学の各1コマ（80分）の無料体験授業を実施中。ご希望に沿った授業内容が可能です。不安な場合は保護者の方が一緒でも大丈夫です。お問い合わせフォームは24時間受付中。お電話からのお問い合せも可能ですが、授業中の場合お受けできない場合がございますのでフォームから詳細を入力していただけると助かります。</p>
+  <a href="https://josaigakuin.crayonsite.net" target="_blank" rel="noopener" class="btn-cta reveal-el">無料体験授業に申し込む<span style="font-size:1.2em">&#8594;</span></a>
+</div>
 </section>
 
-<section style="background:#f5f7ff;max-width:100%;padding:60px 20px">
-  <div style="max-width:900px;margin:0 auto">
-    <h2>対応学年・コース</h2>
-    <table class="course-table">
-      <tr><th>対象</th><th>内容</th><th>授業料目安</th></tr>
-      <tr><td>小学生</td><td>基礎固め・中学受験準備・学校授業サポート</td><td>月5,500円〜</td></tr>
-      <tr><td>中学生</td><td>定期テスト対策・高校受験対策・5科目対応</td><td>月5,500円〜</td></tr>
-      <tr><td>高校生</td><td>大学受験対策・苦手科目の集中補強</td><td>お問い合わせ</td></tr>
-    </table>
-    <p class="price-note">※授業料は教科数・コマ数によって異なります。詳細はお問い合わせください。</p>
+<section class="access" id="access">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">ACCESS</div>
+    <h2 class="section-title">アクセス・教室情報</h2>
   </div>
-</section>
-
-<section>
-  <h2>アクセス</h2>
-  <div class="access-box">
-    <p><strong>城埼学院</strong></p>
-    <p>📍 埼玉県坂戸市元町（東武東上線 坂戸駅近く）</p>
-    <p>🚃 東武東上線「坂戸駅」より徒歩圏内</p>
-    <p>🕐 受付時間：お気軽にお問い合わせください</p>
+  <div class="access-inner">
+    <div class="access-info">
+      <div class="access-item reveal-el" data-delay="0.0">
+        <div class="access-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="access-content">
+          <div class="access-label">所在地</div>
+          <div class="access-value">埼玉県坂戸市元町14-20 愛和ビル2F（坂戸駅からまっすぐ元町通り沿い・駐輪場完備・送迎しやすい場所です）</div>
+        </div>
+      </div>
+      <div class="access-item reveal-el" data-delay="0.08">
+        <div class="access-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div class="access-content">
+          <div class="access-label">お電話</div>
+          <div class="access-value"><a href="tel:049-214-2394" style="color:var(--primary);font-weight:700">049-214-2394</a><span style="font-size:.85rem;color:var(--text-sub)">　授業中はお受けできない場合がございます</span></div>
+        </div>
+      </div>
+      <div class="access-item reveal-el" data-delay="0.16">
+        <div class="access-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="access-content">
+          <div class="access-label">授業時間</div>
+          <div class="access-value">月〜土 18:10〜19:30 / 19:40〜21:00（小学生は応相談）</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-el">
+      <iframe src="https://maps.google.com/maps?q=%E5%9D%82%E6%88%B8%E5%B8%82%E5%85%83%E7%94%BA14-20%E6%84%9B%E5%92%8C%E3%83%93%E3%83%AB2F&output=embed" width="100%" height="320" style="border:0;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08)" allowfullscreen loading="lazy"></iframe>
+    </div>
   </div>
-</section>
-
-<section class="cta-section" id="contact" style="max-width:100%">
-  <div style="max-width:900px;margin:0 auto">
-    <h2>無料体験・お問い合わせ</h2>
-    <p>まずは1回、体験授業にお越しください。費用は一切かかりません。</p>
-    <form>
-      <label>お名前</label>
-      <input type="text" placeholder="山田 太郎">
-      <label>メールアドレス</label>
-      <input type="email" placeholder="example@email.com">
-      <label>お子さまの学年</label>
-      <input type="text" placeholder="例：中学2年生">
-      <label>ご質問・ご要望</label>
-      <textarea placeholder="体験授業の希望日、気になること等、お気軽にどうぞ"></textarea>
-      <button type="submit" class="submit-btn">✉️ 送信する（24時間受付）</button>
-    </form>
-  </div>
+</div>
 </section>
 
 <footer>
-  <p>© 2026 城埼学院 ／ 埼玉県坂戸市元町</p>
-  <p style="margin-top:8px;font-size:.85em">【改善提案】プライバシーポリシーページ・特定商取引法に基づく表記の追加を推奨します</p>
+<div class="container">
+  <div class="footer-brand">
+    <div class="footer-brand-icon">城</div><div class="footer-brand-name">城埼学院</div>
+  </div>
+  <p class="footer-desc">埼玉県坂戸市元町の個別指導塾。講師1:生徒2の丁寧な指導で、定期テスト対策・北辰テスト・入試対策に対応。駐輪場完備、送迎しやすい立地です。</p>
+  <div class="footer-sns">
+    <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="#" aria-label="LINE"><svg viewBox="0 0 24 24"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+  </div>
+  <p class="footer-sns-note">※ご希望に応じてSNSをお選びいただけます</p>
+  <div class="footer-legal">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法に基づく表記</a>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2025 城埼学院 All Rights Reserved.</span>
+    <span class="footer-orig">元サイト: <a href="https://josaigakuin.crayonsite.net" target="_blank" rel="noopener">josaigakuin.crayonsite.net</a></span>
+  </div>
+</div>
 </footer>
+<!-- ===== EduShiftご提案（本体とは独立） ===== -->
+<section class="hero" id="hero">
+<canvas id="particles"></canvas>
+<div class="hero-light-sweep"></div>
+<div class="hero-shape hero-shape-1"></div>
+<div class="hero-shape hero-shape-2"></div>
+<div class="hero-shape hero-shape-3"></div>
+<div class="hero-shape hero-shape-4"></div>
+<div class="container hero-inner">
+  <div class="hero-text hero-parallax-layer" data-depth="0.02">
+    <div class="hero-badge hero-anim">
+      <span class="hero-badge-dot"></span>
+      講師1:生徒2 個別指導 · 無料体験授業受付中
+    </div>
+    <h1 class="hero-anim split-text"><em>定期テストに強い</em><br>地元密着の個別指導塾</h1>
+    <p class="hero-desc hero-anim">城埼学院は坂戸市元町の個別指導塾。講師1名に対して生徒2名までの指導で、分かるまでじっくり丁寧に教えます。月5,500円〜受講でき、週1回・1教科から始められます。坂戸駅からまっすぐ元町通り沿い、駐輪場完備・送迎しやすい場所です。</p>
+    <div class="hero-actions hero-anim">
+      <a href="#contact" class="btn-primary">無料体験授業に申し込む<span style="font-size:1.2em">&#8594;</span></a>
+      <a href="#features" class="btn-secondary">塾の特長を見る</a>
+    </div>
+    <div class="hero-stats hero-anim">
+      <div class="hero-stat" data-delay="0.0"><div class="hero-stat-num" data-val="20年+">20年+</div><div class="hero-stat-label">講師歴</div></div><div class="hero-stat" data-delay="0.15"><div class="hero-stat-num" data-val="5,500円〜">5,500円〜</div><div class="hero-stat-label">月謝（税込）</div></div><div class="hero-stat" data-delay="0.3"><div class="hero-stat-num" data-val="5教科">5教科</div><div class="hero-stat-label">全教科対応</div></div>
+    </div>
+  </div>
+  <div class="hero-photo-wrap hero-parallax-layer" data-depth="0.04">
+    <div class="hero-photo hero-anim" id="heroPhoto">
+      <div class="img-container" style="width:100%;height:100%">
+  <img src="data:image/jpeg;base64," alt="城埼学院 教室" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  <div class="img-overlay">画像はご希望に合わせて変更可能です</div>
+</div>
+      <div class="hero-photo-shine"></div>
+      
+      
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="features" id="features">
+<div class="container">
+  <div class="features-header">
+    <div class="section-label-accent">FEATURES</div>
+    <h2 class="section-title reveal-el">城埼学院が選ばれる理由</h2>
+    <p class="section-desc reveal-el">城埼学院が選ばれる理由をご紹介します。</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">01</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+      </div>
+      <h3 class="feature-title">各学校に合わせた定期テスト対策</h3>
+      <p class="feature-desc">定期テスト期間中は、基本的にテスト範囲表に沿って授業を進めます。学校のワークやプリント、ノートなどの提出物のサポートはもちろん、各学校の過去問も活用し、内申点アップを目指します。テストの点数や順位が上がることで、「次はもっと上を目指したい」という意欲にもつながります。生徒自身のやる気を引き出すことを大切に指導しています。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">02</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      </div>
+      <h3 class="feature-title">合格率の高い英検・漢検・数検対策</h3>
+      <p class="feature-desc">英検対策では、リスニングから二次試験（面接）までしっかりサポートします。近年は、英検2級の取得により大学受験で英語が免除されたり、入試で加点される学校も増えているため、準2級・2級を目指す生徒が増えています。また、合格実績も高く、中学3年生で準1級に合格した実績があります。数検対策も行っており、中学3年生で2級に合格した実績があります。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">03</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3 class="feature-title">受講していない教科へのフォローアップ</h3>
+      <p class="feature-desc">英語の授業では理科・社会の対策も行い、数学の授業では国語の対策も取り入れています。毎回少しずつ確認しながら積み重ねて学習することで、理科・社会・国語の定着を図ります。要点を分かりやすく説明したうえで、自習時間に問題を繰り返し解くことで、着実な成績アップにつなげます。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">04</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
+      <h3 class="feature-title">自主勉強法指導で家庭学習の定着</h3>
+      <p class="feature-desc">家でなかなか勉強できない生徒には、授業とは別に自習時間を予定に組み入れて来てもらっています。自習時間には、勉強の進め方や取り組み方も一緒に確認しながら指導し、家庭学習の習慣づけをサポートします。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">05</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3 class="feature-title">過去問を分析した北辰テスト・入試対策</h3>
+      <p class="feature-desc">北辰テスト・入試に向けて過去問を分析し、傾向に沿った対策を実施。基礎力をつけたい生徒には分からなくなったところまで戻り丁寧に復習、応用力を伸ばしたい生徒には入試を見据えた内容で幅広く対応できる力を養います。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">06</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <h3 class="feature-title">学年関係なくつまずいたところから</h3>
+      <p class="feature-desc">一人ひとりの弱点に合わせてカリキュラムを作成します。クラス授業のように全員が同じ内容を学ぶのではなく、つまずきの原因となった前学年・前学期に遡る「戻り学習」を積極的に行っています。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">07</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+      </div>
+      <h3 class="feature-title">好きな時間に自習席が使えます</h3>
+      <p class="feature-desc">自習席は無料で自由に利用できます。当塾の卒業生も利用可能です。分からないところがあれば空き時間に説明し、自習用プリントもご用意しています。勉強だけでなく、進路相談や悩みなどを気軽に話しに来る生徒もおり、安心して通える雰囲気の塾です。自習席の空き状況はInstagram、Xにて毎日公開中です。</p>
+      <div class="feature-line"></div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-card-num">08</div>
+      <div class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      </div>
+      <h3 class="feature-title">分からないところはすぐに聞いてその日に解決！</h3>
+      <p class="feature-desc">講師1名に対して生徒2名までの個別指導です。講師が常に近くにいるため、分からないことはすぐに質問できます。毎回「今日はこれができるようになった」と実感できる、メリハリのある授業を心がけています。</p>
+      <div class="feature-line"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="photo-grid">
+<div class="container photo-grid-inner">
+  <div class="photo-frame reveal-el">
+    <div class="img-container" style="width:100%;height:100%">
+  <img src="data:image/jpeg;base64," alt="学習風景" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  <div class="img-overlay">画像はご希望に合わせて変更可能です</div>
+</div>
+  </div>
+  <div class="photo-frame reveal-el" data-delay="0.15">
+    <div class="img-container" style="width:100%;height:100%">
+  <img src="data:image/jpeg;base64," alt="教室風景" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  <div class="img-overlay">画像はご希望に合わせて変更可能です</div>
+</div>
+  </div>
+</div>
+</section>
+
+
+
+
+<section style="padding:56px 0;" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">TEACHING</div>
+    <h2 class="section-title">分かるまでじっくり指導</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">話しやすい関係を築けるように生徒とのコミュニケーションを大切にしています。個別指導なので分からないまま、納得のいかないままということがないよう、分かるまであらゆる角度から説明しています。</p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy)">また城埼学院では定着をはかるために前回の内容をおさらいしてから始めます。忘れていることや苦手なところに重点をおき、理解するまで反復演習を繰り返します。得意な単元においてはさらに力がつくよう応用問題などにもチャレンジします。</p>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;background:var(--bg-warm);" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">LOCAL</div>
+    <h2 class="section-title">城埼学院は地域に密着した塾です</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">城埼学院の授業はひとりひとりに合った計画を作成して進めていますので進度も内容も異なります。「今日は学校で分からなかったところを中心に進めてほしい」「英検が控えてるので英検対策授業に変えてほしい」などのご要望にも対応します。年間計画に遅れを生じないよう無料で補習を行なったり、自習時間にフォローしますので心配ありません。</p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy)">講師歴20年以上の塾長や教員免許を持つ副室長などのベテラン勢で分かりやすく指導しています。2019年に坂戸市千代田一丁目から移転しましたが地域の方々のおかげで、口コミでの入塾が多く、大変感謝しております。コロナ禍以前は体育祭や合唱祭などの学校イベントにも誘っていただき、塾では見れない表情もたくさん見られました。塾生とは勉強面だけでなくいろいろな面でつながり、信頼関係を築いています。</p>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">RESULTS</div>
+    <h2 class="section-title">点数UP！順位UP！</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">定期テスト期間中は、基本的にテスト範囲表に沿って授業を進めます。学校のワークやプリント、ノートなどの提出物のサポートはもちろん、各学校の過去問も活用し、内申点アップを目指します。</p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy)">テストの点数や順位が上がることで、「次はもっと上を目指したい」という意欲にもつながります。生徒自身のやる気を引き出すことを大切に指導しています。</p>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;background:var(--bg-warm);" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">SELF-STUDY</div>
+    <h2 class="section-title">自習時間もしっかりサポートします</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">自習席は無料で自由に利用できます。（当塾の卒業生も利用可能です。）分からないところがあれば空き時間に説明し、自習用プリントもご用意しています。勉強だけでなく、進路相談や悩みなどを気軽に話しに来る生徒もおり、安心して通える雰囲気の塾です。</p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">家でなかなか勉強できない生徒には、授業とは別に自習時間を予定に組み入れて来てもらっています。自習時間には、勉強の進め方や取り組み方も一緒に確認しながら指導し、家庭学習の習慣づけをサポートします。</p>
+<p style="font-size:.95rem;line-height:1.8;color:var(--text-sub)">通塾生だけでなく、卒塾生も自習席を利用できます。自習できる時間を毎日Instagram、Xにて公開中です。自習中分からないところがあったらフォローします。Instagram、Xはこのページの一番下から見ることができます。</p>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">FLEXIBLE</div>
+    <h2 class="section-title">週1回・1教科から通えます</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">講師1名に対して生徒2名までの個別指導です。小学生から高校生までを対象に、一人ひとりのレベルや特性に合わせて分かりやすく指導しています。質問しやすい雰囲気づくりを大切にし、笑顔で学べるアットホームな環境が城埼学院の特長です。</p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px">入試対策はもちろん、学校の授業のサポートや資格試験対策など、さまざまな目的で通っていただいています。</p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy)">塾が初めての方でも、週1回・1教科から始められるので安心です。（科目や回数の変更もいつでも可能です。）塾をお探しの方は、ぜひ一度体験授業にお越しください。幅広く柔軟に対応いたします。</p>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;background:var(--bg-warm);" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">FEATURES</div>
+    <h2 class="section-title">個別指導の特色</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <div class="features-grid" style="margin-top:8px">
+  <div class="feature-card fade-up">
+    <div class="feature-num">01</div>
+    <h3 class="feature-title">集中できる環境</h3>
+    <p class="feature-desc">大人数の授業よりも一人ひとりにしっかり対応できるため、落ち着いて学習に取り組める環境です。</p>
+  </div>
+  <div class="feature-card fade-up">
+    <div class="feature-num">02</div>
+    <h3 class="feature-title">指導と演習のバランス</h3>
+    <p class="feature-desc">講師が一人の生徒に解説している間、もう一人の生徒は演習に取り組みます。指導と演習を交互に行うことで、「待ち時間」が少なくなり、効率よく学習を進めることができます。</p>
+  </div>
+  <div class="feature-card fade-up">
+    <div class="feature-num">03</div>
+    <h3 class="feature-title">柔軟なカリキュラム</h3>
+    <p class="feature-desc">一人ひとりの弱点に合わせてカリキュラムを作成します。クラス授業のように全員が同じ内容を学ぶのではなく、それぞれに合った指導を行います。</p>
+  </div>
+</div>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">LESSON</div>
+    <h2 class="section-title">通常授業について</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:16px"><strong>1コマ80分（小学生は60分）</strong></p>
+<p style="font-size:1.05rem;line-height:1.9;color:var(--navy)">生徒のレベルに合わせたテキストを使用し、確実に理解できるように指導します。基礎力をつけたい生徒には、分からなくなったところまで戻り、最初から丁寧に復習しながら基本問題で練習します。応用力を伸ばしたい生徒には、入試を見据えた内容で、幅広く対応できる力を養います。講師が常に近くにいるため、分からないことはすぐに質問できます。毎回「今日はこれができるようになった」と実感できる、メリハリのある授業を心がけています。</p>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;background:var(--bg-warm);" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">SEASONAL</div>
+    <h2 class="section-title">期別講習</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p style="font-size:1.05rem;line-height:1.9;color:var(--navy);margin-bottom:20px">中学生全員を対象に春期講習・夏期講習・冬期講習を実施しています。（小学生は希望制になります。）</p>
+<div class="feature-card fade-up" style="margin-bottom:20px">
+  <h3 class="feature-title">中学1・2年生</h3>
+  <p class="feature-desc">英語・数学などの通常受講している教科が対象となります。<br>《授業数》春期、夏期、冬期 全て各教科10〜15コマずつ増加<br>《授業内容》前学年、前学期の復習や次学期の予習、応用問題などレベルに応じて内容が変わります。</p>
+</div>
+<div class="feature-card fade-up" style="margin-bottom:20px">
+  <h3 class="feature-title">中学3年生</h3>
+  <p class="feature-desc">英語・数学などの通常受講している教科が対象となります。<br>《授業数》春期：各教科10〜15コマずつ増加 ／ 夏期：各教科20〜25コマずつ増加 ／ 冬期：各教科10〜20コマずつ増加<br>講習コマ数は習熟度や志望校に応じて決定します。<br>《授業内容》前学年、前学期の内容を丁寧に確認し北辰テスト、入試を意識した問題へ取り組みます。</p>
+</div>
+<div class="fade-up" style="background:var(--primary-5);border-radius:12px;padding:20px 24px;margin-top:16px">
+  <p style="font-size:.95rem;line-height:1.8;color:var(--navy);margin-bottom:8px"><strong>城埼学院では、講習期間を長めに設定しています。</strong></p>
+  <p style="font-size:.95rem;line-height:1.8;color:var(--text-sub)">春期講習：2〜6月 ／ 夏期講習：6〜11月 ／ 冬期講習：11〜2月<br>短い期間で詰め込まず、長い期間で丁寧に仕上げます。</p>
+  <p style="font-size:.9rem;line-height:1.7;color:var(--text-note);margin-top:8px">講習費用は全学年1コマ2,800円です。通常受講教科以外は1コマ3,300円。講習費用は2〜3回の分割でお支払いいただきます。中学生は全員受講となります。</p>
+</div>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">TRIAL</div>
+    <h2 class="section-title">無料体験授業について</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <div class="features-grid" style="margin-top:8px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+  <div class="feature-card fade-up">
+    <h3 class="feature-title">小学生</h3>
+    <p class="feature-desc">英語、算数、国語、各1コマ（60分）の無料体験授業を実施しております。不安な場合は保護者の方が一緒でも大丈夫です。</p>
+  </div>
+  <div class="feature-card fade-up">
+    <h3 class="feature-title">中学生</h3>
+    <p class="feature-desc">英語、数学、各1コマ（80分）の無料体験授業を実施しております。授業内容はご希望に沿った内容が可能です。</p>
+  </div>
+</div>
+<p class="fade-up" style="font-size:.95rem;line-height:1.8;color:var(--text-sub);margin-top:16px">下の「体験授業お申し込みフォーム」よりご連絡ください。フォームからのお問い合わせは24時間受け付けております。</p>
+  </div>
+</div>
+</section>
+<section style="padding:56px 0;background:var(--bg-warm);" class="content-section">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">TEXTBOOKS</div>
+    <h2 class="section-title">教材等購入品</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto" class="fade-up">
+    <p class="fade-up" style="font-size:.95rem;line-height:1.8;color:var(--text-sub);margin-bottom:16px">各学年、各教科で必要な教材は次のとおりです（目安）</p>
+<div class="fade-up" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+  <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.04);padding:20px">
+    <h4 style="font-family:var(--font-display);font-size:.95rem;color:var(--primary);margin-bottom:10px">小学生</h4>
+    <p style="font-size:.9rem;line-height:1.7;color:var(--navy)">【算数全学年共通】ワーク1冊、計算ドリル1冊<br>【国語全学年共通】ワーク1冊<br>【英語全学年共通】ワーク1冊</p>
+  </div>
+  <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.04);padding:20px">
+    <h4 style="font-family:var(--font-display);font-size:.95rem;color:var(--primary);margin-bottom:10px">中学1・2年生</h4>
+    <p style="font-size:.9rem;line-height:1.7;color:var(--navy)">数学2冊 ／ 英語2冊 ／ 国語2冊<br>理科（各学年）1冊<br>歴史1冊 ／ 地理1冊</p>
+  </div>
+  <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.04);padding:20px">
+    <h4 style="font-family:var(--font-display);font-size:.95rem;color:var(--primary);margin-bottom:10px">中学3年生</h4>
+    <p style="font-size:.9rem;line-height:1.7;color:var(--navy)">数学3冊 ／ 英語2冊 ／ 国語2冊<br>理科（各学年）1冊<br>歴史1冊 ／ 地理1冊 ／ 公民1冊</p>
+  </div>
+</div>
+<p class="fade-up" style="font-size:.85rem;line-height:1.7;color:var(--text-note);margin-top:16px">※英語受講生には理科、社会も購入してもらいます。※例えば中学2年生で入塾の場合、状況に応じては前学年（1年生）の教材を購入していただく場合があります。</p>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:56px 0">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">VOICE</div>
+    <h2 class="section-title">卒業生の声</h2>
+  </div>
+  <div class="features-grid" style="margin-top:24px;grid-template-columns:repeat(2,1fr)">
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
+      <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">1</div>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">わかりやすく丁寧に教えてくださいました。卒業してからも気軽に入れるようなアットホームな雰囲気の塾です！</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
+      <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">2</div>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">嫌いだった数学が楽しくなりました！先生のおかげで高校でも理系で頑張っています。</p>
+    </div>
+    <div class="feature-card fade-up" style="position:relative;padding-top:32px;overflow:visible">
+      <div style="position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700">3</div>
+      <p class="feature-desc" style="font-style:italic;line-height:1.9">勉強以外にも相談でき、何と言っても話しやすい先生たちばかりで全くストレスなく勉強できました。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="results" id="results">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">RESULTS</div>
+    <h2 class="section-title">合格実績</h2>
+    <p class="section-desc-center">確かな指導力が、生徒の可能性を広げます。</p>
+  </div>
+  <div class="results-marquee">
+    <div class="marquee-track marquee-track-1"><span class="result-badge">title</span><span class="result-badge">title</span></div>
+    <div class="marquee-track marquee-track-2"><span class="result-badge">desc</span><span class="result-badge">items</span><span class="result-badge">desc</span><span class="result-badge">items</span></div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:56px 0">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">ACHIEVEMENTS</div>
+    <h2 class="section-title">主な進学先</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto">
+    <p class="fade-up" style="font-size:.95rem;line-height:1.8;color:var(--text-sub);margin-bottom:20px">卒業生は教育、美容、建築、スポーツ、エンターテインメント、医療など多岐にわたる分野で活躍しており、進路相談は卒業後も対応しています。</p>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">国公立高校</h3>
+      <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">川越高校、和光国際高校、坂戸高校、所沢高校、松山高校、松山女子高校、川越南高校、市立川越高校、坂戸西高校、朝霞高校、朝霞西高校、滑川総合高校、小川高校、川越工業高校、川越総合高校、筑波大学附属坂戸高校　他</p>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">私立高校</h3>
+      <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">明治大学明治高校、大宮開成高校、浦和学院高校、埼玉栄高校、川越東高校、城西高校、城西川越高校、狭山ヶ丘高校、東海大学附属相模高校、東京農業大学第三高校、星野高校、西武学園文理高校、聖望高校、西武台高校、山村学園高校、武蔵越生高校、山村国際高校、埼玉平成高校、霞ヶ関高校　他</p>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">大学</h3>
+      <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">青山学院大学、明治大学、東京経済大学、大東文化大学、拓殖大学、東京国際大学　他</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="instructor" style="padding:100px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">INSTRUCTOR</div>
+    <h2 class="section-title">教室紹介</h2>
+  </div>
+  <div class="reveal-el" style="max-width:680px;margin:0 auto;line-height:2;color:var(--text-sub)">
+    <p><strong>城埼学院</strong>　〜地元密着塾！定期テストに強い！！〜</p><p>講師歴20年以上の塾長と教員免許保有の副室長が在籍。分かるまでじっくり指導し、前回の内容のおさらいから始めるので、着実にステップアップできます。</p><p>学習面以外にも、生徒さんたちの悩み事・相談事を親身に聞きアドバイスしています。「今日は学校で分からなかったところを中心に進めてほしい」「英検が控えてるので英検対策授業に変えてほしい」などのご要望にも対応。年間計画に遅れを生じないよう無料で補習を行なったり、自習時間にフォローしますので心配ありません。</p><p>自習席は無料で開放しており、卒業生も利用可能です。分からないところがあれば空き時間に説明し、自習用プリントもご用意しています。自習席の空き状況はInstagram、Xにて毎日公開中です。</p>
+  </div>
+</div>
+</section>
+
+<section class="courses" id="courses">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">COURSES</div>
+    <h2 class="section-title">コースのご案内</h2>
+    <p class="section-desc-center">お子様の学年・目標に合わせたコースをご用意しています。週1回・1教科から通え、科目や回数の変更もいつでも可能です。</p>
+  </div>
+  <div class="course-tabs reveal-el">
+    <button class="course-tab" data-tab="tab-0">小学生</button>
+<button class="course-tab active" data-tab="tab-1">中学生</button>
+<button class="course-tab" data-tab="tab-2">高校生</button>
+
+  </div>
+  <div class="course-panels">
+    <div class="course-panel" id="tab-0">
+      <div class="course-panel-inner">
+        <div class="course-panel-badge">小学生</div>
+        <h3 class="course-panel-title">小学生コース（60分）</h3>
+        <p class="course-panel-desc">月謝6,600円（税込・週1回60分・4コマ）。週2回13,200円（8コマ）。国語・算数・英語に対応。学校の授業の補習から中学準備まで、お子様のペースに合わせた個別カリキュラムで指導します。5週目に授業がある場合は受講コマ数に応じて追加されます。期別講習は希望者のみになります。施設費：月額1,320円。</p>
+        <a href="#contact" class="course-panel-cta">詳しく見る <span class="arrow-right">&#8594;</span></a>
+      </div>
+      <div class="course-panel-deco">
+        <div class="course-deco-circle"></div>
+        <div class="course-deco-dots"></div>
+      </div>
+    </div>
+<div class="course-panel active" id="tab-1">
+      <div class="course-panel-inner">
+        <div class="course-panel-badge">中学生</div>
+        <h3 class="course-panel-title">中学生コース（80分）</h3>
+        <p class="course-panel-desc">月謝13,200円（税込・週1回80分・4コマ）。週2回25,200円（8コマ）、週3回33,600円（12コマ）。5教科対応で定期テスト対策から高校受験まで幅広くサポート。5週目の追加料金：週1回→1コマ3,300円、週2回→1コマ3,150円、週3回→1コマ2,800円。施設費：月額1,980円。期別講習は全員対象。</p>
+        <a href="#contact" class="course-panel-cta">詳しく見る <span class="arrow-right">&#8594;</span></a>
+      </div>
+      <div class="course-panel-deco">
+        <div class="course-deco-circle"></div>
+        <div class="course-deco-dots"></div>
+      </div>
+    </div>
+<div class="course-panel" id="tab-2">
+      <div class="course-panel-inner">
+        <div class="course-panel-badge">高校生</div>
+        <h3 class="course-panel-title">高校生コース（80分）</h3>
+        <p class="course-panel-desc">中学生と同じ料金体系（月謝13,200円〜）。大学受験対策、定期テスト対策、推薦入試対策など、進路に合わせた個別カリキュラムで指導。英検2級取得による大学受験英語免除・加点も見据えた対策が可能です。自習席も無料で利用できます。施設費：月額1,980円。</p>
+        <a href="#contact" class="course-panel-cta">詳しく見る <span class="arrow-right">&#8594;</span></a>
+      </div>
+      <div class="course-panel-deco">
+        <div class="course-deco-circle"></div>
+        <div class="course-deco-dots"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<section class="faq-section" id="faq">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">FAQ</div>
+    <h2 class="section-title">よくある質問</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal-el" data-delay="0.0">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">個別指導と集団指導の違いは何ですか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>個々の習熟度や特性に合わせた目標設定で段階的に進めます。講師の一斉授業ではなく、学力に合わせた説明による能動的授業となり、都度質問が可能。分からない状態での問題演習を避け無駄を省きます。問題・宿題・説明方法も個別対応します。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.06">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">先生1人に生徒2人できちんと見てもらえますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>講義と演習を繰り返し、2人で交互に時間配分します。演習中は適切なタイミングでアドバイス・ヒントを提供しますので、待ち時間なく効率的に学習できます。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.12">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">質問が苦手な子でも大丈夫ですか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>授業前後でコミュニケーションを構築し、授業中は心の声に耳を傾け、手が止まっている生徒に声掛けします。質問しやすい環境づくりを大切にしています。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.18">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">先生は担当制ですか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい、担当制です。担当講師と塾長が指導計画を作成します。習熟度に合わせて変更する場合もあります。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.24">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">中1ですが夏期講習はいつから始まりますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>受験生以外は2学期の定期テスト直前対策として実施します。宿題対応等のご希望があれば臨機応変に対応いたします。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.3">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">自習時間は遅刻しても大丈夫ですか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>自習時間はXで告知しています。強制ではなく入退室は自由ですので、お気軽にご利用ください。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.36">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">通っている学校に合わせた学習やテスト対策はできますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>学校の授業進度に合わせた予習・復習が可能です。学校教材を活用し、内申点対策もしっかり行います。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.42">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">学年を戻って教えてもらうことはできますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>はい、つまずきの原因となった前学年・前学期に遡る「戻り学習」を積極的に行っています。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.48">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">定期テスト前は家で勉強したいのですが…</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>授業日の移動が可能です。テスト3週間前までにご連絡いただければ、他教科の追加も対応します。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.54">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">急な欠席の場合も振替できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>2日前までのご連絡で振替可能です。1日前〜当日の場合は補習でカリキュラムの遅延に対応します。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.6">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">無料体験授業とはどのようなものですか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>学習状況を確認し、円滑に授業を開始できることを目的としています。ご希望の内容を指定することも可能です。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.6599999999999999">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">月の途中からでも入塾できますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>可能です。月途中の入塾でも1ヶ月分の授業回数を実施します。夏休み・冬休みの途中からでも対応いたします。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal-el" data-delay="0.72">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-q-icon">Q</span>
+        <span class="faq-q-text">兄弟で入塾した場合、何か特典はありますか？</span>
+        <span class="faq-q-toggle"><svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="faq-toggle-v"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <div class="faq-a-wrap">
+        <div class="faq-a"><span class="faq-a-icon">A</span>特典がございます。入塾金もご兄弟の場合はかかりません。詳細はお問い合わせください。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:56px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">TUITION</div>
+    <h2 class="section-title">授業料・費用（税込）</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto">
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">入塾金</h3>
+      <p style="font-size:1.05rem;color:var(--navy)">9,900円　<span style="color:var(--text-sub);font-size:.9rem">※ご兄弟が入塾の際は入塾金はかかりません。</span></p>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">小学生（60分授業）</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:1rem">
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--text-sub)">週1回（4コマ）</td><td style="padding:10px 0;text-align:right;font-weight:700;color:var(--navy)">6,600円</td></tr>
+<tr><td style="padding:10px 0;color:var(--text-sub)">週2回（8コマ）</td><td style="padding:10px 0;text-align:right;font-weight:700;color:var(--navy)">13,200円</td></tr>
+</table>
+<p style="font-size:.85rem;color:var(--text-note);margin-top:8px">5週目に授業がある場合は受講コマ数に応じて追加されます。期別講習は希望者のみ。</p>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">中学生・高校生（80分授業）</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:1rem">
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--text-sub)">週1回（4コマ）</td><td style="padding:10px 0;text-align:right;font-weight:700;color:var(--navy)">13,200円</td></tr>
+<tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--text-sub)">週2回（8コマ）</td><td style="padding:10px 0;text-align:right;font-weight:700;color:var(--navy)">25,200円</td></tr>
+<tr><td style="padding:10px 0;color:var(--text-sub)">週3回（12コマ）</td><td style="padding:10px 0;text-align:right;font-weight:700;color:var(--navy)">33,600円</td></tr>
+</table>
+<p style="font-size:.85rem;color:var(--text-note);margin-top:8px">中学生の5週目の追加料金：週1回→1コマあたり3,300円 ／ 週2回→1コマあたり3,150円 ／ 週3回→1コマあたり2,800円</p>
+    </div>
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">施設費（月額）</h3>
+      <p style="font-size:1rem;color:var(--navy)">中学生以上：1,980円 ／ 小学生：1,320円</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:56px 0;background:var(--bg-warm)">
+<div class="container">
+  <div class="section-header-center">
+    <div class="section-label-accent">SCHEDULE</div>
+    <h2 class="section-title">授業時間・空き状況</h2>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
+  <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:16px">中学・高校生の授業時間</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:.9rem">
+    <div>
+      <p style="font-weight:700;color:var(--navy);margin-bottom:6px">午前の部</p>
+      <p style="color:var(--text-sub);line-height:1.7">1限 9:00-10:20<br>2限 10:30-11:50</p>
+    </div>
+    <div>
+      <p style="font-weight:700;color:var(--navy);margin-bottom:6px">午後の部</p>
+      <p style="color:var(--text-sub);line-height:1.7">1限 12:10-13:30<br>2限 13:40-15:00<br>3限 15:10-16:30<br>4限 16:40-18:00<br>5限 18:10-19:30<br>6限 19:40-21:00<br>7限 21:00-22:30</p>
+    </div>
+  </div>
+  <p style="font-size:.85rem;color:var(--text-note);margin-top:12px">※小学生の時間帯は応相談になります。</p>
+</div>
+<div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;overflow-x:auto">
+  <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:16px">空き状況（通常期）</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:.9rem;text-align:center;min-width:400px">
+    <thead>
+      <tr style="border-bottom:2px solid var(--primary)">
+        <th style="padding:8px 4px;color:var(--navy)">時間帯</th>
+        <th style="padding:8px 4px">月</th><th style="padding:8px 4px">火</th><th style="padding:8px 4px">水</th><th style="padding:8px 4px">木</th><th style="padding:8px 4px">金</th><th style="padding:8px 4px">土</th><th style="padding:8px 4px;color:var(--text-note)">日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:10px 4px;color:var(--text-sub);text-align:left">18:00〜19:30</td>
+        <td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#eab308;font-weight:700">△</td><td style="color:var(--text-note)">／</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 4px;color:var(--text-sub);text-align:left">19:30〜21:00</td>
+        <td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#22c55e;font-weight:700">○</td><td style="color:#eab308;font-weight:700">△</td><td style="color:var(--text-note)">／</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:.85rem;color:var(--text-note);margin-top:12px">※時間帯は休み時間も含めています。開始時刻はそれぞれ18:10〜と19:40〜になります。<br>※小学生の時間帯は応相談となりますのでお問い合わせください。</p>
+</div>
+  </div>
+</div>
+</section>
+
+
+<section style="padding:40px 0">
+<div class="container">
+  <div style="max-width:800px;margin:0 auto">
+    <div class="fade-up" style="background:var(--primary-5);border-radius:12px;padding:24px 28px">
+      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">ご確認事項</h3>
+      <ul style="font-size:.95rem;line-height:1.9;color:var(--navy);list-style:disc;padding-left:20px">
+        <li>諸事情により欠席される場合は、お早めにご連絡をお願いいたします。前日までにご連絡いただければ振替が可能です。</li>
+        <li>入塾後は親御さまにLINE登録していただくことにより、ご要望にはいつでも対応させていただいております。お気軽にご連絡ください。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="padding:48px 0">
+<div class="container">
+  <div class="section-label" style="font-family:var(--font-accent);font-size:clamp(.8rem,1.5vw,1rem);font-weight:400;font-style:italic;letter-spacing:.15em;color:var(--primary);margin-bottom:12px">IMPROVEMENT</div>
+  <h2 class="section-title">改善ポイント（ご提案）</h2>
+  <div class="features-grid" style="margin-top:24px">
+    <div class="feature-card fade-up">
+      <div class="feature-num">Point 1</div>
+      <h3 class="feature-title">トップ画面の第一印象</h3>
+      <p class="feature-desc">保護者がサイトを開いた瞬間に「この塾なら安心」と感じていただけるよう、教室の雰囲気が伝わるビジュアルとキャッチコピーを大きく配置。講師歴20年以上の実績・定期テストに強い指導力など、貴塾の強みをファーストビューで一目で伝えます。</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-num">Point 2</div>
+      <h3 class="feature-title">「もっと知りたい」を引き出す構成</h3>
+      <p class="feature-desc">スクロールするごとに「選ばれる理由」「コース・料金」「合格実績」「FAQ」と段階的に情報を開示。保護者の関心を途切れさせず、自然と体験申込まで導く設計にしています。川越高校合格・英検準1級(中3)などの実績が信頼感を後押しします。</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-num">Point 3</div>
+      <h3 class="feature-title">問い合わせへの最短導線</h3>
+      <p class="feature-desc">「無料体験に申し込む」ボタンを画面上部と下部の2箇所に常時表示。「気になった瞬間」を逃さず、ワンタップで行動に移せます。電話番号もタップで即発信、24時間対応のフォームで深夜でも問い合わせ可能です。</p>
+    </div>
+  </div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="https://www.edu-shift.com/service/hp-production" style="color:#1B3A5C;font-weight:700;text-decoration:underline" target="_blank">▶ EduShift HP制作サービスの詳細はこちら</a></p>
+</section>
+
+<a href="#contact" class="floating-line" id="floating-line">無料体験に申し込む</a>
+
+<script>
+(function(){
+  'use strict';
+
+  // === Hamburger (animated X) ===
+  var hamburger=document.getElementById('hamburger');
+  hamburger.addEventListener('click',function(){
+    this.classList.toggle('active');
+    document.getElementById('mobile-nav').classList.toggle('open');
+  });
+  window.closeMobile=function(){
+    hamburger.classList.remove('active');
+    document.getElementById('mobile-nav').classList.remove('open');
+  };
+
+  // === Header scroll + floating CTA + progress bar + active nav ===
+  var header=document.querySelector('header');
+  var fl=document.getElementById('floating-line');
+  var prog=document.getElementById('scrollProgress');
+  var sections=document.querySelectorAll('section[id]');
+  var navLinks=document.querySelectorAll('header nav a');
+
+  window.addEventListener('scroll',function(){
+    var sy=window.scrollY;
+    header.classList.toggle('scrolled',sy>10);
+    if(sy>400)fl.classList.add('show');else fl.classList.remove('show');
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    if(max>0)prog.style.transform='scaleX('+(sy/max)+')';
+
+    // Active nav section highlight
+    var current='';
+    sections.forEach(function(sec){
+      var top=sec.offsetTop-120;
+      if(sy>=top)current=sec.getAttribute('id');
+    });
+    navLinks.forEach(function(a){
+      a.classList.remove('nav-active');
+      if(a.getAttribute('href')==='#'+current)a.classList.add('nav-active');
+    });
+  },{passive:true});
+
+  // === Split text: Line-by-line slide-up + char animation ===
+  document.querySelectorAll('.split-text').forEach(function(el){
+    var html=el.innerHTML;
+    // Split by <br> into lines
+    var lines=html.split(/<br\s*\/?>/gi);
+    var newHTML='';
+    lines.forEach(function(line){
+      // Wrap each visible char (preserve tags)
+      var processed='';
+      var inTag=false;
+      for(var i=0;i<line.length;i++){
+        if(line[i]==='<'){inTag=true;processed+=line[i];continue;}
+        if(line[i]==='>'){inTag=false;processed+=line[i];continue;}
+        if(inTag){processed+=line[i];continue;}
+        if(line[i]===' '){processed+=' ';}
+        else{processed+='<span class="char">'+line[i]+'</span>';}
+      }
+      newHTML+='<span class="hero-line"><span class="hero-line-inner">'+processed+'</span></span>';
+    });
+    el.innerHTML=newHTML;
+  });
+
+  // === Scroll reveal ===
+  var revealObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var delay=e.target.getAttribute('data-delay')||0;
+        e.target.style.transitionDelay=delay+'s';
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.08,rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal-el').forEach(function(el){revealObs.observe(el)});
+
+  // === FAQ accordion ===
+  window.toggleFaq=function(btn){
+    var item=btn.closest('.faq-item');
+    var wrap=item.querySelector('.faq-a-wrap');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(other){
+      if(other!==item){
+        other.classList.remove('open');
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-a-wrap').style.maxHeight='0';
+      }
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      wrap.style.maxHeight=wrap.scrollHeight+'px';
+    }else{
+      item.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      wrap.style.maxHeight='0';
+    }
+  };
+
+  // === Course tabs ===
+  document.querySelectorAll('.course-tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('.course-tab').forEach(function(t){t.classList.remove('active')});
+      document.querySelectorAll('.course-panel').forEach(function(p){p.classList.remove('active')});
+      tab.classList.add('active');
+      var panel=document.getElementById(tab.getAttribute('data-tab'));
+      if(panel)panel.classList.add('active');
+    });
+  });
+
+  // === Particles canvas ===
+  var canvas=document.getElementById('particles');
+  if(canvas){
+    var ctx=canvas.getContext('2d');
+    var particles=[];
+    var primaryColor=getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+    function resizeCanvas(){
+      var hero=canvas.parentElement;
+      canvas.width=hero.offsetWidth;
+      canvas.height=hero.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize',resizeCanvas);
+    for(var i=0;i<45;i++){
+      particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2.5+0.5,
+        dx:(Math.random()-0.5)*0.5,
+        dy:(Math.random()-0.5)*0.5,
+        o:Math.random()*0.18+0.03
+      });
+    }
+    function drawParticles(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(function(p){
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=primaryColor;
+        ctx.globalAlpha=p.o;
+        ctx.fill();
+        p.x+=p.dx;p.y+=p.dy;
+        if(p.x<0||p.x>canvas.width)p.dx*=-1;
+        if(p.y<0||p.y>canvas.height)p.dy*=-1;
+      });
+      ctx.globalAlpha=0.04;
+      ctx.strokeStyle=primaryColor;
+      ctx.lineWidth=0.5;
+      for(var a=0;a<particles.length;a++){
+        for(var b=a+1;b<particles.length;b++){
+          var dx=particles[a].x-particles[b].x;
+          var dy=particles[a].y-particles[b].y;
+          if(dx*dx+dy*dy<18000){
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x,particles[a].y);
+            ctx.lineTo(particles[b].x,particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.globalAlpha=1;
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+  }
+
+  // === CURTAIN REVEAL ===
+  var curtain=document.getElementById('heroCurtain');
+  if(curtain){
+    setTimeout(function(){curtain.classList.add('open')},600);
+    setTimeout(function(){curtain.style.display='none'},1800);
+  }
+
+  // === MOUSE PARALLAX on Hero ===
+  var heroSection=document.getElementById('hero');
+  if(heroSection){
+    heroSection.addEventListener('mousemove',function(e){
+      var rect=heroSection.getBoundingClientRect();
+      var cx=(e.clientX-rect.left)/rect.width-0.5;
+      var cy=(e.clientY-rect.top)/rect.height-0.5;
+      document.querySelectorAll('.hero-parallax-layer').forEach(function(layer){
+        var d=parseFloat(layer.dataset.depth)||0.02;
+        layer.style.transform='translate('+(-cx*d*100)+'px,'+(-cy*d*100)+'px)';
+      });
+      // 3D tilt on photo
+      var photo=document.getElementById('heroPhoto');
+      if(photo){
+        photo.style.transform='rotateY('+(cx*8)+'deg) rotateX('+(-cy*6)+'deg)';
+      }
+    });
+    heroSection.addEventListener('mouseleave',function(){
+      document.querySelectorAll('.hero-parallax-layer').forEach(function(layer){
+        layer.style.transform='translate(0,0)';
+      });
+      var photo=document.getElementById('heroPhoto');
+      if(photo)photo.style.transform='rotateY(0) rotateX(0)';
+    });
+  }
+
+  // === GSAP Cinematic Hero v3 + Scroll Animations ===
+  window.addEventListener('DOMContentLoaded',function(){
+    if(typeof gsap==='undefined')return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hide hero elements for GSAP
+    var heroEls=document.querySelectorAll('.hero-anim');
+    heroEls.forEach(function(el){el.style.opacity='0'});
+
+    // Main timeline - starts after curtain opens
+    var tl=gsap.timeline({defaults:{ease:'power4.out'},delay:1.2});
+
+    // Badge elastic drop
+    tl.to('.hero-badge',{opacity:1,y:0,scale:1,duration:.7,startAt:{y:60,scale:.7,opacity:0},ease:'elastic.out(1,.6)'})
+
+    // Show h1 container
+    .set('.split-text',{opacity:1})
+
+    // Lines slide up with dramatic stagger
+    .to('.hero-line-inner',{
+      y:'0%',
+      opacity:1,
+      duration:1.1,
+      stagger:.22,
+      ease:'power4.out'
+    },'-=.2')
+
+    // Chars cascade wave with scale pop
+    .to('.hero h1 .char',{
+      keyframes:[
+        {y:-12,scale:1.15,duration:.18},
+        {y:0,scale:1,duration:.3,ease:'back.out(2)'}
+      ],
+      stagger:{amount:.6,from:'start'},
+    },'-=.4')
+
+    // Trigger em underline animation
+    .call(function(){
+      var h1=document.querySelector('.hero h1');
+      if(h1)h1.classList.add('revealed');
+    })
+
+    // Description types in feel
+    .to('.hero-desc',{opacity:1,y:0,duration:.8,startAt:{y:40,opacity:0}},'-=.5')
+
+    // Actions slam in
+    .to('.hero-actions',{opacity:1,y:0,scale:1,duration:.7,startAt:{y:35,scale:.9,opacity:0},ease:'back.out(1.4)'},'-=.4')
+
+    // Stats cascade with counter
+    .to('.hero-stat',{opacity:1,y:0,scale:1,duration:.6,stagger:.18,startAt:{y:30,scale:.7,opacity:0},ease:'back.out(2)'},'-=.3')
+
+    // Animate stats border line
+    .call(function(){
+      var statsEl=document.querySelector('.hero-stats');
+      if(statsEl)statsEl.classList.add('animated');
+    })
+
+    // Photo: dramatic 3D flip-in + scale
+    .to('.hero-photo',{
+      opacity:1,
+      rotateY:0,
+      rotateX:0,
+      scale:1,
+      clipPath:'inset(0 0% 0 0%)',
+      duration:1.6,
+      ease:'power3.inOut',
+      startAt:{clipPath:'inset(0 100% 0 0%)',rotateY:-15,rotateX:5,scale:1.15,opacity:0}
+    },'-=1.2')
+
+    // Photo shine sweep
+    .to('.hero-photo-shine::before',{x:'250%',duration:1.2,ease:'power2.inOut'},'-=.4')
+    .call(function(){
+      var shine=document.querySelector('.hero-photo-shine');
+      if(shine){
+        shine.style.cssText='position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:24px';
+        var inner=shine.querySelector('::before');
+      }
+      // Manual shine animation via JS
+      gsap.fromTo('.hero-photo-shine',
+        {background:'linear-gradient(100deg,transparent 0%,rgba(255,255,255,0) 0%)'},
+        {duration:0} // placeholder for shine
+      );
+    })
+
+    // Floating shapes burst in with elastic
+    .to('.hero-shape',{opacity:.1,scale:1,rotation:0,duration:1.2,stagger:.1,ease:'elastic.out(1,.4)',startAt:{scale:0,rotation:-30,opacity:0}},'-=1')
+
+    // Photo badges slam in from edges
+    .to(',ease:'back.out(2)'},'-=.5')
+    .to(',ease:'back.out(2)'},'-=.4');
+
+    // === Scroll-triggered animations ===
+
+    // Feature rows: photo → clip-path slide-in, icon → simple fade+slide
+    document.querySelectorAll('.feature-row, .feature-row-reverse').forEach(function(row){
+      var isReverse=row.classList.contains('feature-row-reverse');
+      var visual=row.querySelector('.feature-visual');
+      var text=row.querySelector('.feature-text');
+      var isPhoto=visual&&visual.classList.contains('feature-visual-photo');
+      if(visual){
+        if(isPhoto){
+          // Photo: dramatic clip-path wipe from side
+          var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+          gsap.fromTo(visual,
+            {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+            {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }else{
+          // Icon: gentle fade + slide from side
+          gsap.fromTo(visual,
+            {opacity:0,x:isReverse?-40:40,scale:.95},
+            {opacity:1,x:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+          );
+        }
+      }
+      // Text: slide in from opposite side
+      if(text){
+        gsap.fromTo(text,
+          {opacity:0,x:isReverse?-60:60,y:15},
+          {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:row,start:'top 80%',once:true}}
+        );
+      }
+    });
+
+    // Detail blocks: dramatic clip-path reveal + slide + scale (zigzag)
+    document.querySelectorAll('.detail-block').forEach(function(block){
+      var isReverse=block.classList.contains('detail-block-reverse');
+      var img=block.querySelector('.detail-img');
+      var text=block.querySelector('.detail-text');
+      var num=block.querySelector('.detail-number');
+      // Image: clip-path wipe from the side + scale + slight rotation
+      var clipFrom=isReverse?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+      gsap.fromTo(img,
+        {opacity:0,clipPath:clipFrom,scale:1.08,rotation:isReverse?2:-2},
+        {opacity:1,clipPath:'inset(0 0% 0 0%)',scale:1,rotation:0,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+      );
+      // Text: slide in from opposite side with stagger feel
+      gsap.fromTo(text,
+        {opacity:0,x:isReverse?-80:80,y:20},
+        {opacity:1,x:0,y:0,duration:1,delay:.3,ease:'power3.out',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+      );
+      // Number: scale pop
+      if(num){
+        gsap.fromTo(num,
+          {opacity:0,scale:0.5},
+          {opacity:1,scale:1,duration:.6,delay:.5,ease:'back.out(2)',scrollTrigger:{trigger:block,start:'top 78%',once:true}}
+        );
+      }
+    });
+
+    // Photo grid frames: staggered clip-path reveal
+    document.querySelectorAll('.photo-frame').forEach(function(frame,i){
+      var clipFrom=i%2===0?'inset(0 0 100% 0)':'inset(100% 0 0 0)';
+      gsap.fromTo(frame,
+        {clipPath:clipFrom,scale:1.05},
+        {clipPath:'inset(0 0 0% 0)',scale:1,duration:1.2,ease:'power3.inOut',scrollTrigger:{trigger:frame,start:'top 82%',once:true}}
+      );
+    });
+
+    // Section titles zoom in
+    document.querySelectorAll('.section-title').forEach(function(title){
+      gsap.fromTo(title,
+        {opacity:0,y:30,scale:.96},
+        {opacity:1,y:0,scale:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:title,start:'top 88%',once:true}}
+      );
+    });
+
+    // Parallax for images
+    document.querySelectorAll('.parallax-img').forEach(function(img){
+      gsap.to(img.querySelector('img,.img-container'),{
+        yPercent:-10,
+        ease:'none',
+        scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:1.5}
+      });
+    });
+
+    // Parallax shapes in hero
+    document.querySelectorAll('.hero-shape').forEach(function(shape,i){
+      gsap.to(shape,{
+        y:-(60+i*25),
+        ease:'none',
+        scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.5}
+      });
+    });
+
+    // CTA section scale-in
+    gsap.fromTo('.cta .container',
+      {opacity:0,scale:.92},
+      {opacity:1,scale:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.cta',start:'top 80%',once:true}}
+    );
+
+    // === ENHANCED: 2. Photo frame parallax ===
+    document.querySelectorAll('.photo-frame').forEach(function(frame){
+      var img=frame.querySelector('img,.img-container');
+      if(img){
+        gsap.fromTo(img,
+          {yPercent:-8},
+          {yPercent:8,ease:'none',scrollTrigger:{trigger:frame,start:'top bottom',end:'bottom top',scrub:1.5}}
+        );
+      }
+    });
+
+    // Access items slide in from left
+    ScrollTrigger.batch('.access-item',{
+      onEnter:function(batch){
+        gsap.fromTo(batch,
+          {opacity:0,x:-40},
+          {opacity:1,x:0,stagger:.08,duration:.6,ease:'power3.out'}
+        );
+      },
+      start:'top 88%',
+      once:true
+    });
+  });
+
+  // === Safety fallback ===
+  setTimeout(function(){
+    // Force curtain open
+    var c=document.getElementById('heroCurtain');
+    if(c){c.classList.add('open');setTimeout(function(){c.style.display='none'},1000)}
+    document.querySelectorAll('.hero-anim').forEach(function(el){
+      if(getComputedStyle(el).opacity==='0'){el.style.opacity='';el.style.transform='';}
+    });
+    document.querySelectorAll('.hero-line-inner').forEach(function(el){
+      el.style.transform='none';el.style.opacity='1';
+    });
+    document.querySelectorAll('.hero h1 .char').forEach(function(el){
+      el.style.opacity='1';el.style.transform='none';
+    });
+    document.querySelectorAll('.reveal-el:not(.visible)').forEach(function(el){el.classList.add('visible')});
+    var h1=document.querySelector('.hero h1');if(h1)h1.classList.add('revealed');
+    var st=document.querySelector('.hero-stats');if(st)st.classList.add('animated');
+  },4500);
+})();
+</script>
 </body>
 </html>
