@@ -1,961 +1,119 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>城埼学院｜坂戸の個別指導塾</title>
-  <meta name="description" content="埼玉県坂戸市の個別指導塾・城埼学院。地元密着・定期テストに強い！講師歴20年以上の塾長が小学生〜高校生を丁寧に指導。月5,500円〜無料体験授業受付中。">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --primary: #1a4fa0;
-      --primary-dark: #133a78;
-      --primary-light: #e8f0fe;
-      --accent: #f59e0b;
-      --accent-dark: #d97706;
-      --text: #1e293b;
-      --text-sub: #475569;
-      --border: #e2e8f0;
-      --bg: #f8faff;
-      --white: #ffffff;
-      --radius: 12px;
-    }
-
-    body {
-      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ===== HEADER ===== */
-    header {
-      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 60%, #3b82f6 100%);
-      color: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(26,79,160,0.25);
-    }
-
-    .header-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .header-logo h1 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-    }
-
-    .header-logo span {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 400;
-      opacity: 0.85;
-      letter-spacing: 0.08em;
-    }
-
-    .header-cta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 22px;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-      border: 2px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-      border-color: var(--accent);
-    }
-    .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(245,158,11,0.4); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,0.7);
-    }
-    .btn-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-1px); }
-
-    /* ===== HERO ===== */
-    .hero {
-      background: linear-gradient(160deg, #1a4fa0 0%, #2563eb 50%, #60a5fa 100%);
-      color: var(--white);
-      padding: 80px 20px 100px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .hero-inner { position: relative; max-width: 800px; margin: 0 auto; }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: 50px;
-      padding: 5px 16px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      margin-bottom: 24px;
-    }
-
-    .hero h2 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 20px;
-      letter-spacing: 0.02em;
-    }
-
-    .hero h2 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      margin-bottom: 36px;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-lg {
-      padding: 16px 36px;
-      font-size: 1rem;
-      border-radius: 50px;
-    }
-
-    .hero-note {
-      margin-top: 20px;
-      font-size: 0.8rem;
-      opacity: 0.75;
-    }
-
-    /* ===== SECTION COMMON ===== */
-    section { padding: 72px 20px; }
-
-    .section-inner { max-width: 1080px; margin: 0 auto; }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: var(--primary);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-
-    .section-desc {
-      color: var(--text-sub);
-      font-size: 1rem;
-      max-width: 580px;
-    }
-
-    .section-head { margin-bottom: 48px; }
-
-    /* ===== FEATURES ===== */
-    .features { background: var(--white); }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
-
-    .feature-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px 24px;
-      text-align: center;
-      transition: all 0.2s;
-    }
-
-    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(26,79,160,0.1); border-color: var(--primary-light); }
-
-    .feature-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--primary-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      margin: 0 auto 20px;
-    }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--primary-dark);
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      color: var(--text-sub);
-      line-height: 1.65;
-    }
-
-    /* ===== COURSES ===== */
-    .courses { background: var(--primary-light); }
-
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-
-    .course-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 24px 20px;
-      text-align: center;
-      border-top: 4px solid var(--primary);
-    }
-
-    .course-grade {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-
-    .course-card h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-
-    .course-card ul {
-      list-style: none;
-      font-size: 0.85rem;
-      color: var(--text-sub);
-    }
-
-    .course-card ul li { padding: 3px 0; }
-    .course-card ul li::before { content: '✓ '; color: var(--primary); font-weight: 700; }
-
-    .free-trial-banner {
-      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
-      color: var(--white);
-      border-radius: var(--radius);
-      padding: 32px 36px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .free-trial-banner h3 {
-      font-size: 1.3rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .free-trial-banner p { opacity: 0.9; font-size: 0.9rem; }
-
-    /* ===== PRICING ===== */
-    .pricing { background: var(--white); }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .pricing-card {
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: all 0.2s;
-    }
-
-    .pricing-card:hover { border-color: var(--primary); box-shadow: 0 8px 24px rgba(26,79,160,0.1); }
-    .pricing-card.popular { border-color: var(--primary); }
-
-    .pricing-head {
-      background: var(--bg);
-      padding: 24px;
-      text-align: center;
-      position: relative;
-    }
-
-    .pricing-card.popular .pricing-head { background: var(--primary); color: var(--white); }
-
-    .popular-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: var(--accent);
-      color: var(--white);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 50px;
-    }
-
-    .pricing-head h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .pricing-price {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .pricing-price span { font-size: 0.9rem; font-weight: 400; }
-
-    .pricing-body {
-      padding: 24px;
-    }
-
-    .pricing-body ul {
-      list-style: none;
-      font-size: 0.875rem;
-    }
-
-    .pricing-body ul li {
-      padding: 7px 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .pricing-body ul li:last-child { border-bottom: none; }
-    .pricing-body ul li::before { content: '●'; color: var(--primary); font-size: 0.6rem; margin-top: 5px; flex-shrink: 0; }
-
-    .pricing-note {
-      background: var(--primary-light);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      font-size: 0.875rem;
-      color: var(--text-sub);
-      margin-top: 32px;
-      line-height: 1.75;
-    }
-
-    .pricing-note strong { color: var(--primary-dark); }
-
-    /* ===== ACCESS ===== */
-    .access { background: var(--bg); }
-
-    .access-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    @media (max-width: 640px) { .access-grid { grid-template-columns: 1fr; } }
-
-    .access-info dl {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 12px 20px;
-      font-size: 0.9rem;
-    }
-
-    .access-info dt {
-      font-weight: 700;
-      color: var(--primary);
-      white-space: nowrap;
-    }
-
-    .access-info dd { color: var(--text-sub); }
-
-    .map-placeholder {
-      background: var(--primary-light);
-      border: 2px dashed var(--primary);
-      border-radius: var(--radius);
-      height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-      color: var(--primary);
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .map-placeholder span { font-size: 2rem; }
-
-    /* ===== CONTACT ===== */
-    .contact {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: var(--white);
-      text-align: center;
-    }
-
-    .contact .section-label { color: rgba(255,255,255,0.7); }
-    .contact .section-title { color: var(--white); }
-    .contact .section-desc { color: rgba(255,255,255,0.85); max-width: 100%; }
-
-    .contact-methods {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 40px 0;
-    }
-
-    .contact-method {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: var(--radius);
-      padding: 28px 36px;
-      text-align: center;
-      min-width: 200px;
-    }
-
-    .contact-method .icon { font-size: 2rem; margin-bottom: 12px; }
-    .contact-method h3 { font-size: 0.85rem; font-weight: 600; opacity: 0.8; margin-bottom: 6px; }
-    .contact-method p { font-size: 1.15rem; font-weight: 800; }
-
-    .contact-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-
-    .btn-white {
-      background: var(--white);
-      color: var(--primary);
-      border-color: var(--white);
-      font-weight: 800;
-    }
-    .btn-white:hover { background: var(--primary-light); border-color: var(--primary-light); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(255,255,255,0.3); }
-
-    /* ===== IMPROVEMENT BANNER ===== */
-    .improvement {
-      background: #fffbeb;
-      border-top: 3px solid var(--accent);
-      padding: 48px 20px;
-    }
-
-    .improvement-inner { max-width: 1080px; margin: 0 auto; }
-
-    .improvement-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .improvement-badge {
-      background: var(--accent);
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 4px;
-      white-space: nowrap;
-    }
-
-    .improvement-header h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #92400e;
-    }
-
-    .improvement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .improvement-item {
-      background: var(--white);
-      border: 1px solid #fde68a;
-      border-radius: 8px;
-      padding: 16px 20px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .improvement-num {
-      background: var(--accent);
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 800;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .improvement-item h3 {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: #92400e;
-      margin-bottom: 4px;
-    }
-
-    .improvement-item p {
-      font-size: 0.8rem;
-      color: #a16207;
-      line-height: 1.55;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0f172a;
-      color: rgba(255,255,255,0.7);
-      padding: 48px 20px 24px;
-    }
-
-    .footer-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
-
-    .footer-brand h3 {
-      color: var(--white);
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .footer-brand p { font-size: 0.825rem; line-height: 1.7; }
-
-    .footer-col h4 {
-      color: var(--white);
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { font-size: 0.8rem; padding: 4px 0; }
-    .footer-col ul li a:hover { color: var(--white); }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.775rem;
-    }
-
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer-links a:hover { color: var(--white); text-decoration: underline; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      section { padding: 52px 16px; }
-      .hero { padding: 56px 16px 72px; }
-      .free-trial-banner { flex-direction: column; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .header-logo h1 { font-size: 1.2rem; }
-      .btn-lg { padding: 14px 24px; font-size: 0.9rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>坂戸市 個別指導塾 城埼学院</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN',sans-serif;color:#333;line-height:1.7}
+.notice-banner{background:#fff3cd;border-left:4px solid #ffc107;padding:12px 20px;font-size:13px;color:#856404;text-align:center}
+header{background:linear-gradient(135deg,#1a237e 0%,#283593 100%);color:#fff;padding:60px 20px;text-align:center}
+header h1{font-size:2.2em;margin-bottom:10px;letter-spacing:2px}
+header p{font-size:1.1em;opacity:.9;margin-bottom:24px}
+.hero-cta{display:inline-block;background:#fdd835;color:#1a237e;padding:14px 36px;border-radius:30px;font-weight:700;font-size:1.1em;text-decoration:none;transition:.2s}
+.hero-cta:hover{background:#f9a825;transform:translateY(-2px)}
+section{padding:60px 20px;max-width:900px;margin:0 auto}
+h2{font-size:1.6em;color:#1a237e;border-bottom:3px solid #1a237e;padding-bottom:10px;margin-bottom:30px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:20px}
+.feature-card{background:#f5f7ff;border-radius:12px;padding:28px;border-top:4px solid #1a237e}
+.feature-card h3{color:#1a237e;margin-bottom:12px;font-size:1.1em}
+.badge{background:#1a237e;color:#fff;display:inline-block;padding:2px 10px;border-radius:12px;font-size:.8em;margin-bottom:8px}
+.course-table{width:100%;border-collapse:collapse;margin-top:20px}
+.course-table th{background:#1a237e;color:#fff;padding:12px 16px;text-align:left}
+.course-table td{padding:12px 16px;border-bottom:1px solid #e0e0e0}
+.course-table tr:nth-child(even) td{background:#f5f7ff}
+.price-note{font-size:.85em;color:#666;margin-top:12px}
+.cta-section{background:#1a237e;color:#fff;padding:60px 20px;text-align:center}
+.cta-section h2{color:#fdd835;border-color:#fdd835}
+form{max-width:600px;margin:30px auto 0;text-align:left}
+label{display:block;margin-bottom:6px;font-size:.95em}
+input,textarea{width:100%;padding:12px;border:1px solid rgba(255,255,255,.3);border-radius:8px;background:rgba(255,255,255,.1);color:#fff;font-size:1em;margin-bottom:20px}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.6)}
+textarea{height:140px;resize:vertical}
+.submit-btn{display:block;width:100%;background:#fdd835;color:#1a237e;border:none;padding:16px;border-radius:30px;font-size:1.1em;font-weight:700;cursor:pointer;transition:.2s}
+.submit-btn:hover{background:#f9a825;transform:translateY(-2px)}
+.access-box{background:#f5f7ff;border-radius:12px;padding:28px;margin-top:20px}
+footer{background:#0d1547;color:rgba(255,255,255,.7);text-align:center;padding:24px;font-size:.9em}
+@media(max-width:600px){header h1{font-size:1.5em}.features{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-
-<!-- ===== HEADER ===== -->
-<header>
-  <div class="header-inner">
-    <div class="header-logo">
-      <h1>城埼学院</h1>
-      <span>個別指導塾｜埼玉県坂戸市</span>
-    </div>
-    <div class="header-cta">
-      <a href="#contact" class="btn btn-outline">お問い合わせ</a>
-      <a href="#contact" class="btn btn-primary">無料体験授業</a>
-    </div>
-  </div>
-</header>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">📍 坂戸駅すぐ・元町通り沿い</div>
-    <h2>地元密着・定期テストに強い！<br><em>坂戸の個別指導塾</em></h2>
-    <p class="hero-sub">小学生〜高校生 / 5教科対応 / 月5,500円〜</p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary btn-lg">無料体験授業に申し込む</a>
-      <a href="#pricing" class="btn btn-outline btn-lg">料金を見る</a>
-    </div>
-    <p class="hero-note">※ 体験授業は無料です（小学生60分 / 中学生80分）</p>
-  </div>
-</section>
-
-<!-- ===== FEATURES ===== -->
-<section class="features">
-  <div class="section-inner">
-    <div class="section-head">
-      <p class="section-label">Features</p>
-      <h2 class="section-title">城埼学院が選ばれる理由</h2>
-      <p class="section-desc">経験豊富な講師陣が一人ひとりに合わせた指導で、確かな成果を積み上げます。</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">👨‍🏫</div>
-        <h3>経験豊富な指導陣</h3>
-        <p>塾長は講師歴20年以上。副室長は教員免許保持者。確かな指導力で生徒の成績向上をサポートします。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📚</div>
-        <h3>5教科完全対応</h3>
-        <p>国語・数学・英語・理科・社会の5教科に対応。定期テスト対策から受験対策まで一貫して指導します。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🕐</div>
-        <h3>自由な曜日・時間設定</h3>
-        <p>部活や習い事と両立できる柔軟なスケジュール。振替授業対応で急な予定変更にも安心です。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📖</div>
-        <h3>自習席・毎日開放</h3>
-        <p>自習席の空き状況をInstagram/Xで毎日公開中。授業のない日も学習習慣を維持できます。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COURSES ===== -->
-<section class="courses">
-  <div class="section-inner">
-    <div class="section-head">
-      <p class="section-label">Courses</p>
-      <h2 class="section-title">対象学年・コース</h2>
-      <p class="section-desc">講師1人に対して生徒2名までの個別指導形式で、きめ細かな指導を実現します。</p>
-    </div>
-    <div class="courses-grid">
-      <div class="course-card">
-        <p class="course-grade">小学生</p>
-        <h3>小学生コース</h3>
-        <ul>
-          <li>基礎学力の定着</li>
-          <li>中学準備指導</li>
-          <li>算数・国語・英語</li>
-          <li>体験60分</li>
-        </ul>
-      </div>
-      <div class="course-card">
-        <p class="course-grade">中学生</p>
-        <h3>中学生コース</h3>
-        <ul>
-          <li>定期テスト対策</li>
-          <li>5教科完全対応</li>
-          <li>高校受験対策</li>
-          <li>体験80分</li>
-        </ul>
-      </div>
-      <div class="course-card">
-        <p class="course-grade">高校生</p>
-        <h3>高校生コース</h3>
-        <ul>
-          <li>大学受験対策</li>
-          <li>苦手科目克服</li>
-          <li>定期テスト対策</li>
-          <li>体験80分</li>
-        </ul>
-      </div>
-      <div class="course-card">
-        <p class="course-grade">季節講習</p>
-        <h3>春・夏・冬期講習</h3>
-        <ul>
-          <li>学習の遅れを取り戻す</li>
-          <li>先取り学習</li>
-          <li>受験直前対策</li>
-          <li>短期集中</li>
-        </ul>
-      </div>
-    </div>
-    <div class="free-trial-banner">
-      <div>
-        <h3>🎓 無料体験授業 実施中</h3>
-        <p>小学生は60分、中学生・高校生は80分の体験授業が無料でご受講いただけます。お気軽にご参加ください。</p>
-      </div>
-      <a href="#contact" class="btn btn-primary btn-lg">無料体験に申し込む</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PRICING ===== -->
-<section class="pricing" id="pricing">
-  <div class="section-inner">
-    <div class="section-head">
-      <p class="section-label">Pricing</p>
-      <h2 class="section-title">料金プラン</h2>
-      <p class="section-desc">週1回1科目から始められます。無理のないペースで続けられる料金設定です。</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-head">
-          <h3>週1回 / 1科目</h3>
-          <div class="pricing-price">¥5,500<span>/月〜</span></div>
-        </div>
-        <div class="pricing-body">
-          <ul>
-            <li>月4回（1科目）</li>
-            <li>個別指導（1:2形式）</li>
-            <li>5教科より選択</li>
-            <li>振替授業対応</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pricing-card popular">
-        <div class="pricing-head">
-          <div class="popular-badge">人気</div>
-          <h3>週2回 / 2科目</h3>
-          <div class="pricing-price">¥11,000<span>/月〜</span></div>
-        </div>
-        <div class="pricing-body">
-          <ul>
-            <li>月8回（2科目）</li>
-            <li>個別指導（1:2形式）</li>
-            <li>5教科より2科目選択</li>
-            <li>振替授業対応</li>
-            <li>自習席利用可</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-head">
-          <h3>週3回 / 3科目以上</h3>
-          <div class="pricing-price">¥16,500<span>/月〜</span></div>
-        </div>
-        <div class="pricing-body">
-          <ul>
-            <li>月12回（3科目）</li>
-            <li>個別指導（1:2形式）</li>
-            <li>5教科より3科目選択</li>
-            <li>振替授業対応</li>
-            <li>自習席利用可</li>
-            <li>定期テスト前特別対策</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="pricing-note">
-      <strong>※ 料金について</strong><br>
-      上記は税込表示の参考価格です。学年・科目数・コース内容によって異なる場合があります。詳細な料金はお問い合わせまたは無料体験時にご説明いたします。教材費・入会金については別途ご案内しています。
-    </div>
-  </div>
-</section>
-
-<!-- ===== ACCESS ===== -->
-<section class="access">
-  <div class="section-inner">
-    <div class="section-head">
-      <p class="section-label">Access</p>
-      <h2 class="section-title">アクセス</h2>
-    </div>
-    <div class="access-grid">
-      <div class="access-info">
-        <dl>
-          <dt>塾名</dt>
-          <dd>城埼学院（個別指導塾）</dd>
-          <dt>住所</dt>
-          <dd>埼玉県坂戸市元町14-20<br>愛和ビル2F</dd>
-          <dt>最寄り駅</dt>
-          <dd>東武東上線 坂戸駅<br>元町通り沿い</dd>
-          <dt>対象</dt>
-          <dd>小学生〜高校生</dd>
-          <dt>電話</dt>
-          <dd>お問い合わせフォームよりご連絡ください</dd>
-          <dt>SNS</dt>
-          <dd>Instagram / X（自習席空き状況を毎日公開）</dd>
-        </dl>
-      </div>
-      <div class="map-placeholder">
-        <span>🗺️</span>
-        <p>埼玉県坂戸市元町14-20<br>愛和ビル2F</p>
-        <small>坂戸駅から元町通り沿い</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="contact" id="contact">
-  <div class="section-inner">
-    <p class="section-label">Contact</p>
-    <h2 class="section-title">無料体験授業・お問い合わせ</h2>
-    <p class="section-desc">まずは気軽にご相談ください。体験授業は完全無料です。<br>勉強の悩みや学習計画についても丁寧にお答えします。</p>
-    <div class="contact-methods">
-      <div class="contact-method">
-        <div class="icon">📧</div>
-        <h3>メールでのお問い合わせ</h3>
-        <p>お問い合わせフォームへ</p>
-      </div>
-      <div class="contact-method">
-        <div class="icon">📱</div>
-        <h3>SNSでの最新情報</h3>
-        <p>Instagram / X で発信中</p>
-      </div>
-    </div>
-    <div class="contact-cta">
-      <a href="mailto:info@josaki-gakuin.example.com" class="btn btn-white btn-lg">無料体験に申し込む</a>
-      <a href="#" class="btn btn-outline btn-lg">お問い合わせフォーム</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== IMPROVEMENT BANNER ===== -->
-<div class="improvement">
-  <div class="improvement-inner">
-    <div class="improvement-header">
-      <span class="improvement-badge">改善提案</span>
-      <h2>このサイトへの改善提案ポイント（制作者メモ）</h2>
-    </div>
-    <div class="improvement-grid">
-      <div class="improvement-item">
-        <div class="improvement-num">1</div>
-        <div>
-          <h3>プライバシーポリシーの設置</h3>
-          <p>お問い合わせフォームの設置に伴い、個人情報の取扱い方針を明記したプライバシーポリシーページへのリンクをフッターに追加する必要があります。</p>
-        </div>
-      </div>
-      <div class="improvement-item">
-        <div class="improvement-num">2</div>
-        <div>
-          <h3>特定商取引法に基づく表記</h3>
-          <p>有料サービスを提供する塾として、特定商取引法に基づく表記（事業者名・住所・電話番号・返金ポリシー等）の掲載が法律上必要です。</p>
-        </div>
-      </div>
-      <div class="improvement-item">
-        <div class="improvement-num">3</div>
-        <div>
-          <h3>CTAボタンの戦略的配置</h3>
-          <p>ヘッダー固定・各セクション末尾・ファーストビューに体験申込ボタンを配置することで、問い合わせ率の向上が見込めます（本サンプルで実装済み）。</p>
-        </div>
-      </div>
-      <div class="improvement-item">
-        <div class="improvement-num">4</div>
-        <div>
-          <h3>問い合わせフォームの整備</h3>
-          <p>現在SNS・メールのみの受付と想定されます。Googleフォームや専用フォームを設置し、フォーム送信後の自動返信メールも設定することを推奨します。</p>
-        </div>
-      </div>
-      <div class="improvement-item">
-        <div class="improvement-num">5</div>
-        <div>
-          <h3>料金表の視覚化</h3>
-          <p>料金プランをカード形式・表形式で明示することで、保護者が比較・検討しやすくなります（本サンプルで実装済み）。</p>
-        </div>
-      </div>
-      <div class="improvement-item">
-        <div class="improvement-num">6</div>
-        <div>
-          <h3>スマートフォン最適化</h3>
-          <p>レスポンシブデザインの強化、タップターゲットサイズの確保、電話番号のクリックtoコール対応を実装することで、スマホからの問い合わせを増やせます。</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="notice-banner">
+  ※このページは <strong>城埼学院</strong> へのHP改善提案サンプルです。現HPへの追加提案：プライバシーポリシー・特定商取引法の追記、スマートフォン最適化、お問い合わせCTA強化
 </div>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <h3>城埼学院</h3>
-        <p>埼玉県坂戸市の地元密着型個別指導塾。講師歴20年以上の塾長と教員免許保持の副室長が、小学生〜高校生の学力向上を全力でサポートします。</p>
-      </div>
-      <div class="footer-col">
-        <h4>コース・料金</h4>
-        <ul>
-          <li><a href="#courses">小学生コース</a></li>
-          <li><a href="#courses">中学生コース</a></li>
-          <li><a href="#courses">高校生コース</a></li>
-          <li><a href="#pricing">料金プラン</a></li>
-          <li><a href="#courses">無料体験授業</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>ご案内</h4>
-        <ul>
-          <li><a href="#access">アクセス</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
-          <li><a href="#">プライバシーポリシー</a></li>
-          <li><a href="#">特定商取引法に基づく表記</a></li>
-        </ul>
-      </div>
+<header>
+  <h1>城埼学院</h1>
+  <p>坂戸市元町 ／ 小学生〜高校生対応 ／ 1:2の丁寧な個別指導</p>
+  <a href="#contact" class="hero-cta">📚 無料体験授業を申し込む</a>
+</header>
+
+<section>
+  <h2>城埼学院の3つの強み</h2>
+  <div class="features">
+    <div class="feature-card">
+      <span class="badge">1:2指導</span>
+      <h3>最適な緊張感と集中力</h3>
+      <p>1:1は緊張しすぎ、1:3以上は演習不足。城埼学院は1:2に徹底し、程よい集中感と質問しやすい環境を両立しています。</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2024 城埼学院 All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#">プライバシーポリシー</a>
-        <a href="#">特定商取引法に基づく表記</a>
-      </div>
+    <div class="feature-card">
+      <span class="badge">柔軟な時間割</span>
+      <h3>文武両立を全力サポート</h3>
+      <p>曜日・時間帯を自由に選択可能。部活やクラブチームに入っている生徒さんも安心。欠席時は前日連絡で振替対応します。</p>
+    </div>
+    <div class="feature-card">
+      <span class="badge">週1回から</span>
+      <h3>小さく始めて着実に伸ばす</h3>
+      <p>週1回・1教科からスタートOK。入試対策、授業サポート、資格試験まで、目的に合わせて柔軟に対応します。</p>
     </div>
   </div>
-</footer>
+</section>
 
+<section style="background:#f5f7ff;max-width:100%;padding:60px 20px">
+  <div style="max-width:900px;margin:0 auto">
+    <h2>対応学年・コース</h2>
+    <table class="course-table">
+      <tr><th>対象</th><th>内容</th><th>授業料目安</th></tr>
+      <tr><td>小学生</td><td>基礎固め・中学受験準備・学校授業サポート</td><td>月5,500円〜</td></tr>
+      <tr><td>中学生</td><td>定期テスト対策・高校受験対策・5科目対応</td><td>月5,500円〜</td></tr>
+      <tr><td>高校生</td><td>大学受験対策・苦手科目の集中補強</td><td>お問い合わせ</td></tr>
+    </table>
+    <p class="price-note">※授業料は教科数・コマ数によって異なります。詳細はお問い合わせください。</p>
+  </div>
+</section>
+
+<section>
+  <h2>アクセス</h2>
+  <div class="access-box">
+    <p><strong>城埼学院</strong></p>
+    <p>📍 埼玉県坂戸市元町（東武東上線 坂戸駅近く）</p>
+    <p>🚃 東武東上線「坂戸駅」より徒歩圏内</p>
+    <p>🕐 受付時間：お気軽にお問い合わせください</p>
+  </div>
+</section>
+
+<section class="cta-section" id="contact" style="max-width:100%">
+  <div style="max-width:900px;margin:0 auto">
+    <h2>無料体験・お問い合わせ</h2>
+    <p>まずは1回、体験授業にお越しください。費用は一切かかりません。</p>
+    <form>
+      <label>お名前</label>
+      <input type="text" placeholder="山田 太郎">
+      <label>メールアドレス</label>
+      <input type="email" placeholder="example@email.com">
+      <label>お子さまの学年</label>
+      <input type="text" placeholder="例：中学2年生">
+      <label>ご質問・ご要望</label>
+      <textarea placeholder="体験授業の希望日、気になること等、お気軽にどうぞ"></textarea>
+      <button type="submit" class="submit-btn">✉️ 送信する（24時間受付）</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 城埼学院 ／ 埼玉県坂戸市元町</p>
+  <p style="margin-top:8px;font-size:.85em">【改善提案】プライバシーポリシーページ・特定商取引法に基づく表記の追加を推奨します</p>
+</footer>
 </body>
 </html>
