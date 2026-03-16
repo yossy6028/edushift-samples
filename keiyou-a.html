@@ -17,7 +17,8 @@ body {
   color: #1a2e5a;
   line-height: 1.7;
 }
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+img { display: block; width: 100%; height: 100%; object-fit: cover;
+  object-position: center 20%; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 
@@ -177,6 +178,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 .hero-overlay {
   position: absolute;
@@ -932,20 +934,26 @@ footer {
 }
 
 /* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 .fade-left {
+  opacity: 0;
   transform: translateX(-40px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-right {
+  opacity: 0;
   transform: translateX(40px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.fade-up {
-  transform: translateY(30px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
-}
-.fade-left.in, .fade-right.in, .fade-up.in {
-  transform: translate(0,0);
+.fade-in.visible,
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: none;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1040,23 +1048,23 @@ html,body{overflow-x:hidden}
 <!-- ===== FEATURES ===== -->
 <section id="features">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header fade-in">
       <span class="section-label">Why Choose Us</span>
       <h2 class="section-title">慶葉進学アカデミーが選ばれる<br>3つの理由</h2>
     </div>
 
     <div class="features-grid">
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-in">
         <div class="feature-num">01</div>
         <h3>実績豊富なエキスパート講師</h3>
         <p>早慶・国公立大学出身の経験豊富な講師陣が、生徒一人ひとりの弱点を的確に把握し、最短距離での合格をサポートします。</p>
       </div>
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-in">
         <div class="feature-num">02</div>
         <h3>坂戸地域密着の丁寧な指導</h3>
         <p>地域の中学・高校を知り尽くした傾向分析で、志望校に特化した対策を徹底。坂戸・川越エリアの入試情報を熟知しています。</p>
       </div>
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-in">
         <div class="feature-num">03</div>
         <h3>速読・個別・集団のトータル指導</h3>
         <p>生徒の目標・学力・ライフスタイルに合わせた最適なコース選択が可能。速読技術も取り入れ、学習効率を最大化します。</p>
@@ -1102,13 +1110,13 @@ html,body{overflow-x:hidden}
 <!-- ===== RESULTS ===== -->
 <section id="results">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header fade-in">
       <span class="section-label">Achievement</span>
       <h2 class="section-title">2026年 合格実績</h2>
     </div>
 
     <div style="text-align:center; margin-bottom:48px;">
-      <div class="results-badge fade-up">早稲田・慶應ダブル合格</div>
+      <div class="results-badge fade-in">早稲田・慶應ダブル合格</div>
     </div>
 
     <div class="results-layout">
@@ -1164,7 +1172,7 @@ html,body{overflow-x:hidden}
 <!-- ===== LESSONS ===== -->
 <section id="lessons">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header fade-in">
       <span class="section-label">Courses</span>
       <h2 class="section-title">コース案内</h2>
     </div>
@@ -1218,7 +1226,7 @@ html,body{overflow-x:hidden}
 <!-- ===== PRICE ===== -->
 <section id="price">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header fade-in">
       <span class="section-label">Price</span>
       <h2 class="section-title">料金案内</h2>
     </div>
@@ -1260,7 +1268,7 @@ html,body{overflow-x:hidden}
 <!-- ===== ACCESS ===== -->
 <section id="access">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header fade-in">
       <span class="section-label">Access</span>
       <h2 class="section-title">アクセス・お問い合わせ</h2>
     </div>
@@ -1362,18 +1370,32 @@ html,body{overflow-x:hidden}
     });
   }
 
-  // IntersectionObserver animation
-  var targets = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-  function activate(el) { el.classList.add('in'); }
-  if ('IntersectionObserver' in window) {
+  // IntersectionObserver for animations
+  (function() {
+    var targets = document.querySelectorAll('.fade-in, .fade-left, .fade-right');
+
+    // Fallback: show all after 2 seconds
+    var fallbackTimer = setTimeout(function() {
+      targets.forEach(function(el) { el.classList.add('visible'); });
+    }, 2000);
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function(el) { el.classList.add('visible'); });
+      clearTimeout(fallbackTimer);
+      return;
+    }
+
     var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); }
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
       });
-    }, { threshold: 0.15 });
-    targets.forEach(function(t) { obs.observe(t); });
-  }
-  setTimeout(function() { targets.forEach(function(t) { activate(t); }); }, 2000);
+    }, { threshold: 0.1 });
+
+    targets.forEach(function(el) { obs.observe(el); });
+  })();
 })();
 </script>
 </body>

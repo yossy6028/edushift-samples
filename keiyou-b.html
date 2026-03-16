@@ -85,20 +85,26 @@ ul { list-style: none; }
 /* =============================
    Animation classes
 ============================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 .fade-left {
+  opacity: 0;
   transform: translateX(-40px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-right {
+  opacity: 0;
   transform: translateX(40px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.fade-up {
-  transform: translateY(30px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
-}
-.fade-left.in, .fade-right.in, .fade-up.in {
-  transform: translate(0, 0);
+.fade-in.visible,
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: none;
 }
 
 /* =============================
@@ -386,6 +392,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 0.6s ease;
 }
 .zigzag-img-wrap:hover img { transform: scale(1.04); }
@@ -524,6 +531,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .results-text-block {}
@@ -644,6 +652,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 0.6s ease;
 }
 .course-row .course-img-wrap:hover img { transform: scale(1.04); }
@@ -720,6 +729,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .price-content {}
@@ -1105,10 +1115,10 @@ html,body{overflow-x:hidden}
 <section id="hero">
   <div class="hero-bg" role="img" aria-label="自習室で勉強する生徒"></div>
   <div class="hero-content">
-    <div class="hero-label fade-up">坂戸地域密着No.1の学習塾</div>
-    <h1 class="hero-h1 fade-up">一人ひとりの可能性を、<br>坂戸から全国へ。</h1>
-    <p class="hero-sub fade-up">慶葉進学アカデミーは坂戸地域に根ざした学習塾です。早稲田・慶應・浦和高校をはじめ、多くの難関校合格実績を誇ります。お子さまの志望校合格を全力でバックアップします。</p>
-    <div class="hero-btns fade-up">
+    <div class="hero-label fade-in">坂戸地域密着No.1の学習塾</div>
+    <h1 class="hero-h1 fade-in">一人ひとりの可能性を、<br>坂戸から全国へ。</h1>
+    <p class="hero-sub fade-in">慶葉進学アカデミーは坂戸地域に根ざした学習塾です。早稲田・慶應・浦和高校をはじめ、多くの難関校合格実績を誇ります。お子さまの志望校合格を全力でバックアップします。</p>
+    <div class="hero-btns fade-in">
       <a href="https://lin.ee/2lww20W" target="_blank" class="btn-primary">LINEで無料体験申込</a>
       <a href="#results" class="btn-outline">合格実績を見る</a>
     </div>
@@ -1122,8 +1132,8 @@ html,body{overflow-x:hidden}
 <!-- ========== FEATURES ========== -->
 <section id="features">
   <div class="container section-inner">
-    <h2 class="section-title fade-up">慶葉進学アカデミーとは</h2>
-    <p class="section-lead fade-up">坂戸市で培った20年以上の指導実績。地元を知り尽くした講師陣が、生徒一人ひとりに最適な学習プランを提供します。</p>
+    <h2 class="section-title fade-in">慶葉進学アカデミーとは</h2>
+    <p class="section-lead fade-in">坂戸市で培った20年以上の指導実績。地元を知り尽くした講師陣が、生徒一人ひとりに最適な学習プランを提供します。</p>
 
     <!-- Zigzag row 1: image left, text right -->
     <div class="zigzag-row">
@@ -1151,17 +1161,17 @@ html,body{overflow-x:hidden}
 
     <!-- Feature cards -->
     <div class="feature-cards">
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-in">
         <div class="feature-card-icon icon-star"></div>
         <h4>難関校合格実績</h4>
         <p>早稲田・慶應・県立浦和など最難関校への合格実績多数。確かな指導力で夢の合格を実現します。</p>
       </div>
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-in">
         <div class="feature-card-icon icon-people"></div>
         <h4>エキスパート講師陣</h4>
         <p>早慶・国公立大出身の経験豊富な講師が在籍。丁寧でわかりやすい解説と熱心な指導が自慢です。</p>
       </div>
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-in">
         <div class="feature-card-icon icon-book"></div>
         <h4>速読コース完備</h4>
         <p>速読技術で読解力・学習効率を根本から底上げ。全教科の成績アップに直結する特別プログラムです。</p>
@@ -1173,8 +1183,8 @@ html,body{overflow-x:hidden}
 <!-- ========== RESULTS ========== -->
 <section id="results">
   <div class="container section-inner">
-    <h2 class="section-title fade-up">2026年 合格実績</h2>
-    <p class="section-lead fade-up" style="color:rgba(255,255,255,0.75);">慶葉進学アカデミーの生徒たちが掴んだ、輝かしい合格実績をご紹介します。</p>
+    <h2 class="section-title fade-in">2026年 合格実績</h2>
+    <p class="section-lead fade-in" style="color:rgba(255,255,255,0.75);">慶葉進学アカデミーの生徒たちが掴んだ、輝かしい合格実績をご紹介します。</p>
 
     <div class="results-zigzag">
       <div class="results-img-wrap fade-left">
@@ -1241,8 +1251,8 @@ html,body{overflow-x:hidden}
 <!-- ========== LESSONS ========== -->
 <section id="lessons">
   <div class="container section-inner">
-    <h2 class="section-title fade-up">コース案内</h2>
-    <p class="section-lead fade-up">お子さまの目標・学力・ライフスタイルに合わせた多彩なコースをご用意しています。</p>
+    <h2 class="section-title fade-in">コース案内</h2>
+    <p class="section-lead fade-in">お子さまの目標・学力・ライフスタイルに合わせた多彩なコースをご用意しています。</p>
 
     <div class="course-list">
       <!-- Course 1: image left -->
@@ -1300,8 +1310,8 @@ html,body{overflow-x:hidden}
 <!-- ========== PRICE ========== -->
 <section id="price">
   <div class="container section-inner">
-    <h2 class="section-title fade-up">料金案内</h2>
-    <p class="section-lead fade-up">明確な料金設定で、安心してご利用いただけます。</p>
+    <h2 class="section-title fade-in">料金案内</h2>
+    <p class="section-lead fade-in">明確な料金設定で、安心してご利用いただけます。</p>
 
     <div class="price-zigzag">
       <div class="price-img-wrap fade-left">
@@ -1346,8 +1356,8 @@ html,body{overflow-x:hidden}
 <!-- ========== ACCESS ========== -->
 <section id="access">
   <div class="container section-inner">
-    <h2 class="section-title fade-up">アクセス・お問い合わせ</h2>
-    <p class="section-lead fade-up">お気軽にご連絡ください。無料体験授業も随時受付中です。</p>
+    <h2 class="section-title fade-in">アクセス・お問い合わせ</h2>
+    <p class="section-lead fade-in">お気軽にご連絡ください。無料体験授業も随時受付中です。</p>
 
     <div class="access-grid">
       <div class="access-info fade-left">
@@ -1446,17 +1456,32 @@ html,body{overflow-x:hidden}
       nav.classList.toggle('open');
     });
   }
-  var targets = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-  function activate(el) { el.classList.add('in'); }
-  if ('IntersectionObserver' in window) {
+  // IntersectionObserver for animations
+  (function() {
+    var targets = document.querySelectorAll('.fade-in, .fade-left, .fade-right');
+
+    // Fallback: show all after 2 seconds
+    var fallbackTimer = setTimeout(function() {
+      targets.forEach(function(el) { el.classList.add('visible'); });
+    }, 2000);
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function(el) { el.classList.add('visible'); });
+      clearTimeout(fallbackTimer);
+      return;
+    }
+
     var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); }
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
       });
-    }, { threshold: 0.15 });
-    targets.forEach(function(t) { obs.observe(t); });
-  }
-  setTimeout(function() { targets.forEach(function(t) { activate(t); }); }, 2000);
+    }, { threshold: 0.1 });
+
+    targets.forEach(function(el) { obs.observe(el); });
+  })();
 })();
 </script>
 

@@ -432,6 +432,7 @@ section { padding: 88px 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 0.5s ease;
 }
 .lesson-img-wrap:hover img { transform: scale(1.03); }
@@ -590,6 +591,7 @@ section { padding: 88px 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 .price-cta-title {
   font-size: 1.2rem;
@@ -812,20 +814,26 @@ footer {
 }
 
 /* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 .fade-left {
+  opacity: 0;
   transform: translateX(-40px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-right {
+  opacity: 0;
   transform: translateX(40px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.fade-up {
-  transform: translateY(30px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
-}
-.fade-left.in, .fade-right.in, .fade-up.in {
-  transform: translate(0,0);
+.fade-in.visible,
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: none;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -923,17 +931,17 @@ footer {
       </p>
     </div>
     <div class="features-grid">
-      <div class="feature-card fade-up">
+      <div class="feature-card fade-in">
         <div class="feature-icon fi-1"></div>
         <h3>完全個別指導</h3>
         <p>集団授業では置いていかれてしまう生徒も安心。講師1人が生徒に向き合い、理解できるまで丁寧に指導します。わからないまま次に進まないから、苦手が積み重なりません。</p>
       </div>
-      <div class="feature-card fade-up" style="transition-delay:0.15s">
+      <div class="feature-card fade-in" style="transition-delay:0.15s">
         <div class="feature-icon fi-2"></div>
         <h3>教科書を徹底理解</h3>
         <p>闇雲に難問を解くより、今学んでいる教科書の内容を完全に理解することを重視。教科書の基礎基本が固まれば、定期テストも高校・大学入試も土台が整います。</p>
       </div>
-      <div class="feature-card fade-up" style="transition-delay:0.3s">
+      <div class="feature-card fade-in" style="transition-delay:0.3s">
         <div class="feature-icon fi-3"></div>
         <h3>反復練習で習慣化</h3>
         <p>音読・漢字・計算など、日々の反復練習が学力の土台を作ります。正しい勉強の仕方を身につけ、自分から学べる姿勢を育てます。習慣が変われば成績が変わります。</p>
@@ -1034,7 +1042,7 @@ footer {
         <p class="section-lead fade-left" style="margin-top:20px; transition-delay:0.1s">
           料金はお子様の学年・受講科目・コマ数によって異なります。まずはお気軽にお問い合わせください。無料体験授業も随時受け付けています。
         </p>
-        <div class="price-list fade-up" style="transition-delay:0.2s">
+        <div class="price-list fade-in" style="transition-delay:0.2s">
           <div class="price-row">
             <span class="price-row-label">小学生コース</span>
             <span class="price-row-value">お問い合わせください</span>
@@ -1188,18 +1196,32 @@ footer {
     nav.classList.toggle('open');
   });
 
-  // Intersection Observer for animations
-  var targets = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-  function activate(el) { el.classList.add('in'); }
-  if ('IntersectionObserver' in window) {
+  // IntersectionObserver for animations
+  (function() {
+    var targets = document.querySelectorAll('.fade-in, .fade-left, .fade-right');
+
+    // Fallback: show all after 2 seconds
+    var fallbackTimer = setTimeout(function() {
+      targets.forEach(function(el) { el.classList.add('visible'); });
+    }, 2000);
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function(el) { el.classList.add('visible'); });
+      clearTimeout(fallbackTimer);
+      return;
+    }
+
     var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); }
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
       });
-    }, { threshold: 0.15 });
-    targets.forEach(function(t) { obs.observe(t); });
-  }
-  setTimeout(function() { targets.forEach(function(t) { activate(t); }); }, 2000);
+    }, { threshold: 0.1 });
+
+    targets.forEach(function(el) { obs.observe(el); });
+  })();
 })();
 
 function closeMenu() {
