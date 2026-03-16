@@ -23,7 +23,8 @@
       --border: #e2e8f0;
       --shadow: 0 4px 16px rgba(30,58,95,0.10);
       --shadow-lg: 0 8px 32px rgba(30,58,95,0.15);
-    }
+  --accent: var(--deep-blue);
+}
 
     html { scroll-behavior: smooth; }
 
@@ -833,7 +834,9 @@
 
       .lesson-title { font-size: 1.2rem; }
     }
-  </style>
+  .img-overlay{position:absolute;bottom:0;left:0;background:rgba(0,0,0,0.55);color:#fff;font-size:0.7rem;padding:2px 8px;width:100%;box-sizing:border-box;text-align:center;pointer-events:none}
+html,body{overflow-x:hidden}
+</style>
 </head>
 <body>
 
@@ -929,6 +932,8 @@
           alt="教科書や参考書で学ぶ教材イメージ"
           loading="lazy"
         >
+<span class="img-overlay">写真はイメージです。実際とは異なる場合があります</span>
+
         <div class="img-caption">教科書の徹底理解が、確かな学力の土台となります</div>
       </div>
     </div>
@@ -967,6 +972,8 @@
             alt="小学生が個別ブースで集中して勉強している様子"
             loading="lazy"
           >
+<span class="img-overlay">写真はイメージです。実際とは異なる場合があります</span>
+
         </div>
       </div>
 
@@ -978,6 +985,8 @@
             alt="中学生が並んだ机で取り組んでいる勉強の様子"
             loading="lazy"
           >
+<span class="img-overlay">写真はイメージです。実際とは異なる場合があります</span>
+
         </div>
         <div class="lesson-body fade-right">
           <div class="lesson-grade">MIDDLE SCHOOL</div>
@@ -1020,6 +1029,8 @@
             alt="高校生が自習エリアで受験勉強に取り組む様子"
             loading="lazy"
           >
+<span class="img-overlay">写真はイメージです。実際とは異なる場合があります</span>
+
         </div>
       </div>
     </div>
