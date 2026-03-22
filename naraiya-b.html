@@ -226,9 +226,7 @@ header nav a.nav-active::after{width:70%}
 /* Card layout (no-photo fallback) */
 .feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;position:relative;transition:transform .3s,box-shadow .3s}
 .feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.feature-card-num{font-family:var(--font-accent);font-size:3.5rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;margin-bottom:16px}
-.feature-card-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.feature-card-icon svg{width:24px;height:24px;color:#fff}
+.feature-card-num{font-family:var(--font-accent);font-size:3rem;font-weight:700;color:var(--primary);line-height:1;margin-bottom:20px;padding-bottom:16px;border-bottom:3px solid var(--primary-10);display:inline-block}
 /* Shared feature text */
 .feature-num{font-family:var(--font-accent);font-size:.85rem;font-weight:400;font-style:italic;letter-spacing:.1em;color:var(--primary-light);margin-bottom:12px;opacity:.5}
 .feature-title{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.5}
@@ -502,63 +500,42 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div class="features-grid">
     <div class="feature-card fade-up">
       <div class="feature-card-num">01</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-      </div>
       <h3 class="feature-title">とことん寄り添う個別指導</h3>
       <p class="feature-desc">生徒一人ひとりの学力や性格に合わせたきめ細かな個別指導講座。教科書内容はもちろん、定期テスト対策から入試対策まで対応。さらに日々の学校の宿題などもサポートします。プロの講師陣が学習目標の達成をお約束いたします。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">02</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-      </div>
       <h3 class="feature-title">少人数クラスコース</h3>
       <p class="feature-desc">講師ひとりに対して生徒が10名ほどの少人数クラスコース。きめ細かな目配りが可能な環境で、集団の中でも一人ひとりに目が行き届く指導を実現しています。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">03</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      </div>
       <h3 class="feature-title">小学生限定「ならいやクラブ」</h3>
       <p class="feature-desc">反復学習で小学校の算数と中学数学をスムーズに解くための計算力を徹底的に定着。国語では漢字の「読み」「書き」を大切にした基礎学力を徹底的に定着させます。小学生のうちにしっかりとした土台を築きます。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">04</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      </div>
       <h3 class="feature-title">中3限定 高校受験コース（入試特訓講座）</h3>
       <p class="feature-desc">受験に特化した中3限定高校受験コース。高校入試を意識した応用力を養成する講座で、受験必勝を目指します。学習指導のみならず進路アドバイスもしっかり行い、志望校合格を目指します。毎年9月開講です。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">05</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      </div>
       <h3 class="feature-title">英会話講座</h3>
       <p class="feature-desc">受験英語だけでなく、リスニング力や将来役立つ英会話スキルが身につきます。英会話講座のみ、高校生から大学生、社会人まで対応です。TOEICや英検にも挑戦できる実践的な英語力を養います。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">06</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-      </div>
       <h3 class="feature-title">無料補習・テスト対策・自習スペース完備</h3>
       <p class="feature-desc">無料補習に加え、定期テスト前には授業日以外にも無料のテスト対策を実施。質問可能な自習スペースも完備しており、いつでも学べる環境を整えています。通い放題の自習室で、自分のペースで学習を進められます。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">07</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-      </div>
       <h3 class="feature-title">地域密着の安心価格・兄弟割引あり</h3>
       <p class="feature-desc">地域密着の安心価格で通いやすい料金設定です。ご兄弟で通われる場合は兄弟割引もご利用いただけます。ご家庭の負担を軽減しながら、質の高い指導を提供します。</p>
       <div class="feature-line"></div>

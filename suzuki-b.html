@@ -226,9 +226,7 @@ header nav a.nav-active::after{width:70%}
 /* Card layout (no-photo fallback) */
 .feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;position:relative;transition:transform .3s,box-shadow .3s}
 .feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.feature-card-num{font-family:var(--font-accent);font-size:3.5rem;font-weight:300;font-style:italic;color:var(--primary-10);line-height:1;margin-bottom:16px}
-.feature-card-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.feature-card-icon svg{width:24px;height:24px;color:#fff}
+.feature-card-num{font-family:var(--font-accent);font-size:3rem;font-weight:700;color:var(--primary);line-height:1;margin-bottom:20px;padding-bottom:16px;border-bottom:3px solid var(--primary-10);display:inline-block}
 /* Shared feature text */
 .feature-num{font-family:var(--font-accent);font-size:.85rem;font-weight:400;font-style:italic;letter-spacing:.1em;color:var(--primary-light);margin-bottom:12px;opacity:.5}
 .feature-title{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.5}
@@ -502,54 +500,36 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div class="features-grid">
     <div class="feature-card fade-up">
       <div class="feature-card-num">01</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-      </div>
       <h3 class="feature-title">個人契約だから実現する良心的な料金</h3>
       <p class="feature-desc">家庭教師センターや仲介業者を通さない個人契約のため、仲介手数料や管理費が発生しません。その分をご家庭に還元し、良心的な料金で質の高い指導をお届けします。料金は指導予定日の前々日22時までに1回分ずつお支払いいただく形式で、月謝制のような縛りもありません。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">02</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-      </div>
       <h3 class="feature-title">指導歴16年・累計900名超の豊富な経験</h3>
       <p class="feature-desc">個別指導17年、集団指導4年、家庭教師として対面・オンライン合わせて約80名の指導実績があり、塾講師時代を含め累計で900名を超える生徒を指導してきました。小学生から高卒生・社会人まで、基礎固めから難関校受験対策まで幅広い指導経験があります。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">03</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      </div>
       <h3 class="feature-title">明治大学卒・教員免許保有のプロ講師</h3>
       <p class="feature-desc">明治大学政治経済学部卒業。中学・高校の教員免許（社会・地理歴史・公民）を保有しています。英検準1級、漢検2級も取得しており、教科指導だけでなく資格対策にも精通しています。現在はトライ式高等学院の講師も兼任し、フリーランスとして活動しています。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">04</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      </div>
       <h3 class="feature-title">英検対策 5級から準1級まで完全対応</h3>
       <p class="feature-desc">英検対策は5級から準1級まで、全レベルに対応しています。学校の補習レベルの英語から難関大対策まで、英語指導には特に力を入れています。中学時代ずっと不登校で高2の夏にアルファベットから始めた生徒がMARCHに現役複数合格し、英検2級も卒業までに合格するなど、確かな実績があります。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">05</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      </div>
       <h3 class="feature-title">不登校・ひきこもりの学習支援に実績多数</h3>
       <p class="feature-desc">不登校やひきこもりのお子様の学習支援にも豊富な経験があります。トライ式高等学院での講師経験も活かし、一人ひとりのペースに合わせた丁寧な指導を行います。学校に通えなくても、学力をしっかり伸ばし、進学や資格取得を実現するためのサポートを提供します。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
       <div class="feature-card-num">06</div>
-      <div class="feature-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-      </div>
       <h3 class="feature-title">対面指導とオンライン指導の両方に対応</h3>
       <p class="feature-desc">対面指導は千葉県・埼玉県・茨城県・東京都の一部エリアに訪問可能です。オンライン指導はZoomやGoogle Meetを使用し、タブレットやホワイトボードを画面共有しながら、対面と変わらない質の高い授業を行います。ご都合に合わせて対面とオンラインを組み合わせることも可能です。</p>
       <div class="feature-line"></div>
