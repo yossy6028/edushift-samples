@@ -394,6 +394,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 @media(max-width:640px){
   header nav,.nav-cta-btn{display:none}
   .hamburger{display:flex}
+  .features-grid,.features-grid:has(.feature-card):not(:has(.feature-row)){grid-template-columns:1fr!important;gap:24px}
   .feature-row,.feature-row-reverse{grid-template-columns:1fr;direction:ltr}
   .feature-visual{aspect-ratio:16/9;padding:32px}
   .hero-stats{gap:20px}
