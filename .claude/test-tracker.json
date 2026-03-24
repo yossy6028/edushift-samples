@@ -1,0 +1,8 @@
+{
+  "executions": {
+    "notification": {
+      "timestamp": "2026-03-09T17:58:43.317276",
+      "command": "say \"タスクが完了しました\""
+    }
+  }
+}
