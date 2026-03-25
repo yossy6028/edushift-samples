@@ -75,6 +75,21 @@ img{max-width:100%;height:auto;display:block}
 .wave-divider svg{position:absolute;bottom:0;width:100%;height:80px}
 .wave-divider-flip svg{position:absolute;top:0;transform:rotate(180deg)}
 
+/* Section dividers — education themed */
+.section-divider{text-align:center;padding:24px 0;position:relative;overflow:hidden}
+.section-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,var(--border) 20%,var(--border) 80%,transparent 95%)}
+.section-divider-icon{display:inline-flex;align-items:center;justify-content:center;position:relative;z-index:1;background:var(--white);padding:0 20px}
+.section-divider-icon svg{width:28px;height:28px;stroke:var(--primary);fill:none;stroke-width:1.5;opacity:.4}
+/* Variant: warm bg */
+.section-divider-warm::before{background:linear-gradient(90deg,transparent 5%,var(--border) 20%,var(--border) 80%,transparent 95%)}
+.section-divider-warm .section-divider-icon{background:var(--bg-warm)}
+/* Pencil line divider */
+.pencil-divider{text-align:center;padding:32px 0;position:relative}
+.pencil-divider::before{content:'';position:absolute;top:50%;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,var(--primary) 0,var(--primary) 8px,transparent 8px,transparent 14px);opacity:.15}
+.pencil-divider-icon{display:inline-flex;position:relative;z-index:1;background:var(--white);padding:0 16px}
+.pencil-divider-icon svg{width:24px;height:24px;fill:var(--primary);opacity:.25}
+.pencil-divider-warm .pencil-divider-icon{background:var(--bg-warm)}
+
 /* ===== EDUCATION FLOAT DECORATIONS ===== */
 .edu-float{position:absolute;opacity:.06;pointer-events:none;z-index:0}
 .edu-float svg{width:100%;height:100%}
@@ -599,7 +614,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .chalkboard-list li{font-family:'Zen Kurenaido',sans-serif;color:rgba(255,255,255,.92);font-size:clamp(1rem,2.5vw,1.2rem);line-height:2;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.15);text-shadow:0 0 5px rgba(255,255,255,.5),0 0 10px rgba(255,255,255,.2),2px 2px 3px rgba(0,0,0,.3)}
 .chalkboard-list li:last-child{border-bottom:none}
 .chalkboard-list li::before{content:"\2714\FE0E";margin-right:12px;color:#C5A44E}
-.chalkboard-body{font-family:'Zen Kurenaido',sans-serif;color:rgba(255,255,255,.75);font-size:.75rem;line-height:1.6;text-align:right;text-shadow:0 0 4px rgba(255,255,255,.4),1px 1px 2px rgba(0,0,0,.3);margin-top:8px}
+.chalkboard-body{font-family:'Zen Kurenaido',sans-serif;color:rgba(255,255,255,.75);font-size:.75rem;line-height:1.6;text-align:left;text-shadow:0 0 4px rgba(255,255,255,.4),1px 1px 2px rgba(0,0,0,.3);margin-top:8px;max-width:60%}
 /* OPEN plate decoration */
 .chalkboard-open-plate{position:absolute;top:4px;left:32px;z-index:3;text-align:center}
 .chalkboard-open-plate::before{content:'';display:block;width:2px;height:24px;background:#8B7355;margin:0 auto}
@@ -632,6 +647,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </div>
 </section>
+
+<div class="pencil-divider"><div class="pencil-divider-icon"><svg viewBox="0 0 24 24"><path d="M17 3a2.83 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></div></div>
 
 
 
@@ -694,7 +711,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
 
 
+<div class="section-divider"><div class="section-divider-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div></div>
 
+
+
+<div class="pencil-divider pencil-divider-warm"><div class="pencil-divider-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div>
 
 
 <section class="results" id="results">
@@ -782,6 +803,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </div>
 </section>
+
+<div class="section-divider section-divider-warm"><div class="section-divider-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div></div>
 
 
 <section class="instructor belief-section" style="padding:100px 0;background:linear-gradient(135deg,#faf8f5 0%,#f3efe8 100%);position:relative;overflow:hidden">
@@ -909,6 +932,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </div>
 </section>
+
+<div class="section-divider"><div class="section-divider-icon"><svg viewBox="0 0 24 24"><path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg></div></div>
 
 
 <section class="faq-section" id="faq">
@@ -1254,6 +1279,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </div>
 </section>
+
+<div class="pencil-divider"><div class="pencil-divider-icon"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div></div>
 
 
 <section style="padding:56px 0;background:var(--bg-warm)">
