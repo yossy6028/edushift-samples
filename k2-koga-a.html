@@ -341,10 +341,40 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .campaign-section p{color:rgba(255,255,255,.9)}
 .campaign-section ul{list-style:none;padding:0;display:flex;justify-content:center;gap:20px;margin:24px 0}
 .campaign-section li{background:rgba(255,255,255,.2);padding:16px 32px;border-radius:12px;font-size:1.1rem;font-weight:700;backdrop-filter:blur(4px)}
+/* Speciality section */
+.speciality-section{background:#fafbfc}
+.speciality-section .fade-up{max-width:740px;padding:40px 48px;background:#fff;border-radius:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid var(--primary)}
+.speciality-section h3{font-size:1.3rem;font-weight:700;color:var(--primary);margin-bottom:16px;margin-top:2em;padding-bottom:12px;border-bottom:2px solid var(--primary-10,rgba(37,99,235,.1))}
+.speciality-section h3:first-child{margin-top:0}
+.speciality-section p{font-size:.95rem;line-height:2;color:#555;margin-bottom:12px}
+/* Exam prep section */
+.exam-prep-section{background:linear-gradient(180deg,#f8f9fa 0%,#eef2f7 100%);padding:80px 0}
+.exam-prep-section .fade-up{max-width:800px;background:#fff;border-radius:20px;padding:40px 48px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.exam-prep-section p{font-size:.95rem;line-height:2;color:#555;margin-bottom:12px}
+.exam-prep-section ul{list-style:none;padding:0;margin:16px 0}
+.exam-prep-section li{padding:12px 0;border-bottom:1px solid #f0f0f0;font-size:.95rem;line-height:1.8}
+.exam-prep-section li:last-child{border-bottom:none}
+.exam-prep-section strong{color:var(--primary);font-weight:700}
+/* Enrollment section (step flow) */
+.enrollment-section{background:#f8f9fa;padding:80px 0}
+.enrollment-section .fade-up{max-width:900px;display:flex;gap:32px;justify-content:center;counter-reset:step}
+.enrollment-section .fade-up p{flex:1;text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,.05);position:relative;counter-increment:step}
+.enrollment-section .fade-up p::before{content:counter(step);display:flex;width:56px;height:56px;border-radius:50%;background:var(--primary);color:#fff;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;margin:0 auto 16px}
+.enrollment-section .fade-up p strong{display:block;font-size:1rem;color:var(--navy);margin-bottom:8px}
+.enrollment-section .fade-up p br{display:none}
+@media(max-width:768px){.enrollment-section .fade-up{flex-direction:column;gap:20px}}
+/* Classroom section (compact 2-col) */
+.classroom-section{background:#f8f9fa}
+.classroom-section .fade-up{max-width:800px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.classroom-section .fade-up p{padding:20px 24px;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);font-size:.9rem;line-height:1.8;color:#555}
+/* Tuition section (2-col grid) */
+#tuition .fade-up{margin-bottom:0}
+#tuition>div>div{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto}
+@media(max-width:768px){#tuition>div>div{grid-template-columns:1fr}}
 
 /* ===== PHOTO GRID ===== */
-.photo-grid{background:var(--bg-warm);padding:80px 0;position:relative;overflow:hidden}
-.photo-grid::before,.photo-grid::after{content:'';position:absolute;left:0;right:0;height:80px;z-index:1}
+.photo-grid{background:var(--bg-warm);padding:40px 0;position:relative;overflow:hidden}
+.photo-grid::before,.photo-grid::after{content:'';position:absolute;left:0;right:0;height:40px;z-index:1}
 .photo-grid::before{top:0;background:linear-gradient(180deg,var(--white),transparent)}
 .photo-grid::after{bottom:0;background:linear-gradient(0deg,var(--white),transparent)}
 .photo-grid-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -379,6 +409,8 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .marquee-track:hover{animation-play-state:paused}
 .result-badge{background:var(--white);border:1px solid var(--border);border-radius:100px;padding:10px 24px;font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--navy);box-shadow:var(--shadow-sm);transition:all .4s cubic-bezier(.34,1.56,.64,1);cursor:default;flex-shrink:0}
 .result-badge:hover{background:var(--primary);color:#fff;border-color:#D4AF37;transform:scale(1.15) rotate(-3deg);box-shadow:0 0 20px rgba(212,175,55,.3);z-index:2}
+.result-badge:nth-child(odd){border-color:var(--primary);color:var(--primary)}
+.result-badge:nth-child(even){border-color:#27ae60;color:#27ae60}
 .result-header{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-color:transparent;font-weight:800}
 /* Sakura petal animation */
 @keyframes sakuraFall{0%{transform:translateY(-10%) rotate(0deg);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
@@ -410,19 +442,18 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 @keyframes decoSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 
 /* ===== FAQ (Bubble conversation) ===== */
-.faq-section{padding:80px 0;background:repeating-linear-gradient(transparent,transparent 31px,#e8e4df 31px,#e8e4df 32px),var(--bg-warm)}
+.faq-section{padding:80px 0;background:var(--bg-warm)}
 .faq-list{max-width:740px;margin:48px auto 0;display:flex;flex-direction:column;gap:20px}
 .faq-conversation{transition:all var(--transition)}
 .faq-row{display:flex;align-items:flex-start;gap:12px;padding:4px 0}
-.faq-row-q{cursor:pointer}
+.faq-row-q{cursor:pointer;justify-content:center}
 .faq-row-q:hover .faq-bubble-q{box-shadow:0 4px 20px rgba(0,0,0,.1)}
-.faq-row-a{justify-content:flex-end}
-.faq-avatar{flex-shrink:0;width:48px;height:48px}
-.faq-avatar svg{width:48px;height:48px}
-.faq-bubble{position:relative;background:#fff;border-radius:18px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.06);font-size:.95rem;line-height:1.8;color:var(--navy);max-width:calc(100% - 72px);transition:all var(--transition)}
-.faq-bubble-q::before{content:'';position:absolute;left:-12px;top:20px;border:8px solid transparent;border-right-color:#fff}
-.faq-bubble-a{background:var(--primary-5)}
-.faq-bubble-a::before{content:'';position:absolute;right:-12px;top:20px;border:8px solid transparent;border-left-color:var(--primary-5)}
+.faq-row-a{justify-content:center}
+.faq-avatar{display:none}
+.faq-bubble{position:relative;background:#fff;border-radius:16px;padding:20px 24px;box-shadow:0 2px 16px rgba(0,0,0,.05);font-size:.95rem;line-height:1.8;color:var(--navy);max-width:700px;margin:0 auto;transition:all var(--transition)}
+.faq-bubble-q::before{display:none}
+.faq-bubble-a{background:var(--primary-5);border-radius:16px}
+.faq-bubble-a::before{display:none}
 .faq-q-label{display:inline-flex;width:28px;height:28px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-radius:8px;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;font-family:var(--font-accent);margin-right:8px;vertical-align:middle;flex-shrink:0}
 .faq-a-label{display:inline-flex;width:28px;height:28px;background:var(--bg-warm);color:var(--primary);border-radius:8px;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;font-family:var(--font-accent);margin-right:8px;vertical-align:middle;flex-shrink:0}
 .faq-toggle{float:right;width:28px;height:28px;border-radius:50%;background:var(--bg-warm);display:inline-flex;align-items:center;justify-content:center;color:var(--text-note);font-size:1.1rem;font-weight:700;transition:all .4s cubic-bezier(.22,1,.36,1);margin-left:12px}
@@ -669,31 +700,22 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 </section>
 
 
-<section class="chalkboard-section" style="padding:72px 0;background:var(--bg-warm);position:relative;overflow:hidden">
+<section class="chalkboard-section" style="background:linear-gradient(135deg,#1a2a3a 0%,#2c3e50 100%);color:#fff;padding:80px 0;position:relative;overflow:hidden">
 <style>
 .chalkboard-section{position:relative}
-.chalkboard-inner{max-width:800px;margin:0 auto;padding:14% 14% 18%;position:relative;z-index:1;background-image:url(data:image/png;base64,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);background-size:100% 100%;background-repeat:no-repeat;background-position:center;}
-.chalkboard-title{font-family:'Zen Kurenaido',sans-serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:400;color:#fff;text-align:center;margin-bottom:32px;text-shadow:0 0 5px rgba(255,255,255,.5),0 0 10px rgba(255,255,255,.2),2px 2px 3px rgba(0,0,0,.3);letter-spacing:.08em}
-.chalkboard-list{list-style:none;padding:0;margin:0 0 24px}
-.chalkboard-list li{font-family:'Zen Kurenaido',sans-serif;color:rgba(255,255,255,.92);font-size:clamp(1rem,2.5vw,1.2rem);line-height:2;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.15);text-shadow:0 0 5px rgba(255,255,255,.5),0 0 10px rgba(255,255,255,.2),2px 2px 3px rgba(0,0,0,.3)}
-.chalkboard-list li:last-child{border-bottom:none}
-.chalkboard-list li::before{content:"\2714\FE0E";margin-right:12px;color:#C5A44E}
-.chalkboard-body{font-family:'Zen Kurenaido',sans-serif;color:rgba(255,255,255,.75);font-size:.75rem;line-height:1.6;text-align:left;text-shadow:0 0 4px rgba(255,255,255,.4),1px 1px 2px rgba(0,0,0,.3);margin-top:8px;max-width:60%}
-/* OPEN plate decoration */
-.chalkboard-open-plate{position:absolute;top:4px;left:32px;z-index:3;text-align:center}
-.chalkboard-open-plate::before{content:'';display:block;width:2px;height:24px;background:#8B7355;margin:0 auto}
-.chalkboard-open-plate::after{content:'OPEN';display:block;background:#F5E6C8;color:#5D4037;font-family:'Zen Kurenaido',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.15em;padding:6px 16px;border-radius:4px;border:2px solid #8B7355;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-/* Chalk eraser decoration */
-.chalkboard-eraser{position:absolute;bottom:12.5%;right:12%;z-index:3;display:flex;align-items:flex-end;gap:4px}
-.chalkboard-eraser-body{width:48px;height:22px;background:#8B7355;border-radius:3px 3px 0 0;box-shadow:0 2px 6px rgba(0,0,0,.2);position:relative}
-.chalkboard-eraser-body::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:#D7CCC8;border-radius:0 0 2px 2px}
-.chalk-piece{width:6px;height:16px;border-radius:2px;opacity:.7}
-.chalk-piece-w{background:#fff}.chalk-piece-y{background:#FFD93D}.chalk-piece-p{background:#F48FB1}
-@media(max-width:768px){.chalkboard-inner{padding:10% 10% 16%}.chalkboard-title{font-size:1.1rem;margin-bottom:16px}.chalkboard-list li{font-size:.85rem;line-height:1.7;padding:4px 0}.chalkboard-body{font-size:.72rem}.chalkboard-open-plate{left:8px;top:2px}.chalkboard-eraser{right:8%;bottom:13%}}
+.chalkboard-inner{max-width:800px;margin:0 auto;padding:0;background:none;position:relative;z-index:1}
+.chalkboard-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;color:#fff;text-align:center;margin-bottom:40px;text-shadow:none;letter-spacing:.05em}
+.chalkboard-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;list-style:none;padding:0;margin:0 0 32px}
+.chalkboard-list li{font-family:var(--font-body);color:rgba(255,255,255,.92);font-size:1rem;line-height:1.8;padding:20px 24px;background:rgba(255,255,255,.08);border-radius:12px;backdrop-filter:blur(4px);text-shadow:none;border-bottom:none}
+.chalkboard-list li::before{content:"\2713";margin-right:10px;display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
+.chalkboard-body{color:rgba(255,255,255,.7);font-size:.9rem;text-align:center;font-family:var(--font-body);text-shadow:none;max-width:100%}
+.chalkboard-open-plate{display:none}
+.chalkboard-eraser{display:none}
+.chalk-piece{display:none}
+@media(max-width:768px){.chalkboard-list{grid-template-columns:1fr}}
 </style>
 <div class="container">
   <div class="chalkboard-inner fade-up">
-    <div class="chalkboard-open-plate"></div>
     <h2 class="chalkboard-title">K2ってどんな塾？</h2>
     <ul class="chalkboard-list">
 <li>～子どもたち一人ひとりと向き合いたい～</li>
@@ -702,12 +724,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <li>地域密着の学習塾です</li>
     </ul>
     <div class="chalkboard-body">教室長 兼 講師［英語］：小林 敦<br>講師［国語・英語］：小林 なつ子</div>
-    <div class="chalkboard-eraser" aria-hidden="true">
-      <div class="chalk-piece chalk-piece-w"></div>
-      <div class="chalk-piece chalk-piece-y"></div>
-      <div class="chalk-piece chalk-piece-p"></div>
-      <div class="chalkboard-eraser-body"></div>
-    </div>
   </div>
 </div>
 </section>
@@ -717,7 +733,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
 
 
-<section style="padding:56px 0;" class="content-section">
+<section style="padding:56px 0;" class="content-section speciality-section">
 <div class="container">
   <div class="section-header-center">
     <div class="section-label-accent">SPECIALITY</div>
@@ -729,7 +745,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   
 </div>
 </section>
-<section style="padding:56px 0;background:repeating-linear-gradient(transparent, transparent 31px, rgba(0,80,160,.015) 31px, rgba(0,80,160,.015) 32px),var(--bg-warm);" class="content-section">
+<section style="padding:56px 0;background:repeating-linear-gradient(transparent, transparent 31px, rgba(0,80,160,.015) 31px, rgba(0,80,160,.015) 32px),var(--bg-warm);" class="content-section exam-prep-section">
 <div class="container">
   <div class="section-header-center">
     <div class="section-label-accent">EXAM PREP</div>
@@ -741,7 +757,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   
 </div>
 </section>
-<section style="padding:56px 0;" class="content-section">
+<section style="padding:56px 0;" class="content-section enrollment-section">
 <div class="container">
   <div class="section-header-center">
     <div class="section-label-accent">ENROLLMENT</div>
@@ -753,7 +769,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   
 </div>
 </section>
-<section style="padding:56px 0;background:repeating-linear-gradient(transparent, transparent 31px, rgba(0,80,160,.015) 31px, rgba(0,80,160,.015) 32px),var(--bg-warm);" class="content-section">
+<section style="padding:56px 0;background:repeating-linear-gradient(transparent, transparent 31px, rgba(0,80,160,.015) 31px, rgba(0,80,160,.015) 32px),var(--bg-warm);" class="content-section classroom-section">
 <div class="container">
   <div class="section-header-center">
     <div class="section-label-accent">CLASSROOM</div>
@@ -834,39 +850,39 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div style="max-width:800px;margin:0 auto">
     <p class="fade-up" style="font-size:.95rem;line-height:1.8;color:var(--text-sub);margin-bottom:20px">K2の生徒たちの合格実績</p>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2026年度 国公立大学</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2026年度 国公立大学</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">九州工業大（工学部）、北九州市立大（地域創生学群、文学部）</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2026年度 私立大学</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2026年度 私立大学</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">立命館大（薬学部）、西南学院大（商学部）、福岡大（薬学部、人文学部、経済学部、商学部）、中村学園大（流通科学部）、九州産業大（国際文化学部）</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2026年度 公立高校</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2026年度 公立高校</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">福岡高校、香椎工業高校</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2026年度 私立高校</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2026年度 私立高校</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">福岡工業大学附属城東高校（I類特別選抜・特待生）、折尾愛真高校</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2026年度 私立中学校</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2026年度 私立中学校</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">九州国際大付属中学校、中村学園女子中学校</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2025-2023年度 国公立大学</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2025-2023年度 国公立大学</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">九州大、長崎大、福岡教育大、下関市立大、名桜大</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2025-2023年度 私立大学</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2025-2023年度 私立大学</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">同志社大、明治学院大、名城大、西南学院大、福岡大、産業医科大、福岡工業大、九州産業大、中村学園大、福岡女学院看護大、福岡国際医療福祉大、純真大、日本赤十字九州国際看護大、九州共立大、日本体育大、東京農業大</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2025-2023年度 公立高校</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2025-2023年度 公立高校</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">新宮（理数科・普通科）、古賀竟成館、玄界、鹿屋農業</p>
     </div>
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
-      <h3 style="font-family:var(--font-display);font-size:1rem;color:var(--primary);margin-bottom:12px">2025-2023年度 私立高校</h3>
+      <h3 style="font-family:var(--font-display);font-size:.85rem;color:#fff;background:var(--primary);display:inline-block;padding:6px 20px;border-radius:20px;margin-bottom:16px">2025-2023年度 私立高校</h3>
       <p style="font-size:.95rem;line-height:1.9;color:var(--navy)">九州産業大付属九州（特進・準特・進学）、東福岡、中村女子学園、東海大付属福岡（進学I類）、博多女子、博多、福岡第一、折尾愛真、広陵（広島）</p>
     </div>
   </div>
@@ -883,16 +899,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .belief-section::before{content:"\201C";position:absolute;top:40px;left:5%;font-size:min(12vw,160px);font-family:'Zen Old Mincho',serif;color:rgba(30,58,95,.04);line-height:1;pointer-events:none;z-index:0}
 .belief-section::after{content:"\201D";position:absolute;bottom:0;right:5%;font-size:min(12vw,160px);font-family:'Zen Old Mincho',serif;color:rgba(30,58,95,.04);line-height:1;pointer-events:none;z-index:0}
 .belief-body{max-width:620px;margin:0 auto;position:relative;z-index:1}
-.belief-body p{font-family:'Zen Old Mincho',serif;font-size:clamp(0.95rem,2.2vw,1.1rem);line-height:2.2;color:#3a3a3a;margin-bottom:1.8em;opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease}
+.belief-body p{font-family:'Zen Old Mincho',serif;font-size:clamp(0.95rem,2.2vw,1.1rem);line-height:2.2;color:#3a3a3a;margin-bottom:1.5em;opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease}
 .belief-body p.belief-visible{opacity:1;transform:translateY(0)}
-.belief-body p:last-child{font-weight:700;color:var(--navy);font-size:clamp(1.05rem,2.4vw,1.2rem);padding-top:0.5em;border-top:2px solid rgba(37,99,235,.15)}
+.belief-body p:last-child{font-weight:600;color:var(--navy);font-size:1.05rem;padding-top:0.5em;border-top:2px solid rgba(37,99,235,.15)}
 .belief-accent{display:inline;background:linear-gradient(transparent 60%,rgba(37,99,235,.12) 60%);padding:0 2px}
 .belief-divider{width:60px;height:2px;background:var(--primary);margin:32px auto;opacity:0;transform:scaleX(0);transition:opacity 0.6s ease 0.3s,transform 0.6s ease 0.3s}
 .belief-divider.belief-visible{opacity:1;transform:scaleX(1)}
 .belief-section .section-title{font-family:'Zen Old Mincho',serif !important;letter-spacing:0.08em}
 .instructor-photo-wrap{text-align:center;margin-bottom:2.5em;opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease}
 .instructor-photo-wrap.belief-visible{opacity:1;transform:translateY(0)}
-.instructor-photo-circle{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 12px;border:4px solid var(--primary-light,#e0e0e0);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.instructor-photo-circle{width:200px;height:200px;border-radius:50%;overflow:hidden;margin:0 auto 12px;border:4px solid var(--primary-light,#e0e0e0);box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .instructor-photo-name{font-family:'Zen Old Mincho',serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-top:8px}
 .instructor-photo-role{font-size:0.85rem;color:#888;margin-top:2px}
 </style>
@@ -1352,13 +1368,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <div class="pencil-divider"><div class="pencil-divider-icon"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div></div>
 
 
-<section style="padding:56px 0;background:var(--bg-warm)">
+<section id="tuition" style="padding:56px 0;background:var(--bg-warm)">
 <div class="container">
   <div class="section-header-center">
     <div class="section-label-accent">TUITION</div>
     <h2 class="section-title">月謝目安（税込）</h2>
   </div>
-  <div style="max-width:800px;margin:0 auto">
+  <div style="max-width:900px;margin:0 auto">
     <div class="fade-up" style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:28px;margin-bottom:20px">
       <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--primary);margin-bottom:12px">入会金</h3>
       <p style='font-size:1.3em;font-weight:700'>3,300円</p>
