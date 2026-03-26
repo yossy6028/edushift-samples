@@ -242,6 +242,59 @@ header nav a.nav-active::after{width:70%}
 .hero-shape-4{width:150px;height:150px;background:var(--primary);border-radius:50%;top:60%;left:45%;filter:blur(60px);animation:floatShape 14s ease-in-out infinite reverse}
 @keyframes floatShape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-25px) rotate(8deg)}}
 
+/* ===== HERO FULLBLEED VARIANT ===== */
+.hero-fullbleed{position:relative;min-height:88vh;overflow:hidden;display:flex;align-items:center;padding:0}
+/* Fullbleed: make header blend with dark hero */
+.hero-fullbleed~*{} /* placeholder */
+body:has(.hero-fullbleed) header{background:rgba(0,0,0,.4);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
+body:has(.hero-fullbleed) header .nav-logo-text,body:has(.hero-fullbleed) header nav a{color:rgba(255,255,255,.9)}
+body:has(.hero-fullbleed) header nav a:hover{color:#fff}
+body:has(.hero-fullbleed) header .nav-logo-sub{color:rgba(255,255,255,.5)}
+body:has(.hero-fullbleed) header .nav-logo-icon{background:rgba(255,255,255,.15);box-shadow:none}
+body:has(.hero-fullbleed) header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,0,0,.04)}
+body:has(.hero-fullbleed) header.scrolled .nav-logo-text,body:has(.hero-fullbleed) header.scrolled nav a{color:var(--navy)}
+body:has(.hero-fullbleed) header.scrolled .nav-logo-sub{color:var(--text-note)}
+body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradient(135deg,var(--primary),var(--primary-light));box-shadow:0 4px 16px var(--primary-20)}
+.hero-fullbleed .hero-bg{position:absolute;inset:0;z-index:0}
+.hero-fullbleed .hero-bg img,.hero-fullbleed .hero-bg .img-container{width:100%;height:100%;object-fit:cover}
+.hero-fullbleed .hero-bg img{animation:kenburns 25s ease-in-out infinite alternate}
+.hero-fullbleed .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.35) 40%,rgba(0,0,0,.5) 100%);z-index:1}
+.hero-fullbleed .container{position:relative;z-index:2}
+.hero-fullbleed .hero-inner{display:flex;flex-direction:column;align-items:flex-start;max-width:640px;padding:100px 0 48px}
+.hero-fullbleed .hero-badge{background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);color:#fff}
+.hero-fullbleed .hero-badge-dot{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.6)}
+.hero-fullbleed h1{color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.3);font-size:clamp(2rem,5.5vw,3.2rem)}
+.hero-fullbleed h1 em{background:none;-webkit-text-fill-color:#fff;text-decoration:underline;text-decoration-color:var(--primary-light);text-underline-offset:6px;text-decoration-thickness:4px}
+.hero-fullbleed h1 em::after{display:none}
+.hero-fullbleed .hero-desc{color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(0,0,0,.2);font-size:.95rem;line-height:1.8;margin-bottom:24px;max-width:520px}
+.hero-fullbleed .hero-actions .btn-primary{box-shadow:0 4px 24px rgba(6,199,85,.4)}
+.hero-fullbleed .hero-actions .btn-secondary{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;border-color:rgba(255,255,255,.3)}
+.hero-fullbleed .hero-actions .btn-secondary:hover{background:rgba(255,255,255,.25);border-color:#fff}
+.hero-fullbleed .hero-stats{border-top-color:rgba(255,255,255,.15)}
+.hero-fullbleed .hero-stats::before{background:linear-gradient(90deg,rgba(255,255,255,.6),var(--primary-light))}
+.hero-fullbleed .hero-stat-num{background:none;-webkit-text-fill-color:#fff;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.2)}
+.hero-fullbleed .hero-stat-label{color:rgba(255,255,255,.7)}
+/* Floating photo badges repositioned for fullbleed */
+.hero-fullbleed .hero-photo-badge{display:none}
+/* Education motif decorations */
+.hero-fullbleed .hero-edu-motif{position:absolute;z-index:1;opacity:.12;pointer-events:none}
+.hero-fullbleed .hero-edu-motif svg{width:100%;height:100%;stroke:#fff;fill:none;stroke-width:1.5}
+.hero-edu-motif-1{width:80px;height:80px;top:15%;right:8%;animation:floatShape 12s ease-in-out infinite}
+.hero-edu-motif-2{width:60px;height:60px;bottom:20%;right:15%;animation:floatShape 10s ease-in-out infinite reverse}
+.hero-edu-motif-3{width:50px;height:50px;top:30%;right:25%;animation:floatShape 14s ease-in-out infinite}
+/* Mobile */
+@media(max-width:900px){
+  .hero-fullbleed .hero-inner{max-width:100%;padding:100px 0 60px}
+  .hero-fullbleed h1{font-size:clamp(1.8rem,7vw,2.6rem)}
+  .hero-fullbleed .hero-stats{gap:20px}
+}
+@media(max-width:640px){
+  .hero-fullbleed{min-height:85vh}
+  .hero-fullbleed .hero-inner{padding:80px 0 40px}
+  .hero-fullbleed h1{font-size:clamp(1.6rem,7vw,2.2rem)}
+  .hero-fullbleed .hero-desc{font-size:.95rem}
+}
+
 /* Scroll reveal */
 .reveal-el{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
 .reveal-el.visible{opacity:1;transform:translateY(0)}
@@ -662,6 +715,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div style="max-width:800px;margin:0 auto" class="fade-up">
     <h3 style='color:var(--primary);font-size:1.15em;margin-bottom:0.8em'>🔤 英語</h3><p>文系・理系に限らず、必須の英語。中高生に求められる単語量・文章量が年々増えており、学校の定期テストや入試問題も難化しているため、多くの子どもたちが苦手に感じやすい教科です。</p><p>私自身も、中学生のとき英語がとても苦手でした。高校生の時に、目標のため英語を勉強していると、勉強する楽しさや大切さに気づき、また、英語の文章に触れて世界のいろいろな価値観を知るきっかけにもなりました。</p><p>その発見や面白さを生徒たちと共有し、生徒自ら英語が楽しい、もっと学びたい、いろいろな価値観を知りたいと思ってもらえるように専門塾をつくりました。</p><p>英語が苦手でも大丈夫、私も苦手だったからこそ苦手な生徒の気持ちやつまずくポイントがわかります。また、英語が得意な方や英語を武器にしたい方を対象に、ハイレベルな授業もご準備しています。K2で英語力を伸ばしてみませんか？</p><h3 style='color:var(--primary);font-size:1.15em;margin-top:2em;margin-bottom:0.8em'>📖 国語</h3><p>近年の高校・大学入試の傾向は、国語に限らずどの科目でも、文章量が大幅に増え、「文章を速く正確に読む力」「設問を理解して自分の言葉で表現する力」が求められています。</p><p>しかし「国語の勉強のしかたがわからない」「そもそも国語って勉強するものなの？」という声をよく耳にしてきました。</p><p>国語は感覚やセンスの世界だと思われがちですが、練習で国語力は伸ばせます。ことばの知識、読解力、表現力は、受験のためだけでなく、社会に出てからも役立つ大切な力となります。</p>
   </div>
+  
 </div>
 </section>
 <section style="padding:56px 0;background:repeating-linear-gradient(transparent, transparent 31px, rgba(0,80,160,.03) 31px, rgba(0,80,160,.03) 32px),var(--bg-warm);" class="content-section">
@@ -673,6 +727,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div style="max-width:800px;margin:0 auto" class="fade-up">
     <p>大学受験・高校受験に必要な「英語力」「国語力」を身につける指導</p><p>各大学・県立高校の出題傾向に合わせた学習カリキュラム</p><p>10年以上の経験と実績があるからこそ無駄のない受験対策指導</p><h3 style='color:var(--primary);font-size:1.1em;margin-top:1.5em;margin-bottom:0.8em'>主要な大学・高校の受験対策ができます</h3><ul><li><strong>例1:</strong> 九州大・北九州市立大などの国公立大学</li><li><strong>例2:</strong> 早稲田大・慶応大・明治大・青山学院大・同志社大・立命館大などの有名私立大学</li><li><strong>例3:</strong> 西南学院大・福岡大などの県内私立大学</li><li><strong>例4:</strong> 福岡高校・古賀竟成館などの県内国公立高校</li><li><strong>例5:</strong> 城東高校・九州高校・大濠高校などの県内私立高校</li></ul>
   </div>
+  
 </div>
 </section>
 <section style="padding:56px 0;" class="content-section">
@@ -684,6 +739,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div style="max-width:800px;margin:0 auto" class="fade-up">
     <p><strong>STEP 1: 体験授業・お問い合わせ</strong><br>お電話またはメールでご予約ください。</p><p><strong>STEP 2: 体験授業実施</strong><br>1回のみ完全無料で体験授業を受講いただけます。</p><p><strong>STEP 3: ご入会または再検討</strong><br>即時入会も可能ですが、ご本人様の「ここで頑張りたい！」という気持ちを大切にしております。そのため、一度ご家庭でご検討されることをおすすめします。ご入会を決められた場合のみ、入会手続きを進めさせていただきます。</p>
   </div>
+  
 </div>
 </section>
 <section style="padding:56px 0;background:repeating-linear-gradient(transparent, transparent 31px, rgba(0,80,160,.03) 31px, rgba(0,80,160,.03) 32px),var(--bg-warm);" class="content-section">
@@ -695,6 +751,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div style="max-width:800px;margin:0 auto" class="fade-up">
     <p>古賀市役所前の建物です。こちらの看板を目印にお越しください。</p><p>少人数授業のスペースです。少人数授業が行われていない時間帯は自習席にもご利用できます。</p><p>自習席です。授業がない日でもご利用できます。</p><p>大手学習塾で教室長と講師業を長年経験してきました。ひとりひとりに寄り添った指導をしています。</p>
   </div>
+  
 </div>
 </section>
 <section style="padding:56px 0;" class="content-section">
@@ -706,6 +763,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div style="max-width:800px;margin:0 auto" class="fade-up">
     <p>期間中にご入会の方に以下の特典をご用意しています。</p><ul><li>授業料2回分無料（個別指導60分）</li><li>入会金無料</li></ul><p>※2か月以上継続の方のみが対象です。</p>
   </div>
+  
 </div>
 </section>
 
