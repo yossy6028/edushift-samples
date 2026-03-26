@@ -243,7 +243,7 @@ header nav a.nav-active::after{width:70%}
 @keyframes floatShape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-25px) rotate(8deg)}}
 
 /* ===== HERO FULLBLEED VARIANT ===== */
-.hero-fullbleed{position:relative;min-height:88vh;overflow:hidden;display:flex;align-items:center;padding:0}
+.hero-fullbleed{position:relative;min-height:80vh;max-height:720px;overflow:hidden;display:flex;align-items:center;padding:0}
 /* Fullbleed: make header blend with dark hero */
 .hero-fullbleed~*{} /* placeholder */
 body:has(.hero-fullbleed) header{background:rgba(0,0,0,.4);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
@@ -260,18 +260,18 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .hero-fullbleed .hero-bg img{animation:kenburns 25s ease-in-out infinite alternate}
 .hero-fullbleed .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.35) 40%,rgba(0,0,0,.5) 100%);z-index:1}
 .hero-fullbleed .container{position:relative;z-index:2}
-.hero-fullbleed .hero-inner{display:flex;flex-direction:column;align-items:flex-start;max-width:640px;padding:100px 0 48px}
-.hero-fullbleed .hero-brand-name{font-family:var(--font-display);font-size:clamp(2.8rem,7vw,4.5rem);font-weight:800;color:#fff;text-shadow:0 3px 30px rgba(0,0,0,.5),0 6px 60px rgba(0,0,0,.3);margin-bottom:16px;letter-spacing:0.06em;line-height:1.1}
+.hero-fullbleed .hero-inner{display:flex;flex-direction:column;align-items:flex-start;max-width:640px;padding:90px 0 40px}
+.hero-fullbleed .hero-brand-name{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,3.8rem);font-weight:800;color:#fff;text-shadow:0 3px 30px rgba(0,0,0,.5),0 6px 60px rgba(0,0,0,.3);margin-bottom:16px;letter-spacing:0.06em;line-height:1.1}
 .hero-fullbleed .hero-badge{background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);color:#fff}
 .hero-fullbleed .hero-badge-dot{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.6)}
-.hero-fullbleed h1{color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.5),0 4px 60px rgba(0,0,0,.3);font-size:clamp(2.2rem,5.5vw,3.4rem);letter-spacing:0.04em}
+.hero-fullbleed h1{color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.5),0 4px 60px rgba(0,0,0,.3);font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:0.04em}
 .hero-fullbleed h1 em{background:none;-webkit-text-fill-color:#fff;text-decoration:underline;text-decoration-color:var(--primary-light);text-underline-offset:6px;text-decoration-thickness:4px}
 .hero-fullbleed h1 em::after{display:none}
-.hero-fullbleed .hero-desc{color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(0,0,0,.2);font-size:.95rem;line-height:1.8;margin-bottom:24px;max-width:520px}
+.hero-fullbleed .hero-desc{color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(0,0,0,.2);font-size:.95rem;line-height:1.8;margin-bottom:16px;max-width:520px}
 .hero-fullbleed .hero-actions .btn-primary{box-shadow:0 4px 24px rgba(6,199,85,.4)}
 .hero-fullbleed .hero-actions .btn-secondary{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;border-color:rgba(255,255,255,.3)}
 .hero-fullbleed .hero-actions .btn-secondary:hover{background:rgba(255,255,255,.25);border-color:#fff}
-.hero-fullbleed .hero-stats{border-top-color:rgba(255,255,255,.15)}
+.hero-fullbleed .hero-stats{border-top-color:rgba(255,255,255,.15);margin-top:16px}
 .hero-fullbleed .hero-stats::before{background:linear-gradient(90deg,rgba(255,255,255,.6),var(--primary-light))}
 .hero-fullbleed .hero-stat-num{background:none;-webkit-text-fill-color:#fff;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.2)}
 .hero-fullbleed .hero-stat-label{color:rgba(255,255,255,.7)}
@@ -290,8 +290,9 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
   .hero-fullbleed .hero-stats{gap:20px}
 }
 @media(max-width:640px){
-  .hero-fullbleed{min-height:85vh}
-  .hero-fullbleed .hero-inner{padding:80px 0 40px}
+  .hero-fullbleed{min-height:75vh;max-height:600px}
+  .hero-fullbleed .hero-brand-name{font-size:clamp(1.8rem,8vw,2.6rem)}
+  .hero-fullbleed .hero-inner{padding:60px 0 32px}
   .hero-fullbleed h1{font-size:clamp(1.6rem,7vw,2.2rem)}
   .hero-fullbleed .hero-desc{font-size:.95rem}
 }
@@ -301,7 +302,7 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .reveal-el.visible{opacity:1;transform:translateY(0)}
 
 /* ===== FEATURES (Zigzag layout) ===== */
-.features{background:repeating-linear-gradient(var(--white), var(--white) 23px, #f0eeeb 23px, #f0eeeb 24px);padding:120px 0;position:relative}
+.features{background:repeating-linear-gradient(var(--white), var(--white) 23px, #f0eeeb 23px, #f0eeeb 24px);padding:80px 0;position:relative}
 .features::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
 .feature-card::before{display:none}
 .features-header{margin-bottom:72px}
@@ -317,8 +318,10 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .feature-row:hover .feature-visual-photo img{transform:scale(1.05)}
 .feature-num-lg{font-family:var(--font-accent);font-size:5rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);text-shadow:0 2px 12px rgba(0,0,0,.3);line-height:1;position:absolute;bottom:16px;right:24px;z-index:2}
 /* Card layout (no-photo fallback) */
-.feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;position:relative;transition:transform .3s,box-shadow .3s}
-.feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:40px 36px;position:relative;transition:transform .3s,box-shadow .3s;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.feature-card-icon{width:48px;height:48px;color:var(--primary);margin-bottom:16px;opacity:.6}
+.feature-card-icon svg{width:100%;height:100%}
 .feature-card-num{font-family:var(--font-accent);font-size:3rem;font-weight:700;color:var(--primary);line-height:1;margin-bottom:20px;padding-bottom:16px;border-bottom:3px solid var(--primary-10);display:inline-block}
 /* Shared feature text */
 .feature-num{font-family:var(--font-accent);font-size:.85rem;font-weight:400;font-style:italic;letter-spacing:.1em;color:var(--primary-light);margin-bottom:12px;opacity:.5}
@@ -327,6 +330,8 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .feature-line{width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px;margin-top:24px;transition:width .6s cubic-bezier(.22,1,.36,1)}
 .feature-row:hover .feature-line{width:120px}
 .feature-card:hover .feature-line{width:120px}
+/* Content sections paragraph spacing */
+.content-section p + p{margin-top:1.2em}
 
 /* ===== PHOTO GRID ===== */
 .photo-grid{background:var(--bg-warm);padding:80px 0;position:relative;overflow:hidden}
@@ -338,7 +343,7 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .photo-frame:hover{transform:scale(1.02)}
 
 /* ===== DETAIL BLOCKS (Premium Zigzag) ===== */
-.details{padding:120px 0;background:var(--white);position:relative}
+.details{padding:80px 0;background:var(--white);position:relative}
 .detail-blocks{display:flex;flex-direction:column;gap:100px;margin-top:64px}
 .detail-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .detail-block-reverse{direction:rtl}
@@ -356,7 +361,7 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .detail-block:hover .detail-line{width:120px}
 
 /* ===== RESULTS (Marquee + Sakura) ===== */
-.results{background:linear-gradient(180deg,#fff5f5 0%,var(--bg-warm) 100%);padding:120px 0;overflow:hidden;position:relative}
+.results{background:linear-gradient(180deg,#fff5f5 0%,var(--bg-warm) 100%);padding:80px 0;overflow:hidden;position:relative}
 .results-marquee{margin-top:48px;display:flex;flex-direction:column;gap:16px;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);position:relative;z-index:1}
 .marquee-track{display:flex;gap:12px;width:max-content;white-space:nowrap}
 .marquee-track-1{animation:marquee 40s linear infinite}
@@ -373,7 +378,7 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .results-stamp{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;opacity:.85}
 
 /* ===== COURSES (Tab switcher) ===== */
-.courses{padding:120px 0;background:var(--white);position:relative}
+.courses{padding:80px 0;background:var(--white);position:relative}
 .courses::before{content:'';position:absolute;top:80px;left:40px;bottom:80px;width:2px;background:#e0574f;opacity:.15;z-index:0}
 .courses::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
 .course-tabs{display:flex;gap:8px;margin-bottom:40px;padding:6px;background:var(--bg-warm);border-radius:100px;width:fit-content;margin-left:auto;margin-right:auto;box-shadow:inset 0 1px 3px rgba(0,0,0,.04)}
@@ -396,7 +401,7 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 @keyframes decoSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 
 /* ===== FAQ (Bubble conversation) ===== */
-.faq-section{padding:120px 0;background:repeating-linear-gradient(transparent,transparent 31px,#e8e4df 31px,#e8e4df 32px),var(--bg-warm)}
+.faq-section{padding:80px 0;background:repeating-linear-gradient(transparent,transparent 31px,#e8e4df 31px,#e8e4df 32px),var(--bg-warm)}
 .faq-list{max-width:740px;margin:48px auto 0;display:flex;flex-direction:column;gap:20px}
 .faq-conversation{transition:all var(--transition)}
 .faq-row{display:flex;align-items:flex-start;gap:12px;padding:4px 0}
@@ -415,7 +420,7 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .faq-conversation.open .faq-toggle{transform:rotate(45deg);background:var(--primary);color:#fff}
 
 /* ===== CTA ===== */
-.cta{background:linear-gradient(135deg,#2D7A4F 0%,var(--primary) 40%,var(--primary-light) 100%);padding:120px 0;text-align:center;position:relative;overflow:hidden}
+.cta{background:linear-gradient(135deg,#2D7A4F 0%,var(--primary) 40%,var(--primary-light) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");pointer-events:none}
 .cta-float-1,.cta-float-2,.cta-float-3{position:absolute;border-radius:50%;background:rgba(255,255,255,.06);pointer-events:none}
 .cta-float-1{width:300px;height:300px;top:-100px;left:-50px;animation:floatShape 10s ease-in-out infinite}
@@ -430,7 +435,7 @@ body:has(.hero-fullbleed) header.scrolled .nav-logo-icon{background:linear-gradi
 .btn-cta:hover::before{width:300px;height:300px}
 
 /* ===== ACCESS (SVG icons) ===== */
-.access{background:var(--bg-warm);padding:120px 0}
+.access{background:var(--bg-warm);padding:80px 0}
 .access-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:start}
 .access-info{display:flex;flex-direction:column;gap:12px}
 .access-item{display:flex;gap:18px;align-items:center;padding:20px 24px;background:var(--white);border-radius:16px;border:1px solid var(--border);transition:all .4s cubic-bezier(.22,1,.36,1)}
@@ -608,30 +613,35 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
   <div class="features-grid">
     <div class="feature-card fade-up">
+      <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
       <div class="feature-card-num">01</div>
       <h3 class="feature-title">「１対１個別指導」と「少人数授業」を組み合わせた学習塾です</h3>
       <p class="feature-desc">「１対１個別指導」と「少人数授業」を組み合わせた学習塾です。生徒一人ひとりに合わせた最適な学習を提供します。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
+      <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
       <div class="feature-card-num">02</div>
       <h3 class="feature-title">指導歴10年以上の英語・国語専門講師が指導します</h3>
       <p class="feature-desc">学生講師ではなく、指導歴10年以上の英語・国語専門講師が指導します。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
+      <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
       <div class="feature-card-num">03</div>
       <h3 class="feature-title">大学受験・高校受験・定期テスト・英検対策に幅広くサポート</h3>
       <p class="feature-desc">大学受験・高校受験・学校の定期テスト・英検対策など、幅広くサポートします。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
+      <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
       <div class="feature-card-num">04</div>
       <h3 class="feature-title">一人ひとりに合わせた受験相談・勉強相談</h3>
       <p class="feature-desc">一人ひとりの学習状況や目標、個性を考慮した受験相談・勉強相談にも対応します。</p>
       <div class="feature-line"></div>
     </div>
     <div class="feature-card fade-up">
+      <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
       <div class="feature-card-num">05</div>
       <h3 class="feature-title">自習席完備・質問もOK</h3>
       <p class="feature-desc">自習席もあるから、家では集中できない子でも安心。先生の空いている時間なら質問もOK。</p>
@@ -713,8 +723,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="section-label-accent">SPECIALITY</div>
     <h2 class="section-title">英語・国語の専門塾だからこそできること</h2>
   </div>
-  <div style="max-width:800px;margin:0 auto" class="fade-up">
-    <h3 style='color:var(--primary);font-size:1.15em;margin-bottom:0.8em'>🔤 英語</h3><p>文系・理系に限らず、必須の英語。中高生に求められる単語量・文章量が年々増えており、学校の定期テストや入試問題も難化しているため、多くの子どもたちが苦手に感じやすい教科です。</p><p>私自身も、中学生のとき英語がとても苦手でした。高校生の時に、目標のため英語を勉強していると、勉強する楽しさや大切さに気づき、また、英語の文章に触れて世界のいろいろな価値観を知るきっかけにもなりました。</p><p>その発見や面白さを生徒たちと共有し、生徒自ら英語が楽しい、もっと学びたい、いろいろな価値観を知りたいと思ってもらえるように専門塾をつくりました。</p><p>英語が苦手でも大丈夫、私も苦手だったからこそ苦手な生徒の気持ちやつまずくポイントがわかります。また、英語が得意な方や英語を武器にしたい方を対象に、ハイレベルな授業もご準備しています。K2で英語力を伸ばしてみませんか？</p><h3 style='color:var(--primary);font-size:1.15em;margin-top:2em;margin-bottom:0.8em'>📖 国語</h3><p>近年の高校・大学入試の傾向は、国語に限らずどの科目でも、文章量が大幅に増え、「文章を速く正確に読む力」「設問を理解して自分の言葉で表現する力」が求められています。</p><p>しかし「国語の勉強のしかたがわからない」「そもそも国語って勉強するものなの？」という声をよく耳にしてきました。</p><p>国語は感覚やセンスの世界だと思われがちですが、練習で国語力は伸ばせます。ことばの知識、読解力、表現力は、受験のためだけでなく、社会に出てからも役立つ大切な力となります。</p>
+  <div style="max-width:680px;margin:0 auto" class="fade-up">
+    <h3 style='color:var(--primary);font-size:1.15em;margin-bottom:0.8em'>英語</h3><p>文系・理系に限らず、必須の英語。中高生に求められる単語量・文章量が年々増えており、学校の定期テストや入試問題も難化しているため、多くの子どもたちが苦手に感じやすい教科です。</p><p>私自身も、中学生のとき英語がとても苦手でした。高校生の時に、目標のため英語を勉強していると、勉強する楽しさや大切さに気づき、また、英語の文章に触れて世界のいろいろな価値観を知るきっかけにもなりました。</p><p>その発見や面白さを生徒たちと共有し、生徒自ら英語が楽しい、もっと学びたい、いろいろな価値観を知りたいと思ってもらえるように専門塾をつくりました。</p><p>英語が苦手でも大丈夫、私も苦手だったからこそ苦手な生徒の気持ちやつまずくポイントがわかります。また、英語が得意な方や英語を武器にしたい方を対象に、ハイレベルな授業もご準備しています。K2で英語力を伸ばしてみませんか？</p><h3 style='color:var(--primary);font-size:1.15em;margin-top:2em;margin-bottom:0.8em'>国語</h3><p>近年の高校・大学入試の傾向は、国語に限らずどの科目でも、文章量が大幅に増え、「文章を速く正確に読む力」「設問を理解して自分の言葉で表現する力」が求められています。</p><p>しかし「国語の勉強のしかたがわからない」「そもそも国語って勉強するものなの？」という声をよく耳にしてきました。</p><p>国語は感覚やセンスの世界だと思われがちですが、練習で国語力は伸ばせます。ことばの知識、読解力、表現力は、受験のためだけでなく、社会に出てからも役立つ大切な力となります。</p>
   </div>
   
 </div>
@@ -725,7 +735,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="section-label-accent">EXAM PREP</div>
     <h2 class="section-title">受験対策</h2>
   </div>
-  <div style="max-width:800px;margin:0 auto" class="fade-up">
+  <div style="max-width:680px;margin:0 auto" class="fade-up">
     <p>大学受験・高校受験に必要な「英語力」「国語力」を身につける指導</p><p>各大学・県立高校の出題傾向に合わせた学習カリキュラム</p><p>10年以上の経験と実績があるからこそ無駄のない受験対策指導</p><h3 style='color:var(--primary);font-size:1.1em;margin-top:1.5em;margin-bottom:0.8em'>主要な大学・高校の受験対策ができます</h3><ul><li><strong>例1:</strong> 九州大・北九州市立大などの国公立大学</li><li><strong>例2:</strong> 早稲田大・慶応大・明治大・青山学院大・同志社大・立命館大などの有名私立大学</li><li><strong>例3:</strong> 西南学院大・福岡大などの県内私立大学</li><li><strong>例4:</strong> 福岡高校・古賀竟成館などの県内国公立高校</li><li><strong>例5:</strong> 城東高校・九州高校・大濠高校などの県内私立高校</li></ul>
   </div>
   
@@ -737,7 +747,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="section-label-accent">ENROLLMENT</div>
     <h2 class="section-title">入会の流れ</h2>
   </div>
-  <div style="max-width:800px;margin:0 auto" class="fade-up">
+  <div style="max-width:680px;margin:0 auto" class="fade-up">
     <p><strong>STEP 1: 体験授業・お問い合わせ</strong><br>お電話またはメールでご予約ください。</p><p><strong>STEP 2: 体験授業実施</strong><br>1回のみ完全無料で体験授業を受講いただけます。</p><p><strong>STEP 3: ご入会または再検討</strong><br>即時入会も可能ですが、ご本人様の「ここで頑張りたい！」という気持ちを大切にしております。そのため、一度ご家庭でご検討されることをおすすめします。ご入会を決められた場合のみ、入会手続きを進めさせていただきます。</p>
   </div>
   
@@ -749,7 +759,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="section-label-accent">CLASSROOM</div>
     <h2 class="section-title">教室の風景</h2>
   </div>
-  <div style="max-width:800px;margin:0 auto" class="fade-up">
+  <div style="max-width:680px;margin:0 auto" class="fade-up">
     <p>古賀市役所前の建物です。こちらの看板を目印にお越しください。</p><p>少人数授業のスペースです。少人数授業が行われていない時間帯は自習席にもご利用できます。</p><p>自習席です。授業がない日でもご利用できます。</p><p>大手学習塾で教室長と講師業を長年経験してきました。ひとりひとりに寄り添った指導をしています。</p>
   </div>
   
@@ -761,7 +771,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="section-label-accent">CAMPAIGN</div>
     <h2 class="section-title">春のキャンペーン（2026年4月4日まで）</h2>
   </div>
-  <div style="max-width:800px;margin:0 auto" class="fade-up">
+  <div style="max-width:680px;margin:0 auto" class="fade-up">
     <p>期間中にご入会の方に以下の特典をご用意しています。</p><ul><li>授業料2回分無料（個別指導60分）</li><li>入会金無料</li></ul><p>※2か月以上継続の方のみが対象です。</p>
   </div>
   
