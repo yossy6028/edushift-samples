@@ -673,8 +673,8 @@ section { padding: 100px 1.5rem; }
   width: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 20%;
-  aspect-ratio: 3/4;
+  object-position: center 10%;
+  aspect-ratio: 4/3;
 }
 .instructor-text { }
 .instructor-name {
@@ -1205,20 +1205,27 @@ section { padding: 100px 1.5rem; }
   line-height: 1;
   position: relative;
   display: inline-block;
-  margin-right: 4px;
+  margin: 0 12px;
 }
 .watermark-num::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120%;
-  height: 120%;
+  width: 130%;
+  height: 130%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, rgba(255,107,53,0.05) 40%, transparent 70%);
+  background:
+    repeating-conic-gradient(
+      var(--accent) 0deg, var(--accent) 2deg,
+      transparent 2deg, transparent 15deg
+    );
   border-radius: 50%;
   z-index: -1;
   pointer-events: none;
+  opacity: 0.5;
+  mask-image: radial-gradient(transparent 45%, black 46%, black 52%, transparent 53%);
+  -webkit-mask-image: radial-gradient(transparent 45%, black 46%, black 52%, transparent 53%);
 }
 
 /* ========== Section Watermark ========== */
