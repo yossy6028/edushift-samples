@@ -432,53 +432,26 @@ section { padding: 100px 1.5rem; }
 }
 
 /* ========== Speciality ========== */
-.speciality { background: #fff; }
-.speciality-content {
-  max-width: 800px;
-  margin: 0 auto;
+.speciality { background: #f7f8fc; padding: 100px 0; }
+.speciality-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 48px;
 }
-.speciality-content p {
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
-  line-height: 1.9;
+@media (max-width: 768px) {
+  .speciality-grid { grid-template-columns: 1fr; }
 }
-.speciality-sub {
-  color: var(--primary);
-  font-size: 1.3rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary-light);
-}
-.speciality-content .speciality-sub:first-child { margin-top: 0; }
 
 /* ========== Exam Prep ========== */
-.exam-prep { background: var(--bg-alt); }
-.exam-prep-content {
-  max-width: 800px;
+.exam-prep { background: linear-gradient(180deg, #f0f4ff 0%, #e8edf5 100%); padding: 100px 0; }
+.exam-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
   margin: 0 auto;
 }
-.exam-prep-content p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-.exam-sub {
-  color: var(--primary);
-  font-size: 1.15rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.exam-list {
-  list-style: none;
-  padding: 0;
-}
-.exam-list li {
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--bg-alt2);
-  font-size: 0.95rem;
-}
-.exam-list li strong { color: var(--primary); }
 
 /* ========== Enrollment ========== */
 .enrollment { background: #fff; }
@@ -1297,41 +1270,99 @@ section { padding: 100px 1.5rem; }
 
 <!-- Speciality -->
 <section class="speciality" id="speciality">
-  <div class="container section-center">
-    <span class="section-label">SPECIALITY</span>
+  <div class="container">
+    <p class="section-label">SPECIALITY</p>
     <h2 class="section-title">英語・国語の専門塾だからこそできること</h2>
-  </div>
-  <div class="speciality-content container" data-animate>
-    <h3 class="speciality-sub">英語</h3>
-<p>文系・理系に限らず、必須の英語。中高生に求められる単語量・文章量が年々増えており、学校の定期テストや入試問題も難化しているため、多くの子どもたちが苦手に感じやすい教科です。</p>
-<p>私自身も、中学生のとき英語がとても苦手でした。高校生の時に、目標のため英語を勉強していると、勉強する楽しさや大切さに気づき、また、英語の文章に触れて世界のいろいろな価値観を知るきっかけにもなりました。</p>
-<p>その発見や面白さを生徒たちと共有し、生徒自ら英語が楽しい、もっと学びたい、いろいろな価値観を知りたいと思ってもらえるように専門塾をつくりました。</p>
-<p>英語が苦手でも大丈夫、私も苦手だったからこそ苦手な生徒の気持ちやつまずくポイントがわかります。また、英語が得意な方や英語を武器にしたい方を対象に、ハイレベルな授業もご準備しています。K2で英語力を伸ばしてみませんか？</p>
-<h3 class="speciality-sub">国語</h3>
-<p>近年の高校・大学入試の傾向は、国語に限らずどの科目でも、文章量が大幅に増え、「文章を速く正確に読む力」「設問を理解して自分の言葉で表現する力」が求められています。</p>
-<p>しかし「国語の勉強のしかたがわからない」「そもそも国語って勉強するものなの？」という声をよく耳にしてきました。</p>
-<p>国語は感覚やセンスの世界だと思われがちですが、練習で国語力は伸ばせます。ことばの知識、読解力、表現力は、受験のためだけでなく、社会に出てからも役立つ大切な力となります。</p>
+    
+    <div class="speciality-grid">
+      <!-- 英語カード -->
+      <div style="background:#fff;border-radius:16px;padding:48px 40px;box-shadow:0 8px 32px rgba(0,0,0,0.06);border-top:5px solid #3B82F6">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+          <div style="width:56px;height:56px;border-radius:12px;background:#EFF6FF;display:flex;align-items:center;justify-content:center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3 style="font-size:1.5rem;font-weight:800;color:#1a2a3a;margin:0">英語</h3>
+        </div>
+        <p style="font-size:0.95rem;line-height:2;color:#555;margin-bottom:16px">文系・理系に限らず、必須の英語。中高生に求められる単語量・文章量が年々増えており、学校の定期テストや入試問題も難化しているため、多くの子どもたちが苦手に感じやすい教科です。</p>
+        <p style="font-size:0.95rem;line-height:2;color:#555;margin-bottom:16px">私自身も、中学生のとき英語がとても苦手でした。高校生の時に、目標のため英語を勉強していると、勉強する楽しさや大切さに気づき、また、英語の文章に触れて世界のいろいろな価値観を知るきっかけにもなりました。</p>
+        <p style="font-size:0.95rem;line-height:2;color:#555;margin-bottom:16px">その発見や面白さを生徒たちと共有し、生徒自ら英語が楽しい、もっと学びたい、いろいろな価値観を知りたいと思ってもらえるように専門塾をつくりました。</p>
+        <p style="font-size:0.95rem;line-height:2;color:#555">英語が苦手でも大丈夫、私も苦手だったからこそ苦手な生徒の気持ちやつまずくポイントがわかります。また、英語が得意な方や英語を武器にしたい方を対象に、ハイレベルな授業もご準備しています。K2で英語力を伸ばしてみませんか？</p>
+      </div>
+      <!-- 国語カード -->
+      <div style="background:#fff;border-radius:16px;padding:48px 40px;box-shadow:0 8px 32px rgba(0,0,0,0.06);border-top:5px solid #10B981">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+          <div style="width:56px;height:56px;border-radius:12px;background:#ECFDF5;display:flex;align-items:center;justify-content:center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <h3 style="font-size:1.5rem;font-weight:800;color:#1a2a3a;margin:0">国語</h3>
+        </div>
+        <p style="font-size:0.95rem;line-height:2;color:#555;margin-bottom:16px">近年の高校・大学入試の傾向は、国語に限らずどの科目でも、文章量が大幅に増え、「文章を速く正確に読む力」「設問を理解して自分の言葉で表現する力」が求められています。</p>
+        <p style="font-size:0.95rem;line-height:2;color:#555;margin-bottom:16px">しかし「国語の勉強のしかたがわからない」「そもそも国語って勉強するものなの？」という声をよく耳にしてきました。</p>
+        <p style="font-size:0.95rem;line-height:2;color:#555">国語は感覚やセンスの世界だと思われがちですが、練習で国語力は伸ばせます。ことばの知識、読解力、表現力は、受験のためだけでなく、社会に出てからも役立つ大切な力となります。</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Exam Prep -->
 <section class="exam-prep" id="exam-prep">
-  <div class="container section-center">
-    <span class="section-label">EXAM PREP</span>
+  <div class="container">
+    <p class="section-label">EXAM PREP</p>
     <h2 class="section-title">受験対策</h2>
-  </div>
-  <div class="exam-prep-content container" data-animate>
-    <p>大学受験・高校受験に必要な「英語力」「国語力」を身につける指導</p>
-<p>各大学・県立高校の出題傾向に合わせた学習カリキュラム</p>
-<p>10年以上の経験と実績があるからこそ無駄のない受験対策指導</p>
-<h3 class="exam-sub">主要な大学・高校の受験対策ができます</h3>
-<ul class="exam-list">
-<li><strong>例1:</strong> 九州大・北九州市立大などの国公立大学</li>
-<li><strong>例2:</strong> 早稲田大・慶応大・明治大・青山学院大・同志社大・立命館大などの有名私立大学</li>
-<li><strong>例3:</strong> 西南学院大・福岡大などの県内私立大学</li>
-<li><strong>例4:</strong> 福岡高校・古賀竟成館などの県内国公立高校</li>
-<li><strong>例5:</strong> 城東高校・九州高校・大濠高校などの県内私立高校</li>
-</ul>
+    
+    <div style="max-width:800px;margin:0 auto 48px;text-align:center">
+      <p style="font-size:1rem;line-height:2;color:#555">大学受験・高校受験に必要な「英語力」「国語力」を身につける指導</p>
+      <p style="font-size:1rem;line-height:2;color:#555">各大学・県立高校の出題傾向に合わせた学習カリキュラム</p>
+      <p style="font-size:1rem;line-height:2;color:#555">10年以上の経験と実績があるからこそ無駄のない受験対策指導</p>
+    </div>
+    <h3 style="text-align:center;font-size:1.2rem;font-weight:700;margin-bottom:32px;color:#1a2a3a">主要な大学・高校の受験対策ができます</h3>
+    <div class="exam-badge-grid">
+      <!-- 国公立大学 -->
+      <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05)">
+        <span style="display:inline-block;padding:4px 16px;background:#DC2626;color:#fff;border-radius:20px;font-size:0.8rem;font-weight:700;margin-bottom:16px">国公立大学</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="padding:6px 14px;background:#FEF2F2;border-radius:8px;font-size:0.88rem;font-weight:500">九州大</span>
+          <span style="padding:6px 14px;background:#FEF2F2;border-radius:8px;font-size:0.88rem;font-weight:500">北九州市立大</span>
+        </div>
+      </div>
+      <!-- 有名私立大学 -->
+      <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05)">
+        <span style="display:inline-block;padding:4px 16px;background:#2563EB;color:#fff;border-radius:20px;font-size:0.8rem;font-weight:700;margin-bottom:16px">有名私立大学</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="padding:6px 14px;background:#EFF6FF;border-radius:8px;font-size:0.88rem;font-weight:500">早稲田大</span>
+          <span style="padding:6px 14px;background:#EFF6FF;border-radius:8px;font-size:0.88rem;font-weight:500">慶応大</span>
+          <span style="padding:6px 14px;background:#EFF6FF;border-radius:8px;font-size:0.88rem;font-weight:500">明治大</span>
+          <span style="padding:6px 14px;background:#EFF6FF;border-radius:8px;font-size:0.88rem;font-weight:500">青山学院大</span>
+          <span style="padding:6px 14px;background:#EFF6FF;border-radius:8px;font-size:0.88rem;font-weight:500">同志社大</span>
+          <span style="padding:6px 14px;background:#EFF6FF;border-radius:8px;font-size:0.88rem;font-weight:500">立命館大</span>
+        </div>
+      </div>
+      <!-- 県内私立大学 -->
+      <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05)">
+        <span style="display:inline-block;padding:4px 16px;background:#059669;color:#fff;border-radius:20px;font-size:0.8rem;font-weight:700;margin-bottom:16px">県内私立大学</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="padding:6px 14px;background:#ECFDF5;border-radius:8px;font-size:0.88rem;font-weight:500">西南学院大</span>
+          <span style="padding:6px 14px;background:#ECFDF5;border-radius:8px;font-size:0.88rem;font-weight:500">福岡大</span>
+        </div>
+      </div>
+      <!-- 公立高校 -->
+      <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05)">
+        <span style="display:inline-block;padding:4px 16px;background:#7C3AED;color:#fff;border-radius:20px;font-size:0.8rem;font-weight:700;margin-bottom:16px">公立高校</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="padding:6px 14px;background:#F5F3FF;border-radius:8px;font-size:0.88rem;font-weight:500">福岡高校</span>
+          <span style="padding:6px 14px;background:#F5F3FF;border-radius:8px;font-size:0.88rem;font-weight:500">古賀竟成館</span>
+        </div>
+      </div>
+      <!-- 私立高校 -->
+      <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05)">
+        <span style="display:inline-block;padding:4px 16px;background:#D97706;color:#fff;border-radius:20px;font-size:0.8rem;font-weight:700;margin-bottom:16px">私立高校</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="padding:6px 14px;background:#FFFBEB;border-radius:8px;font-size:0.88rem;font-weight:500">城東高校</span>
+          <span style="padding:6px 14px;background:#FFFBEB;border-radius:8px;font-size:0.88rem;font-weight:500">九州高校</span>
+          <span style="padding:6px 14px;background:#FFFBEB;border-radius:8px;font-size:0.88rem;font-weight:500">大濠高校</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
