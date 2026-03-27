@@ -37,28 +37,29 @@ ul { list-style: none; }
   --bg-alt: #F7FAFC;
   --bg-alt2: #EDF2F7;
   --success: #38A169;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --radius: 16px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.08);
   --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
   --container: min(1200px, 90vw);
 }
 
 /* ========== Typography ========== */
-h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 700; line-height: 1.4; }
+h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height: 1.4; }
 .section-label {
   display: inline-block;
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 .section-title {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   color: var(--primary-dark);
   margin-bottom: 1rem;
+  font-weight: 800;
 }
 .section-desc {
   font-size: 1rem;
@@ -76,52 +77,106 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 700; line-height:
   border-radius: 2px;
 }
 
-/* ========== Header ========== */
+/* ========== Header (2-tier: logo+phone+CTA / nav bar) ========== */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: #fff;
   transition: box-shadow 0.3s;
 }
 .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.header-top {
+  border-bottom: 3px solid var(--primary);
+}
 .header-inner {
   max-width: var(--container);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 1.5rem;
+  padding: 16px 5%;
 }
 .header-logo {
+  display: flex;
+  flex-direction: column;
+}
+.logo-sub {
+  font-size: 0.7rem;
+  color: #888;
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.logo-main {
   font-family: 'Noto Serif JP', serif;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: var(--primary);
+  line-height: 1.2;
 }
-.header-logo span { color: var(--accent); }
-.header-nav { display: flex; gap: 1.5rem; align-items: center; }
-.header-nav a {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text);
-  transition: color 0.2s;
+.header-phone {
+  text-align: center;
 }
-.header-nav a:hover { color: var(--primary); }
-.header-cta {
+.header-phone a {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: block;
+}
+.header-phone span {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+}
+.header-cta-btn {
   background: var(--accent);
-  color: #fff !important;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 60px;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
   transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(255,107,53,0.3);
 }
-.header-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.header-cta-btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
+.cta-arrow { font-size: 0.8rem; }
+
+/* Main Nav Bar */
+.main-nav {
+  background: var(--primary);
+  padding: 0;
+}
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.main-nav li { position: relative; }
+.main-nav a {
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.main-nav a:hover { background: rgba(255,255,255,0.1); }
 
 /* Hamburger */
 .hamburger {
@@ -145,23 +200,28 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 700; line-height:
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+@media (max-width: 900px) {
+  .header-phone { display: none; }
+  .header-cta-btn { padding: 12px 20px; font-size: 0.85rem; }
+}
 @media (max-width: 768px) {
   .hamburger { display: flex; }
-  .header-nav {
+  .header-cta-btn { display: none; }
+  .main-nav {
     position: fixed;
     top: 0;
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: #fff;
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
-    gap: 1.5rem;
+    padding: 5rem 0 2rem;
     box-shadow: -4px 0 20px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
+    z-index: 1000;
   }
-  .header-nav.open { right: 0; }
-  .header-nav a { font-size: 1rem; }
+  .main-nav.open { right: 0; }
+  .main-nav ul { flex-direction: column; }
+  .main-nav a { padding: 16px 28px; font-size: 1rem; }
 }
 
 /* ========== Hero ========== */
@@ -194,7 +254,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 700; line-height:
   z-index: 2;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 8rem 1.5rem 4rem;
+  padding: 10rem 1.5rem 5rem;
   color: #fff;
 }
 .hero-badge {
@@ -242,7 +302,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 700; line-height:
   background: var(--accent);
   color: #fff;
   padding: 1rem 2.5rem;
-  border-radius: 8px;
+  border-radius: 60px;
   font-weight: 700;
   font-size: 1.1rem;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
@@ -272,56 +332,103 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 700; line-height:
 }
 
 /* ========== Sections ========== */
-section { padding: 5rem 1.5rem; }
+section { padding: 100px 1.5rem; }
 .section-center { text-align: center; }
 .container { max-width: var(--container); margin: 0 auto; }
 
-/* ========== Features ========== */
-.features { background: var(--bg-alt); }
+/* ========== Features (seibukobetsu 4-col grid + numbered circles) ========== */
+.features { background: linear-gradient(180deg, #f0faf6 0%, #e6f5ef 100%); }
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
 .feature-card {
-  background: #fff;
-  padding: 2.5rem 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border: none;
 }
-.feature-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
-.feature-card:hover .feature-icon { transform: scale(1.1); }
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  background: var(--primary-light);
+.feature-label {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.feature-num {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  margin: 4px 0;
+  font-family: 'Noto Serif JP', serif;
+}
+.feature-icon-circle {
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  margin: 16px auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
-  padding: 18px;
+  transition: transform 0.3s;
 }
-.feature-icon { transition: transform 0.3s; }
-.feature-icon svg { width: 100%; height: 100%; }
+.feature-card:hover .feature-icon-circle { transform: scale(1.08); }
+.feature-icon-circle svg {
+  width: 60px;
+  height: 60px;
+  color: var(--primary);
+}
 .feature-title {
-  font-size: 1.05rem;
-  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-top: 16px;
   color: var(--primary-dark);
 }
-.feature-desc {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  line-height: 1.7;
-}
+/* 5th card centered across 2 cols */
+.features-grid .feature-card:nth-child(5) { grid-column: 2 / 4; }
 @media (max-width: 900px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid .feature-card:nth-child(5) { grid-column: auto; }
 }
 @media (max-width: 600px) {
   .features-grid { grid-template-columns: 1fr; }
+  .feature-icon-circle { width: 120px; height: 120px; }
+  .feature-icon-circle svg { width: 50px; height: 50px; }
+  .feature-num { font-size: 2.5rem; }
+}
+
+/* ========== Banner Strip (between sections) ========== */
+.banner-strip {
+  background: linear-gradient(135deg, var(--primary) 0%, #2a6fad 100%);
+  color: #fff;
+  padding: 36px 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.banner-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 60px);
+}
+.banner-strip h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+}
+.banner-strip p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ========== Speciality ========== */
@@ -425,10 +532,10 @@ section { padding: 5rem 1.5rem; }
   margin-right: auto;
 }
 .classroom-item {
-  border-radius: 16px;
+  border-radius: var(--radius);
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow);
 }
 .classroom-item img {
   width: 100%;
@@ -450,13 +557,23 @@ section { padding: 5rem 1.5rem; }
   background: linear-gradient(135deg, var(--accent) 0%, #FF8F5E 100%);
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-.campaign .section-title { color: #fff; }
-.campaign .section-label { color: rgba(255,255,255,0.8); }
+.campaign::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.04) 20px, rgba(255,255,255,0.04) 40px);
+}
+.campaign .section-title { color: #fff; position: relative; z-index: 1; }
+.campaign .section-label { color: rgba(255,255,255,0.8); position: relative; z-index: 1; }
 .campaign-body {
   max-width: 600px;
   margin: 0 auto;
   font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
 }
 .campaign-body ul {
   list-style: none;
@@ -549,9 +666,9 @@ section { padding: 5rem 1.5rem; }
   margin: 0 auto;
 }
 .instructor-photo {
-  border-radius: 16px;
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
 }
 .instructor-photo img {
   width: 100%;
@@ -585,23 +702,49 @@ section { padding: 5rem 1.5rem; }
   .instructor-photo { max-width: 280px; margin: 0 auto; }
 }
 
-/* ========== Courses ========== */
-.courses { background: #fff; }
+/* ========== Courses (dark bg + watermark) ========== */
+.courses {
+  background: linear-gradient(135deg, #1a3a2a 0%, #2d5a42 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.courses::before {
+  content: 'COURSE';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12rem;
+  font-weight: 900;
+  opacity: 0.04;
+  color: #fff;
+  white-space: nowrap;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.1em;
+}
+.courses .section-label { color: rgba(255,255,255,0.6); }
+.courses .section-title { color: #fff; }
+.courses .section-title::after { background: #FFF3C4; }
+.courses .section-desc { color: rgba(255,255,255,0.7); }
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 960px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .course-card {
-  border-radius: var(--radius);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  background: #fff;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 .course-header {
-  background: var(--primary);
+  background: rgba(255,255,255,0.1);
   color: #fff;
   padding: 1.5rem 2rem;
 }
@@ -624,43 +767,44 @@ section { padding: 5rem 1.5rem; }
 .course-row {
   display: flex;
   padding: 0.6rem 0;
-  border-bottom: 1px solid var(--bg-alt2);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   font-size: 0.9rem;
 }
 .course-key {
   font-weight: 700;
-  color: var(--primary);
+  color: rgba(255,255,255,0.6);
   min-width: 60px;
   flex-shrink: 0;
 }
-.course-val { color: var(--text); }
-.course-val.price { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.course-val { color: #fff; }
+.course-val.price { font-size: 1.8rem; font-weight: 800; color: #FFF3C4; }
 .course-recommend {
   margin-top: 1.5rem;
-  background: var(--bg-alt);
+  background: rgba(255,255,255,0.06);
   padding: 1.2rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 .recommend-label {
   font-weight: 700;
   font-size: 0.9rem;
-  color: var(--primary);
+  color: #FFF3C4;
   margin-bottom: 0.5rem;
 }
 .course-recommend ul { padding-left: 1.2rem; list-style: disc; }
 .course-recommend li {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.8);
   padding: 0.2rem 0;
 }
 .course-note {
   margin-top: 1rem;
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.6);
   line-height: 1.7;
 }
 @media (max-width: 768px) {
   .courses-grid { grid-template-columns: 1fr; }
+  .courses::before { font-size: 6rem; }
 }
 
 /* ========== FAQ ========== */
@@ -811,32 +955,63 @@ section { padding: 5rem 1.5rem; }
   .access-content { grid-template-columns: 1fr; }
 }
 
-/* ========== CTA ========== */
+/* ========== CTA (orange stripe) ========== */
 .cta-section {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
   color: #fff;
   text-align: center;
-  padding: 5rem 1.5rem;
+  padding: 100px 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
-.cta-section .section-title { color: #fff; }
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 40px);
+}
+.cta-section .section-title { color: #fff; font-size: 2rem; position: relative; z-index: 1; }
+.cta-section .section-title::after { background: rgba(255,255,255,0.4); }
 .cta-desc {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 1.05rem;
+  opacity: 0.95;
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.5rem;
   line-height: 1.8;
+  position: relative;
+  z-index: 1;
 }
-.cta-phone {
+.cta-btn-large {
+  display: inline-block;
+  background: #fff;
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 800;
+  padding: 24px 64px;
+  border-radius: 60px;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+}
+.cta-btn-large:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+.cta-phone-large {
   font-family: 'Noto Serif JP', serif;
-  font-size: 2rem;
-  font-weight: 900;
-  margin-top: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
 }
-.cta-phone a { color: #FFD580; }
+.cta-phone-large a { color: #fff; }
 .cta-phone-note {
-  font-size: 0.8rem;
-  opacity: 0.7;
+  font-size: 0.85rem;
+  opacity: 0.8;
   margin-top: 0.3rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* ========== Improvement ========== */
@@ -1002,22 +1177,38 @@ section { padding: 5rem 1.5rem; }
 
 <div class="scroll-progress"></div>
 
-<!-- Header -->
+<!-- Header (2-tier) -->
 <header class="header" id="header">
-  <div class="header-inner">
-    <a href="#" class="header-logo">英語と国語の塾 K2</a>
-    <button class="hamburger" id="hamburger" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="header-nav" id="nav">
-      <a href="#features">選ばれる理由</a>
-      <a href="#courses">コース</a>
-      <a href="#results">合格実績</a>
-      <a href="#instructor">講師紹介</a>
-      <a href="#access">アクセス</a>
-      <a href="#contact" class="header-cta">無料体験を予約</a>
-    </nav>
+  <div class="header-top">
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="logo-sub">英語・国語専門</span>
+        <span class="logo-main">英語と国語の塾 K2</span>
+      </div>
+      <div class="header-phone">
+        <a href="tel:090-3417-2055">090-3417-2055</a>
+        <span>受付 12:00〜22:00</span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#contact" class="header-cta-btn">
+        無料体験授業のご予約・お問い合わせ <span class="cta-arrow">&#9654;</span>
+      </a>
+    </div>
   </div>
+  <nav class="main-nav" id="nav">
+    <ul>
+      <li><a href="#features">選ばれる理由</a></li>
+      <li><a href="#speciality">専門科目</a></li>
+      <li><a href="#courses">コース</a></li>
+      <li><a href="#results">合格実績</a></li>
+      <li><a href="#instructor">講師紹介</a></li>
+      <li><a href="#tuition">月謝</a></li>
+      <li><a href="#access">アクセス</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
 </header>
 
 <!-- Hero -->
@@ -1046,42 +1237,63 @@ section { padding: 5rem 1.5rem; }
 <section class="features" id="features">
   <div class="container section-center">
     <span class="section-label">WHY K2</span>
-    <h2 class="section-title">K2が選ばれる理由</h2>
+    <h2 class="section-title">K2が選ばれる5つの理由</h2>
     <p class="section-desc">夫婦二人の小さな教室だからこそ、子どもたちに温かく丁寧な指導がしたいという想いからつくった地域密着の学習塾です。</p>
     <div class="features-grid">
       
         <div class="feature-card" data-animate>
-          <div class="feature-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2.5"/><circle cx="44" cy="20" r="8" stroke="currentColor" stroke-width="2.5"/><path d="M8 48c0-8 6-14 12-14s12 6 12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M32 48c0-8 6-14 12-14s12 6 12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="feature-label">FEATURE</div>
+          <div class="feature-num">1</div>
+          <div class="feature-icon-circle" style="background:#FFF3C4">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2.5"/><circle cx="44" cy="20" r="8" stroke="currentColor" stroke-width="2.5"/><path d="M8 48c0-8 6-14 12-14s12 6 12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M32 48c0-8 6-14 12-14s12 6 12 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
           <h3 class="feature-title">「１対１個別指導」と「少人数授業」を組み合わせた学習塾です</h3>
-          <p class="feature-desc">「１対１個別指導」と「少人数授業」を組み合わせた学習塾です。生徒一人ひとりに合わせた最適な学習を提供します。</p>
         </div>
 
         <div class="feature-card" data-animate>
-          <div class="feature-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="14" width="44" height="30" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M20 24h24M20 30h18M20 36h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M32 44v10M26 54l6-4 6 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="feature-label">FEATURE</div>
+          <div class="feature-num">2</div>
+          <div class="feature-icon-circle" style="background:#D6F5E3">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="14" width="44" height="30" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M20 24h24M20 30h18M20 36h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M32 44v10M26 54l6-4 6 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <h3 class="feature-title">指導歴10年以上の英語・国語専門講師が指導します</h3>
-          <p class="feature-desc">学生講師ではなく、指導歴10年以上の英語・国語専門講師が指導します。</p>
         </div>
 
         <div class="feature-card" data-animate>
-          <div class="feature-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 10h16c4 0 4 4 4 4v36s0-4-4-4H12V10z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M52 10H36c-4 0-4 4-4 4v36s0-4 4-4h16V10z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
+          <div class="feature-label">FEATURE</div>
+          <div class="feature-num">3</div>
+          <div class="feature-icon-circle" style="background:#DBEAFE">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 10h16c4 0 4 4 4 4v36s0-4-4-4H12V10z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M52 10H36c-4 0-4 4-4 4v36s0-4 4-4h16V10z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          </div>
           <h3 class="feature-title">大学受験・高校受験・定期テスト・英検対策に幅広くサポート</h3>
-          <p class="feature-desc">大学受験・高校受験・学校の定期テスト・英検対策など、幅広くサポートします。</p>
         </div>
 
         <div class="feature-card" data-animate>
-          <div class="feature-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2.5"/><path d="M20 36v8l8-8" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 22h12a4 4 0 014 4v12a4 4 0 01-4 4h-4l-6 6v-6" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
+          <div class="feature-label">FEATURE</div>
+          <div class="feature-num">4</div>
+          <div class="feature-icon-circle" style="background:#FDE8D0">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2.5"/><path d="M20 36v8l8-8" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 22h12a4 4 0 014 4v12a4 4 0 01-4 4h-4l-6 6v-6" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          </div>
           <h3 class="feature-title">一人ひとりに合わせた受験相談・勉強相談</h3>
-          <p class="feature-desc">一人ひとりの学習状況や目標、個性を考慮した受験相談・勉強相談にも対応します。</p>
         </div>
 
         <div class="feature-card" data-animate>
-          <div class="feature-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="8" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M18 16h12M18 22h10M18 28h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="46" cy="20" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M46 26v4M40 34c0-4 3-4 6-4s6 0 6 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M10 48h44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="feature-label">FEATURE</div>
+          <div class="feature-num">5</div>
+          <div class="feature-icon-circle" style="background:#E8DAEF">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="8" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M18 16h12M18 22h10M18 28h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="46" cy="20" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M46 26v4M40 34c0-4 3-4 6-4s6 0 6 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M10 48h44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
           <h3 class="feature-title">自習席完備・質問もOK</h3>
-          <p class="feature-desc">自習席もあるから、家では集中できない子でも安心。先生の空いている時間なら質問もOK。</p>
         </div>
     </div>
   </div>
 </section>
+
+<!-- Banner Strip 1 -->
+<div class="banner-strip">
+  <h3>1対1個別指導 ＋ 少人数授業で確実に伸ばす</h3>
+  <p>お子さん一人ひとりに合わせた最適な学びの形をご提供します</p>
+</div>
 
 <!-- Speciality -->
 <section class="speciality" id="speciality">
@@ -1189,6 +1401,12 @@ section { padding: 5rem 1.5rem; }
     </div>
   </div>
 </section>
+
+<!-- Banner Strip 2 (before results) -->
+<div class="banner-strip" style="background: linear-gradient(135deg, #0F2B44 0%, #1B4D7A 100%);">
+  <h3>確かな実績が証明する指導力</h3>
+  <p>九州大・立命館大をはじめ、多数の合格実績</p>
+</div>
 
 <!-- Marquee -->
 <div class="marquee">
@@ -1452,13 +1670,13 @@ section { padding: 5rem 1.5rem; }
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA (orange stripe) -->
 <section class="cta-section" id="contact">
   <div class="container">
     <h2 class="section-title">まずは無料体験授業から</h2>
     <p class="cta-desc">1回の体験授業は完全無料。お子さんの学力・目標に合わせた指導をご体験ください。お電話またはメールでご予約を承ります。</p>
-    <a href="tel:090-3417-2055" class="btn-primary">無料体験授業を予約する</a>
-    <div class="cta-phone"><a href="tel:090-3417-2055">090-3417-2055</a></div>
+    <a href="tel:090-3417-2055" class="cta-btn-large">無料体験授業を予約する</a>
+    <div class="cta-phone-large"><a href="tel:090-3417-2055">090-3417-2055</a></div>
     <p class="cta-phone-note">受付時間 12:00〜22:00</p>
   </div>
 </section>
