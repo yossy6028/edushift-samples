@@ -672,6 +672,9 @@ section { padding: 100px 1.5rem; }
 .instructor-photo img {
   width: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center 20%;
+  aspect-ratio: 3/4;
 }
 .instructor-text { }
 .instructor-name {
@@ -1195,10 +1198,27 @@ section { padding: 100px 1.5rem; }
   display: none;
 }
 .watermark-num {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 900;
-  color: var(--accent);
+  color: transparent;
+  -webkit-text-stroke: 3px var(--accent);
   line-height: 1;
+  position: relative;
+  display: inline-block;
+  margin-right: 4px;
+}
+.watermark-num::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, rgba(255,107,53,0.05) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* ========== Section Watermark ========== */
