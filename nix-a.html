@@ -965,62 +965,12 @@ section { padding: 100px 1.5rem; }
   z-index: 1;
 }
 
-/* ========== Instructor / OUR BELIEF ========== */
-.instructor { background: var(--bg-alt); position: relative; overflow: hidden; }
-.instructor-layout {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 48px;
-  align-items: start;
-  max-width: 960px;
-  margin: 0 auto;
-}
-.instructor-photo {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-.instructor-photo img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center 10%;
-  aspect-ratio: 4/3;
-}
-.instructor-text { }
-.instructor-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-  margin-bottom: 0.3rem;
-}
-.instructor-role {
-  font-size: 0.85rem;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-}
-.instructor-text p {
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-.instructor-text .belief-accent {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-@media (max-width: 768px) {
-  .instructor-layout { grid-template-columns: 1fr; }
-  .instructor-photo { max-width: 280px; margin: 0 auto; }
-}
-
 /* ========== EduShift CTA ========== */
 .edushift-cta {
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #fff;
   text-align: center;
-  padding: 100px 1.5rem;
+  padding: 80px 1.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -1030,90 +980,35 @@ section { padding: 100px 1.5rem; }
   inset: 0;
   background: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 60px);
 }
-.edushift-cta .edushift-badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 60px;
-  padding: 8px 24px;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.1em;
+.edushift-cta h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
-}
-.edushift-cta h2 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 800;
-  font-family: 'Noto Serif JP', serif;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
   color: #fff;
 }
-.edushift-cta .edushift-sub {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  line-height: 1.8;
-  position: relative;
-  z-index: 1;
-}
-.edushift-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 960px;
-  margin: 2rem auto 0;
-  position: relative;
-  z-index: 1;
-}
-.edushift-card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius);
-  padding: 2rem;
-  text-align: center;
-}
-.edushift-card .card-num {
-  font-size: 2rem;
-  font-weight: 800;
-  color: rgba(255,255,255,0.15);
-  margin-bottom: 0.5rem;
-}
-.edushift-card h3 {
+.edushift-cta p {
   font-size: 1rem;
-  color: #fff;
-  margin-bottom: 0.8rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
-.edushift-card p {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.7;
-}
-.edushift-cta .edushift-btn {
+.edushift-cta a {
   display: inline-block;
-  background: linear-gradient(135deg, var(--accent), #F09819);
+  background: linear-gradient(135deg, #FF69B4, #FF1493);
   color: #fff;
-  padding: 16px 40px;
+  padding: 16px 48px;
   border-radius: 60px;
   font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 6px 24px rgba(230,126,34,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(255,105,180,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   z-index: 1;
-  text-decoration: none;
-  margin-top: 2rem;
 }
-.edushift-cta .edushift-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(230,126,34,0.5); }
-@media (max-width: 768px) {
-  .edushift-cards { grid-template-columns: 1fr; }
-}
+.edushift-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,105,180,0.5); }
 
 /* ========== Improvement ========== */
 .improvement { background: var(--bg-alt); }
@@ -1594,7 +1489,7 @@ section { padding: 100px 1.5rem; }
   <div class="section-watermark">STEP</div>
   <div class="container section-center">
     <span class="section-label">ENROLLMENT</span>
-    <h2 class="section-title">進学指導塾Nixの入会の流れ</h2>
+    <h2 class="section-title">入会の流れ</h2>
     <div class="enroll-steps">
       
         <div class="enroll-step" data-animate>
@@ -1717,32 +1612,11 @@ section { padding: 100px 1.5rem; }
   </div>
 </section>
 
-<!-- Instructor / OUR BELIEF -->
-<section class="instructor" id="instructor">
-  <div class="section-watermark">OUR BELIEF</div>
-  <div class="container section-center">
-    <span class="section-label">OUR BELIEF</span>
-    <h2 class="section-title">進学指導塾Nixのこだわり</h2>
-  </div>
-  <div class="instructor-layout container">
-    <div class="instructor-photo" data-animate>
-      <img id="instructor-img" alt="進学指導塾Nix 教室風景" src="">
-    </div>
-    <div class="instructor-text" data-animate>
-      <h3 class="instructor-name">進学指導塾Nix</h3>
-      <p class="instructor-role">葛飾区立石 / 集団・グループ・個別指導</p>
-      <p class="belief-accent">「<span class="marker-yellow">学力下位レベルを中堅以上に仕上げます</span>」</p>
-      <p>集団・グループワークの融合で、中学受験・高校受験・大学受験に対応。学力レベルに合わせたクラス編成と、<span class="marker-green">定期テスト3週間前からの徹底対策</span>で確実に成績を伸ばします。</p>
-      <p>個別指導塾とは違い、講師がそれぞれの専攻科目を担当。高校受験クラスでは英語・数学・国語・理科・社会の5教科対応で、全科目最低80点以上を目標にしています。</p>
-    </div>
-  </div>
-</section>
-
 <!-- Courses -->
 <section class="courses" id="courses">
   <div class="container section-center">
     <span class="section-label">COURSES</span>
-    <h2 class="section-title">進学指導塾Nixの高校受験3年生クラス</h2>
+    <h2 class="section-title">高校受験3年生クラス</h2>
     <p class="section-desc">お子さんの学力と志望校に合わせた3つのコースを用意しています</p>
   </div>
   <div class="courses-grid container">
@@ -1774,7 +1648,7 @@ section { padding: 100px 1.5rem; }
   <div class="section-watermark">Q &amp; A</div>
   <div class="container section-center">
     <span class="section-label">FAQ</span>
-    <h2 class="section-title">進学指導塾Nixのよくあるご質問</h2>
+    <h2 class="section-title">よくあるご質問</h2>
   </div>
   <div class="faq-list container">
     
@@ -1959,36 +1833,9 @@ section { padding: 100px 1.5rem; }
 
 <!-- EduShift CTA -->
 <section class="edushift-cta">
-  <div class="container section-center">
-    <span class="edushift-badge">EduShift・HP制作サービス</span>
-    <h2>進学指導塾NixのHP、<span style="color:#FF69B4">集客力アップ</span>しませんか？</h2>
-    <p class="edushift-sub">
-      EduShiftは学習塾・教育機関専門のHP制作サービスです。<br>
-      既存HPのモダンリニューアルで、保護者からの問い合わせを増やします。
-    </p>
-    <div class="edushift-cards">
-      <div class="edushift-card">
-        <div class="card-num">01</div>
-        <h3>塾専門のHP制作</h3>
-        <p>学習塾・教育機関に特化したデザインと構成で、保護者に刺さるホームページを制作します。</p>
-      </div>
-      <div class="edushift-card">
-        <div class="card-num">02</div>
-        <h3>スマホ最適化+集客設計</h3>
-        <p>保護者の80%以上がスマホで塾を検索。レスポンシブ対応と問い合わせ導線の最適化で集客力を向上します。</p>
-      </div>
-      <div class="edushift-card">
-        <div class="card-num">03</div>
-        <h3>月額980円~の安心プラン</h3>
-        <p>初期費用を抑えた月額プランで、小規模塾でも無理なくプロ品質のHPを維持できます。</p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:2rem">
-      <a href="https://www.edu-shift.com/service/hp-production" target="_blank" rel="noopener" class="edushift-btn">
-        EduShiftのHP制作サービスを見る
-      </a>
-    </div>
-  </div>
+  <h2>進学指導塾NixのHP、<span style="color:#FF69B4">集客力アップ</span>しませんか？</h2>
+  <p>EduShiftは学習塾・教育機関向けのHP制作・集客支援サービスです</p>
+  <a href="https://edu-shift.com" target="_blank" rel="noopener">EduShift の詳細を見る</a>
 </section>
 
 <!-- Improvement -->
@@ -2037,15 +1884,6 @@ section { padding: 100px 1.5rem; }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-// ========== Instructor photo: reuse classroom1 image ==========
-(function() {
-  var classroomImg = document.querySelector('.classroom-item img');
-  var instructorImg = document.getElementById('instructor-img');
-  if (classroomImg && instructorImg) {
-    instructorImg.src = classroomImg.src;
-  }
-})();
-
 // ========== Header scroll effect ==========
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {

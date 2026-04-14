@@ -118,7 +118,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   line-height: 1.2;
 }
 .header-cta-btn {
-  background: linear-gradient(135deg, var(--accent), #E74C3C);
+  background: var(--accent);
   color: #fff;
   padding: 16px 32px;
   border-radius: 60px;
@@ -130,9 +130,9 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   gap: 8px;
   white-space: nowrap;
   transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 4px 15px rgba(192,57,43,0.3);
+  box-shadow: 0 4px 16px rgba(192,57,43,0.3);
 }
-.header-cta-btn:hover { background: linear-gradient(135deg, var(--accent-hover), #C0392B); transform: translateY(-2px); }
+.header-cta-btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
 .cta-arrow { font-size: 0.8rem; }
 
 /* Main Nav Bar */
@@ -282,16 +282,16 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
 }
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, var(--accent), #E74C3C);
+  background: var(--accent);
   color: #fff;
   padding: 1rem 2.5rem;
   border-radius: 60px;
   font-weight: 700;
   font-size: 1.1rem;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(192,57,43,0.3);
+  box-shadow: 0 4px 16px rgba(192,57,43,0.4);
 }
-.btn-primary:hover { background: linear-gradient(135deg, var(--accent-hover), #C0392B); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(192,57,43,0.5); }
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(192,57,43,0.5); }
 .hero-stats {
   display: flex;
   gap: 2.5rem;
@@ -894,57 +894,6 @@ section { padding: 100px 1.5rem; }
   .improve-row { grid-template-columns: 1fr; }
 }
 
-/* ========== Access ========== */
-.access { background: var(--bg-alt); }
-.access-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-.access-map {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  min-height: 300px;
-}
-.access-map iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  border: 0;
-}
-.access-info { }
-.access-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--bg-alt2);
-  font-size: 0.9rem;
-}
-.access-icon {
-  flex-shrink: 0;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-}
-.access-label {
-  font-weight: 700;
-  color: var(--primary);
-  min-width: 70px;
-  flex-shrink: 0;
-}
-.access-value { color: var(--text); }
-.access-value a { color: var(--primary); text-decoration: underline; }
-@media (max-width: 768px) {
-  .access-content { grid-template-columns: 1fr; }
-}
-
 /* ========== Footer ========== */
 .footer {
   background: var(--primary-dark);
@@ -1021,7 +970,7 @@ section { padding: 100px 1.5rem; }
   transition: transform 0.2s;
 }
 .floating-btn:hover { transform: translateY(-2px); }
-.floating-btn-red { background: linear-gradient(135deg, var(--accent), #E74C3C); box-shadow: 0 4px 15px rgba(192,57,43,0.3); }
+.floating-btn-red { background: var(--accent); }
 
 /* ========== Scroll Progress ========== */
 .scroll-progress {
@@ -1137,10 +1086,6 @@ section { padding: 100px 1.5rem; }
   background: linear-gradient(transparent 60%, #FED7D7 60%);
   padding: 0 4px;
 }
-.marker-green {
-  background: linear-gradient(transparent 60%, #C6F6D5 60%);
-  padding: 0 4px;
-}
 
 /* ========== Animations ========== */
 [data-animate] {
@@ -1226,7 +1171,7 @@ section { padding: 100px 1.5rem; }
     </div>
   </div>
   <div class="container section-center">
-    <p class="section-desc">成績向上と<span class="marker-green">志望校合格</span>のために、指導方針の核となる5つのポイントをご紹介します。</p>
+    <p class="section-desc">成績向上と志望校合格のために、指導方針の核となる5つのポイントをご紹介します。</p>
     <div class="features-grid">
       
         <div class="feature-card" data-animate>
@@ -1522,7 +1467,7 @@ section { padding: 100px 1.5rem; }
       </ul>
       <p>一橋大学卒業、大学院修了。大学在学中より塾講師・家庭教師として指導を開始し、大手進学塾・予備校・個別指導塾での指導経験を重ね、指導歴は20年超。</p>
 <p>専門は早稲田・慶應義塾高校入試対策。各校の出題傾向や配点構造、合否を分ける設問特性を精査し、生徒一人ひとりの学力・思考特性に応じた学習戦略を設計する。</p>
-<p>慶応と早稲田では出題の考え方が大きく異なり、その違いを理解せずに学習を続けても成果につながりにくいのが現実です。「早慶は別格」と言われることがありますが、それは決して才能の有無で合否が決まるという意味ではありません。必要なのは、<span class="marker-yellow">正しい解き方と正しい学習の順序</span>を理解した上で、努力を積み重ねることです。私がその最短ルートを示します。</p>
+<p>慶応と早稲田では出題の考え方が大きく異なり、その違いを理解せずに学習を続けても成果につながりにくいのが現実です。「早慶は別格」と言われることがありますが、それは決して才能の有無で合否が決まるという意味ではありません。必要なのは、正しい解き方と正しい学習の順序を理解した上で、努力を積み重ねることです。私がその最短ルートを示します。</p>
     </div>
   </div>
 </section>
@@ -1763,32 +1708,6 @@ section { padding: 100px 1.5rem; }
   </div>
 </section>
 
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">プロ家庭教師 イイヅカ</div>
-      <p class="footer-desc">早慶附属・難関私立高校受験専門のプロ家庭教師イイヅカ。一橋大卒・指導歴20年超。慶應日吉・早大学院合格のための英数特化指導。東京23区中心に対応。</p>
-    </div>
-    <div>
-      <nav class="footer-nav">
-        <a href="#features">指導方針</a>
-        <a href="#speciality">早慶攻略</a>
-        <a href="#results">合格実績</a>
-        <a href="#testimonials">保護者の声</a>
-        <a href="#instructor">講師紹介</a>
-        <a href="#tuition">料金</a>
-        <a href="#faq">よくあるご質問</a>
-        <a href="#contact">面談を依頼</a>
-      </nav>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">&copy; 2024 プロ家庭教師 イイヅカ All rights reserved.</p>
-  </div>
-</footer>
-
 <!-- EduShift CTA -->
 <section class="edushift-cta">
   <div class="container section-center">
@@ -1812,15 +1731,6 @@ section { padding: 100px 1.5rem; }
         <p>合格実績や講師の強みを、バッジやカードで視覚的にアピール。塾の価値が一目で伝わります。</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:2rem">
-      <a href="https://www.edu-shift.com/service/hp-production"
-         target="_blank" rel="noopener"
-         style="display:inline-block;background:linear-gradient(135deg,var(--accent),#F09819);color:#fff;font-size:1rem;font-weight:700;padding:16px 40px;border-radius:60px;text-decoration:none;box-shadow:0 6px 24px rgba(230,126,34,0.4);transition:transform .3s,box-shadow .3s"
-         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(230,126,34,0.5)'"
-         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 24px rgba(230,126,34,0.4)'">
-        EduShiftのHP制作サービスを見る
-      </a>
-    </div>
   </div>
 </section>
 
@@ -1831,7 +1741,7 @@ section { padding: 100px 1.5rem; }
     <h2 class="section-title">改善ポイント</h2>
   </div>
   <div class="improve-list container">
-
+    
         <div class="improve-card" data-animate>
           <h3 class="improve-title">ファーストビューの訴求力強化</h3>
           <div class="improve-row">
@@ -1857,6 +1767,31 @@ section { padding: 100px 1.5rem; }
         </div>
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">プロ家庭教師 イイヅカ</div>
+      <p class="footer-desc">早慶附属・難関私立高校受験専門のプロ家庭教師イイヅカ。一橋大卒・指導歴20年超。慶應日吉・早大学院合格のための英数特化指導。東京23区中心に対応。</p>
+    </div>
+    <div>
+      <nav class="footer-nav">
+        <a href="#features">指導方針</a>
+        <a href="#speciality">早慶攻略</a>
+        <a href="#results">合格実績</a>
+        <a href="#testimonials">保護者の声</a>
+        <a href="#instructor">講師紹介</a>
+        <a href="#tuition">料金</a>
+        <a href="#faq">よくあるご質問</a>
+        <a href="#contact">面談を依頼</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2024 プロ家庭教師 イイヅカ All rights reserved.</p>
+  </div>
+</footer>
 
 <!-- Floating CTA -->
 <div class="floating-cta">
