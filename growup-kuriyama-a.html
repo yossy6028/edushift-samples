@@ -1501,7 +1501,7 @@ document.querySelectorAll('.features-grid, .courses-grid, .tuition-grid, .enroll
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
   gsap.registerPlugin(ScrollTrigger);
-  gsap.utils.toArray('.fade-up, [data-animate]').forEach(el => {
+  gsap.utils.toArray('.fade-up').forEach(el => {
     gsap.from(el, {
       opacity: 0,
       y: 60,
@@ -1510,16 +1510,7 @@ document.querySelectorAll('.features-grid, .courses-grid, .tuition-grid, .enroll
       scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
     });
   });
-  gsap.utils.toArray('.feature-card, .result-card, .testimonial-card, .course-card').forEach((el, i) => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      delay: i * 0.05,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 90%' }
-    });
-  });
+  // [data-animate] fade-in handled by Intersection Observer to avoid GSAP inline-style conflicts
 </script>
 
 </body>

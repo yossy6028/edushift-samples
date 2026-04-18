@@ -2136,16 +2136,7 @@ document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
       scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
     });
   });
-  gsap.utils.toArray('.feature-card, .result-card, .testimonial-card, .course-card').forEach((el, i) => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      delay: i * 0.05,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 90%' }
-    });
-  });
+  // Card fade-in handled by Intersection Observer via [data-animate] to avoid GSAP inline-style conflicts
 </script>
 
 </body>
