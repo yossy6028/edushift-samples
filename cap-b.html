@@ -1204,6 +1204,20 @@ section { padding: 100px 1.5rem; }
   opacity: 0;
   transform: translateY(20px);
 }
+.sister-school { padding: 90px 0; background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 100%); position: relative; overflow: hidden; }
+.sister-school::before { content: "KZEMI"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 14rem; font-weight: 900; letter-spacing: 0.05em; color: var(--primary); opacity: 0.04; pointer-events: none; white-space: nowrap; font-family: 'Noto Serif JP', serif; z-index: 0; }
+.sister-school-wrap { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; text-align: center; background: #fff; padding: 60px 48px; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04); }
+.sister-school-badge { display: inline-block; padding: 6px 18px; background: linear-gradient(135deg, var(--accent), var(--primary)); color: #fff; font-size: 0.8rem; letter-spacing: 0.15em; border-radius: 999px; font-weight: 700; margin-bottom: 22px; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+.sister-school-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.55; color: var(--primary); margin-bottom: 20px; font-weight: 700; }
+.sister-school-accent { color: var(--accent); position: relative; display: inline-block; padding: 0 4px; }
+.sister-school-lead { font-size: 1rem; line-height: 1.9; color: var(--text); margin: 0 auto 36px; text-align: left; max-width: 780px; }
+.sister-school-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+.sister-school-feature { padding: 22px 14px; background: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.05)); border-radius: 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; border: 1px solid rgba(0,0,0,0.05); }
+.sister-school-feature-num { font-family: 'Noto Serif JP', serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.sister-school-feature-txt { font-size: 0.9rem; color: var(--text); font-weight: 500; text-align: center; line-height: 1.55; }
+.sister-school-cta { display: inline-flex; align-items: center; gap: 10px; padding: 16px 38px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; text-decoration: none; border-radius: 999px; font-weight: 700; font-size: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+.sister-school-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+@media (max-width: 640px) { .sister-school-wrap { padding: 40px 22px; } .sister-school-features { grid-template-columns: 1fr; } .sister-school::before { font-size: 7rem; } .sister-school-lead { text-align: left; } }
 </style>
 </head>
 <body>
@@ -1605,6 +1619,35 @@ section { padding: 100px 1.5rem; }
             <p>恐れ入りますが、電話番号は公開しておりません。お問い合わせはメール（hosoi.581201@icloud.com）にてお願いいたします。24時間受付しております。</p>
           </div>
         </div>
+  </div>
+</section>
+
+<!-- Sister School Kzemi -->
+<section class="sister-school" id="sister-school">
+  <div class="container">
+    <div class="sister-school-wrap">
+      <div class="sister-school-badge">SISTER SCHOOL</div>
+      <h2 class="sister-school-title">卒業後も学びは続く — 姉妹校<span class="sister-school-accent">Kゼミ</span>のご案内</h2>
+      <p class="sister-school-lead">CAPで中学受験を終えたお子さまが、中学・高校に進学された後も継続してサポートできるよう、姉妹校として<strong>「個別指導塾Kゼミ」</strong>を運営しています。中高生対象の個別指導で、定期テスト対策から大学受験まで一貫して伴走します。</p>
+      <div class="sister-school-features">
+        <div class="sister-school-feature">
+          <span class="sister-school-feature-num">01</span>
+          <span class="sister-school-feature-txt">中高生対象の個別指導</span>
+        </div>
+        <div class="sister-school-feature">
+          <span class="sister-school-feature-num">02</span>
+          <span class="sister-school-feature-txt">CAP卒業生の継続サポート</span>
+        </div>
+        <div class="sister-school-feature">
+          <span class="sister-school-feature-num">03</span>
+          <span class="sister-school-feature-txt">定期テスト・大学受験まで一貫</span>
+        </div>
+      </div>
+      <a href="https://kzemi.hp.peraichi.com/" target="_blank" rel="noopener" class="sister-school-cta">
+        Kゼミのホームページを見る
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
