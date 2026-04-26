@@ -144,12 +144,9 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
     font-size: 0.95rem; padding: 12px 20px;
   }
 }
+/* ヒーロー画像はトップ帯バナーで明記済みのため、画像内の赤帯ラベルは非表示 */
 .sample-img-wrap.hero-sample::after {
-  top: 50%; left: 50%; right: auto;
-  transform: translate(-50%, -50%);
-  font-size: 1.1rem; padding: 16px 28px;
-  background: rgba(220, 53, 69, 0.92);
-  border: 2px solid #fff;
+  display: none !important;
 }
 
 .sample-text-section {
