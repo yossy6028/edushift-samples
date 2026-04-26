@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一橋ゼミナール｜gpt-image-2 レイアウト案 比較</title>
+<style>
+  :root { --primary:#1E3A8A; --accent:#F59E0B; --bg:#F8F9FB; --txt:#1a1a2e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans',sans-serif; background:var(--bg); color:var(--txt); line-height:1.7; }
+  header { background:var(--primary); color:#fff; padding:24px 16px; text-align:center; }
+  header h1 { margin:0 0 8px; font-size:1.4rem; font-weight:700; }
+  header p { margin:0; opacity:0.85; font-size:0.95rem; }
+  .notice { background:#FFF8DC; border-bottom:3px solid #DC3545; padding:14px 16px; text-align:center; font-size:0.9rem; color:#5C2D00; }
+  .notice strong { color:#B22222; }
+  .container { max-width:1300px; margin:0 auto; padding:32px 16px; }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  .card { background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(0,0,0,0.08); overflow:hidden; }
+  .card-head { padding:18px 20px; border-bottom:1px solid #eee; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .card-head h2 { margin:0; font-size:1.1rem; color:var(--primary); }
+  .badge { background:var(--accent); color:#fff; padding:4px 10px; border-radius:999px; font-size:0.75rem; font-weight:700; }
+  .card-img { display:block; width:100%; height:auto; }
+  .card-foot { padding:16px 20px; background:#fafbfc; font-size:0.85rem; color:#555; }
+  .card-foot a { color:var(--primary); text-decoration:none; font-weight:600; }
+  .card-foot a:hover { text-decoration:underline; }
+  .summary { background:#fff; border-radius:14px; padding:28px; margin-top:32px; box-shadow:0 4px 18px rgba(0,0,0,0.06); }
+  .summary h2 { color:var(--primary); margin-top:0; }
+  .summary table { width:100%; border-collapse:collapse; margin-top:12px; font-size:0.9rem; }
+  .summary th, .summary td { padding:10px 12px; border-bottom:1px solid #eee; text-align:left; vertical-align:top; }
+  .summary th { background:#f5f7fb; color:var(--primary); width:24%; }
+  .links { background:#fff; border-radius:14px; padding:24px; margin-top:24px; box-shadow:0 4px 18px rgba(0,0,0,0.06); }
+  .links h2 { color:var(--primary); margin-top:0; font-size:1rem; }
+  .links ul { padding-left:20px; }
+  .links li { margin-bottom:8px; font-size:0.9rem; }
+  .links a { color:var(--primary); }
+  @media (max-width:880px) { .grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="notice">
+  <strong>これは実験ページです。</strong>　gpt-image-2-2026-04-21（OpenAI最新画像生成モデル）に「一橋ゼミナール寄居校のHPデザイン」を任せた場合の出力比較です。
+  実装版（コード）ではなく、AI生成のレイアウトカンプ（1枚絵）です。
+</div>
+
+<header>
+  <h1>一橋ゼミナール｜gpt-image-2 レイアウト案 比較</h1>
+  <p>OpenAI gpt-image-2 が「日本の塾HP」をどこまでデザインできるかの実験</p>
+</header>
+
+<main class="container">
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-head">
+        <h2>A案：詳細プロンプト指定</h2>
+        <span class="badge">指示型</span>
+      </div>
+      <a href="onezemi-gptimage-a.jpeg" target="_blank">
+        <img src="onezemi-gptimage-a.jpeg" alt="A案 gpt-image-2 layout" class="card-img">
+      </a>
+      <div class="card-foot">
+        navy + amber 配色、女子生徒1人ヒーロー、Feature 5列、講師3名、を細かく指定。<br>
+        → 結果: 指示通りの「整ったが控えめ」な構成<br>
+        画像URL: <a href="onezemi-gptimage-a.jpeg" target="_blank">onezemi-gptimage-a.jpeg</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>B案：フリー解釈</h2>
+        <span class="badge">自由型</span>
+      </div>
+      <a href="onezemi-gptimage-b.jpeg" target="_blank">
+        <img src="onezemi-gptimage-b.jpeg" alt="B案 gpt-image-2 layout" class="card-img">
+      </a>
+      <div class="card-foot">
+        塾名・住所・実績数値だけ伝え、配色やレイアウトは「お任せ」。<br>
+        → 結果: 業界標準＋αの盛り盛り版（生徒の声・FAQ2列など追加）<br>
+        画像URL: <a href="onezemi-gptimage-b.jpeg" target="_blank">onezemi-gptimage-b.jpeg</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="summary">
+    <h2>セクション比較</h2>
+    <table>
+      <tr><th>セクション</th><th>A案（指示型）</th><th>B案（自由型）</th></tr>
+      <tr><td>塾名表示</td><td>一橋ゼミナール</td><td>一橋ゼミナール寄居校（より正式）</td></tr>
+      <tr><td>ヘッダー右</td><td>オレンジCTA「042-123-4567」(架空)</td><td>「無料体験・資料請求」+ 電話「048-581-0123」(寄居の市外局番048を当てた、ただし下4桁ハルシネーション)</td></tr>
+      <tr><td>ヒーロー</td><td>女子生徒1人クローズアップ</td><td>グループ写真+キャッチ「わかる→できる」</td></tr>
+      <tr><td>Feature</td><td>5列横並び</td><td>3列バッジカード型</td></tr>
+      <tr><td>講師</td><td>3名アバター（イラスト風）</td><td>4名（実写風で誤認リスクあり）</td></tr>
+      <tr><td>体験談</td><td>なし</td><td>追加（生徒・保護者の声 3列）</td></tr>
+      <tr><td>FAQ</td><td>縦リスト</td><td>2列レイアウト</td></tr>
+      <tr><td>サンプル明記</td><td>なし</td><td>なし</td></tr>
+    </table>
+  </section>
+
+  <section class="links">
+    <h2>関連リンク</h2>
+    <ul>
+      <li>実装版A（HTML/CSS、サンプル明記済）: <a href="onezemi-a.html" target="_blank">onezemi-a.html</a></li>
+      <li>実装版B（HTML/CSS、サンプル明記済）: <a href="onezemi-b.html" target="_blank">onezemi-b.html</a></li>
+      <li>元HP: <a href="https://onezemi.jp" target="_blank">https://onezemi.jp</a></li>
+    </ul>
+  </section>
+
+</main>
+
+</body>
+</html>
