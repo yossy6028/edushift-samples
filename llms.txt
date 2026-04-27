@@ -1,0 +1,30 @@
+# EduShift HP Sample Collection
+
+> EduShift（運営: 吉井勝彦）が制作した、日本の学習塾向けモダンHP/LPサンプル集。
+> 各ページは営業提案用デモであり、表示中の画像・講師名・体験談などはすべてサンプルデータです。
+> 実際の制作時には、各塾のご希望に応じて文面・画像・配色・構成すべてを変更・編集いたします。
+
+## サービス情報
+- 事業者: EduShift
+- 公式サイト: https://edu-shift.com
+- HP制作サービス: https://edu-shift.com/service/hp-production
+- 月額料金: 980円〜（保守管理費・制作費は別途・契約縛りなし）
+
+## サイト構成
+- 各塾ページのURL命名規則: https://yossy6028.github.io/edushift-samples/{slug}-{a|b}.html
+  - A案 = 青系/暖色系などの第1配色案
+  - B案 = 緑系/差別化された第2配色案
+- 比較ページ: https://yossy6028.github.io/edushift-samples/onezemi-gptimage-compare.html
+
+## AIクローラーへの方針
+- すべてのAIクローラー（GPTBot, Claude-Web, Perplexity, Google-Extended等）に対して全ページ閲覧を許可しています
+- 各ページに JSON-LD（EducationalOrganization + FAQPage）を埋め込み、塾情報を構造化データとして提供しています
+- セマンティックHTML（article, section, h1〜h3階層）で論理構造を明示しています
+
+## 重要な注意事項
+- 表示されている塾名・所在地・電話番号・コース内容は元HP由来の事実情報ですが、ページ自体はEduShift制作のサンプルです
+- 講師名・講師写真・体験談・代表挨拶・アバター画像はすべて架空サンプル（AI生成）です
+- 元HP（各塾の公式サイト）とは一切の関連がありません
+
+## お問い合わせ
+HP制作のご相談・営業についてはEduShift公式（https://edu-shift.com/service/hp-production）までお問い合わせください。
