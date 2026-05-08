@@ -273,9 +273,22 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   font-family: 'Noto Serif JP', serif;
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.12;
   margin-bottom: 1rem;
   text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+.hero-brand-line {
+  display: block;
+  white-space: nowrap;
+}
+.hero-brand-name {
+  letter-spacing: 0.02em;
+}
+@media (max-width: 480px) {
+  .hero-brand {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+    line-height: 1.18;
+  }
 }
 .hero h1 {
   font-size: clamp(1.2rem, 3vw, 2rem);
@@ -1269,7 +1282,7 @@ section { padding: 100px 1.5rem; }
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">中学受験専門 / 1対1個別指導 / 東京都中野区</div>
-    <p class="hero-brand">中学受験専門<br>個別指導塾<br>CAP</p>
+    <p class="hero-brand"><span class="hero-brand-line">中学受験専門</span><span class="hero-brand-line">個別指導塾</span><span class="hero-brand-line hero-brand-name">CAP</span></p>
     <h1>中学受験専門塾CAP中野校の<br><span class="hero-h1-accent">元室長が１対１で指導</span></h1>
     <p class="hero-desc">中学受験専門塾として約40年間にわたり多くの受験生を指導してきたCAP中野校は、2024年度より、中学受験専門個別指導塾CAPとして新たにスタートしています。指導を行うのは、CAP中野校設立メンバーの一人であり長年CAP中野校の室長を務めてきた細井です。入試合格までのプロセスの完全管理から他塾の補講まで、中学受験に関わる指導全般を行います。</p>
     <div class="hero-cta">
@@ -1440,7 +1453,7 @@ section { padding: 100px 1.5rem; }
   <div class="container section-center">
     <span class="section-label">RESULTS</span>
     <h2 class="section-title">CAPの合格実績</h2>
-    <p class="results-intro">◎印は最新（2026年度）合格校です。対象期間は細井が全教科指導を開始した2021年以降の入試（2022年度入試から）。</p>
+    <p class="results-intro">◎印は最新（2026年度）合格校です。対象期間は細井が全教科指導を開始した2021年以降（2022年度入試から）。</p>
     <div class="results-badges">
       <span class="result-badge ">女子学院</span>
 <span class="result-badge ">豊島岡</span>
@@ -1555,7 +1568,7 @@ section { padding: 100px 1.5rem; }
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer" id="faq-answer-5" role="region">
-            <p>Kゼミは小学生だけでなく中高生を対象とした姉妹校です。CAPで中学受験を経て中学生・高校生になられたお子さまの継続指導にも対応しています。詳しくはKゼミのホームページをご覧ください。</p>
+            <p>Kゼミは小学だけではなく中高生を対象とした姉妹校です。CAPで中学受験を経て中学生・高校生になられたお子さまの継続指導にも対応しています。詳しくはKゼミのホームページをご覧ください。</p>
           </div>
         </div>
 
