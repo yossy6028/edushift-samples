@@ -213,7 +213,7 @@ h1,h2,h3,h4{{font-family:'Noto Serif JP',serif;font-weight:800;line-height:1.4}}
   .main-nav li{{flex:none}}
 }}
 
-footer{{background:var(--primary-dark);color:#fff;padding:48px 1.5rem;text-align:center}}
+footer{{background:var(--primary);color:#fff;padding:48px 1.5rem;text-align:center}}
 footer p{{font-size:.85rem;opacity:.6;margin-top:8px}}
 
 .floating-cta{{position:fixed;bottom:24px;right:24px;z-index:999}}
