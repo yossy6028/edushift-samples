@@ -1,0 +1,60 @@
+name: Build Kzemi Blog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'production/kzemi/posts/**'
+      - 'production/kzemi/build_blog.py'
+      - 'production/kzemi/images/**'
+      - '.github/workflows/build-kzemi-blog.yml'
+  workflow_dispatch:
+
+# 同時実行を直列化（CMSから連続でcommitされた場合に競合しないように）
+concurrency:
+  group: build-kzemi-blog
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Build Kzemi blog
+        working-directory: production/kzemi
+        run: |
+          python3 build_blog.py
+          echo "=== generated ==="
+          ls -la dist/blog/ || true
+
+      - name: Sync dist/blog -> production/kzemi/blog
+        run: |
+          rm -rf production/kzemi/blog
+          cp -R production/kzemi/dist/blog production/kzemi/blog
+          # distは公開対象外なので削除（ローカル中間生成物のみ）
+          rm -rf production/kzemi/dist
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -z "$(git status --porcelain production/kzemi/blog)" ]]; then
+            echo "変更なし。スキップ。"
+            exit 0
+          fi
+          git add production/kzemi/blog
+          git commit -m "Kゼミ ブログ自動ビルド ($(date '+%Y-%m-%d %H:%M JST'))"
+          git push
