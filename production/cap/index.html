@@ -212,8 +212,13 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   .main-nav a { padding: 12px 16px; font-size: 0.8rem; }
 }
 @media (max-width: 768px) {
+  .header-inner { padding: 8px 4%; gap: 0.5rem; }
+  .header-logo { flex: 1; min-width: 0; }
+  .logo-sub { font-size: 0.62rem; letter-spacing: 0.02em; white-space: nowrap; }
+  .logo-main { font-size: 1.5rem; line-height: 1; letter-spacing: 0.06em; }
   .hamburger { display: flex; }
-  .header-cta-btn { padding: 10px 14px; font-size: 0.75rem; }
+  .header-cta-btn { padding: 9px 14px; font-size: 0.72rem; gap: 4px; }
+  .header-cta-btn .cta-arrow { display: none; }
   .main-nav {
     position: fixed;
     top: 0;
@@ -1250,8 +1255,8 @@ section { padding: 100px 1.5rem; }
   <div class="header-top">
     <div class="header-inner">
       <div class="header-logo">
-        <span class="logo-sub">中学受験専門 / 個別指導</span>
-        <span class="logo-main">中学受験専門 個別指導塾 CAP</span>
+        <span class="logo-sub">中学受験専門 個別指導塾</span>
+        <span class="logo-main">CAP</span>
       </div>
       <div class="header-mail">
         <a href="mailto:hosoi.581201@icloud.com">hosoi.581201@icloud.com</a>
