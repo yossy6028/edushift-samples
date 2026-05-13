@@ -373,7 +373,7 @@ def render_post_page(post, related_posts):
     fm = post["fm"]
     blocks = post["blocks"]
     body_html = render_blocks(blocks)
-    hero_b64 = read_b64("hero")
+    hero_b64 = read_b64("blog-hero") or read_b64("hero")
     hero_img = f'data:image/jpeg;base64,{hero_b64}' if hero_b64 else ""
     cat_color = fm.get("category_color", "#1B5E20")
     tags = [t.strip() for t in fm.get("tags", "").split(",") if t.strip()]
@@ -521,7 +521,7 @@ INDEX_PAGE_CSS = """
 
 def render_index_page(posts):
     """ブログインデックスページHTML生成"""
-    hero_b64 = read_b64("hero")
+    hero_b64 = read_b64("blog-hero") or read_b64("hero")
     hero_img = f'data:image/jpeg;base64,{hero_b64}' if hero_b64 else ""
     cards = []
     for p in posts:
