@@ -481,9 +481,9 @@ def render_post_page(post, related_posts):
 # ブログインデックス生成
 # ============================================================
 INDEX_PAGE_CSS = """
-.blog-hero{position:relative;min-height:48vh;display:flex;align-items:center;overflow:hidden}
+.blog-hero{position:relative;min-height:62vh;display:flex;align-items:center;overflow:hidden;background:#0D3311}
 .blog-hero-bg{position:absolute;inset:0;z-index:0}
-.blog-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:65% 35%}
+.blog-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;transform:scale(0.92);transform-origin:center}
 .blog-hero-overlay{position:absolute;inset:0;background:HERO_OVERLAY;z-index:1}
 .blog-hero-content{position:relative;z-index:2;max-width:min(1200px,90vw);margin:0 auto;padding:6rem 1.5rem 4rem;color:#fff;width:100%}
 .blog-hero-label{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#FFD580;margin-bottom:.75rem}
