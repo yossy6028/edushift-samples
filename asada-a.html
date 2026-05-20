@@ -311,9 +311,17 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
 }
 .hero-brand .small { display:block; font-size: 0.36em; letter-spacing: 0.1em; margin-top: 6px; opacity: 0.92; font-weight: 600; }
 .hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.4; margin-bottom: 1.5rem;
+  font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 900; line-height: 1.35; margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
 }
-.hero-h1-accent { color: var(--accent); }
+.hero-h1-accent { color: #FFD55C; text-shadow: 0 4px 28px rgba(255, 213, 92, 0.35); }
+
+/* 暗背景上での強調（マーカー帯ではなく文字色＋下線で読みやすさを担保） */
+.emph-gold {
+  color: #FFD55C; font-weight: 900;
+  border-bottom: 2px solid rgba(255, 213, 92, 0.55);
+  padding-bottom: 2px;
+}
 .hero-desc {
   font-size: clamp(0.95rem, 1.5vw, 1.05rem); line-height: 1.9;
   max-width: 640px; opacity: 0.95; margin-bottom: 2rem;
@@ -505,12 +513,16 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   border-left: 4px solid var(--accent); box-shadow: var(--shadow);
 }
 .result-group-title {
-  font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 16px;
+  font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 18px; font-weight: 800;
 }
-.result-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.result-items { display: flex; flex-wrap: wrap; gap: 10px; }
 .result-item {
   display: inline-block; background: var(--bg-alt2);
-  padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; color: var(--text);
+  padding: 10px 18px; border-radius: 8px; font-size: 1.05rem; color: var(--text); font-weight: 600;
+}
+@media (max-width: 720px) {
+  .result-group-title { font-size: 1.1rem; }
+  .result-item { font-size: 0.95rem; padding: 8px 14px; }
 }
 
 /* ========== Instructor ========== */
@@ -916,7 +928,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   <div class="hero-overlay"></div>
   <div class="hero-content container">
     <div class="hero-badge">埼玉県飯能市・塾長による進学塾</div>
-    <h1>行こう、川越・川女・<br><span class="hero-h1-accent">付属校へ。</span></h1>
+    <h1><span class="hero-h1-accent">行こう、<br>川越・川女・付属校へ。</span></h1>
     <p class="hero-desc">2026年、卒業生8名のうち2名が早稲田付属へ。<br>全員が、県立学校選択問題採用校・その水準校に合格しました。</p>
     <div class="hero-cta-row">
       <a href="#contact" class="btn-primary">無料体験を申し込む &#9654;</a>
@@ -972,7 +984,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
     
         <div class="results-hero" data-animate>
           <div class="results-hero-decor">2026</div>
-          <h3 class="results-hero-title">8名中2名が早稲田付属に進学。<br>そして<span class="marker-yellow">全員が、県立学校選択問題採用校・その水準校に合格。</span></h3>
+          <h3 class="results-hero-title">8名中2名が早稲田付属に進学。<br>そして<span class="emph-gold">全員が、県立学校選択問題採用校・その水準校に合格。</span></h3>
           <p class="results-hero-lead">中学生 8名の卒業生のうち、2名が早稲田付属（早稲田実業・早稲田大学高等学院）へ進学しました。これは、一般的な進学塾の枠を超える結果だと考えています。さらに特筆すべきは、進学した全員が「県立学校選択問題採用校（川越・川越女子・所沢・和光国際 等）またはそれと同等水準の私立校」に合格していること。一人の取りこぼしもありません。</p>
           <div class="results-hero-stats">
             <div class="rh-stat">
