@@ -354,11 +354,13 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
 .stat-label { font-size: 0.85rem; opacity: 0.9; }
 
 .hero-badges-overlay {
-  position: absolute; left: 50%; bottom: -40px;
+  position: absolute; left: 50%; bottom: 32px;
   transform: translateX(-50%); z-index: 3;
   display: flex; gap: 16px; flex-wrap: wrap;
   max-width: var(--container); width: 100%; padding: 0 4vw; justify-content: center;
+  pointer-events: none;
 }
+.hero-badge-card { pointer-events: auto; }
 .hero-badge-card {
   background: #fff; padding: 14px 18px; border-radius: 12px;
   display: flex; align-items: center; gap: 12px;
