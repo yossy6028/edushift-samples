@@ -177,42 +177,12 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   .sample-notice-text { text-align: center; font-size: 0.88rem; }
 }
 
+/* 本番運用版: サンプルラベルは全て無効化 */
 .sample-img-wrap { position: relative; display: block; width: 100%; }
 .sample-img-wrap img { display: block; width: 100%; height: auto; }
-.sample-img-wrap::after {
-  content: "サンプル画像／ご希望の写真に差し替え可能";
-  position: absolute; top: 12px; right: 12px;
-  background: rgba(220, 53, 69, 0.95); color: #fff;
-  padding: 8px 14px; font-size: 0.78rem; font-weight: 700;
-  border-radius: 4px; letter-spacing: 0.03em;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-  pointer-events: none; z-index: 5; white-space: nowrap;
-}
-@media (max-width: 720px) {
-  .sample-img-wrap::after {
-    top: 50%; right: 50%; transform: translate(50%, -50%);
-    font-size: 0.95rem; padding: 12px 20px;
-  }
-}
-.sample-img-wrap.hero-sample::after { display: none !important; }
-.feature-icon-circle .sample-img-wrap::after { display: none !important; }
-.ins-avatar .sample-img-wrap::after { display: none !important; }
-
-.sample-text-section {
-  position: relative;
-  border: 2px dashed rgba(220, 53, 69, 0.6);
-  padding: 28px; border-radius: 8px; background: rgba(255, 248, 220, 0.3);
-}
-.sample-text-section::before {
-  content: "サンプル文面／ご希望の内容に書き換え可能";
-  display: block;
-  background: linear-gradient(135deg, #DC3545, #FD7E14);
-  color: #fff; padding: 10px 18px;
-  font-size: 0.92rem; font-weight: 700;
-  border-radius: 4px; margin-bottom: 20px; text-align: center;
-  letter-spacing: 0.04em;
-  box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
-}
+.sample-img-wrap::after { display: none !important; }
+.sample-text-section { position: relative; padding: 0; border: none; background: transparent; }
+.sample-text-section::before { display: none !important; }
 
 .full-sample-declaration {
   background: linear-gradient(135deg, #FFF8DC, #FFE4B5);
@@ -1226,32 +1196,6 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
   </div>
 </section>
 
-<!-- Stories（塾長執筆ブログ形式の体験談 1〜2本） -->
-<section class="testimonials" id="stories" style="background:#F8FAFC">
-  <div class="container section-center">
-    <span class="section-label">STORY</span>
-    <h2 class="section-title">合格者の話 — 塾長執筆</h2>
-    <p class="section-desc">体験談ではなく、塾長が一人ひとりの生徒について書いた、本気の記録です。</p>
-  </div>
-  <div class="container">
-    
-        <article class="story-card" data-animate>
-          <div class="story-meta-row">
-            <span class="story-label">塾長執筆</span>
-            <span class="story-meta">2026年4月｜中学3年生・男子・早稲田実業 進学</span>
-          </div>
-          <h3 class="story-title">R.8年 早稲田実業進学 A君の話</h3>
-          <div class="story-body">
-            <p>A君がアサダ塾に来たのは、中学2年生の春だった。本人に聞くと「川越か、できれば早稲田付属に行きたい」と、当時は半ば夢のような目標を口にしていた。</p>
-<p>成績はと言えば、北辰偏差値60を少し超えるくらい。早稲田実業を狙うには、絶対に足りない。だが、私はあえて目標を下げる提案はしなかった。本気でやるなら、本気で付き合う。それがアサダ塾のスタイルだからだ。</p>
-<p>A君は、本当によく通った。土日も、長期休みも。指導時間に上限が無いことを、彼は最大限に使った。「分からない」が出てきたら、その場で持ってくる。間違えた問題は、私が直接、解き方の前提から徹底的に教える。</p>
-<p>中3の秋、北辰偏差値が一気に伸びた。冬期には、過去問演習で早稲田実業の合格ラインを超えるようになった。そして当日。本人は静かに合格を持って帰ってきた。</p>
-<p>「本気でやれば変わる」と、よく言う。だが、それを実際に変えるのは、本人の腹の括り方と、それに付き合い切れる環境だ。アサダ塾は、その「環境」になる。ここまで来たら逃げるな——その一言を、私は何度でも言うために、この塾を開いている。</p>
-          </div>
-        </article>
-  </div>
-</section>
-
 <!-- Classroom（教室の風景・授業中の風景） -->
 <section class="classroom" id="classroom">
   <div class="container section-center">
@@ -1325,21 +1269,39 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
     <p class="section-desc">アサダ塾の日常、合格者の話、勉強への向き合い方を、塾長自ら執筆しています。</p>
     <div class="blog-picks-grid">
       
-        <a href="https://asada-juku.com/blog/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
-          <span class="blog-pick-date">2026.04.10</span>
-          <h3 class="blog-pick-title">R.8年 早稲田実業進学 A君の話</h3>
+        <a href="https://asada-juku.com/2026/04/26/r-8%e5%b9%b4%e3%80%80%e6%97%a9%e7%a8%b2%e7%94%b0%e5%ae%9f%e6%a5%ad%e9%80%b2%e5%ad%a6%e3%80%80a%e5%90%9b%e3%81%ae%e8%a9%b1/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
+          <span class="blog-pick-date">2026.04.26</span>
+          <h3 class="blog-pick-title">R.8年　早稲田実業進学　A君の話</h3>
           <span class="blog-pick-more">続きを読む &#9654;</span>
         </a>
 
-        <a href="https://asada-juku.com/blog/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
-          <span class="blog-pick-date">2026.03.20</span>
-          <h3 class="blog-pick-title">「生徒に合わせた指導」とは何か</h3>
+        <a href="https://asada-juku.com/2026/03/06/2026%e5%b9%b4%e3%80%80%e9%80%b2%e5%ad%a6%e5%ae%9f%e7%b8%be/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
+          <span class="blog-pick-date">2026.03.06</span>
+          <h3 class="blog-pick-title">2026年　進学実績</h3>
           <span class="blog-pick-more">続きを読む &#9654;</span>
         </a>
 
-        <a href="https://asada-juku.com/blog/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
+        <a href="https://asada-juku.com/2026/02/27/%e5%b0%8f%e6%89%8b%e5%85%88%e3%81%ae%e3%83%86%e3%82%af%e3%83%8b%e3%83%83%e3%82%af%e3%81%a7%e9%ab%98%e6%a0%a1%e3%81%ab%e5%85%a5%e5%ad%a6%e3%81%99%e3%82%8b%e3%81%a8%e3%81%a9%e3%81%86%e3%81%aa%e3%82%8b/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
+          <span class="blog-pick-date">2026.02.26</span>
+          <h3 class="blog-pick-title">小手先のテクニックで高校に入学するとどうなるか</h3>
+          <span class="blog-pick-more">続きを読む &#9654;</span>
+        </a>
+
+        <a href="https://asada-juku.com/2026/02/27/%e5%a4%89%e3%82%8f%e3%82%8b%e5%9f%bc%e7%8e%89%e3%81%ae%e5%85%a5%e8%a9%a6/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
+          <span class="blog-pick-date">2026.02.26</span>
+          <h3 class="blog-pick-title">変わる埼玉の入試</h3>
+          <span class="blog-pick-more">続きを読む &#9654;</span>
+        </a>
+
+        <a href="https://asada-juku.com/2026/02/18/%e3%80%90%e5%a1%be%e6%a5%ad%e7%95%8c%e3%81%ae%e8%a9%b1%e3%80%91%e3%80%8c95%e3%81%ae%e7%94%9f%e5%be%92%e3%81%8c%e5%85%a5%e5%a1%be%e5%be%8c%e3%81%ab%e6%88%90%e7%b8%beup%ef%bc%81%ef%bc%81%e3%80%8d/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
+          <span class="blog-pick-date">2026.02.18</span>
+          <h3 class="blog-pick-title">【塾業界の話】「95%の生徒が入塾後に成績UP！！」という広告について</h3>
+          <span class="blog-pick-more">続きを読む &#9654;</span>
+        </a>
+
+        <a href="https://asada-juku.com/2026/03/05/2026%e5%b9%b4%e3%80%80%e5%90%88%e6%a0%bc%e5%ae%9f%e7%b8%be/" target="_blank" rel="noopener" class="blog-pick-card" data-animate>
           <span class="blog-pick-date">2026.03.05</span>
-          <h3 class="blog-pick-title">北辰テストで偏差値を10上げるためにやったこと</h3>
+          <h3 class="blog-pick-title">2026年　合格実績　3/6更新</h3>
           <span class="blog-pick-more">続きを読む &#9654;</span>
         </a>
     </div>
@@ -1540,14 +1502,14 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
       <nav class="footer-nav">
         <a href="#results">合格実績</a>
         <a href="#features">特徴</a>
+        <a href="#comparison">他塾との違い</a>
         <a href="#courses">コース・料金</a>
         <a href="#enrollment">入塾の流れ</a>
-        <a href="#stories">合格者の話</a>
+        <a href="#blog">塾長ブログ</a>
         <a href="#faq">よくある質問</a>
         <a href="#access">アクセス</a>
         <a href="#contact">お問合せ</a>
         <a href="https://asada-juku.com/blog/" target="_blank" rel="noopener">ブログ &#8599;</a>
-        <a href="https://asada-juku.com/blog/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
       </nav>
     </div>
   </div>
