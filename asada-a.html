@@ -293,7 +293,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
 .hero-content {
   position: relative; z-index: 2;
   max-width: var(--container); margin: 0 auto;
-  padding: 5rem 0 4rem; color: #fff;
+  padding: 5rem 0 9rem; color: #fff;
 }
 .hero-badge {
   display: inline-block;
@@ -316,11 +316,12 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
 }
 .hero-h1-accent { color: #FFD55C; text-shadow: 0 4px 28px rgba(255, 213, 92, 0.35); }
 
-/* 暗背景上での強調（マーカー帯ではなく文字色＋下線で読みやすさを担保） */
+/* 暗背景上での強調（マーカー帯NG・下線も省く・純粋なゴールド太字） */
 .emph-gold {
   color: #FFD55C; font-weight: 900;
-  border-bottom: 2px solid rgba(255, 213, 92, 0.55);
-  padding-bottom: 2px;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
 }
 .hero-desc {
   font-size: clamp(0.95rem, 1.5vw, 1.05rem); line-height: 1.9;
@@ -913,7 +914,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
       <li><a href="#enrollment">入塾の流れ</a></li>
       <li><a href="#access">アクセス</a></li>
       <li><a href="#contact">お問合せ</a></li>
-      <li><a href="https://asada-juku.com/2026/" target="_blank" rel="noopener">ブログ &#8599;</a></li>
+      <li><a href="https://asada-juku.com/%e3%83%96%e3%83%ad%e3%82%b0/" target="_blank" rel="noopener">ブログ &#8599;</a></li>
     </ul>
   </nav>
 </header>
@@ -1263,7 +1264,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
           <span class="blog-pick-more">続きを読む &#9654;</span>
         </a>
     </div>
-    <a href="https://asada-juku.com/2026/" target="_blank" rel="noopener" class="blog-more-link">ブログ一覧を見る &#9654;</a>
+    <a href="https://asada-juku.com/%e3%83%96%e3%83%ad%e3%82%b0/" target="_blank" rel="noopener" class="blog-more-link">ブログ一覧を見る &#9654;</a>
   </div>
 </section>
 
@@ -1467,7 +1468,7 @@ h1, h2, h3 { font-family: 'Noto Serif JP', serif; font-weight: 800; line-height:
         <a href="#faq">よくある質問</a>
         <a href="#access">アクセス</a>
         <a href="#contact">お問合せ</a>
-        <a href="https://asada-juku.com/2026/" target="_blank" rel="noopener">ブログ &#8599;</a>
+        <a href="https://asada-juku.com/%e3%83%96%e3%83%ad%e3%82%b0/" target="_blank" rel="noopener">ブログ &#8599;</a>
       </nav>
     </div>
   </div>
